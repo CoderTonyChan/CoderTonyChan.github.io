@@ -3,17 +3,17 @@
 
 
     <sitemap>
-        <loc>http://yoursite-url/post-sitemap.xml</loc>
+        <loc>https://blog.tonystudio.ml/post-sitemap.xml</loc>
         <lastmod>2017-09-23T13:40:20.000Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://yoursite-url/page-sitemap.xml</loc>
+        <loc>https://blog.tonystudio.ml/page-sitemap.xml</loc>
         <lastmod>2018-12-21T07:47:19.890Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://yoursite-url/tag-sitemap.xml</loc>
+        <loc>https://blog.tonystudio.ml/tag-sitemap.xml</loc>
         <lastmod>2017-09-23T13:40:20.000Z</lastmod>
     </sitemap>
 

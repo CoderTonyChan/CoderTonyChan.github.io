@@ -2,34 +2,34 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>http://yoursite-url</loc>
+        <loc>https://blog.tonystudio.ml</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
     
     <url>
-        <loc>http://yoursite-url/about/</loc>
+        <loc>https://blog.tonystudio.ml/about/</loc>
         <lastmod>2018-12-21T07:47:19.890Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>http://yoursite-url/404.html</loc>
+        <loc>https://blog.tonystudio.ml/404.html</loc>
         <lastmod>2017-09-23T13:40:20.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>http://yoursite-url/archive/</loc>
+        <loc>https://blog.tonystudio.ml/archive/</loc>
         <lastmod>2017-09-23T13:40:20.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>http://yoursite-url/tags/</loc>
+        <loc>https://blog.tonystudio.ml/tags/</loc>
         <lastmod>2017-09-23T13:40:20.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
