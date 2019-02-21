@@ -9,15 +9,15 @@
 
     <url>
         <loc>https://blog.tonystudio.ml/2018/04/30/HTTPS-mitmproxy/</loc>
-        <lastmod>2019-02-19T09:32:49.772Z</lastmod>
+        <lastmod>2019-02-21T08:04:47.751Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://blog.tonystudio.ml/2016/09/18/HTTPS-Charles/</loc>
-        <lastmod>2019-02-19T09:27:04.107Z</lastmod>
+        <loc>https://blog.tonystudio.ml/2015/02/16/soft-collect/</loc>
+        <lastmod>2019-02-21T07:44:55.185Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -25,7 +25,23 @@
 
     <url>
         <loc>https://blog.tonystudio.ml/2017/03/18/hexo-theme-beantech/</loc>
-        <lastmod>2017-09-23T13:40:20.000Z</lastmod>
+        <lastmod>2019-02-20T09:00:41.166Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2016/09/18/HTTPS-Charles/</loc>
+        <lastmod>2019-02-20T09:00:38.537Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2015/02/16/git-collect/</loc>
+        <lastmod>2019-02-20T01:46:01.689Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

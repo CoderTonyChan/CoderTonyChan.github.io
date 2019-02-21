@@ -15,11 +15,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          Tony写字的地方 | 知道自己要做什么
+          Git操作指南 - Tony写字的地方 | 知道自己要做什么
         
     </title>
 
-    <link rel="canonical" href="https://blog.tonystudio.ml/tags/Charles/">
+    <link rel="canonical" href="https://blog.tonystudio.ml/2015/02/16/git-collect/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -69,10 +69,10 @@
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
-         /* page 就是 about archives等等 */
-            /* background-image: url('/undefined') */
-            background-image: url('undefined')
-            
+        
+            background-image: url('/img/post/HTTPS-mitmproxy.1.jpg');
+            -webkit-mask: -webkit-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,1),rgba(0,0,0,1),rgba(0,0,0,0.5));
+            /*post*/
         
     }
 
@@ -87,10 +87,18 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                         
-                        <div class="site-heading">
-                            <h1>Tony&#39;s Studio</h1>
-                            <!--<hr class="small">-->
-                            <span class="subheading">Talk is cheap. Show me the code.</span>
+                        <div class="post-heading" style="color: ">
+                            <div class="tags">
+                                
+                                <a class="tag" href="/tags/#Git" title="Git">Git</a>
+                                
+                            </div>
+                            <h1>Git操作指南</h1>
+                            <h2 class="subheading">Git操作指南</h2>
+                            <span class="meta">
+                                Posted by Tony Chan on
+                                2015-02-16
+                            </span>
                         </div>
                         
     
@@ -300,319 +308,168 @@
 
 
     <!-- Main Content -->
-    
-<meta name="referrer" content="no-referrer">
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        
+    <!-- Modify by Yu-Hsuan Yen -->
 
-<!-- USE SIDEBAR -->
-    <!-- Post Container -->
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-            
-                
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <!-- 归档列表 -->
-            
-            
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
 
-             <!-- 归档列表 -->
+                <blockquote>
+<p>mitmproxy是一个支持HTTP和HTTPS的抓包程序，有类似Fiddler、Charles的功能，只不过它是一个控制台的形式操作。<br>
+mitmproxy还有两个关联组件。一个是mitmdump，它是mitmproxy的命令行接口，利用它我们可以对接Python脚本，用Python实现监听后的处理。另一个是mitmweb，它是一个Web程序，通过它我们可以清楚观察mitmproxy捕获的请求。<br>
+下面我们来了解它们的用法。</p>
+</blockquote>
+<p><img src="https://pic2.zhimg.com/80/v2-6b01852319b8673cabc3bc9e524c4d05_hd.jpg" alt="BeanTech Desktop"></p>
+<h1 id="git删除所有历史提交记录">git删除所有历史提交记录</h1>
+<hr>
+<p>把旧项目提交到Git上，但是会有一些历史记录，这些历史记录中可能会有项目密码等敏感信息。如何删除这些历史记录，形成一个全新的仓库，并且保持代码不变呢？</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">1. Checkout</span><br><span class="line"></span><br><span class="line">   git checkout --orphan latest_branch</span><br><span class="line"></span><br><span class="line">2. Add all the files</span><br><span class="line"></span><br><span class="line">   git add -A</span><br><span class="line"></span><br><span class="line">3. Commit the changes</span><br><span class="line"></span><br><span class="line">   git commit -am "commit message"</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">4. Delete the branch</span><br><span class="line"></span><br><span class="line">   git branch -D master</span><br><span class="line"></span><br><span class="line">5.Rename the current branch to master</span><br><span class="line"></span><br><span class="line">   git branch -m master</span><br><span class="line"></span><br><span class="line">6.Finally, force update your repository</span><br><span class="line"></span><br><span class="line">   git push -f origin master</span><br></pre></td></tr></table></figure>
+                
 
-            
-            <div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2018">
-                    <span class="tag-text">2018</span>
-                </span>
-                <ul>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <li>
-                    04-30
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    <a href="/2018/04/30/HTTPS-mitmproxy/" style="color: #0085a1">
-                        <span>
-                            HTTP/HTTPS 抓包 —— mitmproxy
-                        </span>
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </li>
-                
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2016/09/18/HTTPS-Charles/" data-toggle="tooltip" data-placement="top" title="HTTP/HTTPS 抓包 —— Charles">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2015/02/16/soft-collect/" data-toggle="tooltip" data-placement="top" title="常用软件合集">Next Post &rarr;</a>
+                        </li>
+                    
                 </ul>
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                    <div class="comment">
+                        <div id="disqus_thread" class="disqus-thread"></div>
+                    </div>
+                
+                <!-- disqus comment end -->
             </div>
             
-            <div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2017">
-                    <span class="tag-text">2017</span>
-                </span>
-                <ul>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <li>
-                    03-18
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    <a href="/2017/03/18/hexo-theme-beantech/" style="color: #0085a1">
-                        <span>
-                            [Hexo] Theme BeanTech
-                        </span>
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </li>
-                
-                </ul>
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2016">
-                    <span class="tag-text">2016</span>
-                </span>
-                <ul>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <li>
-                    09-18
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    <a href="/2016/09/18/HTTPS-Charles/" style="color: #0085a1">
-                        <span>
-                            HTTP/HTTPS 抓包 —— Charles
-                        </span>
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </li>
-                
-                </ul>
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2015">
-                    <span class="tag-text">2015</span>
-                </span>
-                <ul>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <li>
-                    02-16
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    <a href="/2015/02/16/soft-collect/" style="color: #0085a1">
-                        <span>
-                            常用软件合集
-                        </span>
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </li>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <li>
-                    02-16
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    <a href="/2015/02/16/git-collect/" style="color: #0085a1">
-                        <span>
-                            Git操作指南
-                        </span>
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </li>
-                
-                </ul>
-            </div>
-            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
 
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#git删除所有历史提交记录"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">git删除所有历史提交记录</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
 
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#Git" title="Git">Git</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://tonystudio.ml" target="_blank">TonyStudio Home</a></li>
+                    
+                </ul>
+                
+            </div>
         </div>
     </div>
-</div>
-
-                <!-- 如果开启评论功能 -->
-                
-            </div>
-
-          <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Featured Tags -->
-
-<section>
-    <!-- no hr -->
-    <h5><a href="/tags/">FEATURED TAGS</a></h5>
-    <div class="tags">
-        
-            
-            <a href="/tags/#抓包" title="抓包" rel="2">抓包</a>
-            
-        
-            
-            <a href="/tags/#HTTPS" title="HTTPS" rel="2">HTTPS</a>
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-            <a href="/tags/#Git" title="Git" rel="2">Git</a>
-            
-        
-    </div>
-</section>
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-    <h5><a href="/about/">ABOUT ME</a></h5>
-    <div class="short-about">
-
-        
-        <img id="avatar_pic" src="/img/sidebar/avatar.jpg">
-        
-
-        
-        <p>
-            Hi, i&#39;m Tony Chan
-        </p>
-        
-
-        <!-- SNS Link -->
-        <ul class="list-inline">
-            
-            <li>
-                <a href="mailto:CoderTonyChan@icloud.com">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-                    </span>
-                </a>
-            </li>
-            
-
-            
-            <li>
-                <a target="_blank" href="https://github.com/CoderTonyChan">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                    </span>
-                </a>
-            </li>
-            
-
-            
-            <li>
-                <a href="/rss2.xml">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                    </span>
-                </a>
-            </li>
-            
-            
-            
-
-            
-
-            
+</article>
 
 
-            
-        </ul>
-    </div>
-</section>
-        <hr>
-    
-        
-  <h5>RECENT POSTS
-  <div class="widget">
-    <ul>
-      
-        <li>
-          <a href="/2018/04/30/HTTPS-mitmproxy/">HTTP/HTTPS 抓包 —— mitmproxy</a>
-        </li>
-      
-        <li>
-          <a href="/2017/03/18/hexo-theme-beantech/">[Hexo] Theme BeanTech</a>
-        </li>
-      
-        <li>
-          <a href="/2016/09/18/HTTPS-Charles/">HTTP/HTTPS 抓包 —— Charles</a>
-        </li>
-      
-        <li>
-          <a href="/2015/02/16/git-collect/">Git操作指南</a>
-        </li>
-      
-        <li>
-          <a href="/2015/02/16/soft-collect/">常用软件合集</a>
-        </li>
-      
-    </ul>
-  </div>
-</h5>
-        <hr>
-    
-        <!-- Friends Blog -->
 
-<h5>FRIENDS</h5>
-<ul class="list-inline">
 
-    
-        <li><a href="https://tonystudio.ml" target="_blank">TonyStudio Home</a></li>
-    
-</ul>
+<!-- disqus embedded js code start (one page only need to embed once) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "your-disqus-ID";
+    var disqus_identifier = "https://blog.tonystudio.ml/2015/02/16/git-collect/";
+    var disqus_url = "https://blog.tonystudio.ml/2015/02/16/git-collect/";
 
-        <hr>
-    
-        
-    <h5>ARCHIVES</h5>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">2</span></li></ul>
-    </div>
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus embedded js code start end -->
 
-        <hr>
-    
-        <!-- Categories -->
 
-        <hr>
-    
-</div>
 
-        
-    </div>
-</div>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
 
 
     <!-- Footer -->
