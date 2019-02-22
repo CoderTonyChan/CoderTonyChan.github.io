@@ -8,6 +8,13 @@
     </url>
     
     <url>
+        <loc>https://blog.tonystudio.ml/books/</loc>
+        <lastmod>2019-02-22T05:59:42.044Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
         <loc>https://blog.tonystudio.ml/about/</loc>
         <lastmod>2019-02-21T07:46:33.513Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -24,13 +31,6 @@
     <url>
         <loc>https://blog.tonystudio.ml/tags/</loc>
         <lastmod>2019-02-21T07:46:33.513Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://blog.tonystudio.ml/books/</loc>
-        <lastmod>2019-02-19T09:04:18.119Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>

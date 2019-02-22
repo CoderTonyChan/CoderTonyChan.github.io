@@ -8,16 +8,8 @@
     </url>
 
     <url>
-        <loc>https://blog.tonystudio.ml/2018/04/30/HTTPS-mitmproxy/</loc>
-        <lastmod>2019-02-21T08:04:47.751Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://blog.tonystudio.ml/2015/02/16/soft-collect/</loc>
-        <lastmod>2019-02-21T07:44:55.185Z</lastmod>
+        <lastmod>2019-02-22T05:54:31.030Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -25,7 +17,15 @@
 
     <url>
         <loc>https://blog.tonystudio.ml/2017/03/18/hexo-theme-beantech/</loc>
-        <lastmod>2019-02-20T09:00:41.166Z</lastmod>
+        <lastmod>2019-02-21T08:12:51.015Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2018/04/30/HTTPS-mitmproxy/</loc>
+        <lastmod>2019-02-21T08:04:47.751Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
