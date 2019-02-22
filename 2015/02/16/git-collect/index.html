@@ -195,36 +195,36 @@
                     
 
                         
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
                         <li>
                             <a href="/tags/">Tags</a>
                         </li>
-                        
-                    
-
-                        
-                    
-
-                        
-                    
-
-                        
-                    
-
-                        
-                    
-
-                        
-                    
-
-                        
-                    
-
-                        
-                    
-
-                        
-                    
-
                         
                     
 
@@ -331,6 +331,26 @@ mitmproxy还有两个关联组件。一个是mitmdump，它是mitmproxy的命令
 <hr>
 <p>把旧项目提交到Git上，但是会有一些历史记录，这些历史记录中可能会有项目密码等敏感信息。如何删除这些历史记录，形成一个全新的仓库，并且保持代码不变呢？</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">1. Checkout</span><br><span class="line"></span><br><span class="line">   git checkout --orphan latest_branch</span><br><span class="line"></span><br><span class="line">2. Add all the files</span><br><span class="line"></span><br><span class="line">   git add -A</span><br><span class="line"></span><br><span class="line">3. Commit the changes</span><br><span class="line"></span><br><span class="line">   git commit -am "commit message"</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">4. Delete the branch</span><br><span class="line"></span><br><span class="line">   git branch -D master</span><br><span class="line"></span><br><span class="line">5.Rename the current branch to master</span><br><span class="line"></span><br><span class="line">   git branch -m master</span><br><span class="line"></span><br><span class="line">6.Finally, force update your repository</span><br><span class="line"></span><br><span class="line">   git push -f origin master</span><br></pre></td></tr></table></figure>
+<h1 id="git多个远程仓库">git多个远程仓库</h1>
+<hr>
+<blockquote>
+<p>用GitHub管理自己的开源项目有几年了,有时候需要同步GitHub和公司的Gitlab</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = true</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        url = https://github.com/CoderTonyChan/laoshihao-login-web</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[branch &quot;master&quot;]</span><br><span class="line">        remote = origin</span><br><span class="line">        merge = refs/heads/master</span><br></pre></td></tr></table></figure>
+<h2 id="用git命令行添加多个远程仓库">用git命令行添加多个远程仓库</h2>
+<p>添加一个名为“mirror”的远程仓库：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add mirror https://gitee.com/CoderTonyChan/laoshihao-login-web.git</span><br></pre></td></tr></table></figure>
+<p>执行完这条命令后.git/config文件内容变成了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = true</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        url = https://github.com/CoderTonyChan/laoshihao-login-web</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[branch &quot;master&quot;]</span><br><span class="line">        remote = origin</span><br><span class="line">        merge = refs/heads/master</span><br><span class="line">[remote &quot;mirror&quot;]</span><br><span class="line">        url = https://gitee.com/CoderTonyChan/laoshihao-login-web.git</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/mirror/*</span><br></pre></td></tr></table></figure>
+<p>此时已经是一个本地仓库，两个远程仓库。使用下面的命令可以分别从两个远程仓库拉取和推送到两个远程仓库。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master </span><br><span class="line">git pull mirror master</span><br><span class="line">git push origin master </span><br><span class="line">git push mirror master</span><br></pre></td></tr></table></figure>
+<h2 id="一条命令同时更新多个远程仓库">一条命令同时更新多个远程仓库</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote set-url --add origin https://gitee.com/CoderTonyChan/laoshihao-login-web.git</span><br></pre></td></tr></table></figure>
+<p>执行这条命令后.git/config内容变成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = true</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        url = https://github.com/CoderTonyChan/laoshihao-login-web.git</span><br><span class="line">        url = https://gitee.com/CoderTonyChan/laoshihao-login-web.git</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[branch &quot;master&quot;]</span><br><span class="line">        remote = origin</span><br><span class="line">        merge = refs/heads/master</span><br></pre></td></tr></table></figure>
+<p>这时候我们一条命令即可更新两个远程仓库：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+
                 
 
                 <hr>
@@ -373,7 +393,7 @@ mitmproxy还有两个关联组件。一个是mitmdump，它是mitmproxy的命令
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#git删除所有历史提交记录"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">git删除所有历史提交记录</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#git删除所有历史提交记录"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">git删除所有历史提交记录</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#git多个远程仓库"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">git多个远程仓库</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#用git命令行添加多个远程仓库"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">用git命令行添加多个远程仓库</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#一条命令同时更新多个远程仓库"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">一条命令同时更新多个远程仓库</span></a></li></ol></li></ol>
         
         </div>
       </aside>

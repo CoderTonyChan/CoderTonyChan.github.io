@@ -15,11 +15,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          HTTP/HTTPS 抓包 —— Charles - Tony写字的地方 | 知道自己要做什么
+          Nginx配置 - Tony写字的地方 | 知道自己要做什么
         
     </title>
 
-    <link rel="canonical" href="https://blog.tonystudio.ml/2016/09/18/HTTPS-Charles/">
+    <link rel="canonical" href="https://blog.tonystudio.ml/2017/06/26/nginx-collect/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -70,7 +70,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('https://blog.devtang.com/images/charles-logo.png');
+            background-image: url('http://pn9jzw2t9.bkt.clouddn.com/2019/bg-japan.JPG');
             -webkit-mask: -webkit-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,1),rgba(0,0,0,1),rgba(0,0,0,0.5));
             /*post*/
         
@@ -87,21 +87,17 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                         
-                        <div class="post-heading" style="color: black">
+                        <div class="post-heading" style="color: ">
                             <div class="tags">
                                 
-                                <a class="tag" href="/tags/#抓包" title="抓包">抓包</a>
-                                
-                                <a class="tag" href="/tags/#HTTPS" title="HTTPS">HTTPS</a>
-                                
-                                <a class="tag" href="/tags/#Charles" title="Charles">Charles</a>
+                                <a class="tag" href="/tags/#nginx" title="nginx">nginx</a>
                                 
                             </div>
-                            <h1>HTTP/HTTPS 抓包 —— Charles</h1>
-                            <h2 class="subheading">Charles使用教程.</h2>
+                            <h1>Nginx配置</h1>
+                            <h2 class="subheading">Nginx配置</h2>
                             <span class="meta">
                                 Posted by Tony Chan on
-                                2016-09-18
+                                2017-06-26
                             </span>
                         </div>
                         
@@ -325,45 +321,26 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <blockquote>
-<p>网上数据抓包,在当前抓包工具横行的时代,对于一个IT开发者来说,是一个很简单的必备的技能,例如青花瓷(Charles)等等工具.</p>
-</blockquote>
-<p><img src="https://blog.devtang.com/images/charles-logo.png" alt="BeanTech Desktop"></p>
-<h1 id="https通讯过程">https通讯过程</h1>
+                <p>nginx在工作中已经有好几个环境在使用了，每次都是重新去网上扒博客，各种编译配置，今天自己也整理一份安装文档和nginx.conf配置选项的说明，留作以后参考。像负载均衡配置（包括健康检查）、缓存（包括清空缓存）配置实例，请参考 <a href="http://segmentfault.com/a/1190000002873747" target="_blank" rel="noopener">http://segmentfault.com/a/1190000002873747</a> ，ssl加密请参考 <a href="http://seanlook.com/2015/05/28/nginx-ssl/" target="_blank" rel="noopener">http://seanlook.com/2015/05/28/nginx-ssl/</a> 。</p>
+<p><img src="https://segmentfault.com/img/remote/1460000015385948" alt="BeanTech Desktop"></p>
+<h1 id="nginx常用配置">Nginx常用配置</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  dev-admin.paascloud.net;</span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_pass http://localhost:7020;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    error_page   500 502 503 504  /50x.html;</span><br><span class="line">    location = /50x.html &#123;</span><br><span class="line">        root   html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  dev-login.paascloud.net;</span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_pass http://localhost:7010;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    error_page   500 502 503 504  /50x.html;</span><br><span class="line">    location = /50x.html &#123;</span><br><span class="line">        root   html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  dev-mall.paascloud.net;</span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_pass http://localhost:7030;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    error_page   500 502 503 504  /50x.html;</span><br><span class="line">    location = /50x.html &#123;</span><br><span class="line">        root   html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  dev-api.paascloud.net;</span><br><span class="line">    location ~ &#123;</span><br><span class="line">        proxy_pass   http://localhost:7979;</span><br><span class="line">    &#125;</span><br><span class="line">    error_page   500 502 503 504  /50x.html;</span><br><span class="line">    location = /50x.html &#123;</span><br><span class="line">        root   html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="nginx配置文件的整体结构">Nginx配置文件的整体结构</h1>
 <hr>
-<p>在讲https抓包之前,必须要了解https的整个校验和通信过程,我们就简单的精简的画一下重要的过程,至于什么三个随机数或者通信秘钥的生成就不详细介绍,主要是针对讲一下https的中间人攻击(https抓包的实现基础)过程</p>
-<p align="center">
-<img src="https://upload-images.jianshu.io/upload_images/5505686-68a34f7acfa8ebf3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/825">
-</p>
-<p>在这个过程中,正常的话,如果哪个步骤出现问题,链接都会停止,无法进行通信,这个是https简单的校验的一个过程介绍.</p>
-<p>那么,https在抓包工具中是如何实现抓包的呢?<br>
-抓包工具就是在上面的过程中,证书认证生成通信密钥中做了手脚.<br>
-以青花瓷为例,大家使用青花瓷抓http请求时,由于没有做安全校验,很容易就实现了数据拦截和转发,至于https呢?</p>
-<h1 id="中间人攻击的情形">中间人攻击的情形</h1>
+<p><img src="https://segmentfault.com/img/remote/1460000015385949" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">user  nobody  nobody;</span><br><span class="line">worker_processes  3;</span><br><span class="line">error_log  logs/error.log;</span><br><span class="line">pid  logs/nginx.pid;</span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    use epoll;</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    include       mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    log_format  main  &apos;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &apos;</span><br><span class="line">                      &apos;$status $body_bytes_sent &quot;$http_referer&quot; &apos;</span><br><span class="line">                      &apos;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&apos;;</span><br><span class="line">    access_log  logs/access.log  main;</span><br><span class="line">    sendfile  on;</span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen       8088;</span><br><span class="line">        server_name  codesheep;</span><br><span class="line">        access_log  /codesheep/webserver/server1/log/access.log;</span><br><span class="line">        error_page  404  /404.html;</span><br><span class="line"></span><br><span class="line">        location /server1/location1 &#123;</span><br><span class="line">            root   /codesheep/webserver;</span><br><span class="line">            index  index.server2-location1.htm;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        location /server1/location2 &#123;</span><br><span class="line">        root   /codesheep/webserver;</span><br><span class="line">            index  index.server2-location2.htm;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen       8089;</span><br><span class="line">        server_name  192.168.31.177;</span><br><span class="line">        access_log  /codesheep/webserver/server2/log/access.log;</span><br><span class="line">        error_page  404  /404.html;</span><br><span class="line">        </span><br><span class="line">        location /server2/location1 &#123;</span><br><span class="line">            root   /codesheep/webserver;</span><br><span class="line">            index  index.server2-location1.htm;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        location /srv2/loc2 &#123;</span><br><span class="line">            alias   /codesheep/webserver/server2/location2/;</span><br><span class="line">            index  index.server2-location2.htm;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        location = /404.html &#123;</span><br><span class="line">            root /codesheep/webserver/;</span><br><span class="line">            index 404.html;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="nginx常见错误及处理方法">Nginx常见错误及处理方法</h1>
 <hr>
-<p>抓取https包的时候,青花瓷会要求使用者 对抓包的设备(手机或其他设备)<br>
-,安装一个证书,安装这个证书的时候,其实是安装了一个根证书(允许颁发CA的一个证书机构的根证书),当你安装了该根证书之后,该证书机构颁发的其他证书,默认都会被你的系统所信任,这个就是青花瓷完成https抓包的一个重要前提!!</p>
-<p align="center">
-<img src="https://upload-images.jianshu.io/upload_images/5505686-d95be6d0815def28.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/980">
-</p>
-<p>当客户端设置了代理,并且开始发出网络请求的时候,这个网络请求的校验过程就会变成这样</p>
-<p align="center">
-<img src="https://upload-images.jianshu.io/upload_images/5505686-1c2bb870ed73506f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000">
-</p>
-<ul>
-<li>当客户端Client对服务器Server发送请求(带着随机数和加密算法),由于青花瓷做了代理,请求被青花瓷拦截,处理(青花瓷的角色现在对于Client来说是服务器),青花瓷将客户端带的随机数和加密算法处理,然后返回自己的证书通过客户端校验,获取到客户端提交的请求参数等数据,</li>
-<li>青花瓷作为客户端(自己去产生随机数和携带支持的加密算法)去请求刚刚Client想要请求的Server,然后,Server会和青花瓷完成上面讲的那个完整的校验,并且读取青花瓷带错来的具体请求,返回正常的数据结果.</li>
-<li>青花瓷得到服务器数据的返回结果之后,开始继续和过程1中的Client以服务器的身份,去做处理,首先收到客户端的随机数和加密算法,自己生成一个随机数和选择一个客户端的加密算法,然后<strong><strong><strong><strong><em>重要</em></strong></strong></strong></strong>* 青花瓷会返回一个伪造的CA证书(公钥和真实的server不一样,但是域名是一样的,或者说,除了域名是一致的,其他的都不是一致的,而且这个签发机构是青花瓷之前让你安装的根证书 签发的,所以,当返回这个证书的时候,你的客户端的信任链是可以完成的,会被系统信任),然后Client在这个伪造的证书(对于青花瓷和Client是真实证书(验证信任链和证书信息都通过了),但是和真实的域名对应的证书来看,是伪造证书)的基础上,和青花瓷通信,然后青花瓷再和Server通信,成了一个中间人的角色,这样,整个过程的数据传输,都被青花瓷给监听到了,在此,中间人攻击的过程 就完成了</li>
-</ul>
-<h1 id="如何防止被抓包">如何防止被抓包</h1>
-<hr>
-<p>当进行网络请求的时候,客户端判断当前是否设置了代理,如果设置了代理,不允许进行访问(不知道微信浏览器 里面 是不是这样实现的,微信里面 设置了代理看公众号等信息就都不允许看了,无法访问)<br>
-附带判断是否设置代理的代码:</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="built_in">BOOL</span>)getProxyStatus &#123;</span><br><span class="line">    <span class="built_in">NSDictionary</span> *proxySettings = <span class="built_in">NSMakeCollectable</span>([(<span class="built_in">NSDictionary</span> *)<span class="built_in">CFNetworkCopySystemProxySettings</span>() autorelease]);</span><br><span class="line">    <span class="built_in">NSArray</span> *proxies = <span class="built_in">NSMakeCollectable</span>([(<span class="built_in">NSArray</span> *)<span class="built_in">CFNetworkCopyProxiesForURL</span>((<span class="built_in">CFURLRef</span>)[<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://www.google.com"</span>], (<span class="built_in">CFDictionaryRef</span>)proxySettings) autorelease]);</span><br><span class="line">    <span class="built_in">NSDictionary</span> *settings = [proxies objectAtIndex:<span class="number">0</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"host=%@"</span>, [settings objectForKey:(<span class="built_in">NSString</span> *)kCFProxyHostNameKey]);</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"port=%@"</span>, [settings objectForKey:(<span class="built_in">NSString</span> *)kCFProxyPortNumberKey]);</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"type=%@"</span>, [settings objectForKey:(<span class="built_in">NSString</span> *)kCFProxyTypeKey]);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> ([[settings objectForKey:(<span class="built_in">NSString</span> *)kCFProxyTypeKey] isEqualToString:<span class="string">@"kCFProxyTypeNone"</span>])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//没有设置代理</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//设置代理了</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>客户端本地做证书校验,并且设置不仅仅校验公钥,设置完整的正式校验模式</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">+(AFSecurityPolicy*)customSecurityPolicy</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// /先导入证书</span></span><br><span class="line">    <span class="built_in">NSString</span> *cerPath = [[<span class="built_in">NSBundle</span> mainBundle] pathForResource:<span class="string">@"test"</span> ofType:<span class="string">@"cer"</span>];<span class="comment">//证书的路径</span></span><br><span class="line">    <span class="built_in">NSData</span> *certData = [<span class="built_in">NSData</span> dataWithContentsOfFile:cerPath];</span><br><span class="line">    <span class="comment">// AFSSLPinningModeCertificate 使用证书验证模式 (AFSSLPinningModeCertificate是证书所有字段都一样才通过认证，AFSSLPinningModePublicKey只认证公钥那一段，AFSSLPinningModeCertificate更安全。但是单向认证不能防止“中间人攻击”)</span></span><br><span class="line">    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];</span><br><span class="line">    <span class="comment">// allowInvalidCertificates 是否允许无效证书（也就是自建的证书），默认为NO</span></span><br><span class="line">    <span class="comment">// 如果是需要验证自建证书，需要设置为YES</span></span><br><span class="line">    securityPolicy.allowInvalidCertificates = <span class="literal">YES</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//validatesDomainName 是否需要验证域名，默认为YES；</span></span><br><span class="line">    <span class="comment">//假如证书的域名与你请求的域名不一致，需把该项设置为NO；如设成NO的话，即服务器使用其他可信任机构颁发的证书，也可以建立连接，这个非常危险，建议打开。</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//置为NO，主要用于这种情况：客户端请求的是子域名，而证书上的是另外一个域名。因为SSL证书上的域名是独立的，假如证书上注册的域名是www.google.com，那么mail.google.com是无法验证通过的；当然，有钱可以注册通配符的域名*.google.com，但这个还是比较贵的。</span></span><br><span class="line">    <span class="comment">//如置为NO，建议自己添加对应域名的校验逻辑。</span></span><br><span class="line">    securityPolicy.validatesDomainName = <span class="literal">YES</span>;</span><br><span class="line">    <span class="built_in">NSSet</span>&lt;<span class="built_in">NSData</span>*&gt; * set = [[<span class="built_in">NSSet</span> alloc]initWithObjects:certData  , <span class="literal">nil</span>];</span><br><span class="line">    securityPolicy.pinnedCertificates = set;</span><br><span class="line">    </span><br><span class="line">     </span><br><span class="line">    <span class="keyword">return</span> securityPolicy;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这样的话,证书会校验请求的时候不仅仅校验域名,会将证书中的公钥及其他信息也进行校验,这样的话,中间人伪造的证书就无法通过验证,无法进行抓包</p>
-
+<h2 id="404-bad-request">404 bad request</h2>
+<p>一般原因:请求的Header过大</p>
+<p>解决方法：配置nginx.conf相关设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">client_header_buffer_size 16k;</span><br><span class="line">large_client_header_buffers 4 64k;</span><br></pre></td></tr></table></figure>
+<h2 id="500-internal-server-rrror">500 Internal Server Rrror</h2>
+<p>一般原因：</p>
+<p>脚本错误，（php语法错误、lua语法错误）</p>
+<p>访问量过大，系统资源限制，不能打开过多文件</p>
+<p>磁盘空间不足。（access log开启可能导致磁盘满溢 关闭）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">worker_rlimit_nofile 65535;</span><br><span class="line">* soft nofile 65535</span><br><span class="line">* hard nofile 65535</span><br></pre></td></tr></table></figure>
                 
 
                 <hr>
@@ -371,12 +348,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2017/03/18/hexo-theme-beantech/" data-toggle="tooltip" data-placement="top" title="[Hexo] Theme BeanTech">&larr; Previous Post</a>
+                            <a href="/2018/04/30/HTTPS-mitmproxy/" data-toggle="tooltip" data-placement="top" title="HTTP/HTTPS 抓包 —— mitmproxy">&larr; Previous Post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2015/02/16/git-collect/" data-toggle="tooltip" data-placement="top" title="Git操作指南">Next Post &rarr;</a>
+                            <a href="/2017/03/18/hexo-theme-beantech/" data-toggle="tooltip" data-placement="top" title="[Hexo] Theme BeanTech">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -406,7 +383,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#https通讯过程"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">https通讯过程</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#中间人攻击的情形"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">中间人攻击的情形</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#如何防止被抓包"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">如何防止被抓包</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#nginx常用配置"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Nginx常用配置</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#nginx配置文件的整体结构"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Nginx配置文件的整体结构</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#nginx常见错误及处理方法"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Nginx常见错误及处理方法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#404-bad-request"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">404 bad request</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#500-internal-server-rrror"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">500 Internal Server Rrror</span></a></li></ol></li></ol>
         
         </div>
       </aside>
@@ -426,11 +403,7 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#抓包" title="抓包">抓包</a>
-                        
-                          <a class="tag" href="/tags/#HTTPS" title="HTTPS">HTTPS</a>
-                        
-                          <a class="tag" href="/tags/#Charles" title="Charles">Charles</a>
+                          <a class="tag" href="/tags/#nginx" title="nginx">nginx</a>
                         
                     </div>
                 </section>
@@ -459,8 +432,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "your-disqus-ID";
-    var disqus_identifier = "https://blog.tonystudio.ml/2016/09/18/HTTPS-Charles/";
-    var disqus_url = "https://blog.tonystudio.ml/2016/09/18/HTTPS-Charles/";
+    var disqus_identifier = "https://blog.tonystudio.ml/2017/06/26/nginx-collect/";
+    var disqus_url = "https://blog.tonystudio.ml/2017/06/26/nginx-collect/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
