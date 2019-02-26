@@ -70,7 +70,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('https://blog.devtang.com/images/charles-logo.png');
+            background-image: url('http://pn9jzw2t9.bkt.clouddn.com/2019/chales-collect.1.jpg');
             -webkit-mask: -webkit-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,1),rgba(0,0,0,1),rgba(0,0,0,0.5));
             /*post*/
         
@@ -87,7 +87,7 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                         
-                        <div class="post-heading" style="color: black">
+                        <div class="post-heading" style="color: ">
                             <div class="tags">
                                 
                                 <a class="tag" href="/tags/#抓包" title="抓包">抓包</a>
@@ -98,7 +98,7 @@
                                 
                             </div>
                             <h1>HTTP/HTTPS 抓包 —— Charles</h1>
-                            <h2 class="subheading">Charles使用教程.</h2>
+                            <h2 class="subheading">Charles Tutorial</h2>
                             <span class="meta">
                                 Posted by Tony Chan on
                                 2016-09-18
@@ -149,13 +149,6 @@
 
                         
                         <li>
-                            <a href="/about/">About</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/archive/">Archives</a>
                         </li>
                         
@@ -169,29 +162,9 @@
                     
 
                         
-                    
-
-                        
-                    
-
-                        
-                    
-
-                        
-                    
-
-                        
-                    
-
-                        
-                    
-
-                        
-                    
-
-                        
-                    
-
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
                         
                     
 
@@ -229,6 +202,33 @@
                         <li>
                             <a href="/tags/">Tags</a>
                         </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
                         
                     
 
@@ -328,7 +328,7 @@
                 <blockquote>
 <p>网上数据抓包,在当前抓包工具横行的时代,对于一个IT开发者来说,是一个很简单的必备的技能,例如青花瓷(Charles)等等工具.</p>
 </blockquote>
-<p><img src="https://blog.devtang.com/images/charles-logo.png" alt="BeanTech Desktop"></p>
+<p><img src="http://pn9jzw2t9.bkt.clouddn.com/2019/chales-collect.2.png" alt=""></p>
 <h1 id="https通讯过程">https通讯过程</h1>
 <hr>
 <p>在讲https抓包之前,必须要了解https的整个校验和通信过程,我们就简单的精简的画一下重要的过程,至于什么三个随机数或者通信秘钥的生成就不详细介绍,主要是针对讲一下https的中间人攻击(https抓包的实现基础)过程</p>
@@ -363,6 +363,203 @@
 <p>客户端本地做证书校验,并且设置不仅仅校验公钥,设置完整的正式校验模式</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">+(AFSecurityPolicy*)customSecurityPolicy</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// /先导入证书</span></span><br><span class="line">    <span class="built_in">NSString</span> *cerPath = [[<span class="built_in">NSBundle</span> mainBundle] pathForResource:<span class="string">@"test"</span> ofType:<span class="string">@"cer"</span>];<span class="comment">//证书的路径</span></span><br><span class="line">    <span class="built_in">NSData</span> *certData = [<span class="built_in">NSData</span> dataWithContentsOfFile:cerPath];</span><br><span class="line">    <span class="comment">// AFSSLPinningModeCertificate 使用证书验证模式 (AFSSLPinningModeCertificate是证书所有字段都一样才通过认证，AFSSLPinningModePublicKey只认证公钥那一段，AFSSLPinningModeCertificate更安全。但是单向认证不能防止“中间人攻击”)</span></span><br><span class="line">    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];</span><br><span class="line">    <span class="comment">// allowInvalidCertificates 是否允许无效证书（也就是自建的证书），默认为NO</span></span><br><span class="line">    <span class="comment">// 如果是需要验证自建证书，需要设置为YES</span></span><br><span class="line">    securityPolicy.allowInvalidCertificates = <span class="literal">YES</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//validatesDomainName 是否需要验证域名，默认为YES；</span></span><br><span class="line">    <span class="comment">//假如证书的域名与你请求的域名不一致，需把该项设置为NO；如设成NO的话，即服务器使用其他可信任机构颁发的证书，也可以建立连接，这个非常危险，建议打开。</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//置为NO，主要用于这种情况：客户端请求的是子域名，而证书上的是另外一个域名。因为SSL证书上的域名是独立的，假如证书上注册的域名是www.google.com，那么mail.google.com是无法验证通过的；当然，有钱可以注册通配符的域名*.google.com，但这个还是比较贵的。</span></span><br><span class="line">    <span class="comment">//如置为NO，建议自己添加对应域名的校验逻辑。</span></span><br><span class="line">    securityPolicy.validatesDomainName = <span class="literal">YES</span>;</span><br><span class="line">    <span class="built_in">NSSet</span>&lt;<span class="built_in">NSData</span>*&gt; * set = [[<span class="built_in">NSSet</span> alloc]initWithObjects:certData  , <span class="literal">nil</span>];</span><br><span class="line">    securityPolicy.pinnedCertificates = set;</span><br><span class="line">    </span><br><span class="line">     </span><br><span class="line">    <span class="keyword">return</span> securityPolicy;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这样的话,证书会校验请求的时候不仅仅校验域名,会将证书中的公钥及其他信息也进行校验,这样的话,中间人伪造的证书就无法通过验证,无法进行抓包</p>
+<h1 id="如何抓包">如何抓包</h1>
+<p>————<br>
+要掌握 HTTP ，就需要先看到 HTTP 到底长什么样？（不了解「<a href="http://baike.baidu.com/view/1868389.htm" target="_blank" rel="noopener">网络七层协议模型</a>」和 TCP 的同学先不着急，本系列的后面几篇会涉及到。）</p>
+<h2 id="1-安装-http-抓包工具">1、安装 HTTP 抓包工具</h2>
+<p>在 Chrome 开发者工具下我们可以看到，打开一个网页后，浏览器会发起许多 HTTP 的请求（HTTP Request），这些请求经过服务器端处理后会返回对应的数据（HTTP Response），浏览器会按照这些数据的类型将它们渲染出来。</p>
+<p><img src="https://cloud.githubusercontent.com/assets/344283/11622992/b61edff4-9d04-11e5-8b32-7552bb35371b.png" alt="Chrome Network Panel"></p>
+<p>Chrome 中看到的 Request/Response Header 是其格式化之后的形式，要看到它们的原始模样（Raw Source），我们需要借助两个 HTTP 接口调试利器。</p>
+<p>其中 Windows 系统下使用 <a href="http://www.telerik.com/fiddler" target="_blank" rel="noopener">Fiddler</a>，Mac 系统下使用 <a href="https://www.charlesproxy.com/download/" target="_blank" rel="noopener">Charles</a>。Fiddler 具体的安装与使用教程，请自行百度（安装 Fiddler4 还需同时安装 <a href="http://www.microsoft.com/zh-cn/download/confirmation.aspx?id=17718" target="_blank" rel="noopener">.NET Framework 4</a>），Charles 相关教程，推荐参考 iOS 大神唐巧的《<a href="http://blog.devtang.com/blog/2015/11/14/charles-introduction/" target="_blank" rel="noopener">Charles 从入门到精通</a>》。使用 Linux 系统的说明已经是网络编程方面的大牛了，不需要继续往下看 :P</p>
+<h2 id="2-查看-http-详细报文">2、查看 HTTP 详细报文</h2>
+<p>运行 Fiddler（或 Charles） 之后，使用 Chrome 浏览器打开「猫哥学前班」的新浪微博主页：<a href="http://weibo.com/mgxqb" target="_blank" rel="noopener">http://weibo.com/mgxqb</a></p>
+<p>在 Fiddler 左侧面板下选中该条 HTTP 请求，再将右侧面板的请求部分和响应部分都切换到 Raw 标签页。如下图所示：</p>
+<p><img src="https://cloud.githubusercontent.com/assets/344283/11623001/c7d41f98-9d04-11e5-9463-1ef44694dfa0.png" alt="Fiddler Panel"></p>
+<p>Charles 下的操作与 Fiddler 类似：</p>
+<p><img src="https://cloud.githubusercontent.com/assets/344283/11623009/d7fee63c-9d04-11e5-8f38-b2093c316c54.png" alt="Charles Panel"></p>
+<p><a href="http://www.w3.org/Protocols/" target="_blank" rel="noopener">HTTP 协议规范</a>由 W3C 制定，与具体的抓包工具无关，接下来我们主要以 Charles 为例，详细讲解下 HTTP 的报文格式，这对理解基于 HTTP 的 API 接口设计和网页性能优化有很大帮助。</p>
+<p>我们先看一下请求头的源码（Request Raw），为了防止隐私泄露，我已删除部分 Cookie 信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">GET /mgxqb HTTP/1.1</span><br><span class="line">Host: weibo.com</span><br><span class="line">Cache-Control: max-age=0</span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</span><br><span class="line">Upgrade-Insecure-Requests: 1</span><br><span class="line">User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.73 Safari/537.36</span><br><span class="line">Accept-Encoding: gzip, deflate, sdch</span><br><span class="line">Accept-Language: en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4</span><br><span class="line">Cookie: YF-Page-G0=f70469e0b5607cacf38b47457e34254f; _s_tentry=passport.weibo.com</span><br></pre></td></tr></table></figure>
+<p>仔细观察以上源码，我们能大概总结出 HTTP 协议的格式规范：</p>
+<ul>
+<li>第一行定义了请求类型（<code>GET</code>）、请求路径（<code>/mgxqb</code>）与协议类型及其版本号（<code>HTTP/1.1</code>），使用一个半角空格间隔这三块信息；</li>
+<li>示例源码的最后是两个空行。由于 HTTP 规范中要求一个合法的 HTTP 报文至少包含有一个空行，其中第一个空行用来间隔报文的头部信息（<strong>HTTP Request/Response Header</strong>）和主体信息（<strong>HTTP Request/Response Body</strong>）。在空行的下一行是报文的主体信息，由于本例为 GET 类型请求，其主体（Body）信息通常为空，这便是第二个空行的含义；</li>
+<li>余下的部分有着相同的格式，即 「HTTP Header 字段名+半角冒号+半角空格+值」，我们可以把它看成 <a href="http://baike.baidu.com/view/1479346.htm" target="_blank" rel="noopener">YAML</a> 格式的简易版。其中 HTTP Header 在规范中有着明确的定义，具体参见 <a href="https://zh.wikipedia.org/wiki/HTTP%E5%A4%B4%E5%AD%97%E6%AE%B5%E5%88%97%E8%A1%A8" target="_blank" rel="noopener">HTTP头字段列表</a>。</li>
+</ul>
+<p>这便是一个 HTTP 协议报文的源码格式，以下我们简单讲解下最常见的 HTTP header 的含义。</p>
+<h2 id="3-常见-http-header">3、常见 HTTP header</h2>
+<h3 id="user-agent客户端身份标识">User-Agent：客户端身份标识</h3>
+<p>User-Agent （以下简称 UA）字段记录了访问当前网页的用户浏览器的类型与版本、操作系统类型与版本。根据不同的 UA 信息，提供不同的站点内容是使用 UA 的常见场景。例如，如果用户使用手机访问魅族官网 <a href="http://www.meizu.com%EF%BC%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BC%9A%E8%87%AA%E5%8A%A8%E8%B7%B3%E8%BD%AC%E8%87%B3%E9%AD%85%E6%97%8F%E6%89%8B%E6%9C%BA%E5%AE%98%E7%BD%91" target="_blank" rel="noopener">www.meizu.com，浏览器会自动跳转至魅族手机官网</a> <a href="http://m.meizu.com" target="_blank" rel="noopener">m.meizu.com</a>。这种跳转实现既可以由前端 JavaScript 完成，也可以通过后端返回 302 重定向来完成。</p>
+<p>JavaScript 访问 <code>window.navigator.userAgent</code> 属性即可获取该信息。虽然该属性是只读的，但有很多前端手段可以伪造 UA 。如下图，Chrome 开发者工具在模拟不同的手机机型时，也会改变浏览器 UA 值。由此可见，通过检测 HTTP User-Agent Header 来识别是否为爬虫程序，不是一个有效的方法。</p>
+<p><img src="https://cloud.githubusercontent.com/assets/344283/11623027/f2abc20c-9d04-11e5-9d57-95d5c1a90e46.png" alt="使用 Chrome 开发者工具模拟不同手机设备 UA"></p>
+<p>在 PHP 中，所有的 HTTP Header 字段信息都保存在 <code>$_SERVER</code> 对象中，通过访问 <code>$_SERVER['HTTP_USER_AGENT']</code> 即可获取 User-Agent 的值。</p>
+<h3 id="cookie用户身份标识">Cookie：用户身份标识</h3>
+<p>由于 HTTP 协议最初被设计成一种无状态的数据传输协议，服务器端无法判断每次处理的请求相互之间以及与之前处理的请求之间的关系，Cookie 的设计就是为了解决这个问题。</p>
+<p>用户在浏览器中首次访问一个站点时，会通过请求响应头或页面JS脚本生成一些用于标识用户身份的 Cookie 信息，这些信息会按照域名分类，存放在浏览器本地缓存文件当中。例如 Windows 系统下通过访问 「C:\Users&lt;用户名&gt;\AppData\Local\Microsoft\Windows\Temporary Internet Files」 目录可以查看到 IE 浏览器保存在本地的 Cookie 文件。当用户再次访问该站点时，这些 Cookie 信息会被浏览器自动添加到 HTTP Request Header 的 Cookie 字段中，服务器通过读取这些信息，来区分当前请求的用户身份与状态。</p>
+<p>浏览器可以通过读写 document.cookie 属性来添加或删除 Cookie 信息，服务器端可以通过 HTTP Response Header（响应头）中的 <strong>Set-Cookie</strong> 来改写客户端的 Cookie 信息。每一条 Cookie 属性通常都会设置一个过期时间，过期之后的 Cookie 浏览器将会自动清理它们，不会再被携带在 HTTP Request Header（请求头）中。</p>
+<p>例如，以下 PHP 语句可以通过设置 Cookie 过期时间为前一个小时来触发客户端 Cookie 过期，达到删除 Cookie 的目的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setcookie(&apos;key&apos;, &apos;&apos;, time() - 3600, &apos;/&apos;);</span><br></pre></td></tr></table></figure>
+<p>由于 Cookie 通常用于记录用户「帐号信息」和用户的「操作记录」，所以泄露 Cookie 会带来个人帐号与隐私泄露的风险。这也是为什么你在百度上搜索「贷款」的关键词之后，访问其他网站时就能看到相关的推荐广告，甚至第二天就会有各种放贷电话找上门来。</p>
+<p>又由于 Cookie 可以随意被客户端修改（通过修改 document.cookie 属性），因此浏览器厂商们一起制定了 <a href="https://www.owasp.org/index.php/HttpOnly" target="_blank" rel="noopener">HttpOnly</a> 的 Cookie 机制。服务器端在 setcookie 时，通过设置 HttpOnly 的标识，可以防止客户端通过 JavaScript 修改 Cookie 的信息。不过这种方法对于基于 HTTP 协议进行篡改的方法来说无法防范，在之后的猫哥网络编程系列中，我将会介绍如何通过监控 Wi-Fi 流量来截取、伪造用户身份。</p>
+<p>在 YSlow 性能优化最佳实践中，有两条与 Cookie 相关的建议：</p>
+<ul>
+<li><a href="https://developer.yahoo.com/performance/rules.html#cookie_size" target="_blank" rel="noopener">Reduce Cookie Size</a></li>
+<li><a href="https://developer.yahoo.com/performance/rules.html#cookie_free" target="_blank" rel="noopener">Use Cookie-free Domains for Components</a></li>
+</ul>
+<p>虽然浏览器对 Cookie 的大小与数量有着较为严格的限制，但很多网站（尤其是包含登录态的）的 Cookie 信息量通常比其他所有 HTTP Header 加起来的还要多。为了减少不必要的 HTTP 数据传输量，YSlow 给出了以上两条优化建议。由于网页的静态资源（图片、CSS、JS）文件无需记录用户状态，因此通常会使用一个额外的域名（Cookie 是按域名来分类存储）来存放静态资源文件。</p>
+<p>我们使用 Chrome 开发者工具查看「<a href="http://weibo.com/mgxqb" target="_blank" rel="noopener">猫哥学前班</a>」新浪微博主页，可以看到新浪微博使用了 <strong><a href="http://img.t.sinajs.cn" target="_blank" rel="noopener">img.t.sinajs.cn</a></strong> 的域名来存放它的 CSS 文件，这个域名发起的 HTTP Request Header 中没有自动带上 Cookie 字段信息 （因为前后端脚本都没有在这个域名上设置 Cookie，而是设置在了 <a href="http://weibo.com" target="_blank" rel="noopener">weibo.com</a> 域名上）：</p>
+<p><img src="https://cloud.githubusercontent.com/assets/344283/11623043/16c19e50-9d05-11e5-9fb5-6bad3e37a416.png" alt="Use Cookie-free Domains"></p>
+<p>这里还需要引申一个知识点：Session，它和 Cookie 有什么关系？由于 Session 与本文所讲的 HTTP 协议关系不大，相关知识点请自行百度。</p>
+<h3 id="cache-control浏览器资源缓存标识">Cache-Control：浏览器资源缓存标识</h3>
+<p><strong>网站性能优化中，最为关键的是缓存机制（又是没有之一）</strong>。在服务器端通常会使用 Memcached、Redis 等服务来缓存经常访问的数据。例如在一个电商网站中，用户经常访问的热卖商品数据会被缓存在内存中，用户在一定时间内访问商品详情页时，后台程序直接从缓存服务中获取这段数据，这种方法可以大幅降低数据库的访问压力。</p>
+<p>在用户端，浏览器会有一系列机制通过缓存来提升页面加载速度。例如 IE/Chrome 都会缓存 GET 类型的 AJAX 请求，IE 甚至会缓存 POST 类型的请求，需要通过增加时间戳参数的方式来强制清除缓存。对于所有的静态资源文件来说，最佳实践是为它们增加一个 「<a href="https://www.ietf.org/rfc/rfc2616.txt" target="_blank" rel="noopener">Never Expires</a>」（永不过期）的强（长）缓存，以下是一个强缓存静态资源服务器的 Nginx 配置示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name yekai.net;</span><br><span class="line">    root /var/www/yekai.net;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        index index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line">    location ~ .*\.(gif|jpg|jpeg|png|bmp|swf|js|css)$ &#123;  </span><br><span class="line">        expires 365d;  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过配置 「expires 365d」，HTTP Response Header（响应头）中会返回 「<strong>Cache-Control: max-age=31536000</strong>」 的头字段，配合 <strong>Last-Modified</strong> 头字段。浏览器便可以自动完成资源的强缓存。</p>
+<p>Cache-Control 是浏览器缓存机制中最为重要的一个配置，以下是浏览器加载静态资源文件时的缓存检查机制流程：</p>
+<p><img src="https://cloud.githubusercontent.com/assets/344283/11623053/278b3318-9d05-11e5-9515-8f76b53e6007.png" alt="浏览器缓存检查机制流程"></p>
+<p>由此可见，静态资源缓存优化的最佳状态是：直接从本地缓存中读取 304 状态 200 状态。关于 HTTP 状态码，与网站性能优化有关的主要是以下几个。</p>
+<ul>
+<li>尽量减少 200 状态码的请求。200 表示是一个正常的请求返回，此条优化规则要求尽可能多的减少页面的 HTTP Request 数量。常见的方法有：合并打包静态资源、使用 CSS Sprite 雪碧图合并、缓存 AJAX、使用 LocalStorage/UserData/Manifest 等本地缓存技术。</li>
+<li>清理返回 301/302 状态码的入口链接。301 表示永久重定向，302 表示临时重定向。服务器端使用重定向返回通常是为了兼容一个旧的入口链接。我们能做的优化是，将调用旧入口的场景进行清理，直接调用重定向之后的新 URL 地址。</li>
+<li>304 表示静态资源未更新，浏览器可直接使用本地缓存文件。通常 304 的产生与浏览器的处理机制以及服务器缓存头配置有一定的关系。304 虽然未传输文件主体内容，但 HTTP 请求的建立依然是一个可以避免的性能损耗。腾讯 KM（内部知识分享平台）上有一篇文章通过在真实海量业务场景（没记错的话是 Qzone 业务）中，正交验证 HTTP 1.0 与 1.1 协议中与缓存相关的 HTTP Header 配置，结合日志分析得出了一个最佳实践：**关闭 <a href="http://baike.baidu.com/view/3039264.htm" target="_blank" rel="noopener">Etag</a> 配置，只启用 Cache-Control 与 Last-Modified 响应头。为了兼容老浏览器，可保留 Expires。**因为 Etag 的缓存方案，在经过 CDN 及网关代理服务器后，会导致缓存命中率下降。从以上「浏览器缓存检查机制流程」图上可以看出，使用强缓存（Cache-Control max-age 设置为一年）后浏览器在资源过期前不会发起 HTTP 请求，那如何保证静态资源在服务器上更新后本地的缓存也能同步更新呢？可参考百度 FIS 的「<a href="http://fis.baidu.com/fis3/docs/beginning/release.html#%E6%96%87%E4%BB%B6%E6%8C%87%E7%BA%B9" target="_blank" rel="noopener">文件指纹</a>」方案。</li>
+<li>清理返回 404 状态码的入口链接。静态资源文件的 404 调用需严格避免，而入口页面的 404 则在所难免。通过在全站 404 页面进行产品引导与体验优化，并结合数据上报记录来源页（<a href="https://zh.wikipedia.org/wiki/HTTP%E5%8F%83%E7%85%A7%E4%BD%8D%E5%9D%80#.E6.8B.BC.E5.86.99.E9.97.AE.E9.A2.98" target="_blank" rel="noopener">HTTP Referer Header</a> 或 <code>document.referrer</code>），可以找到并清理 404 来源入口。对于由搜索引擎进入的来源，可通过主动提交新索引至搜索引擎，或使用 301/302 重定向的方式，有效利用起这些「被浪费的流量」。</li>
+<li>502 服务器出错。如果是 Nginx + FastCGI 的常见架构，通常是由于 Nginx 缓冲区溢出或服务器资源被耗尽引起，针对不同的业务场景进行 Nginx 的配置优化能显著提升服务器抗压性能。</li>
+</ul>
+<p>如果你对上文提及的「网络性能优化」的知识点十分感兴趣，建议你通读 <a href="https://stevesouders.com/" target="_blank" rel="noopener">Steve Souders</a> 的《高性能网站建设指南》与《<a href="http://book.douban.com/subject/4719162/" target="_blank" rel="noopener">高性能网站建设进阶指南</a>》，Steve Souders 的个人网站上积累了很多性能优化的方法与案例。</p>
+<p>如果你能看到这里，相信你已经知道明白关于 「<strong>HTTP 协议、状态码、缓存与性能优化</strong>」相关的问题。</p>
+<h1 id="调试">调试</h1>
+<h2 id="http-pem-调试法之-proxy">「HTTP PEM 调试法」之 Proxy</h2>
+<p>Windows 下的 Fiddler 和 Mac 下的 Charles 这两款 HTTP 抓包工具，其实它们就是两个 HTTP 代理服务器（HTTP Proxy Server）。由于 HTTP 是一种符合 REST 架构风格（Representational State Transfer）的协议，具有无状态（Stateless）与统一接口（Uniform Interface）的架构约束，因此其代理机制的实现十分的简单。</p>
+<p>打个比方，我们可以把 Proxy Server 理解成一个快递中转站，当一个包裹经过中转站时，包裹的信息（发件人、收件人与包裹里的货物）通常不会做任何的改动，直接发往下一个中转站或顾客手中。但中转站完全有能力修改快递单信息、拆箱检查货物，甚至是私吞或调换货物。</p>
+<p>当我们需要快速定位「线上产品的接口问题」时，如果没有源码、数据、依赖服务和足够的时间去搭建一个测试环境，则通常会使用 HTTP 代理服务器来进行快速抓包调试。</p>
+<p>Fiddler 默认只允许本地 IP（127.0.0.1）使用代理服务，通过设置「Tools -Connections -Allow remote computers to connect」可以开启其他 IP（通常是同一局域网内的其他设备）使用代理服务。</p>
+<p><img src="https://cloud.githubusercontent.com/assets/344283/11863306/c3c93124-a4cd-11e5-9fef-e62a9f41d8f4.png" alt="Fiddler 开启 Remote Proxy"></p>
+<p>Charles 默认开放代理服务，但陌生设备首次连接时需要授权确认，通过以下配置可以设置成无需授权。</p>
+<p><img src="https://cloud.githubusercontent.com/assets/344283/11863310/d2da1c46-a4cd-11e5-8aec-a787c21982a1.png" alt="授权所有设备使用 Charles 代理服务"></p>
+<p>以上两款软件默认的代理端口均是 <strong>8888</strong> ，软件开启之后，我们可以在对应的平台终端下通过 <code>ipconfig</code>（Windows） 或 <code>ifconfig</code>（Mac）命令查询本机的局域网 IP，还可以使用 <code>telnet</code> 命令检查代理通道是否可用。（注：Win7 下如何开启 telnet 命令请参考<a href="http://jingyan.baidu.com/article/95c9d20d96ba4aec4f756154.html" target="_blank" rel="noopener">百度经验</a>。）</p>
+<p>以下是 Windows 下 CMD 终端的使用截图，Mac 系统下请类比参考。</p>
+<p><img src="https://cloud.githubusercontent.com/assets/344283/11863316/e2acc09c-a4cd-11e5-931e-02d52c4cc849.png" alt="CMD 下 ipconfig 与 telnet"></p>
+<p>接下来，我们将手机的 Wi-Fi 代理设置为上述的 IP 与 端口号，以下是 iOS 的设置截图（ Android 系统通常是长按已连接的 Wi-Fi ，在弹出的高级设置菜单中配置代理服务器）。</p>
+<p><img src="https://cloud.githubusercontent.com/assets/344283/11863318/ec209d10-a4cd-11e5-94ce-a9634209c0f0.png" alt="iOS 下设置 HTTP 代理"></p>
+<p>至此，手机上任意应用发起的 HTTP 请求都将会被代理服务器（本例中的 Fiddler/Charles 软件）监听到。</p>
+<h2 id="http-pem-调试法之-edit">「HTTP PEM 调试法」之 Edit</h2>
+<p>通过代理服务器监听到 HTTP 请求之后，我们可以通过浏览报文的详细信息，定位出可能的接口问题。Fiddler 与 Charles 都具有同样强大的 HTTP 编辑（Edit）、重发（Replay/Repeat）、断点（Breakpoints）功能。Charles 的基础与高级用法请参考《<a href="http://blog.devtang.com/blog/2015/11/14/charles-introduction/" target="_blank" rel="noopener">Charles 从入门到精通</a>》，Fiddler 教程可以参考 OSChina 专题《<a href="http://www.oschina.net/p/fiddler" target="_blank" rel="noopener">HTTP调试代理 Fiddler</a>》，以下介绍 Fiddler 的部分常见用法。</p>
+<h3 id="fiddler-edit-与-autoresponder">Fiddler Edit 与 AutoResponder</h3>
+<p>抓到手机 HTTP 请求之后，通过编辑（Unlock For Editing）和重发（Replay）操作可以不断地调试接口的响应是否符合预期。</p>
+<p><img src="https://cloud.githubusercontent.com/assets/344283/11863324/fc243636-a4cd-11e5-99f5-01175fc23c14.png" alt="Fiddler 手动修改调试请求"></p>
+<p>通过设置自动响应规则（AutoResponder Rules）可以将响应头设置成常见状态码的返回，或将响应体映射成本地文件，通过外部编辑器修改文件内容进行调试。其中，若设置响应为 <code>*bpu</code> 或 <code>*bpafter</code> 可以在请求前与响应前的事件触发时进行断点调试，十分方便。</p>
+<p><img src="https://cloud.githubusercontent.com/assets/344283/11863326/047d1708-a4ce-11e5-87d6-70c3a49e513f.png" alt="Fiddler 将请求映射本地文件"></p>
+<p>需要注意的是，在 Fiddler 中使用 Replay 功能重发请求时，请求由 Fiddler 代理重新发起而非手机，因此手机 App 中的 H5 不会有任何变化。只有重新刷新 App 的 H5 页面，配合 HTTP 断点调试（Breakpoints ）的方式才可以让修改后的 HTTP 响应体在 App中生效。这里介绍另外一种配合 <a href="https://people.apache.org/~pmuellr/weinre-docs/latest/" target="_blank" rel="noopener">Weinre</a> 的调试用法。</p>
+<h3 id="weinre-基本用法">Weinre 基本用法</h3>
+<p>Weinre 属于知名 Hybrid 框架 <a href="https://cordova.apache.org/" target="_blank" rel="noopener">Cordova</a> 中的一款 Web App 远程调试工具。通过在页面中注入一段 JS 脚本，可以在 PC 和手机端的 H5 页面之间建立一个 Socket 双向数据传输通道。原理上可以理解为，当我们在 PC 端的后台进行 debug 时，相关的操作被序列化成一组 JSON 字符串，数据经由通道传输给手机端中的 H5 页面，页面在接收到这些数据之后反序列化成相应的 JS 脚本操作，在其 window 上下文中执行，并将执行的结果回传给通道，PC 端的 Chrome 通过监听通道获取到相应的数据在 debug 后台中展现出来。</p>
+<p>以下介绍 Weinre 的基本用法：</p>
+<ol>
+<li>通过 <a href="https://nodejs.org/" target="_blank" rel="noopener">npm</a> 全局安装 weinre： <code>npm install -g weinre</code></li>
+<li>在本地 8081 端口上启动 weinre 服务：<code>weinre --boundHost 0.0.0.0 --httpPort 8081</code> 。通常在 Node.js 的服务中绑定 IP 为 0.0.0.0 而非 127.0.0.1（本地 IP），意味着可以让任意来源的 IP 访问该服务</li>
+<li>通过上文介绍的 <code>ipconfig</code>（Mac 为 <code>ifconfig</code>）命令获取本机 IP 后，在本机 Chrome 浏览器中访问 Weinre 管理后台：<a href="http://10.2.69.47:8081" target="_blank" rel="noopener">http://10.2.69.47:8081</a> （本例中我的 IP 为 10.2.69.47，请注意将其替换成自己的局域网 IP）</li>
+<li>在管理后台我们能看到相关使用说明，要求将以下脚本插入需要调试的 H5 页面中：<code>&lt;script src=&quot;http://10.2.69.47:8081/target/target-script-min.js#anonymous&quot;&gt;&lt;/script&gt;</code></li>
+<li>将以上脚本插入进 H5 页面后，我们在 PC 端 Chrome 中，通过 <strong><a href="http://10.2.69.47:8081/client/#anonymous" target="_blank" rel="noopener">http://10.2.69.47:8081/client/#anonymous</a></strong> 后台点击进入相应的客户端调试界面</li>
+</ol>
+<p>问题是，我们「<strong>如何将 Weinre Script 自动注入到手机的 H5 页面中</strong>」？</p>
+<h3 id="http-script-注入">HTTP Script 注入</h3>
+<p>想必用过中国电信宽带的同学都有过这样的体验：在刚开始浏览网页时，会自动跳出一些「宽带升级优惠」、「宽带缴费提醒」之类的页面。这种耍流氓的方式便是宽带运营商在 HTTP 代理层面的 Script 注入行为。前面已经提到 HTTP 协议是一种 REST 风格的架构，并且他的头部与主体报文为字符串文本流（对比二机制、十六进制数据流），在不使用 HTTPS 的情况下，很容易被中间路由或代理网关进行消息篡改。</p>
+<p>通过 Fiddler Script 特性，我们可以自动对经过 Fiddler 的 HTTP 流量进行二次修改，注入任意内容（Mac 用户若已了解相关知识点，请直接跳至下方的 Charles 截图）。</p>
+<p>打开 Fiddler 菜单「Rules -Customize Rules… 」，如果是首次开启会要求先下载安装 Fiddler ScriptEditor。打开 Fiddler ScriptEditor 之后，找到以下代码块（或使用菜单「Go -to OnBeforeResponse」）：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">OnBeforeResponse</span>(<span class="params">oSession: Session</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (m_Hide304s &amp;&amp; oSession.responseCode == <span class="number">304</span>) &#123;</span><br><span class="line">        oSession[<span class="string">"ui-hide"</span>] = <span class="string">"true"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://docs.telerik.com/fiddler/KnowledgeBase/FiddlerScript/ModifyRequestOrResponse" target="_blank" rel="noopener">Fiddler Script</a> 使用的编程语言是 <a href="http://JScript.NET" target="_blank" rel="noopener">JScript.NET</a>（JavaScript 和 C# 的混合语法，类似 TypeScript），<code>OnBeforeResponse</code> 是 HTTP Response 响应前的事件函数，我们只需要在这里判断「如果开启了 Weinre Debug 功能，那么就在所有的 HTML 响应体中注入 Weinre Script」，以下是我修改的示例代码，覆盖以上代码块即可。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> RulesOption(<span class="string">"Enable Weinre Script"</span>)</span><br><span class="line"><span class="keyword">var</span> m_EnableWeinreScript: <span class="built_in">boolean</span> = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">var</span> g_weinreScriptString: <span class="built_in">String</span> = <span class="string">'&lt;script src="http://127.0.0.1:8080/target/target-script-min.js#anonymous"&gt;&lt;/script&gt;'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> ToolsAction(<span class="string">"Config Weinre Script"</span>)</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ConfigWeinreScript</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">    g_weinreScriptString = FiddlerObject.prompt(<span class="string">"Text beblow will inject into HTML pages when 'Enable Weinre Script' rule is Enabled."</span>, g_weinreScriptString , <span class="string">"Please Input the Weinre Script"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">OnBeforeResponse</span>(<span class="params">oSession: Session</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (m_Hide304s &amp;&amp; oSession.responseCode == <span class="number">304</span>) &#123;</span><br><span class="line">        oSession[<span class="string">"ui-hide"</span>] = <span class="string">"true"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (m_EnableWeinreScript &amp;&amp; oSession.oResponse.headers.ExistsAndContains(<span class="string">"Content-Type"</span>,<span class="string">"text/html"</span>))&#123;</span><br><span class="line">        oSession.utilDecodeResponse();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(oSession.utilFindInResponse(<span class="string">"&lt;/html&gt;"</span>, <span class="literal">false</span>)&gt;<span class="number">-1</span>)&#123;</span><br><span class="line">            oSession[<span class="string">"ui-backcolor"</span>] = <span class="string">"#5E30B5"</span>;</span><br><span class="line">            oSession[<span class="string">"ui-color"</span>] = <span class="string">"white"</span>;</span><br><span class="line">            oSession.utilReplaceRegexInResponse(<span class="string">"&lt;\/html&gt;"</span>, g_weinreScriptString + <span class="string">'&lt;/html&gt;'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>修改保存后重启 Fiddler（或使用菜单「Tools -Reset Script」）以生效规则，接下来运行「Tools」菜单中新出现的「Config Weinre Script」，将 <strong>127.0.0.1:8080</strong> 替换成自己本机的局域网 IP 与 weinre 服务端口号，同时开启菜单「Rules -Enable Weinre Script」。至此，所有 HTML 页面将会被自动注入 Weinre Script，之后我们就可以在 weinre 后台中开始调试相关页面。以下是参考截图：</p>
+<p><img src="https://cloud.githubusercontent.com/assets/344283/11863336/14c5227c-a4ce-11e5-8cc8-bffd4842c115.png" alt="Fiddler 中的 HTTP Script 注入"></p>
+<p>可以看到 HTTP 响应体中已经被动态注入 Weinre Script。</p>
+<p>在 Mac Charles 下的 Script 注入配置更加容易，只需利用其 「Rewrite」功能进行简单的配置即可，参看下图：</p>
+<p><img src="https://cloud.githubusercontent.com/assets/344283/11863339/220a5a88-a4ce-11e5-801c-3c5eb86ed3c9.png" alt="Charles Rewrite 配置 HTTP Script 注入"></p>
+<p>通过 Fiddler/Charles 代理工具将 JS 脚本注入成功后，我们便可以通过前文提到的 weinre 后台开始 debug 相应的页面，以下是在 iPhone 模拟器中调试新浪微博界面的截图：</p>
+<p><img src="https://cloud.githubusercontent.com/assets/344283/11863348/2c3bdbbc-a4ce-11e5-9329-816fd0ff6454.png" alt="Weinre 后台 debug Webview H5 页面"></p>
+<p>使用该方法可以调试 Android 和 iOS 中「<strong>任意 App 的 H5 页面</strong>」，但由于主要使用了 weinre 服务，其原理决定了该方法无法像真正的 Chrome DevTools 一样支持 JS 断点调试、Profiles 性能分析等功能，具有一定的局限性。在实际 Web App 开发过程中，推荐使用以下工具进行调试 ：</p>
+<ul>
+<li><a href="http://blog.qqbrowser.cc/" target="_blank" rel="noopener">微信官方调试工具</a> 调试基于微信的 Web App</li>
+<li><a href="https://developer.chrome.com/devtools/docs/remote-debugging" target="_blank" rel="noopener">Chrome Remote Debugging</a> 调试 Android Web App</li>
+<li><a href="http://developer.telerik.com/featured/a-concise-guide-to-remote-debugging-on-ios-android-and-windows-phone/" target="_blank" rel="noopener">Safari Remote Debugging</a> 调试 iOS Web App</li>
+</ul>
+<p>由此可见，「HTTP PEM 调试法」是一个通用的 HTTP 接口调试方案，可以用来快速定位线上接口问题，对于开发人员来说掌握其背后的 HTTP 协议及其代理机制的原理更加重要，接下来我们聊聊常见的 HTTP 接口开发协作方法与 Mock 思路。</p>
+<p>我的开发任务没法推进，因为某某的接口还没提供给我。</p>
+<h2 id="http-pem-调试法之-mock">「HTTP PEM 调试法」之 Mock</h2>
+<p>希望新手程序员在看完这一章节之后，不要再向你的项目组和上级反馈这样的说法，因为 HTTP Mock（接口数据模拟）是一项网络编程的基础技能，从实际项目经验来看，大部分基于 HTTP 接口的任务都可以并行开发。</p>
+<h3 id="最简-http-api">最简 HTTP API</h3>
+<p>不同岗位（例如前端开发与后台开发）或不同业务（例如订单系统与账户系统）的开发人员开始并行开发任务之前，首先要做的应该是对耦合和相互依赖的任务进行边界划分与规则约定。具体到某个 HTTP API 接口的约定上，至少应该明确以下信息：</p>
+<ol>
+<li>是否按照 <a href="http://www.ruanyifeng.com/blog/2014/05/restful_api.html" target="_blank" rel="noopener">RESTful API</a> 的约定来设计接口</li>
+<li>接口的路径、提交方法、参数、编码类型（Enctype/Content-Type）</li>
+<li>接口返回的错误码（code）、消息说明（message）、业务数据（data）</li>
+</ol>
+<p>针对以上三条信息，我设想的「最简」 HTTP API 包含以下几条原则，供各位参考：</p>
+<h4 id="1-不使用-restful-api-来设计接口">1、不使用 RESTful API 来设计接口</h4>
+<p>RESTful API 实际上是利用 HTTP 协议的语义（提交类型、返回码、<a href="https://developer.github.com/v3/#hypermedia" target="_blank" rel="noopener">Hypermedia Link</a>）来将所有接口操作抽象化为一系列资源对象。这要求 API 的设计者与调用者都具备深厚的 HTTP 协议功底、语义化与抽象化能力。</p>
+<ul>
+<li>RESTful 作为一个 Buzzword（流行词），其含义已经被曲解。HTTP 协议和 REST 架构的设计者 Roy Fielding 很反感这一点，还专门开了<a href="http://roy.gbiv.com/untangled/2008/no-rest-in-cmis" target="_blank" rel="noopener">博客以正视听</a>。大多数人只将 <a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/evaluation.htm#sec_6_5_3" target="_blank" rel="noopener">HTTP 当做一种传输协议</a>来使用（既成事实），并不能真正理解  REST 架构风格；</li>
+<li>RESTful API 将所有请求抽象化为资源名词（Resources）的做法争议很大。这种做法总会让我回想起上个世纪用 FrontPage 做网页的经历，「设置一个超链接，从某个资源跳到另外一个资源」。在经过 Web 2.0 浪潮，进入移动互联网时代后，这种 API 设计容易给人带来困惑。例如「登录、注册」这样的「动词」如何抽象成「名词」（还好有 <a href="https://developer.github.com/v3/oauth/" target="_blank" rel="noopener">Github API</a> 可以参考 ）。而刻意的使用 「HTTP CRUD」（POST/GET/PUT/DELETE Method）操作「资源化」之后的接口，并未带来更多实质上的收益；</li>
+<li>HTTP 状态码的分层思路在 RESTful API 模式下被破坏了。<a href="http://www.restapitutorial.com/httpstatuscodes.html" target="_blank" rel="noopener">HTTP 1.0 中定义的常见状态码</a>已经足够网络中间组件（代理、网关、路由）使用，HTTP 1.1 中加入的很多状态码缺乏实际场景（例如 <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes" target="_blank" rel="noopener">306 状态码的废弃</a>），它们增加了中间组件以及浏览器对规范理解与实现的要求。尽可能的将状态码交给相应的接口逻辑层而非 HTTP 协议层，能够将问题简化；</li>
+<li>对比以英文为母语的国外开发者而言，国内开发者对语义化的认知难度更高，例如 RESTful 建议<strong>资源命名用复数形式</strong>，那收货地址单词 address 的复数形式是什么？address or addresses ？address-list or address-lists？（没过英语八级的同学已经哭晕在厕所 T_T）</li>
+<li>每个人对 RESTful API 的理解都不同，在 HTTP 协议层面做扩展与实现，不如交给接口设计者与调用者自己来约定数据结构（或者参考 <a href="http://wiki.geekdream.com/Specification/json-rpc_2.0.html" target="_blank" rel="noopener">JSON-RPC</a> 规范）。把 HTTP 只当做传输协议来使用的好处是，当后端服务间的接口需要直接基于 TCP 传输层来做性能优化时，可以十分方便的切换成 Socket 的实现（之前在腾讯做微博相关项目时，微博开放平台对外只提供 HTTP 的 Open API，但对内可以提供更高频率与频次调用的原生 Socket 协议）。</li>
+</ul>
+<h4 id="2-只使用-getpost-method">2、只使用 GET/POST Method</h4>
+<p>由于 HTTP 1.0 尤其是 HTML 的规范与应用已经深入人心。大部分开发者能够很自然的这样理解：「GET」 表示「读」操作，「POST」 表示「写」操作。这样既可以保证中间组件与浏览器很好的利用 GET 的缓存机制，又能降低接口设计的复杂度。HTTP 之父 Roy Fielding 也说过「<a href="http://roy.gbiv.com/untangled/2009/it-is-okay-to-use-post" target="_blank" rel="noopener">It is okay to use POST</a>」：</p>
+<p>Some people think that REST suggests not to use POST for updates. Search my dissertation and you won’t find any mention of CRUD or POST. （很多人认为 RESTful 建议不要使用 POST 用于提交更新，去翻一翻我的论文，压根就没提到过 POST 和其他「增查改删」方面的内容。）</p>
+<p>但使用 POST 方法时尤其要注意：「使用统一的 Content-Type」。这是一个容易被新手忽略的细节，也是接口设计中经常出错的点。</p>
+<p>一个 POST 请求的 Content-Type 有多少种，传输的数据格式有何区别？</p>
+<p>以下举例一些常见类型的 HTTP POST Request 报文，请注意其中的 <code>Content-Type</code> 与 Body 的对应关系（已手动删除无关 HTTP Header）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">POST /test.php HTTP/1.1</span><br><span class="line">Host: 127.0.0.1:8080</span><br><span class="line">Content-Length: 54</span><br><span class="line">Content-Type: application/json</span><br><span class="line"></span><br><span class="line">&#123;&quot;weixin_id&quot;:&quot;imgXQB&quot;,&quot;weixin_name&quot;:&quot;学前班&quot;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">POST /test.php HTTP/1.1</span><br><span class="line">Host: 127.0.0.1:8080</span><br><span class="line">Content-Length: 74</span><br><span class="line">Content-Type: application/x-www-form-urlencoded</span><br><span class="line"></span><br><span class="line">weixin_id=imgXQB&amp;weixin_name=%E7%8C%AB%E5%93%A5%E5%AD%A6%E5%89%8D%E7%8F%AD</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">POST /test.php HTTP/1.1</span><br><span class="line">Host: 127.0.0.1:8080</span><br><span class="line">Content-Length: 259</span><br><span class="line">Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryl60ti7CVoBj2kxfX</span><br><span class="line"></span><br><span class="line">------WebKitFormBoundaryl60ti7CVoBj2kxfX</span><br><span class="line">Content-Disposition: form-data; name=&quot;weixin_id&quot;</span><br><span class="line"></span><br><span class="line">imgXQB</span><br><span class="line">------WebKitFormBoundaryl60ti7CVoBj2kxfX</span><br><span class="line">Content-Disposition: form-data; name=&quot;weixin_name&quot;</span><br><span class="line"></span><br><span class="line">学前班</span><br><span class="line">------WebKitFormBoundaryl60ti7CVoBj2kxfX--</span><br></pre></td></tr></table></figure>
+<p>只有客户端 POST 请求体的消息格式与其请求头声明的 <strong>Content-Type</strong> 一致时，服务端才能正确的接收与响应。因为许多后端的 Web 应用框架会遵照 HTTP 协议的内容协商原则（<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec12.html" target="_blank" rel="noopener">Content Negotiation</a>）对响应体进行预处理，以提升开发体验。例如，Python 的 <a href="http://flask.pocoo.org/docs/0.10/api/#incoming-request-data" target="_blank" rel="noopener">Flask 框架</a> 封装了 <strong>request.json</strong>、<strong>request.form</strong>、<strong>request.data</strong> 等一系列属性用于存放不同类型的来源数据。</p>
+<h4 id="3-接口-uri-与参数命名风格的一致性">3、接口 URI 与参数命名风格的一致性</h4>
+<ul>
+<li>API URI 应该全小写。屏蔽掉 Linux/Windows 操作系统对文件名大小写敏感度不一致的问题；</li>
+<li>URI 命名上应该使用连字符「-」来间隔，而不是使用下划线「_」或驼峰式。这是出于视觉美观度和英文语义方面的考虑，英文域名规范规定可以使用连字符，但不能使用下划线，API 路径应该和 Domain 命名风格一致；</li>
+<li>URI 使用「动词+名词」或者「名词+动词」均可，但选定一种之后应该保持一致。接口风格的一致性，可以降低使用者的理解成本，好的 API 命名风格能让人「以一知万」，能从一个 API 猜测出所有其他 API 的命名形式；</li>
+<li>参数命名上应该使用下划线「_」而非连接符「-」。这点主要是从数据库字段设计的统一性和后台应用程序框架的易用性来考虑；</li>
+<li>不同接口的相同参数命名应保持统一，并考虑扩展要求。例如，收集用户信息的参数可以统一叫「ua」，为了便于扩展可以约定将客户端分辨率、浏览器型号等信息使用「||」字符串连接，如 <code>ua=1280x768||chrome</code>，当需要添加操作系统字段时，客户端只需按规则追加信息到原来的参数上，如 <code>ua=1280x768||chrome||windows</code>。该条原则还有许多其他的方法来实现，不再一一举例。</li>
+</ul>
+<h4 id="4-返回数据结构的一致性">4、返回数据结构的一致性</h4>
+<p>基本的返回体结构，可参考以下示例代码。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"code"</span>: <span class="string">"0"</span>,</span><br><span class="line">    <span class="attr">"message"</span>: <span class="string">"success"</span>,</span><br><span class="line">    <span class="attr">"data"</span>: &#123;</span><br><span class="line">        <span class="attr">"id"</span> : <span class="string">"1"</span>,</span><br><span class="line">        <span class="attr">"list"</span> : []</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>寥寥的几行代码饱含了几部深刻的血泪史：</p>
+<ul>
+<li>出于一致性的考虑，<code>code</code> 表示返回码（也可以理解成错误码），成功时返回 <code>&quot;0&quot;</code> ，出错时按预设的错误码规则返回（<a href="https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&amp;t=resource/res_list&amp;verify=1&amp;id=open1419318634&amp;token=&amp;lang=zh_CN" target="_blank" rel="noopener">微信的返回码规范</a>设计的并不好，因为没有内建的规律和语义）；</li>
+<li>同上，可以理解 <code>message</code> 与 <code>data</code> 的设计。需要注意的是 <strong>data</strong> 只具有 <strong>Object</strong> 一种类型。无数据的时候返回一个空对象 <code>{}</code>（而非 <code>null</code>），有多条数据的时候将  <strong>Array</strong> 类型数据放在其内部的 <code>list</code> 之类的属性中；</li>
+<li>所有原始数据类型建议统一使用字符串类型，包括布尔值用 <code>&quot;0&quot;</code> 和 <code>&quot;1&quot;</code>。原因是前后端对浮点数运算精度不一致，会导致商品价格的计算与展示出错；iOS/Android 客户端对 JSON null、布尔类型转换的不一致会导致频繁的 App Crash。</li>
+</ul>
+<p>当然，也有许多其他的方案可以解决上面提到的问题，但出于「最简」的原则，这样约定的理解成本最低。</p>
+<h3 id="最简-mock-server">最简 Mock Server</h3>
+<p>有了最简 API 的约定之后，实现最简 Mock Server 就相对简单多了。</p>
+<h4 id="1-编写返回的模拟数据">1、编写返回的模拟数据</h4>
+<p>首先，我们按照 API 接口约定来新建一些模拟数据文件。例如新建一个 「mock-data.json」 的文件，将以上返回体数据保存其中。</p>
+<h4 id="2-运行-php-内置服务器">2、运行 php 内置服务器</h4>
+<p>在命令行模式下运行 <code>php</code> 命令，Mac 用户直接打开终端即可，Windows 用户需要先安装 <a href="https://www.apachefriends.org/index.html" target="_blank" rel="noopener">XAMPP</a> 套件，并将 php.exe 所在的目录<a href="https://github.com/kaiye/kaiye.github.com/issues/2" target="_blank" rel="noopener">配置到系统环境变量</a>中，再使用 CMD 运行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php -S 0.0.0.0:8080 mock-data.json</span><br></pre></td></tr></table></figure>
+<p>开启之后访问任意 API 地址（<a href="http://127.0.0.1:8080/any-api-uri-you-want/%EF%BC%89%E5%9D%87%E4%BC%9A%E8%BF%94%E5%9B%9E" target="_blank" rel="noopener">http://127.0.0.1:8080/any-api-uri-you-want/）均会返回</a> mock-data.json 的数据响应体。通过将 8080 端口换成 80 端口（Mac 需要使用 sudo 权限），再设置类似 <code>127.0.0.1 www.example.com</code> 的 HOST 配置，便可以模拟 API 的 Domain Host（<a href="http://www.example.com/any-api-uri-you-want/%EF%BC%89%E5%BD%A2%E5%BC%8F%E3%80%82" target="_blank" rel="noopener">http://www.example.com/any-api-uri-you-want/）形式。</a></p>
+<p>当然，也可以自己编写一个 index.php 的入口文件来实现一个基于 URL Path 规则的简单 Rewrite 功能，用来同时支持多个 API 的数据模拟。</p>
+<h3 id="使用-fiddlercharles-的-map-local-功能">使用 Fiddler/Charles 的 Map Local 功能</h3>
+<p>Fiddler/Charles 的 Map Local（本地映射）不光是用于 HTTP Edit，同样可以用于 HTTP Mock，当一个 404 请求（还未真正实现的 API）被代理服务器捕获后，可以设置映射到本地自定义的 mock-data.json 模拟数据文件，从而被模拟成一个正常的 200 请求。</p>
+<h3 id="自动化-mock-system-构想">自动化 Mock System 构想</h3>
+<p>迄今为止，我还未发现一个理想中的 Mock API 开源系统，如有哪位同学有见到过请在 Github 上留言周知，以下是我对最理想 Mock System 的构想：</p>
+<ol>
+<li>API 录入后台。包含一个按项目（一般是 Domain）维度进行 API 管理的后台。可以在后台上录入「请求 URI、参数、多种业务数据响应体、全局错误码、API 错误码」等接口信息；</li>
+<li>API 接口文档。能够基于 API 后台数据，生成在线的 API 文档平台；</li>
+<li>Postman 导入/导出。能够基于 API 数据导出生成 <a href="https://www.getpostman.com/docs/collections" target="_blank" rel="noopener">Postman Collections</a>，以便导入 Postman 中进行 API 调试；</li>
+<li>Mock Server。能够基于 API 数据快速搭建类似 <a href="http://www.mock-server.com/mock_server/" target="_blank" rel="noopener">MockServer</a> 的本地服务，或提供远程模拟接口服务。</li>
+</ol>
+<h2 id="http-pem系统分析利器">「HTTP PEM」系统分析利器</h2>
+<p>这个接口很复杂，内部调用了好几个其他接口，如何定位问题究竟出在哪一步？</p>
+<p>对于新人来说，最快的成长方式是不断地在新项目中实践，从头到尾参与到项目的每个系统细节的设计与讨论。如果能参与到重点、大型项目中，甚至幸运地得到大牛的亲自指导，成长速度将会突飞猛进。</p>
+<p>但更多的情况是，新人作为离职程序员的补充力量来接手一个老项目甚至是烂摊子。面对一个复杂的陌生系统，吐槽与抱怨无济于事。这时，如果能使用「HTTP PEM 调试法」，从接口设计与调用的角度来剖析、理解整个系统的设计，就能快速上手业务。例如，PHP 程序员可以在项目代码中所有的 curl 调用点，将「<a href="http://php.net/manual/zh/function.curl-setopt.php" target="_blank" rel="noopener">CURLOPT_PROXY</a>」设置成 Fiddler/Charles 的代理服务，然后一步步调试，从接口字段上理解数据库设计和 Controller 背后的业务逻辑。</p>
+<p>最后，欢迎各位给我留言分享更多关于「HTTP PEM」和其他调试方法的经验与体会。</p>
+<hr>
+<p>Reference：</p>
+<blockquote>
+<p>GitHub Repo：<a href="https://github.com/CoderTonyChan/CoderTonyChan.github.io" target="_blank" rel="noopener">Tony Studio</a></p>
+<p>Follow: <a href="https://github.com/CoderTonyChan" target="_blank" rel="noopener">CoderTonyCHan · GitHub</a></p>
+</blockquote>
 
                 
 
@@ -371,12 +568,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2017/03/18/hexo-theme-beantech/" data-toggle="tooltip" data-placement="top" title="[Hexo] Theme BeanTech">&larr; Previous Post</a>
+                            <a href="/2016/10/24/build-tonystudio.ml/" data-toggle="tooltip" data-placement="top" title="个人建站教程">&larr; Previous Post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2015/02/16/git-collect/" data-toggle="tooltip" data-placement="top" title="Git操作指南">Next Post &rarr;</a>
+                            <a href="/2016/02/18/git-collect/" data-toggle="tooltip" data-placement="top" title="Git操作指南">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -406,7 +603,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#https通讯过程"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">https通讯过程</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#中间人攻击的情形"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">中间人攻击的情形</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#如何防止被抓包"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">如何防止被抓包</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#https通讯过程"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">https通讯过程</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#中间人攻击的情形"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">中间人攻击的情形</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#如何防止被抓包"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">如何防止被抓包</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#如何抓包"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">如何抓包</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-安装-http-抓包工具"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">1、安装 HTTP 抓包工具</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-查看-http-详细报文"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">2、查看 HTTP 详细报文</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-常见-http-header"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">3、常见 HTTP header</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#user-agent客户端身份标识"><span class="toc-nav-number">4.3.1.</span> <span class="toc-nav-text">User-Agent：客户端身份标识</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#cookie用户身份标识"><span class="toc-nav-number">4.3.2.</span> <span class="toc-nav-text">Cookie：用户身份标识</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#cache-control浏览器资源缓存标识"><span class="toc-nav-number">4.3.3.</span> <span class="toc-nav-text">Cache-Control：浏览器资源缓存标识</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#调试"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">调试</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#http-pem-调试法之-proxy"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">「HTTP PEM 调试法」之 Proxy</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#http-pem-调试法之-edit"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">「HTTP PEM 调试法」之 Edit</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#fiddler-edit-与-autoresponder"><span class="toc-nav-number">5.2.1.</span> <span class="toc-nav-text">Fiddler Edit 与 AutoResponder</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#weinre-基本用法"><span class="toc-nav-number">5.2.2.</span> <span class="toc-nav-text">Weinre 基本用法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#http-script-注入"><span class="toc-nav-number">5.2.3.</span> <span class="toc-nav-text">HTTP Script 注入</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#http-pem-调试法之-mock"><span class="toc-nav-number">5.3.</span> <span class="toc-nav-text">「HTTP PEM 调试法」之 Mock</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#最简-http-api"><span class="toc-nav-number">5.3.1.</span> <span class="toc-nav-text">最简 HTTP API</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-不使用-restful-api-来设计接口"><span class="toc-nav-number">5.3.1.1.</span> <span class="toc-nav-text">1、不使用 RESTful API 来设计接口</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-只使用-getpost-method"><span class="toc-nav-number">5.3.1.2.</span> <span class="toc-nav-text">2、只使用 GET/POST Method</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-接口-uri-与参数命名风格的一致性"><span class="toc-nav-number">5.3.1.3.</span> <span class="toc-nav-text">3、接口 URI 与参数命名风格的一致性</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-返回数据结构的一致性"><span class="toc-nav-number">5.3.1.4.</span> <span class="toc-nav-text">4、返回数据结构的一致性</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#最简-mock-server"><span class="toc-nav-number">5.3.2.</span> <span class="toc-nav-text">最简 Mock Server</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-编写返回的模拟数据"><span class="toc-nav-number">5.3.2.1.</span> <span class="toc-nav-text">1、编写返回的模拟数据</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-运行-php-内置服务器"><span class="toc-nav-number">5.3.2.2.</span> <span class="toc-nav-text">2、运行 php 内置服务器</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#使用-fiddlercharles-的-map-local-功能"><span class="toc-nav-number">5.3.3.</span> <span class="toc-nav-text">使用 Fiddler/Charles 的 Map Local 功能</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#自动化-mock-system-构想"><span class="toc-nav-number">5.3.4.</span> <span class="toc-nav-text">自动化 Mock System 构想</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#http-pem系统分析利器"><span class="toc-nav-number">5.4.</span> <span class="toc-nav-text">「HTTP PEM」系统分析利器</span></a></li></ol></li></ol>
         
         </div>
       </aside>

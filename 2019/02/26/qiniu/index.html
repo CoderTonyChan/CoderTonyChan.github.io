@@ -15,11 +15,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          Git操作指南 - Tony写字的地方 | 知道自己要做什么
+          七牛云备份命令 - Tony写字的地方 | 知道自己要做什么
         
     </title>
 
-    <link rel="canonical" href="https://blog.tonystudio.ml/2015/02/16/git-collect/">
+    <link rel="canonical" href="https://blog.tonystudio.ml/2019/02/26/qiniu/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -70,7 +70,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('/img/post/HTTPS-mitmproxy.1.jpg');
+            background-image: url('http://pn9jzw2t9.bkt.clouddn.com/2019/bg-japan.JPG');
             -webkit-mask: -webkit-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,1),rgba(0,0,0,1),rgba(0,0,0,0.5));
             /*post*/
         
@@ -90,14 +90,16 @@
                         <div class="post-heading" style="color: ">
                             <div class="tags">
                                 
-                                <a class="tag" href="/tags/#Git" title="Git">Git</a>
+                                <a class="tag" href="/tags/#Shell" title="Shell">Shell</a>
+                                
+                                <a class="tag" href="/tags/#七牛云" title="七牛云">七牛云</a>
                                 
                             </div>
-                            <h1>Git操作指南</h1>
-                            <h2 class="subheading">Git操作指南</h2>
+                            <h1>七牛云备份命令</h1>
+                            <h2 class="subheading"></h2>
                             <span class="meta">
                                 Posted by Tony Chan on
-                                2015-02-16
+                                2019-02-26
                             </span>
                         </div>
                         
@@ -145,13 +147,6 @@
 
                         
                         <li>
-                            <a href="/about/">About</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/archive/">Archives</a>
                         </li>
                         
@@ -165,29 +160,9 @@
                     
 
                         
-                    
-
-                        
-                    
-
-                        
-                    
-
-                        
-                    
-
-                        
-                    
-
-                        
-                    
-
-                        
-                    
-
-                        
-                    
-
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
                         
                     
 
@@ -225,6 +200,33 @@
                         <li>
                             <a href="/tags/">Tags</a>
                         </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
                         
                     
 
@@ -322,34 +324,26 @@
                 post-container">
 
                 <blockquote>
-<p>mitmproxy是一个支持HTTP和HTTPS的抓包程序，有类似Fiddler、Charles的功能，只不过它是一个控制台的形式操作。<br>
-mitmproxy还有两个关联组件。一个是mitmdump，它是mitmproxy的命令行接口，利用它我们可以对接Python脚本，用Python实现监听后的处理。另一个是mitmweb，它是一个Web程序，通过它我们可以清楚观察mitmproxy捕获的请求。<br>
-下面我们来了解它们的用法。</p>
+<p>由于最近博客搬家, 使用了七牛云</p>
 </blockquote>
-<p><img src="https://pic2.zhimg.com/80/v2-6b01852319b8673cabc3bc9e524c4d05_hd.jpg" alt="BeanTech Desktop"></p>
-<h1 id="git删除所有历史提交记录">git删除所有历史提交记录</h1>
+<p><img src="https://user-images.githubusercontent.com/16996753/53394471-5c8e6380-39da-11e9-9d32-b5507474259b.png" alt="image"></p>
+<h1 id="批量上传">批量上传</h1>
 <hr>
-<p>把旧项目提交到Git上，但是会有一些历史记录，这些历史记录中可能会有项目密码等敏感信息。如何删除这些历史记录，形成一个全新的仓库，并且保持代码不变呢？</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">1. Checkout</span><br><span class="line"></span><br><span class="line">   git checkout --orphan latest_branch</span><br><span class="line"></span><br><span class="line">2. Add all the files</span><br><span class="line"></span><br><span class="line">   git add -A</span><br><span class="line"></span><br><span class="line">3. Commit the changes</span><br><span class="line"></span><br><span class="line">   git commit -am "commit message"</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">4. Delete the branch</span><br><span class="line"></span><br><span class="line">   git branch -D master</span><br><span class="line"></span><br><span class="line">5.Rename the current branch to master</span><br><span class="line"></span><br><span class="line">   git branch -m master</span><br><span class="line"></span><br><span class="line">6.Finally, force update your repository</span><br><span class="line"></span><br><span class="line">   git push -f origin master</span><br></pre></td></tr></table></figure>
-<h1 id="git多个远程仓库">git多个远程仓库</h1>
+<p>blog.json</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="attr">"src_dir"</span>: <span class="string">"/Users/tonychan/Pictures/qiniu"</span>,</span><br><span class="line"><span class="attr">"bucket"</span>: <span class="string">"tonystudio-ml"</span>,</span><br><span class="line"><span class="attr">"rescan_local"</span>: <span class="literal">true</span>,</span><br><span class="line"><span class="attr">"skip_suffixes"</span>: <span class="string">".DS_Store"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qshell qupload blog.json</span><br></pre></td></tr></table></figure>
+<h1 id="批量下载">批量下载</h1>
 <hr>
+<pre><code class="language-shell">qshell listbucket tonystudio-ml  &gt; list
+cat list | awk -F ' ' ' {print &quot;http://pn9jzw2t9.bkt.clouddn.com/&quot;$1}' &gt; urlList
+</code></pre>
+<p>将tonystudio-ml 和 <a href="http://pn9jzw2t9.bkt.clouddn.com" target="_blank" rel="noopener">http://pn9jzw2t9.bkt.clouddn.com</a> 改成自己的变量即可</p>
+<hr>
+<p>Reference：</p>
 <blockquote>
-<p>用GitHub管理自己的开源项目有几年了,有时候需要同步GitHub和公司的Gitlab</p>
+<p>GitHub Repo：<a href="https://github.com/CoderTonyChan/CoderTonyChan.github.io" target="_blank" rel="noopener">Tony Studio</a></p>
+<p>Follow: <a href="https://github.com/CoderTonyChan" target="_blank" rel="noopener">CoderTonyCHan · GitHub</a></p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = true</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        url = https://github.com/CoderTonyChan/laoshihao-login-web</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[branch &quot;master&quot;]</span><br><span class="line">        remote = origin</span><br><span class="line">        merge = refs/heads/master</span><br></pre></td></tr></table></figure>
-<h2 id="用git命令行添加多个远程仓库">用git命令行添加多个远程仓库</h2>
-<p>添加一个名为“mirror”的远程仓库：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add mirror https://gitee.com/CoderTonyChan/laoshihao-login-web.git</span><br></pre></td></tr></table></figure>
-<p>执行完这条命令后.git/config文件内容变成了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = true</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        url = https://github.com/CoderTonyChan/laoshihao-login-web</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[branch &quot;master&quot;]</span><br><span class="line">        remote = origin</span><br><span class="line">        merge = refs/heads/master</span><br><span class="line">[remote &quot;mirror&quot;]</span><br><span class="line">        url = https://gitee.com/CoderTonyChan/laoshihao-login-web.git</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/mirror/*</span><br></pre></td></tr></table></figure>
-<p>此时已经是一个本地仓库，两个远程仓库。使用下面的命令可以分别从两个远程仓库拉取和推送到两个远程仓库。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master </span><br><span class="line">git pull mirror master</span><br><span class="line">git push origin master </span><br><span class="line">git push mirror master</span><br></pre></td></tr></table></figure>
-<h2 id="一条命令同时更新多个远程仓库">一条命令同时更新多个远程仓库</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote set-url --add origin https://gitee.com/CoderTonyChan/laoshihao-login-web.git</span><br></pre></td></tr></table></figure>
-<p>执行这条命令后.git/config内容变成：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = true</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        url = https://github.com/CoderTonyChan/laoshihao-login-web.git</span><br><span class="line">        url = https://gitee.com/CoderTonyChan/laoshihao-login-web.git</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[branch &quot;master&quot;]</span><br><span class="line">        remote = origin</span><br><span class="line">        merge = refs/heads/master</span><br></pre></td></tr></table></figure>
-<p>这时候我们一条命令即可更新两个远程仓库：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
 
                 
 
@@ -357,13 +351,9 @@ mitmproxy还有两个关联组件。一个是mitmdump，它是mitmproxy的命令
                 <!-- Pager -->
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2016/09/18/HTTPS-Charles/" data-toggle="tooltip" data-placement="top" title="HTTP/HTTPS 抓包 —— Charles">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2015/02/16/soft-collect/" data-toggle="tooltip" data-placement="top" title="常用软件合集">Next Post &rarr;</a>
+                            <a href="/2018/11/06/FFmpeg/" data-toggle="tooltip" data-placement="top" title="FFmpeg命令">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -393,7 +383,7 @@ mitmproxy还有两个关联组件。一个是mitmdump，它是mitmproxy的命令
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#git删除所有历史提交记录"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">git删除所有历史提交记录</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#git多个远程仓库"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">git多个远程仓库</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#用git命令行添加多个远程仓库"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">用git命令行添加多个远程仓库</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#一条命令同时更新多个远程仓库"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">一条命令同时更新多个远程仓库</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#批量上传"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">批量上传</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#批量下载"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">批量下载</span></a></li></ol>
         
         </div>
       </aside>
@@ -413,7 +403,9 @@ mitmproxy还有两个关联组件。一个是mitmdump，它是mitmproxy的命令
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#Git" title="Git">Git</a>
+                          <a class="tag" href="/tags/#Shell" title="Shell">Shell</a>
+                        
+                          <a class="tag" href="/tags/#七牛云" title="七牛云">七牛云</a>
                         
                     </div>
                 </section>
@@ -442,8 +434,8 @@ mitmproxy还有两个关联组件。一个是mitmdump，它是mitmproxy的命令
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "your-disqus-ID";
-    var disqus_identifier = "https://blog.tonystudio.ml/2015/02/16/git-collect/";
-    var disqus_url = "https://blog.tonystudio.ml/2015/02/16/git-collect/";
+    var disqus_identifier = "https://blog.tonystudio.ml/2019/02/26/qiniu/";
+    var disqus_url = "https://blog.tonystudio.ml/2019/02/26/qiniu/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

@@ -8,40 +8,8 @@
     </url>
 
     <url>
-        <loc>https://blog.tonystudio.ml/2017/06/26/nginx-collect/</loc>
-        <lastmod>2019-02-22T09:32:51.248Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.tonystudio.ml/2015/02/16/git-collect/</loc>
-        <lastmod>2019-02-22T09:15:45.189Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.tonystudio.ml/2015/02/16/soft-collect/</loc>
-        <lastmod>2019-02-22T05:54:31.030Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.tonystudio.ml/2017/03/18/hexo-theme-beantech/</loc>
-        <lastmod>2019-02-21T08:12:51.015Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.tonystudio.ml/2018/04/30/HTTPS-mitmproxy/</loc>
-        <lastmod>2019-02-21T08:04:47.751Z</lastmod>
+        <loc>https://blog.tonystudio.ml/2016/02/18/git-collect/</loc>
+        <lastmod>2019-02-26T09:20:15.771Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -49,7 +17,55 @@
 
     <url>
         <loc>https://blog.tonystudio.ml/2016/09/18/HTTPS-Charles/</loc>
-        <lastmod>2019-02-20T09:00:38.537Z</lastmod>
+        <lastmod>2019-02-26T09:04:33.503Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2016/10/24/build-tonystudio.ml/</loc>
+        <lastmod>2019-02-26T08:44:37.859Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2018/11/06/FFmpeg/</loc>
+        <lastmod>2019-02-26T08:10:14.679Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2015/02/16/soft-collect/</loc>
+        <lastmod>2019-02-26T08:07:15.810Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2017/06/26/nginx-collect/</loc>
+        <lastmod>2019-02-26T08:06:21.506Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2018/04/30/HTTPS-mitmproxy/</loc>
+        <lastmod>2019-02-26T08:06:01.946Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2019/02/26/qiniu/</loc>
+        <lastmod>2019-02-26T07:50:48.813Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
