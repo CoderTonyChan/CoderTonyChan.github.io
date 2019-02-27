@@ -192,12 +192,12 @@
                     
 
                         
-                    
-
-                        
                         <li>
                             <a href="/tags/">Tags</a>
                         </li>
+                        
+                    
+
                         
                     
 
@@ -324,6 +324,7 @@
                 <p>nginx在工作中已经有好几个环境在使用了，每次都是重新去网上扒博客，各种编译配置，今天自己也整理一份安装文档和nginx.conf配置选项的说明，留作以后参考。像负载均衡配置（包括健康检查）、缓存（包括清空缓存）配置实例，请参考 <a href="http://segmentfault.com/a/1190000002873747" target="_blank" rel="noopener">http://segmentfault.com/a/1190000002873747</a> ，ssl加密请参考 <a href="http://seanlook.com/2015/05/28/nginx-ssl/" target="_blank" rel="noopener">http://seanlook.com/2015/05/28/nginx-ssl/</a> 。</p>
 <p><img src="https://segmentfault.com/img/remote/1460000015385948" alt=""></p>
 <h1 id="nginx常用配置">Nginx常用配置</h1>
+<hr>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  dev-admin.paascloud.net;</span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_pass http://localhost:7020;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    error_page   500 502 503 504  /50x.html;</span><br><span class="line">    location = /50x.html &#123;</span><br><span class="line">        root   html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  dev-login.paascloud.net;</span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_pass http://localhost:7010;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    error_page   500 502 503 504  /50x.html;</span><br><span class="line">    location = /50x.html &#123;</span><br><span class="line">        root   html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  dev-mall.paascloud.net;</span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_pass http://localhost:7030;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    error_page   500 502 503 504  /50x.html;</span><br><span class="line">    location = /50x.html &#123;</span><br><span class="line">        root   html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  dev-api.paascloud.net;</span><br><span class="line">    location ~ &#123;</span><br><span class="line">        proxy_pass   http://localhost:7979;</span><br><span class="line">    &#125;</span><br><span class="line">    error_page   500 502 503 504  /50x.html;</span><br><span class="line">    location = /50x.html &#123;</span><br><span class="line">        root   html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="nginx配置文件的整体结构">Nginx配置文件的整体结构</h1>
 <hr>
@@ -332,10 +333,12 @@
 <h1 id="nginx常见错误及处理方法">Nginx常见错误及处理方法</h1>
 <hr>
 <h2 id="404-bad-request">404 bad request</h2>
+<hr>
 <p>一般原因:请求的Header过大</p>
 <p>解决方法：配置nginx.conf相关设置</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">client_header_buffer_size 16k;</span><br><span class="line">large_client_header_buffers 4 64k;</span><br></pre></td></tr></table></figure>
 <h2 id="500-internal-server-rrror">500 Internal Server Rrror</h2>
+<hr>
 <p>一般原因：</p>
 <p>脚本错误，（php语法错误、lua语法错误）</p>
 <p>访问量过大，系统资源限制，不能打开过多文件</p>
