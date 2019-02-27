@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword" content="TonyChan">
+    <meta name="referrer" content="no-referrer">
+    <link rel="shortcut icon" href="/img/icon.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          wireshark 入门教程 - Tony写字的地方 | 知道自己要做什么
+        
+    </title>
+
+    <link rel="canonical" href="https://blog.tonystudio.ml/2018/09/05/wireshark-tutorial/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('http://pn9jzw2t9.bkt.clouddn.com/2019/bg-japan.JPG');
+            -webkit-mask: -webkit-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,1),rgba(0,0,0,1),rgba(0,0,0,0.5));
+            /*post*/
+        
+    }
+
+    
+</style>
+
+<div style="background: #000">
+    <header class="intro-header">
+        <!-- Signature -->
+        <div id="signature">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        
+                        <div class="post-heading" style="color: ">
+                            <div class="tags">
+                                
+                                <a class="tag" href="/tags/#抓包" title="抓包">抓包</a>
+                                
+                                <a class="tag" href="/tags/#wireshark" title="wireshark">wireshark</a>
+                                
+                            </div>
+                            <h1>wireshark 入门教程</h1>
+                            <h2 class="subheading">Wireshark Tutorial</h2>
+                            <span class="meta">
+                                Posted by Tony Chan on
+                                2018-09-05
+                            </span>
+                        </div>
+                        
+    
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Tony&#39;s Studio</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/books/">Books</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <blockquote>
+<p>网络抓包是个基础技能，对于网络协议的掌握有一定的要求。iOS上实现网络抓包可以用Charles（针对http和https），tcpdump（快速分析网络包），和Wireshare。之前写过一篇介绍tcpdump抓包的入门文章，和tcpdump相比，Wireshark提供丰富的GUI交互，而且能分析所有的网络协议，关键还是免费的，掌握好Wireshark就能应付绝大部分需要分析网络协议的场景了。</p>
+</blockquote>
+<h1 id="安装初识">安装初识</h1>
+<hr>
+<p>Wireshark提供Mac版本，可以从官网下载安装，到这篇博客为止最新版本应该是2.2.1。安装好之后打开的第一个界面如下：</p>
+<img width="500" alt="6acb6917-0d00-4673-ac57-f6200a853865" src="https://user-images.githubusercontent.com/16996753/53470399-827c3c80-3a9c-11e9-8bb5-37f44cfbd35b.png">
+<p>Wireshark在第一个界面就把当前系统所包含的网卡列出来了，直接点击任何一项就可以开始监听通过该网卡的所有网络流量。<br>
+当我们把iPhone通过usb连接macbook时，Wireshark并不能直接监听通过iPhone的网络流量，需要通过一个系统程序在我们的Mac系统上，建立一个映射到iPhone的虚拟网卡，在terminal中输入如下命令即可：</p>
+<img width="500" alt="10f399c5-1527-46eb-adcf-be4d4a8425f5" src="https://user-images.githubusercontent.com/16996753/53470411-8c9e3b00-3a9c-11e9-8180-1dc405b7fa17.png">
+<p>格式是rvictl -s [设备udid]，设备的udid可以通过itunes或者itools获取，执行命令之后Wireshark能立即识别新增加的rvi0网卡，也就是上图中高亮的部分，双击rvi0这一项，Wireshare即进入如下界面开始监听iPhone设备上的所有流量。</p>
+<img width="500" alt="cd63d159-765f-437f-974f-19a17e3c05f6" src="https://user-images.githubusercontent.com/16996753/53470427-97f16680-3a9c-11e9-8ac6-49af3ac74981.png">
+<p>此时，启动iPhone上的任意App，只要有网络流量产生，对应的网络包都会在Wireshark上述的列表中展示出来。<br>
+Wireshark的流量监控界面主要分为四块，由上至下第一部分（标号为1）是工具栏，通过工具栏我们可以控制监控的行为，比如开始抓包，停止抓包，重新开始抓包，以及在包之间跳转等等。工具栏的底部有个输入框，可以让我们手动输入包的过滤条件，这部分对于熟练使用Wireshark抓包非常重要，后面会详细的讲解。<br>
+第二部分（标号为2）是历史流量包列表展示界面，这里展示的是从抓包开始，所有通过我们iPhone设备的流量。列表界面不同的包有不同的颜色，Wireshark通过颜色来区分包的类型，对于特定场景快速识别目标流量非常有用，后面也会专门讲解。<br>
+第三部分（标号为3）是单个包的详细信息展示面板，我们在第二部分选中的网络包在这一部分会将其结构以可阅读的文本形式展示出来，要正确阅读这一部分的信息需要对tcp/ip协议有一定的掌握。<br>
+第四部分（标号为4）是单个包的二进制流信息展示面板，这一部分展示的信息是包的原始数据，也是一个网络包所包含内容的真实展现，我们在第三部分多选中的协议头，都会在这一部分以同步高亮的形式标记出来。这一部分的展示是为了让我们对包的真实内容做直观的判断，能具体到单个byte。<br>
+初步认识上述四块主要面板之后，可以尝试开始分析网络包，在开始分析网络包之前，先要对网络包有个大致的概念。</p>
+<h1 id="网络包结构">网络包结构</h1>
+<hr>
+<p>我们最初学习网络协议的时候，无论是OSI七层模型，还是经典的TCP/IP五层结构，都是以下图中的左边部分的形式展示的。</p>
+<img width="500" alt="1b6e7c66-5253-48b7-9b98-291dd966219c" src="https://user-images.githubusercontent.com/16996753/53470437-9cb61a80-3a9c-11e9-85ee-d5645e7af178.png">
+<p>这是一种经典的分层架构，确实也符合网络协议设计上的思路，但却不能表达网络包真实的包含关系。上图右边部分是我所绘制的一个包结构示意图。在我看来，这种洋葱式的结构更符合网络包的真实形态。Application是最内层的payload，除了Application这一层之外，其他层都是用自己这一层的协议header+所包含那一层的payload。可以用如下公式表示：</p>
+<p>TCP Layer = TCP Header + Application Payload</p>
+<p>IP Layer = IP Header + TCP Payload</p>
+<p>…</p>
+<p>我们分析每个网络包的时候要能理解每一个包它所代表的抽象含义，再进一步将相关联的包串联起来，形成一次完整的网络会话。</p>
+<h1 id="分析包结构">分析包结构</h1>
+<hr>
+<p>对于iOS程序员来说，我们绝大部分的流量分析都集中在HTTP或者基于TCP的socket长连接。从这一层面来说，和我们最贴近的三层是应用层(http)，传输层(tcp or udp)，网络层(ip)。<br>
+对于应用层来说主要是http协议的学习，对于http request和response格式的阅读，比如下图表示的一个http request包：</p>
+<img width="500" alt="a2873532-9e47-4a03-ab95-45599923129b" src="https://user-images.githubusercontent.com/16996753/53470438-a049a180-3a9c-11e9-920f-c74bca0b946b.png">
+<p>Packet详情面板以符合http协议的表述，将header中各个field清晰的罗列出来了，阅读起来很方便。<br>
+传输层我们应用较多的是tcp，这一层的阅读主要是tcp header的学习：</p>
+<img width="500" alt="d7069508-f4e1-4813-b31b-3d91f8636435" src="https://user-images.githubusercontent.com/16996753/53470444-a3dd2880-3a9c-11e9-9c5a-35f5f436b0b9.png">
+<p>典型的tcp header一般长度为20个字节，将这20个字节逐一学习一遍就可以分析大部分的tcp流量了。<br>
+网络层的分析主要是针对于IP Header，header结构如下：</p>
+<img width="500" alt="eba25723-c341-44c3-a4fd-7c2730584cbc" src="https://user-images.githubusercontent.com/16996753/53470446-a6d81900-3a9c-11e9-93b1-0b2036865375.png">
+<p>这其中IP Header第十三个字节各个filed的理解，对于我们分析tcp流量的起始和结束尤其有用，典型的IPV4 Header也是20个字节，梳理一遍就可以分析IP包了。<br>
+所以对于包结构的分析关键在于三个知识点的学习：http header, tcp header, ip header，这么一看好像也没多少东西 ;)</p>
+<h1 id="使用filter过滤包">使用Filter过滤包</h1>
+<hr>
+<p>使用Wireshark和使用Charles最大的区别在于，Charles只捕获HTTP流量，而Wireshark捕捉的是经过目标网卡所有的流量，流量包可以在几秒内膨胀到难以阅读的数量，所以此时我们需要使用Filter来做包的过滤，Filter规则定的越细，剔除掉的干扰信息就越多，分析起来就越快。</p>
+<p>Wireshark的Filter分为两种，一种为Capture Filter，另一种是Display Filter。</p>
+<p>Capture Filter出现在初始界面，在网卡列表的上方有个输入框，允许我们输入capture filter，一旦输入了特定的capture规则，Wireshark就只捕获符合该规则的流量包了。</p>
+<img width="500" alt="ce1a622b-1312-46c8-a7c4-90f3cc9615da" src="https://user-images.githubusercontent.com/16996753/53470448-a9d30980-3a9c-11e9-9ea5-1b705fea4af2.png">
+<p>Display Filter出现在流量监控界面，在工具栏的下方有个输入框，允许我们输入display filter，display filter只是从界面上过滤掉不符合规则的包，Wireshark实际上还是监听了这些包，一旦去掉display filter，所有的包又会出现在同一界面。</p>
+<img width="500" alt="33749cab-566e-47e0-8aed-9d516644f1ff" src="https://user-images.githubusercontent.com/16996753/53470454-ad669080-3a9c-11e9-8016-05bd1e5a5e97.png">
+<p>Capture Filter的规则和我们平常使用tcpdump的filter语法是一致的，比如为了只监控http的流量，我们可以先在初始化界面选中rvi0网卡，再在capture filter输入框里输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//只捕获HTTP流量</span><br><span class="line">port 80 or port 443</span><br></pre></td></tr></table></figure>
+<p>回车之后Wireshark就开始监控我们iPhone上所有的http和https流量了 ，非常简单，我们还可以使用其他的capture filter来捕获特定的流量，比如想分析DNS解析过程，可以使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//只捕获DNS流量</span><br><span class="line">port 53</span><br></pre></td></tr></table></figure>
+<p>比如只想捕获和特定服务器相关的流量:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//只捕获和特定主机的流量</span><br><span class="line">host 171.10.191.10</span><br></pre></td></tr></table></figure>
+<p>Display Filter的语法是由Wireshark自定义的，和Capture filter的语法不能混用。比如我们只想看某个主机的流量，可以使用如下Display Filter：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip.addr==171.10.191.10</span><br></pre></td></tr></table></figure>
+<p>如果只看http或者https的流量，可以用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcp.port == 80 || tcp.port == 443</span><br></pre></td></tr></table></figure>
+<p>更多的语法规则可以查看Wireshark官方文档，Wireshark实际上提供了便捷的UI操作帮助我们来书写Display Filter，在Display Filter输入框的最右边有个Expression按钮，点击之后可以弹出如下界面：</p>
+<img width="500" alt="4af664f7-0694-43c9-807e-1d3f2eb54a11" src="https://user-images.githubusercontent.com/16996753/53470458-b22b4480-3a9c-11e9-81b5-3dd647ea3b39.png">
+<p>Display Filter的语法本质上是个等是关系描述，我们可以在search当中输入我们感兴趣的协议比如http，再在展开的协议头里选择我们的条件比如http.host，最后设置Relation和Value就可以生成一个Display Filter条件了。</p>
+<h1 id="包颜色规则">包颜色规则</h1>
+<hr>
+<p>Wireshark在大多数时候捕获的包数量都远超我们感兴趣的数量，而且各个连接的包都混杂在一起，为了方便我们识别不同的连接会话，Wireshark默认使用一种着色规则帮助我们来进行包类型区分。</p>
+<p>具体的规则可以通过菜单View-&gt;Coloring Rules…查看，默认规则如下：</p>
+<img width="500" alt="4d3b2980-dfd4-4a1a-9b8b-99dfc1cd8eb1" src="https://user-images.githubusercontent.com/16996753/53470468-b5becb80-3a9c-11e9-9338-4ec6fc8f4bdc.png">
+<p>这里有个小技巧，如上图所示，我只将我感兴趣的协议包上了色，集中在http，tcp，udp包，这样分析起来更加直观。比如根据上图的规则，tcp三次握手中的Sync包是使用灰色标记的，这样我就可以在下图的包中迅速定位一次tcp连接的开始包位置：</p>
+<img width="500" alt="236e7e35-ab3d-4be1-a911-8844e5187b78" src="https://user-images.githubusercontent.com/16996753/53470472-b8b9bc00-3a9c-11e9-9439-c652a28ac418.png">
+<p>当然，包的颜色也可以按照自己的视觉习惯进行定制，我个人习惯把Sync包和FIN包设置一个高亮的颜色，方便判断一次HTTP会话的起始和结束。</p>
+<h1 id="流量跟踪">流量跟踪</h1>
+<hr>
+<p>Wireshark默认情况下将不同网络连接的流量都混在一起展示，即使给不同协议的包上色之后，要单独查看某个特定连接的流量依然不怎么方便，我们可以通过Wireshark提供的两种方式来实现这个目标。</p>
+<p>方式一：Follow Stream</p>
+<p>当我们选中某个包之后，右键弹出的菜单里，有个选项允许我们将当前包所属于的完整流量单独列出来，如下图：</p>
+<img width="500" alt="4f0320fb-6bb0-4161-b5f1-8e5789775a6d" src="https://user-images.githubusercontent.com/16996753/53470484-bc4d4300-3a9c-11e9-9a94-80b77723b876.png">
+<p>Wireshark支持我们常见的四种Stream，TCP，UDP，HTTP，SSL。比如我们选中Follow TCP Stream之后可以得到如下的详细分析输出（样本为监控iPhone手机的流量）：</p>
+<img width="500" alt="44c54654-9f31-4b9e-9db9-8ba21995eef0" src="https://user-images.githubusercontent.com/16996753/53470489-bfe0ca00-3a9c-11e9-82e4-9cec23966158.png">
+<p>上图中将iPhone和Server之间某次的连接流量完整的呈现出来，包括iPhone发送了多少个包，Server回了多少个包，以及iPhone上行和下行的流量，还提供流量编解码选择，文本搜索功能等。</p>
+<p>方式二：Flow Graph</p>
+<p>Flow Graph可以通过菜单Statistics-&gt;Flow Graph来生成，这样我们可以得到另一种形式的流量呈现：</p>
+<img width="500" alt="fc19eb0d-15fd-42f5-a729-e22c02c22ced" src="https://user-images.githubusercontent.com/16996753/53470491-c2dbba80-3a9c-11e9-911a-f6de53eb1ad2.png">
+<p>和Follow Stream不同的是我们获取到的是完整的流量，从上图中可以看出从10.136.66.127(我的iPhone手机IP地址)发出的流向多个服务器的网络流量，包括DNS解析和SSL安全握手等。当然我们也可以在上图中下方的操作区域做进一步的过滤，可以使用Display Filter做进一步的流量定位。</p>
+<p>Follow Stream更适合分析针对某一个服务器地址的流量，而Flow Graph更适合分析某个App的整体网络行为，包含从DNS解析开始到和多个服务器交互等。</p>
+<p>其实Statistics菜单下还有更多的图表分析模式，可以根据不同的分析目标来选择，比如Statistics-&gt;HTTP-&gt;Requests可以得到如下按主机分门别类的HTTP请求分析图，和收费的Charles的展示结果类似。</p>
+<img width="500" alt="8bcde133-c012-4262-a785-8a822b7aebc7" src="https://user-images.githubusercontent.com/16996753/53470496-c5d6ab00-3a9c-11e9-9e14-fa60eb62d214.png">
+<h1 id="https包分析">HTTPS包分析</h1>
+<hr>
+<p>介绍完使用方式再来实际分析下HTTPS的流量。下图是我使用Wireshark在iPhone上抓包知乎App网络请求的结果：</p>
+<img width="500" alt="4af664f7-0694-43c9-807e-1d3f2eb54a11" src="https://user-images.githubusercontent.com/16996753/53470501-c8d19b80-3a9c-11e9-9d83-28b146f1f0c4.png">
+<p>当我使用Follow TCP Stream之后，一次完整的HTTPS会话流量就被单独过滤出来了，第一步先分析包列表界面。<br>
+通过高亮颜色找到会话的其实Sync包，继而可以快速的定位到HTTP建立连接之初的tcp三次握手所产生的三个包：</p>
+<p>Sync： iPhone发送Sync。</p>
+<p>Sync+Ack： Server发送Sync+Ack。</p>
+<p>Ack： iPhone Ack。</p>
+<p>三次握手之后是ssl handshake，ssl handshake分为以下几步：</p>
+<p>Client Hello</p>
+<p>这一个包是ssl握手的起始包，客户端（我的iPhone）会携带当前会话所依赖的一些关键信息：使用的tls版本（当前为tls1.2），上次的Session ID（如果可以session重用，就可以避免当前这次的安全握手），客户端所支持的加密算法套件（从下图中可以看出可以从22个suites里面挑选）等。</p>
+<img width="500" alt="9d04e8e8-9b84-4983-a203-3ca05cf9188d" src="https://user-images.githubusercontent.com/16996753/53470507-cbcc8c00-3a9c-11e9-9954-4fd365174e69.png">
+<p>Server Hello</p>
+<p>Server Hello这个包带上服务器这一端的一些信息，比如Server所选择的tls版本，或者带上可以重用的Session ID避免重新握手，在Client传过来的Cipher Suites当中挑选一个Cipher Suite进行后续的安全通话等。</p>
+<img width="500" alt="88434006-295c-4a12-814b-45f102b8ea3a" src="https://user-images.githubusercontent.com/16996753/53470514-ce2ee600-3a9c-11e9-82a7-eebe4a717f4f.png">
+<p>Server 下发Certificate</p>
+<p>Server同时会下发自己的Certificate，如下图所示：</p>
+<img width="500" alt="1113cc9c-bd09-4a2d-987c-d7f63df3ea4c" src="https://user-images.githubusercontent.com/16996753/53470519-d129d680-3a9c-11e9-9e56-6589ce9b43f9.png">
+<p>从包列表界面可以看出，Certificate（大小为2407个bytes）这个包由于超过了1440个字节，被拆成了2个包，所以我们可以在包Info里面看到[TCP segment of a reassembled PDU]，我们使用Wireshark抓包的时候经常会看到reassembled PDU，出现这种情况是因为包太大，超过了MSS，需要拆成两个来发送。<br>
+接下来几个包是Client和Server基于上面交换的信息协商最后使用的密钥。</p>
+<p>Server Key Exchange</p>
+<p>Client Key Exchange</p>
+<p>Change Cipher Spec</p>
+<p>…</p>
+<p>Send Application Data</p>
+<p>各个包里面所包含的详细内容分析涉及到非对称加密算法的相关知识，这里就不展开了，使用Wireshark可以将整个HTTPS的握手过程非常清晰的展现出来，感兴趣的同学可以阅读这篇文章。<br>
+当然大部分时候我们需要分析iPhone上HTTPS流量里的具体包内容，Wireshark虽然支持配置RSA私钥，但我们没办法直接获取iPhone设备上各个App所使用的私钥，这种场景下我们一般使用MITM（Man In The Middle）中间人攻击来破解HTTPS包内容，收费工具Charles可以通过代理的方式来实现此功能，免费版抓包工具mitmproxy同样也可以，Charles的使用教程比较多了，后续我们会再写一篇mitmproxy的教程介绍如何使用破解调试HTTPS的流量。<br>
+结束语</p>
+<p>Wireshark就介绍到这里，现在在iPhone上抓包的方式有很多，有面向所有协议的tcpdump和Wireshark，也有针对HTTP的Charles和mitmproxy，无论使用哪个工具，前提都是我们需要对网络协议有全面的认识，所以在学习使用这些工具的同时，要持续深入的学习网络协议知识。</p>
+<h1 id="抓包例子">抓包例子</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ rvictl -s c85646a786f30eaea5732c806c586f3ed7fae11c</span><br><span class="line">// capture filter</span><br><span class="line">host==59.36.6.53 ||  host==192.168.3.65</span><br><span class="line">// Filter  </span><br><span class="line">ip.addr==59.36.6.53 ||  ip.addr==192.168.3.65</span><br></pre></td></tr></table></figure>
+<h2 id="抓websocket">抓websocket</h2>
+<p><img src="https://user-images.githubusercontent.com/16996753/53471087-8d37d100-3a9e-11e9-8fdb-1a0721f49331.png" alt="wireshark1"></p>
+<h2 id="字节解析器">字节解析器</h2>
+<p><img src="https://user-images.githubusercontent.com/16996753/53471105-9c1e8380-3a9e-11e9-9492-e2a07a796a3d.png" alt="056b5218-f16f-453b-bba8-1b7abdabd7ca"></p>
+<h2 id="完整的https请求">完整的HTTPS请求</h2>
+<p><img src="https://user-images.githubusercontent.com/16996753/53471113-9f197400-3a9e-11e9-9563-0d6cff8695dd.png" alt="6c6f2aba-dc2c-4d1c-886b-eac90941ee1f"></p>
+<h2 id="证书超过1400-做了分包">证书超过1400 做了分包</h2>
+<p><img src="https://user-images.githubusercontent.com/16996753/53471119-a2acfb00-3a9e-11e9-99a1-23438dd9ad8a.png" alt="86e8c06f-4b19-4ee7-a1d2-b02c26e969ce"></p>
+<h1 id="流量跟踪功能测试">流量跟踪功能测试</h1>
+<hr>
+<h2 id="追踪-http流">追踪 HTTP流</h2>
+<p><img src="https://user-images.githubusercontent.com/16996753/53471123-a6408200-3a9e-11e9-9936-ba3f5ee05cfe.png" alt="shark2"></p>
+<h2 id="追踪tcp为http服务的">追踪TCP（为HTTP服务的）</h2>
+<p><img src="https://user-images.githubusercontent.com/16996753/53471128-a9d40900-3a9e-11e9-90b0-dfca3ff79f61.png" alt="tcp"></p>
+<h2 id="追踪ssl-和-tcp一样">追踪SSL （和 TCP一样）</h2>
+<p><img src="https://user-images.githubusercontent.com/16996753/53471131-accef980-3a9e-11e9-8159-2322ac3e67a4.png" alt="09e86bc8-a1ac-49f3-9701-79c6f7d1463c"></p>
+<h2 id="追踪websocket-连接">追踪WebSocket 连接</h2>
+<p><img src="https://user-images.githubusercontent.com/16996753/53471135-b0628080-3a9e-11e9-8857-08576b8ac399.png" alt="00575db6-982e-4f40-9e10-23ac6dc7f6b0"></p>
+<h2 id="websocket的开始和结束">Websocket的开始和结束</h2>
+<p><img src="https://user-images.githubusercontent.com/16996753/53471136-b3f60780-3a9e-11e9-86e9-68f917072b5b.png" alt="websocket"></p>
+<h1 id="wireshark常用过滤规则">wireshark常用过滤规则</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// GET包</span><br><span class="line">http.request.method == “GET” &amp;&amp; http contains “Host: “</span><br><span class="line"></span><br><span class="line">tcp.len &gt;= 7   指的是ip数据包(tcp下面那块数据),不包括tcp本身</span><br><span class="line">ip.src eq 10.175.168.182</span><br></pre></td></tr></table></figure>
+<hr>
+<p>Reference：</p>
+<blockquote>
+<p>GitHub Repo：<a href="https://github.com/CoderTonyChan/CoderTonyChan.github.io" target="_blank" rel="noopener">Tony Studio</a></p>
+<p>Follow: <a href="https://github.com/CoderTonyChan" target="_blank" rel="noopener">CoderTonyCHan · GitHub</a></p>
+</blockquote>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2018/11/06/FFmpeg/" data-toggle="tooltip" data-placement="top" title="FFmpeg命令">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2018/04/30/HTTPS-mitmproxy/" data-toggle="tooltip" data-placement="top" title="HTTP/HTTPS 抓包 —— mitmproxy">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                    <div class="comment">
+                        <div id="disqus_thread" class="disqus-thread"></div>
+                    </div>
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#安装初识"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">安装初识</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#网络包结构"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">网络包结构</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#分析包结构"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">分析包结构</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#使用filter过滤包"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">使用Filter过滤包</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#包颜色规则"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">包颜色规则</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#流量跟踪"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">流量跟踪</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#https包分析"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">HTTPS包分析</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#抓包例子"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">抓包例子</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#抓websocket"><span class="toc-nav-number">8.1.</span> <span class="toc-nav-text">抓websocket</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#字节解析器"><span class="toc-nav-number">8.2.</span> <span class="toc-nav-text">字节解析器</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#完整的https请求"><span class="toc-nav-number">8.3.</span> <span class="toc-nav-text">完整的HTTPS请求</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#证书超过1400-做了分包"><span class="toc-nav-number">8.4.</span> <span class="toc-nav-text">证书超过1400 做了分包</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#流量跟踪功能测试"><span class="toc-nav-number">9.</span> <span class="toc-nav-text">流量跟踪功能测试</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#追踪-http流"><span class="toc-nav-number">9.1.</span> <span class="toc-nav-text">追踪 HTTP流</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#追踪tcp为http服务的"><span class="toc-nav-number">9.2.</span> <span class="toc-nav-text">追踪TCP（为HTTP服务的）</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#追踪ssl-和-tcp一样"><span class="toc-nav-number">9.3.</span> <span class="toc-nav-text">追踪SSL （和 TCP一样）</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#追踪websocket-连接"><span class="toc-nav-number">9.4.</span> <span class="toc-nav-text">追踪WebSocket 连接</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#websocket的开始和结束"><span class="toc-nav-number">9.5.</span> <span class="toc-nav-text">Websocket的开始和结束</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#wireshark常用过滤规则"><span class="toc-nav-number">10.</span> <span class="toc-nav-text">wireshark常用过滤规则</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#抓包" title="抓包">抓包</a>
+                        
+                          <a class="tag" href="/tags/#wireshark" title="wireshark">wireshark</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://tonystudio.ml" target="_blank">TonyStudio Home</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- disqus embedded js code start (one page only need to embed once) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "your-disqus-ID";
+    var disqus_identifier = "https://blog.tonystudio.ml/2018/09/05/wireshark-tutorial/";
+    var disqus_url = "https://blog.tonystudio.ml/2018/09/05/wireshark-tutorial/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus embedded js code start end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+
+                
+                <li>
+                    <a href="mailto:CoderTonyChan@icloud.com">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                
+                
+
+                
+                <li>
+                    <a target="_blank" href="https://github.com/CoderTonyChan">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                
+
+                
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                
+
+                
+
+                
+
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Tony Chan 2019 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="http://beantech.org">BeanTech</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://blog.tonystudio.ml/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

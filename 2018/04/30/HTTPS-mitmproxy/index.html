@@ -98,7 +98,7 @@
                                 
                             </div>
                             <h1>HTTP/HTTPS 抓包 —— mitmproxy</h1>
-                            <h2 class="subheading">Mitmproxy Tutorial</h2>
+                            <h2 class="subheading">mitmproxy tutorial</h2>
                             <span class="meta">
                                 Posted by Tony Chan on
                                 2018-04-30
@@ -156,14 +156,14 @@
 
                         
                         <li>
-                            <a href="/books/">Books</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/books/">Books</a>
                         </li>
                         
                     
@@ -330,41 +330,143 @@
 mitmproxy还有两个关联组件。一个是mitmdump，它是mitmproxy的命令行接口，利用它我们可以对接Python脚本，用Python实现监听后的处理。另一个是mitmweb，它是一个Web程序，通过它我们可以清楚观察mitmproxy捕获的请求。<br>
 下面我们来了解它们的用法。</p>
 </blockquote>
-<p><img src="https://pic2.zhimg.com/80/v2-6b01852319b8673cabc3bc9e524c4d05_hd.jpg" alt=""></p>
-<h1 id="https通讯过程">https通讯过程</h1>
+<h1 id="一-准备工作">一、准备工作</h1>
 <hr>
-<p>在讲https抓包之前,必须要了解https的整个校验和通信过程,我们就简单的精简的画一下重要的过程,至于什么三个随机数或者通信秘钥的生成就不详细介绍,主要是针对讲一下https的中间人攻击(https抓包的实现基础)过程</p>
-<p align="center">
-<img src="https://upload-images.jianshu.io/upload_images/5505686-68a34f7acfa8ebf3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/825">
-</p>
-<p>在这个过程中,正常的话,如果哪个步骤出现问题,链接都会停止,无法进行通信,这个是https简单的校验的一个过程介绍.</p>
-<p>那么,https在抓包工具中是如何实现抓包的呢?<br>
-抓包工具就是在上面的过程中,证书认证生成通信密钥中做了手脚.<br>
-以青花瓷为例,大家使用青花瓷抓http请求时,由于没有做安全校验,很容易就实现了数据拦截和转发,至于https呢?</p>
-<h1 id="中间人攻击的情形">中间人攻击的情形</h1>
+<p>请确保已经正确安装好了mitmproxy，并且手机和PC处于同一个局域网下，同时配置好了mitmproxy的CA证书。</p>
+<h1 id="二-mitmproxy的功能">二、mitmproxy的功能</h1>
 <hr>
-<p>抓取https包的时候,青花瓷会要求使用者 对抓包的设备(手机或其他设备)<br>
-,安装一个证书,安装这个证书的时候,其实是安装了一个根证书(允许颁发CA的一个证书机构的根证书),当你安装了该根证书之后,该证书机构颁发的其他证书,默认都会被你的系统所信任,这个就是青花瓷完成https抓包的一个重要前提!!</p>
-<p align="center">
-<img src="https://upload-images.jianshu.io/upload_images/5505686-d95be6d0815def28.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/980">
-</p>
-<p>当客户端设置了代理,并且开始发出网络请求的时候,这个网络请求的校验过程就会变成这样</p>
-<p align="center">
-<img src="https://upload-images.jianshu.io/upload_images/5505686-1c2bb870ed73506f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000">
-</p>
+<p>mitmproxy有如下几项功能。</p>
 <ul>
-<li>当客户端Client对服务器Server发送请求(带着随机数和加密算法),由于青花瓷做了代理,请求被青花瓷拦截,处理(青花瓷的角色现在对于Client来说是服务器),青花瓷将客户端带的随机数和加密算法处理,然后返回自己的证书通过客户端校验,获取到客户端提交的请求参数等数据,</li>
-<li>青花瓷作为客户端(自己去产生随机数和携带支持的加密算法)去请求刚刚Client想要请求的Server,然后,Server会和青花瓷完成上面讲的那个完整的校验,并且读取青花瓷带错来的具体请求,返回正常的数据结果.</li>
-<li>青花瓷得到服务器数据的返回结果之后,开始继续和过程1中的Client以服务器的身份,去做处理,首先收到客户端的随机数和加密算法,自己生成一个随机数和选择一个客户端的加密算法,然后<strong><strong><strong><strong><em>重要</em></strong></strong></strong></strong>* 青花瓷会返回一个伪造的CA证书(公钥和真实的server不一样,但是域名是一样的,或者说,除了域名是一致的,其他的都不是一致的,而且这个签发机构是青花瓷之前让你安装的根证书 签发的,所以,当返回这个证书的时候,你的客户端的信任链是可以完成的,会被系统信任),然后Client在这个伪造的证书(对于青花瓷和Client是真实证书(验证信任链和证书信息都通过了),但是和真实的域名对应的证书来看,是伪造证书)的基础上,和青花瓷通信,然后青花瓷再和Server通信,成了一个中间人的角色,这样,整个过程的数据传输,都被青花瓷给监听到了,在此,中间人攻击的过程 就完成了</li>
+<li>
+<p>拦截HTTP和HTTPS请求和响应。</p>
+</li>
+<li>
+<p>保存HTTP会话并进行分析。</p>
+</li>
+<li>
+<p>模拟客户端发起请求，模拟服务端返回响应。</p>
+</li>
+<li>
+<p>利用反向代理将流量转发给指定的服务器。</p>
+</li>
+<li>
+<p>支持Mac和Linux上的透明代理。</p>
+</li>
+<li>
+<p>利用Python对HTTP请求和响应进行实时处理。</p>
+</li>
 </ul>
-<h1 id="如何防止被抓包">如何防止被抓包</h1>
+<h1 id="三-抓包原理">三、抓包原理</h1>
 <hr>
-<p>当进行网络请求的时候,客户端判断当前是否设置了代理,如果设置了代理,不允许进行访问(不知道微信浏览器 里面 是不是这样实现的,微信里面 设置了代理看公众号等信息就都不允许看了,无法访问)<br>
-附带判断是否设置代理的代码:</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="built_in">BOOL</span>)getProxyStatus &#123;</span><br><span class="line">    <span class="built_in">NSDictionary</span> *proxySettings = <span class="built_in">NSMakeCollectable</span>([(<span class="built_in">NSDictionary</span> *)<span class="built_in">CFNetworkCopySystemProxySettings</span>() autorelease]);</span><br><span class="line">    <span class="built_in">NSArray</span> *proxies = <span class="built_in">NSMakeCollectable</span>([(<span class="built_in">NSArray</span> *)<span class="built_in">CFNetworkCopyProxiesForURL</span>((<span class="built_in">CFURLRef</span>)[<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://www.google.com"</span>], (<span class="built_in">CFDictionaryRef</span>)proxySettings) autorelease]);</span><br><span class="line">    <span class="built_in">NSDictionary</span> *settings = [proxies objectAtIndex:<span class="number">0</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"host=%@"</span>, [settings objectForKey:(<span class="built_in">NSString</span> *)kCFProxyHostNameKey]);</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"port=%@"</span>, [settings objectForKey:(<span class="built_in">NSString</span> *)kCFProxyPortNumberKey]);</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"type=%@"</span>, [settings objectForKey:(<span class="built_in">NSString</span> *)kCFProxyTypeKey]);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> ([[settings objectForKey:(<span class="built_in">NSString</span> *)kCFProxyTypeKey] isEqualToString:<span class="string">@"kCFProxyTypeNone"</span>])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//没有设置代理</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//设置代理了</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>客户端本地做证书校验,并且设置不仅仅校验公钥,设置完整的正式校验模式</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">+(AFSecurityPolicy*)customSecurityPolicy</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// /先导入证书</span></span><br><span class="line">    <span class="built_in">NSString</span> *cerPath = [[<span class="built_in">NSBundle</span> mainBundle] pathForResource:<span class="string">@"test"</span> ofType:<span class="string">@"cer"</span>];<span class="comment">//证书的路径</span></span><br><span class="line">    <span class="built_in">NSData</span> *certData = [<span class="built_in">NSData</span> dataWithContentsOfFile:cerPath];</span><br><span class="line">    <span class="comment">// AFSSLPinningModeCertificate 使用证书验证模式 (AFSSLPinningModeCertificate是证书所有字段都一样才通过认证，AFSSLPinningModePublicKey只认证公钥那一段，AFSSLPinningModeCertificate更安全。但是单向认证不能防止“中间人攻击”)</span></span><br><span class="line">    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];</span><br><span class="line">    <span class="comment">// allowInvalidCertificates 是否允许无效证书（也就是自建的证书），默认为NO</span></span><br><span class="line">    <span class="comment">// 如果是需要验证自建证书，需要设置为YES</span></span><br><span class="line">    securityPolicy.allowInvalidCertificates = <span class="literal">YES</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//validatesDomainName 是否需要验证域名，默认为YES；</span></span><br><span class="line">    <span class="comment">//假如证书的域名与你请求的域名不一致，需把该项设置为NO；如设成NO的话，即服务器使用其他可信任机构颁发的证书，也可以建立连接，这个非常危险，建议打开。</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//置为NO，主要用于这种情况：客户端请求的是子域名，而证书上的是另外一个域名。因为SSL证书上的域名是独立的，假如证书上注册的域名是www.google.com，那么mail.google.com是无法验证通过的；当然，有钱可以注册通配符的域名*.google.com，但这个还是比较贵的。</span></span><br><span class="line">    <span class="comment">//如置为NO，建议自己添加对应域名的校验逻辑。</span></span><br><span class="line">    securityPolicy.validatesDomainName = <span class="literal">YES</span>;</span><br><span class="line">    <span class="built_in">NSSet</span>&lt;<span class="built_in">NSData</span>*&gt; * set = [[<span class="built_in">NSSet</span> alloc]initWithObjects:certData  , <span class="literal">nil</span>];</span><br><span class="line">    securityPolicy.pinnedCertificates = set;</span><br><span class="line">    </span><br><span class="line">     </span><br><span class="line">    <span class="keyword">return</span> securityPolicy;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这样的话,证书会校验请求的时候不仅仅校验域名,会将证书中的公钥及其他信息也进行校验,这样的话,中间人伪造的证书就无法通过验证,无法进行抓包</p>
+<p>和Charles一样，mitmproxy运行于自己的PC上，mitmproxy会在PC的8080端口运行，然后开启一个代理服务，这个服务实际上是一个HTTP/HTTPS的代理。</p>
+<p>手机和PC在同一个局域网内，设置代理为mitmproxy的代理地址，这样手机在访问互联网的时候流量数据包就会流经mitmproxy，mitmproxy再去转发这些数据包到真实的服务器，服务器返回数据包时再由mitmproxy转发回手机，这样mitmproxy就相当于起了中间人的作用，抓取到所有Request和Response，另外这个过程还可以对接mitmdump，抓取到的Request和Response的具体内容都可以直接用Python来处理，比如得到Response之后我们可以直接进行解析，然后存入数据库，这样就完成了数据的解析和存储过程。</p>
+<h1 id="四-设置代理">四、设置代理</h1>
+<hr>
+<p>首先，我们需要运行mitmproxy，命令如下所示：</p>
+<p>启动mitmproxy的命令如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mitmproxy</span><br></pre></td></tr></table></figure>
+<p>之后会在8080端口上运行一个代理服务，如下图所示。<br>
+<img src="https://user-images.githubusercontent.com/16996753/53460122-fe638e00-3a76-11e9-8be2-12f9f7a85194.png" alt="image"><br>
+右下角会出现当前正在监听的端口。</p>
+<p>或者启动mitmdump，它也会监听8080端口，命令如下所示：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mitmdump</span><br></pre></td></tr></table></figure>
+<p>运行结果如下图所示。<br>
+<img src="https://user-images.githubusercontent.com/16996753/53460127-015e7e80-3a77-11e9-8897-196e4a7c1367.png" alt="image"></p>
+<p>将手机和PC连接在同一局域网下，设置代理为当前代理。首先看看PC的当前局域网IP。</p>
+<p>Windows上的命令如下所示：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ipconfig</span><br></pre></td></tr></table></figure>
+<p>Linux和Mac上的命令如下所示：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
+<p>输出结果如下图所示。<br>
+<img src="https://user-images.githubusercontent.com/16996753/53460161-1b985c80-3a77-11e9-9546-bf0cfae6bca5.png" alt="image"></p>
+<p>一般类似10.<em>.</em>.<em>或172.16.</em>.*或192.168.1.*这样的IP就是当前PC的局域网IP，例如此图中PC的IP为192.168.1.28，手机代理设置类似如下图所示。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53460171-29e67880-3a77-11e9-9f8c-d5b3eeb48d5c.png" alt="image"></p>
+<p>这样我们就配置好了mitmproxy的的代理。</p>
+<h1 id="五-mitmproxy的使用">五、mitmproxy的使用</h1>
+<hr>
+<p>确保mitmproxy正常运行，并且手机和PC处于同一个局域网内，设置了mitmproxy的代理，具体的配置方法可以参考官方文档。</p>
+<p>运行mitmproxy，命令如下所示：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mitmproxy</span><br></pre></td></tr></table></figure>
+<p>设置成功之后，我们只需要在手机浏览器上访问任意的网页或浏览任意的App即可。例如在手机上打开百度，mitmproxy页面便会呈现出手机上的所有请求，如下图所示。<br>
+<img src="https://user-images.githubusercontent.com/16996753/53460202-4a163780-3a77-11e9-95d8-b9e42106c4dd.png" alt="image"></p>
+<p>这就相当于之前我们在浏览器开发者工具监听到的浏览器请求，在这里我们借助于mitmproxy完成。Charles完全也可以做到。</p>
+<p>这里是刚才手机打开百度页面时的所有请求列表，左下角显示的2/38代表一共发生了38个请求，当前箭头所指的是第二个请求。</p>
+<p>每个请求开头都有一个GET或POST，这是各个请求的请求方式。紧接的是请求的URL。第二行开头的数字就是请求对应的响应状态码，后面是响应内容的类型，如text/html代表网页文档、image/gif代表图片。再往后是响应体的大小和响应的时间。</p>
+<p>当前呈现了所有请求和响应的概览，我们可以通过这个页面观察到所有的请求。</p>
+<p>如果想查看某个请求的详情，我们可以敲击回车，进入请求的详情页面，如下图所示。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53460218-5601f980-3a77-11e9-9414-88feaead5db0.png" alt="image"></p>
+<p>可以看到Headers的详细信息，如Host、Cookies、User-Agent等。</p>
+<p>最上方是一个Request、Response、Detail的列表，当前处在Request这个选项上。这时我们再点击TAB键，即可查看这个请求对应的响应详情，如下图所示。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53460232-60bc8e80-3a77-11e9-8c2f-7c1f2c08b0ed.png" alt="image"></p>
+<p>最上面是响应头的信息，下拉之后我们可以看到响应体的信息。针对当前请求，响应体就是网页的源代码。</p>
+<p>这时再敲击TAB键，切换到最后一个选项卡Detail，即可看到当前请求的详细信息，如服务器的IP和端口、HTTP协议版本、客户端的IP和端口等，如下图所示。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53460264-7762e580-3a77-11e9-82ec-39b06b693bd1.png" alt="image"></p>
+<p>mitmproxy还提供了命令行式的编辑功能，我们可以在此页面中重新编辑请求。敲击e键即可进入编辑功能，这时它会询问你要编辑哪部分内容，如Cookies、Query、URL等，每个选项的第一个字母会高亮显示。敲击要编辑内容名称的首字母即可进入该内容的编辑页面，如敲击m即可编辑请求的方式，敲击q即可修改GET请求参数Query。</p>
+<p>这时我们敲击q，进入到编辑Query的页面。由于没有任何参数，我们可以敲击a来增加一行，然后就可以输入参数对应的Key和Value，如下图所示。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53460278-83e73e00-3a77-11e9-843d-121fa665bb2c.png" alt="image"></p>
+<p>这里我们输入Key为wd，Value为NBA。</p>
+<p>然后再敲击esc键和q键，返回之前的页面，再敲击e和p键修改Path。和上面一样，敲击a增加Path的内容，这时我们将Path修改为s，如下图所示。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53460288-8e093c80-3a77-11e9-9be4-9f70a9519524.png" alt="image"></p>
+<p>再敲击esc和q键返回，这时我们可以看到最上面的请求链接变成了：<a href="https://www.baidu.com/s?wd=NBA%E3%80%82%E8%AE%BF%E9%97%AE%E8%BF%99%E4%B8%AA%E9%A1%B5%E9%9D%A2%EF%BC%8C%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E7%99%BE%E5%BA%A6%E6%90%9C%E7%B4%A2NBA%E5%85%B3%E9%94%AE%E8%AF%8D%E7%9A%84%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C%EF%BC%8C%E5%A6%82%E4%B8%8B%E5%9B%BE%E6%89%80%E7%A4%BA%E3%80%82" target="_blank" rel="noopener">https://www.baidu.com/s?wd=NBA。访问这个页面，可以看到百度搜索NBA关键词的搜索结果，如下图所示。</a></p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53460302-98c3d180-3a77-11e9-91b6-38867840cf12.png" alt="image"></p>
+<p>敲击a保存修改，敲击r重新发起修改后的请求，即可看到上方请求方式前面多了一个回旋箭头，这说明重新执行了修改后的请求。这时我们再观察响应体内容，即可看到搜索NBA的页面结果的源代码，如下图所示。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53460305-a5e0c080-3a77-11e9-8433-e3767ba86e20.png" alt="image"></p>
+<p>以上内容便是mitmproxy的简单用法。利用mitmproxy，我们可以观察到手机上的所有请求，还可以对请求进行修改并重新发起。</p>
+<p>Fiddler、Charles也有这个功能，而且它们的图形界面操作更加方便。那么mitmproxy的优势何在？</p>
+<p>mitmproxy的强大之处体现在它的另一个工具mitmdump，有了它我们可以直接对接Python对请求进行处理。下面我们来看看mitmdump的用法。</p>
+<h1 id="六-mitmdump的使用">六、mitmdump的使用</h1>
+<hr>
+<p>mitmdump是mitmproxy的命令行接口，同时还可以对接Python对请求进行处理，这是相比Fiddler、Charles等工具更加方便的地方。有了它我们可以不用手动截获和分析HTTP请求和响应，只需写好请求和响应的处理逻辑即可。它还可以实现数据的解析、存储等工作，这些过程都可以通过Python实现。</p>
+<h2 id="1-实例引入">1. 实例引入</h2>
+<hr>
+<p>我们可以使用命令启动mitmproxy，并把截获的数据保存到文件中，命令如下所示：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mitmdump -w outfile</span><br></pre></td></tr></table></figure>
+<p>其中outfile的名称任意，截获的数据都会被保存到此文件中。</p>
+<p>还可以指定一个脚本来处理截获的数据，使用-s参数即可：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mitmdump -s script.py</span><br></pre></td></tr></table></figure>
+<p><a href="http://xn--script-vy7ihu55yfpr8vg1omb7ltso830csz5bmn0cwlh.py" target="_blank" rel="noopener">这里指定了当前处理脚本为script.py</a>，它需要放置在当前命令执行的目录下。</p>
+<p>我们可以在脚本里写入如下的代码：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def request(flow):</span><br><span class="line">    flow.request.headers['User-Agent'] = 'MitmProxy'</span><br><span class="line">    print(flow.request.headers)</span><br></pre></td></tr></table></figure>
+<p>我们定义了一个request()方法，参数为flow，它其实是一个HTTPFlow对象，通过request属性即可获取到当前请求对象。然后打印输出了请求的请求头，将请求头的User-Agent修改成了MitmProxy。</p>
+<p>运行之后我们在手机端访问http://httpbin.org/get，可以看到如下情况发生。</p>
+<p>手机端的页面显示如下图所示。<br>
+<img src="https://user-images.githubusercontent.com/16996753/53460361-d163ab00-3a77-11e9-8a36-0fbc600137b7.png" alt="image"></p>
+<p>PC端控制台输出如下图所示。<br>
+<img src="https://user-images.githubusercontent.com/16996753/53460370-daed1300-3a77-11e9-9cbb-3b7c30be4ad7.png" alt="image"></p>
+<p>手机端返回结果的Headers实际上就是请求的Headers，User-Agent被修改成了mitmproxy。PC端控制台输出了修改后的Headers内容，其User-Agent的内容正是mitmproxy。</p>
+<p>所以，通过这三行代码我们就可以完成对请求的改写。print()方法输出结果可以呈现在PC端控制台上，可以方便地进行调试。</p>
+<h2 id="2-日志输出">2. 日志输出</h2>
+<hr>
+<p>mitmdump提供了专门的日志输出功能，可以设定不同级别以不同颜色输出结果。我们把脚本修改成如下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">from mitmproxy import ctx</span><br><span class="line"></span><br><span class="line">def request(flow):</span><br><span class="line">    flow.request.headers[&apos;User-Agent&apos;] = &apos;MitmProxy&apos;</span><br><span class="line">    ctx.log.info(str(flow.request.headers))</span><br><span class="line">    ctx.log.warn(str(flow.request.headers))</span><br><span class="line">    ctx.log.error(str(flow.request.headers))</span><br></pre></td></tr></table></figure>
+<p>这里调用了ctx模块，它有一个log功能，调用不同的输出方法就可以输出不同颜色的结果，以方便我们做调试。例如，info()方法输出的内容是白色的，warn()方法输出的内容是黄色的，error()方法输出的内容是红色的。运行结果如下图所示。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53460406-0243e000-3a78-11e9-9fc2-6582d885369e.png" alt="image"></p>
+<p>不同的颜色对应不同级别的输出，我们可以将不同的结果合理划分级别输出，以更直观方便地查看调试信息。</p>
+<h2 id="3-request">3. Request</h2>
+<hr>
+<p>最开始我们实现了request()方法并且对Headers进行了修改。下面我们来看看Request还有哪些常用的功能。我们先用一个实例来感受一下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">from mitmproxy import ctx</span><br><span class="line"></span><br><span class="line">def request(flow):</span><br><span class="line">    request = flow.request</span><br><span class="line">    info = ctx.log.info</span><br><span class="line">    info(request.url)</span><br><span class="line">    info(str(request.headers))</span><br><span class="line">    info(str(request.cookies))</span><br><span class="line">    info(request.host)</span><br><span class="line">    info(request.method)</span><br><span class="line">    info(str(request.port))</span><br><span class="line">    info(request.scheme)</span><br></pre></td></tr></table></figure>
+<p>我们修改脚本，然后在手机上打开百度，即可看到PC端控制台输出了一系列的请求，在这里我们找到第一个请求。控制台打印输出了Request的一些常见属性，如URL、Headers、Cookies、Host、Method、Scheme等。输出结果如下图所示。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53460441-1851a080-3a78-11e9-9766-7da3fcb579ea.png" alt="image"></p>
+<p>结果中分别输出了请求链接、请求头、请求Cookies、请求Host、请求方法、请求端口、请求协议这些内容。</p>
+<p>同时我们还可以对任意属性进行修改，就像最初修改Headers一样，直接赋值即可。例如，这里将请求的URL修改一下，脚本修改如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def request(flow):</span><br><span class="line">    url = &apos;https://httpbin.org/get&apos;</span><br><span class="line">    flow.request.url = url</span><br></pre></td></tr></table></figure>
+<p>手机端得到如下结果，如下图所示。<br>
+<img src="https://user-images.githubusercontent.com/16996753/53460464-29021680-3a78-11e9-8407-97ff08b4edf9.png" alt="image"></p>
+<p>比较有意思的是，浏览器最上方还是呈现百度的URL，但是页面已经变成了httpbin.org的页面了。另外，Cookies明显还是百度的Cookies。我们只是用简单的脚本就成功把请求修改为其他的站点。通过这种方式修改和伪造请求就变得轻而易举。</p>
+<p>通过这个实例我们知道，有时候URL虽然是正确的，但是内容并非是正确的。我们需要进一步提高自己的安全防范意识。</p>
+<p>Request还有很多属性，在此不再一一列举。更多属性可以参考：<a href="http://docs.mitmproxy.org/en/latest/scripting/api.html%E3%80%82" target="_blank" rel="noopener">http://docs.mitmproxy.org/en/latest/scripting/api.html。</a></p>
+<p>只要我们了解了基本用法，会很容易地获取和修改Reqeust的任意内容，比如可以用修改Cookies、添加代理等方式来规避反爬。</p>
+<h2 id="4-response">4. Response</h2>
+<hr>
+<p>对于爬虫来说，我们更加关心的其实是Response的内容，因为Response Body才是爬取的结果。对于Response来说，mitmdump也提供了对应的处理接口，就是response()方法。下面我们用一个实例感受一下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">from mitmproxy import ctx</span><br><span class="line"></span><br><span class="line">def response(flow):</span><br><span class="line">    response = flow.response</span><br><span class="line">    info = ctx.log.info</span><br><span class="line">    info(str(response.status_code))</span><br><span class="line">    info(str(response.headers))</span><br><span class="line">    info(str(response.cookies))</span><br><span class="line">    info(str(response.text))</span><br></pre></td></tr></table></figure>
+<p>将脚本修改为如上内容，然后手机访问：<a href="http://httpbin.org/get%E3%80%82" target="_blank" rel="noopener">http://httpbin.org/get。</a></p>
+<p>这里打印输出了Response的status_code、headers、cookies、text这几个属性，其中最主要的text属性就是网页的源代码。</p>
+<p>PC端控制台输出如下图所示。<br>
+<img src="https://user-images.githubusercontent.com/16996753/53460481-420ac780-3a78-11e9-9697-51ea32ba6670.png" alt="image"></p>
+<p>控制台输出了Response的状态码、响应头、Cookies、响应体这几部分内容。</p>
+<p>我们可以通过response()方法获取每个请求的响应内容。接下来再进行响应的信息提取和存储，我们就可以成功完成爬取了。</p>
 <hr>
 <p>Reference：</p>
 <blockquote>
@@ -379,12 +481,12 @@ mitmproxy还有两个关联组件。一个是mitmdump，它是mitmproxy的命令
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2018/11/06/FFmpeg/" data-toggle="tooltip" data-placement="top" title="FFmpeg命令">&larr; Previous Post</a>
+                            <a href="/2018/09/05/wireshark-tutorial/" data-toggle="tooltip" data-placement="top" title="wireshark 入门教程">&larr; Previous Post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2017/06/26/nginx-collect/" data-toggle="tooltip" data-placement="top" title="Nginx配置">Next Post &rarr;</a>
+                            <a href="/2018/01/01/2017-summary/" data-toggle="tooltip" data-placement="top" title="2017 年总结">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -414,7 +516,7 @@ mitmproxy还有两个关联组件。一个是mitmdump，它是mitmproxy的命令
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#https通讯过程"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">https通讯过程</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#中间人攻击的情形"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">中间人攻击的情形</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#如何防止被抓包"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">如何防止被抓包</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#一-准备工作"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">一、准备工作</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#二-mitmproxy的功能"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">二、mitmproxy的功能</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#三-抓包原理"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">三、抓包原理</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#四-设置代理"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">四、设置代理</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#五-mitmproxy的使用"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">五、mitmproxy的使用</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#六-mitmdump的使用"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">六、mitmdump的使用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-实例引入"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">1. 实例引入</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-日志输出"><span class="toc-nav-number">6.2.</span> <span class="toc-nav-text">2. 日志输出</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-request"><span class="toc-nav-number">6.3.</span> <span class="toc-nav-text">3. Request</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-response"><span class="toc-nav-number">6.4.</span> <span class="toc-nav-text">4. Response</span></a></li></ol></li></ol>
         
         </div>
       </aside>

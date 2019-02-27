@@ -144,14 +144,14 @@
 
                         
                         <li>
-                            <a href="/books/">Books</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/books/">Books</a>
                         </li>
                         
                     
@@ -307,19 +307,23 @@
             <!-- 标签云 -->
             <div id="tag_cloud" class="tags">
                 
+                    <a href="#Summary" title="Summary" rel="2">Summary</a>
+                
                     <a href="#Shell" title="Shell" rel="3">Shell</a>
                 
-                    <a href="#抓包" title="抓包" rel="2">抓包</a>
+                    <a href="#nginx" title="nginx" rel="1">nginx</a>
+                
+                    <a href="#七牛云" title="七牛云" rel="1">七牛云</a>
+                
+                    <a href="#Git" title="Git" rel="2">Git</a>
+                
+                    <a href="#抓包" title="抓包" rel="3">抓包</a>
                 
                     <a href="#HTTPS" title="HTTPS" rel="2">HTTPS</a>
                 
                     <a href="#mitmproxy" title="mitmproxy" rel="1">mitmproxy</a>
                 
-                    <a href="#Git" title="Git" rel="2">Git</a>
-                
-                    <a href="#七牛云" title="七牛云" rel="1">七牛云</a>
-                
-                    <a href="#nginx" title="nginx" rel="1">nginx</a>
+                    <a href="#wireshark" title="wireshark" rel="1">wireshark</a>
                 
                     <a href="#Charles" title="Charles" rel="1">Charles</a>
                 
@@ -327,6 +331,51 @@
 
             <!-- 标签列表 -->
 
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="Summary">
+                    <span class="tag-text">Summary</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2019/01/01/2018-summary/">
+                        <h2 class="post-title">
+                            2018 年总结
+                        </h2>
+                        
+                            <h3 class="post-subtitle">
+                                2018 summary
+                            </h3>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2018/01/01/2017-summary/">
+                        <h2 class="post-title">
+                            2017 年总结
+                        </h2>
+                        
+                            <h3 class="post-subtitle">
+                                2017 summary
+                            </h3>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
             
             <div class="one-tag-list">
                 <span class="fa fa-tag listing-seperator" id="Shell">
@@ -389,8 +438,8 @@
             </div>
             
             <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="抓包">
-                    <span class="tag-text">抓包</span>
+                <span class="fa fa-tag listing-seperator" id="nginx">
+                    <span class="tag-text">nginx</span>
                 </span>
                 
                   <!-- <li class="listing-item">
@@ -398,32 +447,13 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/2018/04/30/HTTPS-mitmproxy/">
+                     <a href="/2017/06/26/nginx-collect/">
                         <h2 class="post-title">
-                            HTTP/HTTPS 抓包 —— mitmproxy
+                            Nginx配置
                         </h2>
                         
                             <h3 class="post-subtitle">
-                                Mitmproxy Tutorial
-                            </h3>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2016/09/18/HTTPS-Charles/">
-                        <h2 class="post-title">
-                            HTTP/HTTPS 抓包 —— Charles
-                        </h2>
-                        
-                            <h3 class="post-subtitle">
-                                Charles Tutorial
+                                Nginx Configuration
                             </h3>
                         
                     </a>
@@ -434,8 +464,8 @@
             </div>
             
             <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="HTTPS">
-                    <span class="tag-text">HTTPS</span>
+                <span class="fa fa-tag listing-seperator" id="七牛云">
+                    <span class="tag-text">七牛云</span>
                 </span>
                 
                   <!-- <li class="listing-item">
@@ -443,59 +473,10 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/2018/04/30/HTTPS-mitmproxy/">
+                     <a href="/2019/02/26/qiniu/">
                         <h2 class="post-title">
-                            HTTP/HTTPS 抓包 —— mitmproxy
+                            七牛云备份命令
                         </h2>
-                        
-                            <h3 class="post-subtitle">
-                                Mitmproxy Tutorial
-                            </h3>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2016/09/18/HTTPS-Charles/">
-                        <h2 class="post-title">
-                            HTTP/HTTPS 抓包 —— Charles
-                        </h2>
-                        
-                            <h3 class="post-subtitle">
-                                Charles Tutorial
-                            </h3>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="mitmproxy">
-                    <span class="tag-text">mitmproxy</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2018/04/30/HTTPS-mitmproxy/">
-                        <h2 class="post-title">
-                            HTTP/HTTPS 抓包 —— mitmproxy
-                        </h2>
-                        
-                            <h3 class="post-subtitle">
-                                Mitmproxy Tutorial
-                            </h3>
                         
                     </a>
                     <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
@@ -550,8 +531,8 @@
             </div>
             
             <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="七牛云">
-                    <span class="tag-text">七牛云</span>
+                <span class="fa fa-tag listing-seperator" id="抓包">
+                    <span class="tag-text">抓包</span>
                 </span>
                 
                   <!-- <li class="listing-item">
@@ -559,10 +540,52 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/2019/02/26/qiniu/">
+                     <a href="/2018/04/30/HTTPS-mitmproxy/">
                         <h2 class="post-title">
-                            七牛云备份命令
+                            HTTP/HTTPS 抓包 —— mitmproxy
                         </h2>
+                        
+                            <h3 class="post-subtitle">
+                                mitmproxy tutorial
+                            </h3>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2018/09/05/wireshark-tutorial/">
+                        <h2 class="post-title">
+                            wireshark 入门教程
+                        </h2>
+                        
+                            <h3 class="post-subtitle">
+                                Wireshark Tutorial
+                            </h3>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2016/09/18/HTTPS-Charles/">
+                        <h2 class="post-title">
+                            HTTP/HTTPS 抓包 —— Charles
+                        </h2>
+                        
+                            <h3 class="post-subtitle">
+                                Charles Tutorial
+                            </h3>
                         
                     </a>
                     <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
@@ -572,8 +595,8 @@
             </div>
             
             <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="nginx">
-                    <span class="tag-text">nginx</span>
+                <span class="fa fa-tag listing-seperator" id="HTTPS">
+                    <span class="tag-text">HTTPS</span>
                 </span>
                 
                   <!-- <li class="listing-item">
@@ -581,13 +604,84 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/2017/06/26/nginx-collect/">
+                     <a href="/2018/04/30/HTTPS-mitmproxy/">
                         <h2 class="post-title">
-                            Nginx配置
+                            HTTP/HTTPS 抓包 —— mitmproxy
                         </h2>
                         
                             <h3 class="post-subtitle">
-                                Nginx Configuration
+                                mitmproxy tutorial
+                            </h3>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2016/09/18/HTTPS-Charles/">
+                        <h2 class="post-title">
+                            HTTP/HTTPS 抓包 —— Charles
+                        </h2>
+                        
+                            <h3 class="post-subtitle">
+                                Charles Tutorial
+                            </h3>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="mitmproxy">
+                    <span class="tag-text">mitmproxy</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2018/04/30/HTTPS-mitmproxy/">
+                        <h2 class="post-title">
+                            HTTP/HTTPS 抓包 —— mitmproxy
+                        </h2>
+                        
+                            <h3 class="post-subtitle">
+                                mitmproxy tutorial
+                            </h3>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="wireshark">
+                    <span class="tag-text">wireshark</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2018/09/05/wireshark-tutorial/">
+                        <h2 class="post-title">
+                            wireshark 入门教程
+                        </h2>
+                        
+                            <h3 class="post-subtitle">
+                                Wireshark Tutorial
                             </h3>
                         
                     </a>
