@@ -15,11 +15,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          Git操作指南 - Tony写字的地方 | 知道自己要做什么
+          Filza Summary - Tony写字的地方 | 知道自己要做什么
         
     </title>
 
-    <link rel="canonical" href="https://blog.tonystudio.ml/2016/02/18/git-collect/">
+    <link rel="canonical" href="https://blog.tonystudio.ml/2018/08/08/ios-Filza/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -70,7 +70,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('http://pn9jzw2t9.bkt.clouddn.com/2019/git.2.png');
+            background-image: url('http://pn9jzw2t9.bkt.clouddn.com/2019/bg-japan.JPG');
             -webkit-mask: -webkit-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,1),rgba(0,0,0,1),rgba(0,0,0,0.5));
             /*post*/
         
@@ -90,14 +90,14 @@
                         <div class="post-heading" style="color: ">
                             <div class="tags">
                                 
-                                <a class="tag" href="/tags/#Git" title="Git">Git</a>
+                                <a class="tag" href="/tags/#越狱" title="越狱">越狱</a>
                                 
                             </div>
-                            <h1>Git操作指南</h1>
-                            <h2 class="subheading">Git Instructions</h2>
+                            <h1>Filza Summary</h1>
+                            <h2 class="subheading">Filza Summary</h2>
                             <span class="meta">
                                 Posted by Tony Chan on
-                                2016-02-18
+                                2018-08-08
                             </span>
                         </div>
                         
@@ -322,32 +322,143 @@
                 post-container">
 
                 <blockquote>
-<p>Git 是程序员必备技能，在能熟练使用 Git GUI 客户端之后（如 SoureTree、Github Desktop，或者是 VSCode 的 git 面板或 GitLens 插件），也许你希望能了解到更多关于 Git 的知识点，并用于解决实际项目遇到的问题。</p>
+<p>Filza File Manager 是iOS 系统的一款多功能文件管理器，需要越狱后安装，功能强大，使用简单，可以查看所有文件，是一款真正意义上的iOS 文件管理器，兼容iOS 7~iOS 11 系统，适用于iPhone、iPad、iPod Touch。</p>
 </blockquote>
-<p><img src="http://pn9jzw2t9.bkt.clouddn.com/2019/git.1.jpg" alt=""></p>
-<h1 id="git删除所有历史提交记录">git删除所有历史提交记录</h1>
 <hr>
-<p>把旧项目提交到Git上，但是会有一些历史记录，这些历史记录中可能会有项目密码等敏感信息。如何删除这些历史记录，形成一个全新的仓库，并且保持代码不变呢？</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">1. Checkout</span><br><span class="line"></span><br><span class="line">   git checkout --orphan latest_branch</span><br><span class="line"></span><br><span class="line">2. Add all the files</span><br><span class="line"></span><br><span class="line">   git add -A</span><br><span class="line"></span><br><span class="line">3. Commit the changes</span><br><span class="line"></span><br><span class="line">   git commit -am "commit message"</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">4. Delete the branch</span><br><span class="line"></span><br><span class="line">   git branch -D master</span><br><span class="line"></span><br><span class="line">5.Rename the current branch to master</span><br><span class="line"></span><br><span class="line">   git branch -m master</span><br><span class="line"></span><br><span class="line">6.Finally, force update your repository</span><br><span class="line"></span><br><span class="line">   git push -f origin master</span><br></pre></td></tr></table></figure>
-<h1 id="git多个远程仓库">git多个远程仓库</h1>
-<hr>
-<blockquote>
-<p>用GitHub管理自己的开源项目有几年了,有时候需要同步GitHub和公司的Gitlab</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = true</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        url = https://github.com/CoderTonyChan/laoshihao-login-web</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[branch &quot;master&quot;]</span><br><span class="line">        remote = origin</span><br><span class="line">        merge = refs/heads/master</span><br></pre></td></tr></table></figure>
-<h2 id="用git命令行添加多个远程仓库">用git命令行添加多个远程仓库</h2>
-<p>添加一个名为“mirror”的远程仓库：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add mirror https://gitee.com/CoderTonyChan/laoshihao-login-web.git</span><br></pre></td></tr></table></figure>
-<p>执行完这条命令后.git/config文件内容变成了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = true</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        url = https://github.com/CoderTonyChan/laoshihao-login-web</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[branch &quot;master&quot;]</span><br><span class="line">        remote = origin</span><br><span class="line">        merge = refs/heads/master</span><br><span class="line">[remote &quot;mirror&quot;]</span><br><span class="line">        url = https://gitee.com/CoderTonyChan/laoshihao-login-web.git</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/mirror/*</span><br></pre></td></tr></table></figure>
-<p>此时已经是一个本地仓库，两个远程仓库。使用下面的命令可以分别从两个远程仓库拉取和推送到两个远程仓库。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master </span><br><span class="line">git pull mirror master</span><br><span class="line">git push origin master </span><br><span class="line">git push mirror master</span><br></pre></td></tr></table></figure>
-<h2 id="一条命令同时更新多个远程仓库">一条命令同时更新多个远程仓库</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote set-url --add origin https://gitee.com/CoderTonyChan/laoshihao-login-web.git</span><br></pre></td></tr></table></figure>
-<p>执行这条命令后.git/config内容变成：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = true</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        url = https://github.com/CoderTonyChan/laoshihao-login-web.git</span><br><span class="line">        url = https://gitee.com/CoderTonyChan/laoshihao-login-web.git</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[branch &quot;master&quot;]</span><br><span class="line">        remote = origin</span><br><span class="line">        merge = refs/heads/master</span><br></pre></td></tr></table></figure>
-<p>这时候我们一条命令即可更新两个远程仓库：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<h1 id="filza-file-manager简介">Filza File Manager简介</h1>
+<p>Filza File Manager 主要特点：</p>
+<ul>
+<li>
+<p>系统文件管理，读取和修改</p>
+</li>
+<li>
+<p>支持多格式文件查看</p>
+</li>
+<li>
+<p>方便的查看应用目录</p>
+</li>
+<li>
+<p>收藏路径，随时直达</p>
+</li>
+<li>
+<p>文件压缩和解压</p>
+</li>
+<li>
+<p>安装/查看ipa 程序</p>
+</li>
+<li>
+<p>安装/查看deb 插件</p>
+</li>
+<li>
+<p>文件导出和WiFi 传输</p>
+</li>
+</ul>
+<h1 id="插件安装">插件安装</h1>
+<p>Filza 免费即可下载，大家可以到官方源下载最新版本体验，目前已经适配iOS 11 系统。如果你是64位系统，请下载Filza File Manager 64-bit 版本。</p>
+<p>名称：Filza File Manager</p>
+<p>作者：TIGI Software</p>
+<p>大小：21012kB</p>
+<p>版本：3.5.2-4</p>
+<p>价格：完整版$5.99</p>
+<p>语言：英语</p>
+<p>兼容：iOS 7~iOS 11</p>
+<p>官方源：<a href="http://tigisoftware.com/cydia/" target="_blank" rel="noopener">http://tigisoftware.com/cydia/</a></p>
+<p>首次安装Filza File Manager ，需要安装多个依赖。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53608689-c25b3500-3bfe-11e9-9821-42a01e2d0768.png" alt="image"></p>
+<h1 id="功能介绍">功能介绍</h1>
+<p>Filza 功能非常丰富，下面小编给大家简单介绍一下。</p>
+<h2 id="文件查看和管理">文件查看和管理</h2>
+<p>Filza 主打文件管理功能，可以读取手机内的所有文件，包含系统目录，Filza 支持多种格式的文件查看。<br>
+<img src="https://user-images.githubusercontent.com/16996753/53608715-d69f3200-3bfe-11e9-9c3d-882474c2959e.png" alt="image"></p>
+<p>你可以预览、查看、移动、修改、删除或者分享文件，给你电脑般的体验。解压和压缩文件也变得非常简单。<br>
+<img src="https://user-images.githubusercontent.com/16996753/53608718-d99a2280-3bfe-11e9-8c08-dcea4b5bb5d7.png" alt="image"></p>
+<p>移动文件，非常方便。编辑状态选择文件后，点击移动，会弹出提示。<br>
+<img src="https://user-images.githubusercontent.com/16996753/53608724-ddc64000-3bfe-11e9-9b88-24781c4bd422.png" alt="image"></p>
+<p>只需在你想移动到的文件夹点击一下粘贴按钮，文件就移动完成了。<br>
+<img src="https://user-images.githubusercontent.com/16996753/53608728-e0289a00-3bfe-11e9-8983-a04478c7ba15.png" alt="image"></p>
+<p>通过一些文件的修改或者替换，你可以实现很多内容，例如替换字体，替换提示铃声等等。</p>
+<p>如下图所示为导入的铃声，可以预览或者删除。路径：</p>
+<p>/private/var/mobile/Media/iTunes_Control/Ringtones<br>
+<img src="https://user-images.githubusercontent.com/16996753/53608734-e4ed4e00-3bfe-11e9-8767-a0ec844c056e.png" alt="image"></p>
+<p>搜索功能，可以帮你快速找到想要的文件，并定位到路径。点击搜索结果右上角的箭头，可以快速打开文件所在的位置。可以在根目录或者当前文件夹搜索。<br>
+<img src="https://user-images.githubusercontent.com/16996753/53608740-e880d500-3bfe-11e9-90de-fbeb1a0dab7c.png" alt="image"></p>
+<p>显示路径，当你打开一个文件夹，点击一下标题栏。<br>
+<img src="https://user-images.githubusercontent.com/16996753/53608746-eb7bc580-3bfe-11e9-84d5-7dbc4260197f.png" alt="image"></p>
+<p>就会当前文件夹显示路径，可以复制。</p>
+<p>标签管理，点击底部的标签按钮，可以打开多页面，就像Safari 浏览器一样的多页面方式的管理，方便文件整理。<br>
+<img src="https://user-images.githubusercontent.com/16996753/53608753-efa7e300-3bfe-11e9-9983-93155b5cf210.png" alt="image"></p>
+<p>在多页面切换界面，底部按钮可以快速直达App 管理器，和音乐库管理器。</p>
+<h1 id="善用收藏夹">善用收藏夹</h1>
+<p>打开收藏夹，你可以快速到达特定的路径。点击右上角“+”号，你可以将当前的路径，添加到收藏夹，方便快速打开。</p>
+<p>Filza 内置了一些收藏夹内容，例如App 管理器。<br>
+<img src="https://user-images.githubusercontent.com/16996753/53608761-f8001e00-3bfe-11e9-8c94-ef257e8dad1c.png" alt="image"></p>
+<p>App 管理器可以快速打开App 主目录，你可以打开每个App 的文件，查看详细内容，非常方便。<br>
+<img src="https://user-images.githubusercontent.com/16996753/53608763-f9c9e180-3bfe-11e9-9a26-ff64c76e3296.png" alt="image"></p>
+<p>Filza 内置回收站功能，你删除的文件可以在回收站内查看，以免误删文件。</p>
+<h1 id="安装ipa-程序">安装IPA 程序</h1>
+<p>Filza 内置ipa 安装和查看功能，使用Filza ，可以很方便的安装ipa 文件。</p>
+<p>例如我们QQ中的ipa 文件，选择使用其他应用打开，拷贝到Filza。<br>
+<img src="https://user-images.githubusercontent.com/16996753/53608766-ffbfc280-3bfe-11e9-99ed-b14dbd5e8305.png" alt="image"></p>
+<p>在Filza 中打开ipa 文件，点击右上角的安装，即可快速安装。稍等片刻，返回桌面就会看到应用已经安装了。<br>
+<img src="https://user-images.githubusercontent.com/16996753/53608768-03ebe000-3bff-11e9-9be1-eac0cc26c2d7.png" alt="image"></p>
+<p>你也可以解压ipa 安装包，查看详细内容。例如查看info.plist 文件。<br>
+<img src="https://user-images.githubusercontent.com/16996753/53608776-0817fd80-3bff-11e9-8ea0-09b3d2a3364e.png" alt="image"></p>
+<p>在info.plist 文件可以轻松的找到应用的URL Schemes。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53608779-0bab8480-3bff-11e9-924f-7dce642915cb.png" alt="image"></p>
+<h1 id="安装deb-文件">安装DEB 文件</h1>
+<p>Filza 也支持deb 格式文件查看和安装，我们可以很方便的安装deb 插件。</p>
+<p>例如一些没有上传到源的deb 包，例如在Cyida 无法打开的特殊情况，我们使用Filza 来安装修补插件，可以解决很多问题。</p>
+<p>首先需要将deb 包拷贝到Filza ，然后点击打开，点击右上角的安装。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53608788-12d29280-3bff-11e9-8297-4b68e1c47699.png" alt="image"></p>
+<p>你会看到安装进度和显示。安装完毕，如果插件是需要注销才能生效的类型，请点击右上角的注销，注销设备。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53608792-16661980-3bff-11e9-8745-dae8df20bfdb.png" alt="image"></p>
+<p>打开Cydia ，在已安装→最近里面，可以看到刚刚安装的插件。值得注意的是，插件需要在Cydia 中才能卸载。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53608795-1a923700-3bff-11e9-834b-7331e31f3860.png" alt="image"></p>
+<h1 id="文件导出和wifi-传输">文件导出和WiFi 传输</h1>
+<p>Filza 拥有方便的文件导出功能，你可以将文件以邮件发送，或者使用其他App打开进行导出。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53608799-1e25be00-3bff-11e9-96a6-665c9339f1d1.png" alt="image"></p>
+<p>Filza 支持Web 服务，进入设置，启动WebDAV 服务。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53608803-2120ae80-3bff-11e9-9cb9-e45c2632a19b.png" alt="image"></p>
+<p>在同一网络的情况下，在电脑浏览器上输入地址，可以打开文件进行共享，实现在电脑上查看手机所有文件。<br>
+<img src="https://user-images.githubusercontent.com/16996753/53608807-241b9f00-3bff-11e9-9c5f-1a4341cb7095.png" alt="image"></p>
+<p>你可以直接下载 /重命名 / 删除文件。在没有数据线的情况下，导出文件也变得非常简单。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53608810-28e05300-3bff-11e9-91e7-f852ccde9a10.png" alt="image"></p>
+<h1 id="丰富的设置">丰富的设置</h1>
+<p>Filza 的设置非常丰富，你可以根据自身情况进行自定义。<br>
+<img src="https://user-images.githubusercontent.com/16996753/53608815-2e3d9d80-3bff-11e9-96fe-c32c092fd980.png" alt="image"></p>
+<p>例如文件显示，文件关联，或者文件查看器。<br>
+<img src="https://user-images.githubusercontent.com/16996753/53608817-30076100-3bff-11e9-9a62-3eea81f34b99.png" alt="image"></p>
+<p>你也可以对文件夹进行进行属性修改。在编辑状态选中文件夹，更多→属性，就可以修改了。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53608823-33025180-3bff-11e9-876c-d0ae55a13be8.png" alt="image"></p>
+<h1 id="使用小结">使用小结</h1>
+<p>iOS 系统没有文件管理器，也无法查看系统文件。越狱后，我们安装Filza File Manager，可以实现电脑版的文件管理功能。</p>
+<p>Filza 可以说是非常强大：</p>
+<ul>
+<li>
+<p>方便的文件管理系统</p>
+</li>
+<li>
+<p>多格式文件查看或编辑</p>
+</li>
+<li>
+<p>内置ipa /deb 安装器，可以轻松查看和安装ipa /deb 文件</p>
+</li>
+<li>
+<p>便捷的文件移动/复制方式</p>
+</li>
+<li>
+<p>支持搜索功能，快速找到想要的文件</p>
+</li>
+<li>
+<p>App管理器，快速找到App 文件目录</p>
+</li>
+<li>
+<p>支持Web 服务，方便的文件导入和导出</p>
+</li>
+</ul>
+<p>有了Filza ，可以突破系统限制，轻松的完成很多事情。当然，对于系统文件，如果你不是那么熟悉，建议不要轻易删除或者修改，以免出错。</p>
+<p>篇幅有限，文章仅仅介绍了Filza 的部分功能，更多使用技巧欢迎留言分享。</p>
+<p>越狱后，有些插件是必须安装的，Filza 就是必备工具之一。</p>
 <hr>
 <p>Reference：</p>
 <blockquote>
@@ -362,12 +473,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2016/09/18/HTTPS-Charles/" data-toggle="tooltip" data-placement="top" title="HTTP/HTTPS 抓包 ---- Charles">&larr; Previous Post</a>
+                            <a href="/2018/09/05/wireshark-tutorial/" data-toggle="tooltip" data-placement="top" title="wireshark 入门教程">&larr; Previous Post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2015/02/16/soft-collect/" data-toggle="tooltip" data-placement="top" title="常用软件合集 @ Mac/iOS/Android/Win">Next Post &rarr;</a>
+                            <a href="/2018/08/06/ios-flex/" data-toggle="tooltip" data-placement="top" title="Flex Summary">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -397,7 +508,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#git删除所有历史提交记录"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">git删除所有历史提交记录</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#git多个远程仓库"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">git多个远程仓库</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#用git命令行添加多个远程仓库"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">用git命令行添加多个远程仓库</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#一条命令同时更新多个远程仓库"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">一条命令同时更新多个远程仓库</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#filza-file-manager简介"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Filza File Manager简介</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#插件安装"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">插件安装</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#功能介绍"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">功能介绍</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#文件查看和管理"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">文件查看和管理</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#善用收藏夹"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">善用收藏夹</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#安装ipa-程序"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">安装IPA 程序</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#安装deb-文件"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">安装DEB 文件</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#文件导出和wifi-传输"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">文件导出和WiFi 传输</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#丰富的设置"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">丰富的设置</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#使用小结"><span class="toc-nav-number">9.</span> <span class="toc-nav-text">使用小结</span></a></li></ol>
         
         </div>
       </aside>
@@ -417,7 +528,7 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#Git" title="Git">Git</a>
+                          <a class="tag" href="/tags/#越狱" title="越狱">越狱</a>
                         
                     </div>
                 </section>
@@ -446,8 +557,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "your-disqus-ID";
-    var disqus_identifier = "https://blog.tonystudio.ml/2016/02/18/git-collect/";
-    var disqus_url = "https://blog.tonystudio.ml/2016/02/18/git-collect/";
+    var disqus_identifier = "https://blog.tonystudio.ml/2018/08/08/ios-Filza/";
+    var disqus_url = "https://blog.tonystudio.ml/2018/08/08/ios-Filza/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

@@ -15,11 +15,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          Git操作指南 - Tony写字的地方 | 知道自己要做什么
+          Flex Summary - Tony写字的地方 | 知道自己要做什么
         
     </title>
 
-    <link rel="canonical" href="https://blog.tonystudio.ml/2016/02/18/git-collect/">
+    <link rel="canonical" href="https://blog.tonystudio.ml/2018/08/06/ios-flex/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -70,7 +70,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('http://pn9jzw2t9.bkt.clouddn.com/2019/git.2.png');
+            background-image: url('http://pn9jzw2t9.bkt.clouddn.com/2019/bg-japan.JPG');
             -webkit-mask: -webkit-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,1),rgba(0,0,0,1),rgba(0,0,0,0.5));
             /*post*/
         
@@ -90,14 +90,14 @@
                         <div class="post-heading" style="color: ">
                             <div class="tags">
                                 
-                                <a class="tag" href="/tags/#Git" title="Git">Git</a>
+                                <a class="tag" href="/tags/#越狱" title="越狱">越狱</a>
                                 
                             </div>
-                            <h1>Git操作指南</h1>
-                            <h2 class="subheading">Git Instructions</h2>
+                            <h1>Flex Summary</h1>
+                            <h2 class="subheading">Flex Summary</h2>
                             <span class="meta">
                                 Posted by Tony Chan on
-                                2016-02-18
+                                2018-08-06
                             </span>
                         </div>
                         
@@ -322,32 +322,102 @@
                 post-container">
 
                 <blockquote>
-<p>Git 是程序员必备技能，在能熟练使用 Git GUI 客户端之后（如 SoureTree、Github Desktop，或者是 VSCode 的 git 面板或 GitLens 插件），也许你希望能了解到更多关于 Git 的知识点，并用于解决实际项目遇到的问题。</p>
+<p>Flex 3 是iOS 系统的一款修改工具，需要越狱后安装。Flex 3 功能强大，使用简单，可以让用户修改iOS 系统功能，实现系统功能自定义；修改App 应用程序，或者去除广告，或者增强App 体验等，兼容iOS 11 系统。</p>
 </blockquote>
-<p><img src="http://pn9jzw2t9.bkt.clouddn.com/2019/git.1.jpg" alt=""></p>
-<h1 id="git删除所有历史提交记录">git删除所有历史提交记录</h1>
 <hr>
-<p>把旧项目提交到Git上，但是会有一些历史记录，这些历史记录中可能会有项目密码等敏感信息。如何删除这些历史记录，形成一个全新的仓库，并且保持代码不变呢？</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">1. Checkout</span><br><span class="line"></span><br><span class="line">   git checkout --orphan latest_branch</span><br><span class="line"></span><br><span class="line">2. Add all the files</span><br><span class="line"></span><br><span class="line">   git add -A</span><br><span class="line"></span><br><span class="line">3. Commit the changes</span><br><span class="line"></span><br><span class="line">   git commit -am "commit message"</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">4. Delete the branch</span><br><span class="line"></span><br><span class="line">   git branch -D master</span><br><span class="line"></span><br><span class="line">5.Rename the current branch to master</span><br><span class="line"></span><br><span class="line">   git branch -m master</span><br><span class="line"></span><br><span class="line">6.Finally, force update your repository</span><br><span class="line"></span><br><span class="line">   git push -f origin master</span><br></pre></td></tr></table></figure>
-<h1 id="git多个远程仓库">git多个远程仓库</h1>
+<h1 id="flex-3介绍">Flex 3介绍</h1>
+<p>Flex 3 主要特点：</p>
+<ul>
+<li>修改系统功能</li>
+<li>修改应用程序</li>
+<li>云端补丁库，免费下载使用</li>
+</ul>
+<h1 id="功能介绍">功能介绍</h1>
 <hr>
-<blockquote>
-<p>用GitHub管理自己的开源项目有几年了,有时候需要同步GitHub和公司的Gitlab</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = true</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        url = https://github.com/CoderTonyChan/laoshihao-login-web</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[branch &quot;master&quot;]</span><br><span class="line">        remote = origin</span><br><span class="line">        merge = refs/heads/master</span><br></pre></td></tr></table></figure>
-<h2 id="用git命令行添加多个远程仓库">用git命令行添加多个远程仓库</h2>
-<p>添加一个名为“mirror”的远程仓库：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add mirror https://gitee.com/CoderTonyChan/laoshihao-login-web.git</span><br></pre></td></tr></table></figure>
-<p>执行完这条命令后.git/config文件内容变成了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = true</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        url = https://github.com/CoderTonyChan/laoshihao-login-web</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[branch &quot;master&quot;]</span><br><span class="line">        remote = origin</span><br><span class="line">        merge = refs/heads/master</span><br><span class="line">[remote &quot;mirror&quot;]</span><br><span class="line">        url = https://gitee.com/CoderTonyChan/laoshihao-login-web.git</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/mirror/*</span><br></pre></td></tr></table></figure>
-<p>此时已经是一个本地仓库，两个远程仓库。使用下面的命令可以分别从两个远程仓库拉取和推送到两个远程仓库。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master </span><br><span class="line">git pull mirror master</span><br><span class="line">git push origin master </span><br><span class="line">git push mirror master</span><br></pre></td></tr></table></figure>
-<h2 id="一条命令同时更新多个远程仓库">一条命令同时更新多个远程仓库</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote set-url --add origin https://gitee.com/CoderTonyChan/laoshihao-login-web.git</span><br></pre></td></tr></table></figure>
-<p>执行这条命令后.git/config内容变成：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = true</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        url = https://github.com/CoderTonyChan/laoshihao-login-web.git</span><br><span class="line">        url = https://gitee.com/CoderTonyChan/laoshihao-login-web.git</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[branch &quot;master&quot;]</span><br><span class="line">        remote = origin</span><br><span class="line">        merge = refs/heads/master</span><br></pre></td></tr></table></figure>
-<p>这时候我们一条命令即可更新两个远程仓库：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<h2 id="脚本使用">脚本使用</h2>
+<hr>
+<p>Flex 3 通过添加补丁来工作。打开Flex 3 ，有三个分类：</p>
+<p>我的补丁：存放所有已添加补丁</p>
+<p>云端补丁：云端补丁库</p>
+<p>仪表盘：插件信息，个人账户等<br>
+<img src="https://user-images.githubusercontent.com/16996753/53608155-a787c100-3bfc-11e9-9ac0-885b90207d25.png" alt="image"></p>
+<p>首页是我的补丁列表，这里存放的是你已经下载的所有补丁。可以自行选择开启或者关闭补丁，以颜色深浅区分。顶部点击编辑，可以对补丁进行排序。点击“+”号可以新建补丁。App 补丁会显示相应App 图标，需要该应用已经安装。系统补丁则显示默认手机图标。向左滑动，可以点击删除补丁。</p>
+<p>点击底部云按钮，进入云端补丁，有四个分类：</p>
+<p>Installed：本机已经安装的应用程序，点击即可查看相关补丁</p>
+<p>Recent：最近上传到云端的补丁</p>
+<p>Trending：流行的补丁</p>
+<p>Popular：热门补丁</p>
+<p>Search：搜索补丁</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53608163-b2425600-3bfc-11e9-8cf0-c6990f3400b7.png" alt="image"></p>
+<p>例如墨迹天气，点击即可查看App相关补丁，你可以查看补丁详细信息，也可以立即获取。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53608168-b66e7380-3bfc-11e9-9ca6-6d4fbe06f32d.png" alt="image"></p>
+<p>补丁详细介绍页面标注了补丁的作者，描述（Description）补丁的用处，补丁适配App的版本，以及更新日期，补丁使用者的评论（comments），以及版本信息。如果补丁适合，点击GET即可下载。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53608179-bcfceb00-3bfc-11e9-93fc-c5fe9684a4a9.png" alt="image"></p>
+<p>你下载的补丁会出现在“我的补丁”里面，打开开关，补丁就生效了。可以实现补丁介绍的效果，如图所示的墨迹天气优化补丁，当你打开应用你会发现顿时清爽了。你也可以查看或者编辑补丁。</p>
+<p>App补丁无需注销，立即生效<br>
+<img src="https://user-images.githubusercontent.com/16996753/53608186-c25a3580-3bfc-11e9-906c-d9e82a397a65.png" alt="image"></p>
+<p>系统相关的补丁，当你打开或者关闭的时候，需要注销才能生效。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53608189-c5552600-3bfc-11e9-808d-66d691441cd8.png" alt="image"></p>
+<p>系统补丁开启/关闭需要注销生效</p>
+<p>你可以在云端寻找适合自己的补丁，搜索能快速寻找你需要的补丁。国内anton_j 、5iFlex、iBreak 等作者制作的补丁相当出色，介绍也非常详细。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53608194-c9814380-3bfc-11e9-94cb-bc7c8328caf8.png" alt="image"></p>
+<p>在云端补丁的Installed分类，你可以找到SpringBoard（桌面）和System Wide （全系统）相关的补丁。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53608197-cc7c3400-3bfc-11e9-846d-ea5cbb1bc8f5.png" alt="image"></p>
+<p>这里的补丁可以修改系统功能，如下图所示。值得注意的是，使用系统相关补丁前，请仔细查看补丁说明以及兼容性，看一下评论。一些不兼容的补丁，可能会引起问题。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53608201-cf772480-3bfc-11e9-9df1-d7f034dbae02.png" alt="image"></p>
+<p>通过云端补丁库，即使你不会制作补丁，下载安装大神们已经制作好的补丁，也能享受Flex 3 的功能。</p>
+<p>值得注意的是：</p>
+<p>下载补丁前请自行阅读说明</p>
+<p>App 补丁请仔细检查已安装版本是否匹配补丁要求，版本不一致会造成补丁无效</p>
+<p>系统补丁请仔细核对是否兼容当前手机系统，以免出现问题</p>
+<p>在仪表盘界面，你可查看Flex 3 的更新日志，登录账号，购买升级等等。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53608225-d736c900-3bfc-11e9-83d9-5a8d53734c87.png" alt="image"></p>
+<p>已经下载的Flex 3补丁，会以patches.plist 合集的方式存在，你可以将补丁合集plist 文件导出备份，以免补丁丢失。</p>
+<p>Flex 3 补丁路径</p>
+<p>/var/mobile/Library/Application Support/Flex3</p>
+<h1 id="配合app-admin-使用">配合App Admin 使用</h1>
+<p>有了Flex 3，可以实现一些App 去除广告、获得额外功能。</p>
+<p>但是有时候，已安装的App 版本和补丁要求不一致，我们可以使用App 降级插件，在App Store 降级应用，使用旧版，这样就能适合补丁使用。</p>
+<p>名称：App Admin</p>
+<p>作者：UnlimApps inc</p>
+<p>大小：822kB</p>
+<p>版本：目前1.0r-101</p>
+<p>价格：免费</p>
+<p>语言：英语</p>
+<p>兼容：iOS 11</p>
+<p>插件源：<a href="http://btea.unlimapps.com/" target="_blank" rel="noopener">http://btea.unlimapps.com/</a></p>
+<p>App Admin 目前在测试中，兼容iOS 11 系统，主要作用：</p>
+<p>App Store 安装任意版本软件</p>
+<p>查看软件旧版本ID 号</p>
+<p>App Admin 使用非常简单，安装后，打开App Store 即可使用。例如你已经下载过的软件，会显示云朵符号，点击云朵，弹出菜单。其中：</p>
+<p>Continue：直接下载最新版本</p>
+<p>Downgrade：降级软件版本<br>
+<img src="https://user-images.githubusercontent.com/16996753/53608233-def66d80-3bfc-11e9-9c94-55a9ba3fed2f.png" alt="image"></p>
+<p>我们选择Downgrade，就会弹出该软件的版本号列表，这里有尚在提供的所有旧版。</p>
+<p>选择你需要安装的任意版本，点击即可下载。等待片刻，旧版软件就安装到手机了，非常简单轻松。<br>
+<img src="https://user-images.githubusercontent.com/16996753/53608237-e1f15e00-3bfc-11e9-9ad3-664e8ff0e1a5.png" alt="image"></p>
+<p>App Admin 支持屏蔽应用更新，长按更新按钮弹出菜单，选择“Block All Updates”，应用将不会出现在更新列表。在更新列表，点击左上角的齿轮标志，进入App Admin 设置界面。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53608263-f897b500-3bfc-11e9-90bc-cd205df73193.png" alt="image"></p>
+<p>App Admin 设置界面可以管理屏蔽更新的应用，或者一些开关的控制。已经屏蔽更新的应用，可以在管理列表内删除。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53608268-fcc3d280-3bfc-11e9-8b81-31781daa1d9d.png" alt="image"></p>
+<h1 id="一些补丁示例">一些补丁示例</h1>
+<p>说了这么多，Flex 3 有什么强大之处呢？为什么要安装Flex 3 呢？下面介绍一些实用的补丁，或许是你安装Flex 3 的吸引力。</p>
+<h2 id="去广告补丁">去广告补丁</h2>
+<p>Flex 3 通过修改App实现去除App 广告，例如一些广告比较凶猛的观影工具，使用Flex 3 可以轻松解决，给你一个清爽的体验。<br>
+<img src="https://user-images.githubusercontent.com/16996753/53608292-19f8a100-3bfd-11e9-91c7-b25e3e8bd43a.png" alt="image"></p>
+<p>使用小结</p>
+<p>Flex 3 是一款功能强大的iOS 修改器，通过自行修改变量、参数及函数等等，可以实现很多功能，例如去除广告，增强App体验，带来更多功能等。如果你会编写补丁，可以自行修改。即使你不会编写，你也可以从云端下载补丁，享受Flex 3 带来的乐趣。</p>
+<p>有时候，无需安装插件，一个小小的补丁就可以搞定，方便简单。</p>
+<p>注意事项：</p>
+<p>下载补丁前请仔细阅读说明，观看使用评论</p>
+<p>一些历史悠久的补丁一般都会失效</p>
+<p>Installed 列表并不保证显示所有已经安装的应用，部分应用会无显示</p>
+<p>使用App 补丁前请仔细检查已安装版本是否匹配补丁要求，版本不一致会造成补丁无效</p>
+<p>系统补丁请仔细核对是否兼容当前手机系统，以免出现问题</p>
+<p>在云端补丁库，部分应用或许没有任何补丁</p>
+<p>云端补丁可能会因为部分原因下架，例如一些破解补丁，如果遇到好的补丁，请及时下载</p>
+<p>篇幅有限，文章仅仅简单的介绍了Flex 3的部分功能，希望对新手朋友有帮助吧，更多使用技巧欢迎留言分享。</p>
+<p>越狱后，有些插件是必须安装的，Flex 3  会是您的必备工具之一吗？</p>
 <hr>
 <p>Reference：</p>
 <blockquote>
@@ -362,12 +432,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2016/09/18/HTTPS-Charles/" data-toggle="tooltip" data-placement="top" title="HTTP/HTTPS 抓包 ---- Charles">&larr; Previous Post</a>
+                            <a href="/2018/08/08/ios-Filza/" data-toggle="tooltip" data-placement="top" title="Filza Summary">&larr; Previous Post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2015/02/16/soft-collect/" data-toggle="tooltip" data-placement="top" title="常用软件合集 @ Mac/iOS/Android/Win">Next Post &rarr;</a>
+                            <a href="/2018/04/30/HTTPS-mitmproxy/" data-toggle="tooltip" data-placement="top" title="HTTP/HTTPS 抓包 ---- mitmproxy">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -397,7 +467,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#git删除所有历史提交记录"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">git删除所有历史提交记录</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#git多个远程仓库"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">git多个远程仓库</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#用git命令行添加多个远程仓库"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">用git命令行添加多个远程仓库</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#一条命令同时更新多个远程仓库"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">一条命令同时更新多个远程仓库</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#flex-3介绍"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Flex 3介绍</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#功能介绍"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">功能介绍</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#脚本使用"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">脚本使用</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#配合app-admin-使用"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">配合App Admin 使用</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#一些补丁示例"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">一些补丁示例</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#去广告补丁"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">去广告补丁</span></a></li></ol></li></ol>
         
         </div>
       </aside>
@@ -417,7 +487,7 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#Git" title="Git">Git</a>
+                          <a class="tag" href="/tags/#越狱" title="越狱">越狱</a>
                         
                     </div>
                 </section>
@@ -446,8 +516,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "your-disqus-ID";
-    var disqus_identifier = "https://blog.tonystudio.ml/2016/02/18/git-collect/";
-    var disqus_url = "https://blog.tonystudio.ml/2016/02/18/git-collect/";
+    var disqus_identifier = "https://blog.tonystudio.ml/2018/08/06/ios-flex/";
+    var disqus_url = "https://blog.tonystudio.ml/2018/08/06/ios-flex/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

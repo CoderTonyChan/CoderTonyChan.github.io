@@ -9,7 +9,47 @@
 
     <url>
         <loc>https://blog.tonystudio.ml/2015/02/16/soft-collect/</loc>
-        <lastmod>2019-02-27T07:10:46.523Z</lastmod>
+        <lastmod>2019-03-04T05:56:15.216Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2018/08/08/ios-Filza/</loc>
+        <lastmod>2019-03-01T01:33:42.644Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2018/01/01/2017-summary/</loc>
+        <lastmod>2019-03-01T00:59:04.782Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2019/01/01/2018-summary/</loc>
+        <lastmod>2019-03-01T00:59:02.053Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2018/11/06/FFmpeg/</loc>
+        <lastmod>2019-03-01T00:58:57.908Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2018/08/06/ios-flex/</loc>
+        <lastmod>2019-03-01T00:58:36.992Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -56,32 +96,8 @@
     </url>
 
     <url>
-        <loc>https://blog.tonystudio.ml/2019/01/01/2018-summary/</loc>
-        <lastmod>2019-02-27T03:42:26.075Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.tonystudio.ml/2018/01/01/2017-summary/</loc>
-        <lastmod>2019-02-27T03:29:33.222Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://blog.tonystudio.ml/2016/02/18/git-collect/</loc>
         <lastmod>2019-02-26T09:20:15.771Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.tonystudio.ml/2018/11/06/FFmpeg/</loc>
-        <lastmod>2019-02-26T08:10:14.679Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
