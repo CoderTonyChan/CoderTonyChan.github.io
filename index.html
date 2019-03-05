@@ -136,7 +136,7 @@
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
@@ -150,7 +150,7 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
@@ -317,6 +317,56 @@
             ">
             
                 <!-- Main Content -->
+
+<div class="post-preview">
+
+    <a href="/2019/03/05/2019-blog-feature/">
+        <h2 class="post-title">
+            2019博客升级
+        </h2>
+        <h3 class="post-subtitle">
+            2019,Blog update.
+        </h3>
+        <div class="post-content-preview">
+            2019年更新一下😊
+Disqus换Gitalk
+
+由于在国内上 Disqus 十分糟糕，而且本人社交基本在GitHub上，故改成Gitalk
+集成 Gitalk
+
+Google Analytics
+
+标签功能升级
+
+分类功能
+
+照片墙功能
+
+
+Reference：
+
+GitHub Repo：Tony Studio
+Follow: CoderTonyCHan · GitHub
+
+...
+        </div>
+    </a>
+    
+    <p class="post-meta" style="margin: 10px 0;">
+        Posted by
+        Tony Chan on
+        2019-03-05
+    </p>
+    <div class="tags">
+        
+        <a href="/tags/#Blogger" title="Blogger">
+            Blogger</a>
+        
+    </div>
+    
+
+</div>
+<hr>
 
 <div class="post-preview">
 
@@ -555,6 +605,40 @@ Flex 3 通过添加补丁来工......
 
 <div class="post-preview">
 
+    <a href="/2018/05/21/MacOS-Linux-Com/">
+        <h2 class="post-title">
+            MacOS/Linux下的串口通信
+        </h2>
+        <h3 class="post-subtitle">
+            MacOS/Linux COM
+        </h3>
+        <div class="post-content-preview">
+            在windows下实现串口通信一般采用串口助手之类的东西来发送和接收信息，而LINUX也有相应的串口助手之类的东西，如xgcom,完全的图形化界面，可以在github下载源码，编译安装。当然LINUX下自然minicom之类的终端，但是使用起来也并不顺手（而且不支持16进制的发送和显示）。下面就说说如何不利用额外的工具，直接使用SHELL实现串口的通信。
+
+检测串口
+
+在LINUX下首先需要......
+        </div>
+    </a>
+    
+    <p class="post-meta" style="margin: 10px 0;">
+        Posted by
+        Tony Chan on
+        2018-05-21
+    </p>
+    <div class="tags">
+        
+        <a href="/tags/#COM" title="COM">
+            COM</a>
+        
+    </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/2018/04/30/HTTPS-mitmproxy/">
         <h2 class="post-title">
             HTTP/HTTPS 抓包 ---- mitmproxy
@@ -637,79 +721,6 @@ Follo......
 </div>
 <hr>
 
-<div class="post-preview">
-
-    <a href="/2017/06/26/nginx-collect/">
-        <h2 class="post-title">
-            Nginx配置
-        </h2>
-        <h3 class="post-subtitle">
-            Nginx Configuration
-        </h3>
-        <div class="post-content-preview">
-            nginx在工作中已经有好几个环境在使用了，每次都是重新去网上扒博客，各种编译配置，今天自己也整理一份安装文档和nginx.conf配置选项的说明，留作以后参考。像负载均衡配置（包括健康检查）、缓存（包括清空缓存）配置实例，请参考 http://segmentfault.com/a/1190000002873747 ，ssl加密请参考 http://seanlook.com/2015/05/......
-        </div>
-    </a>
-    
-    <p class="post-meta" style="margin: 10px 0;">
-        Posted by
-        Tony Chan on
-        2017-06-26
-    </p>
-    <div class="tags">
-        
-        <a href="/tags/#nginx" title="nginx">
-            nginx</a>
-        
-    </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2016/10/24/build-tonystudio.ml/">
-        <h2 class="post-title">
-            个人建站教程
-        </h2>
-        <h3 class="post-subtitle">
-            How to Create Blog with Hexo & GitHub
-        </h3>
-        <div class="post-content-preview">
-            
-个人建站教程
-服务器 -&gt; 域名 -&gt; DNS提供 -&gt; SSL证书
-
-
-服务器
-
-推荐使用阿里云 , 或者 GCP 一年免费撸
-免密码登录
-
-方法一
-1ssh root@112.74.34.46 'mkdir -p .ssh &amp;&amp; cat &gt;&gt; .ssh/authorized_keys' &lt; ~/.ssh/id_rsa.pub
-方法二
-......
-        </div>
-    </a>
-    
-    <p class="post-meta" style="margin: 10px 0;">
-        Posted by
-        Tony Chan on
-        2016-10-24
-    </p>
-    <div class="tags">
-        
-        <a href="/tags/#Shell" title="Shell">
-            Shell</a>
-        
-    </div>
-    
-
-</div>
-<hr>
-
 
 
 <!-- Pager -->
@@ -750,7 +761,13 @@ Follo......
             
         
             
+        
+            
+        
+            
             <a href="/tags/#Shell" title="Shell" rel="3">Shell</a>
+            
+        
             
         
             
@@ -853,6 +870,10 @@ Follo......
     <ul>
       
         <li>
+          <a href="/2019/03/05/2019-blog-feature/">2019博客升级</a>
+        </li>
+      
+        <li>
           <a href="/2019/02/26/qiniu/">七牛云备份命令</a>
         </li>
       
@@ -866,10 +887,6 @@ Follo......
       
         <li>
           <a href="/2018/09/05/wireshark-tutorial/">wireshark 入门教程</a>
-        </li>
-      
-        <li>
-          <a href="/2018/08/08/ios-Filza/">Filza Summary</a>
         </li>
       
     </ul>
@@ -892,7 +909,7 @@ Follo......
         
     <h5>ARCHIVES</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
 
         <hr>
@@ -1043,17 +1060,18 @@ Follo......
 
 <script>
     // dynamic User by Hux
-    var _gaId = 'UA-XXXXXXXX-X';
-    var _gaDomain = 'yoursite';
+    var _gaId = 'UA-135626320-1';
+    var _gaDomain = 'undefined';
+</script>
 
-    // Originial
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135626320-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    ga('create', _gaId, _gaDomain);
-    ga('send', 'pageview');
+    gtag('config', 'UA-135626320-1');
 </script>
 
 
