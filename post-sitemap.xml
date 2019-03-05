@@ -8,6 +8,30 @@
     </url>
 
     <url>
+        <loc>https://blog.tonystudio.ml/2018/06/05/WWDC-2018/</loc>
+        <lastmod>2019-03-05T09:27:54.080Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2016/09/18/HTTPS-Charles/</loc>
+        <lastmod>2019-03-05T09:26:57.701Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2015/02/16/soft-collect/</loc>
+        <lastmod>2019-03-05T09:15:30.096Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.tonystudio.ml/2019/03/05/2019-blog-feature/</loc>
         <lastmod>2019-03-05T08:26:38.859Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -26,14 +50,6 @@
     <url>
         <loc>https://blog.tonystudio.ml/2017/02/21/cocopods-collect/</loc>
         <lastmod>2019-03-05T03:32:45.507Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.tonystudio.ml/2015/02/16/soft-collect/</loc>
-        <lastmod>2019-03-04T05:56:15.216Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -82,14 +98,6 @@
     <url>
         <loc>https://blog.tonystudio.ml/2018/04/30/HTTPS-mitmproxy/</loc>
         <lastmod>2019-02-27T07:09:51.919Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.tonystudio.ml/2016/09/18/HTTPS-Charles/</loc>
-        <lastmod>2019-02-27T07:09:51.918Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
