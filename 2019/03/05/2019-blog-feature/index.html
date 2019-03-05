@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="description" content="Tony写字的地方">
     <meta name="keyword" content="TonyChan">
     <meta name="referrer" content="no-referrer">
     <link rel="shortcut icon" href="/img/icon.png">
@@ -15,7 +15,7 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          2019博客升级 - Tony写字的地方 | 知道自己要做什么
+          2019博客升级 - Tony&#39;s Studio
         
     </title>
 
@@ -158,6 +158,9 @@
                     
 
                         
+                    
+
+                        
                         <li>
                             <a href="/about/">About</a>
                         </li>
@@ -195,15 +198,12 @@
                     
 
                         
+                    
+
+                        
                         <li>
                             <a href="/tags/">Tags</a>
                         </li>
-                        
-                    
-
-                        
-                    
-
                         
                     
 
@@ -327,6 +327,18 @@
 <p>由于在国内上 Disqus 十分糟糕，而且本人社交基本在GitHub上，故改成Gitalk</p>
 <h2 id="集成-gitalk">集成 Gitalk</h2>
 <hr>
+<p>可参考文档 <a href="https://github.com/gitalk/gitalk" target="_blank" rel="noopener">Gitalk</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- Gitalk 评论 start  --&gt;</span><br><span class="line">&#123;% if site.gitalk.enable %&#125;</span><br><span class="line">&lt;!-- Link Gitalk 的支持文件  --&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/gitalk/dist/gitalk.css&quot;&gt;</span><br><span class="line">&lt;script src=&quot;https://unpkg.com/gitalk@latest/dist/gitalk.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id=&quot;gitalk-container&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    var gitalk = new Gitalk(&#123;</span><br><span class="line">        clientID: `Github Application clientID`,</span><br><span class="line">        clientSecret: `Github Application clientSecret`,</span><br><span class="line">        repo: `存储你评论 issue 的 Github 仓库名`,</span><br><span class="line">        owner: &apos;Github 用户名&apos;,</span><br><span class="line">        admin: [&apos;Github 用户名&apos;],</span><br><span class="line">        id: location.pathname,</span><br><span class="line">    &#125;);</span><br><span class="line">    gitalk.render(&apos;gitalk-container&apos;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line">&lt;!-- Gitalk end --&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="创建-github-application">创建 Github Application</h2>
+<hr>
+<p>如果没有 <a href="https://github.com/settings/applications/new" target="_blank" rel="noopener">点击这里申请</a>，<code>Authorization callback URL</code> 填写当前使用插件页面的域名。</p>
+<h2 id="创建issue">创建issue</h2>
+<hr>
+<p>当你用 github 帐号登录（管理员），并且第一次加载该会比较慢，因为第一次加载会自动在你 repo 的仓库下创建对应 issue。</p>
+<p>当然，你也可以手动创建issue作为 gitalk评论容器。只要有 Gitalk 标签 和 id 对应标签就可以。</p>
+<p>Gitalk 需要在管理员在登录状态下点开每篇文章的页面才会创建对应的 issue。</p>
+<p>解决方案如下 :<br>
+<a href="https://draveness.me/git-comments-initialize" target="_blank" rel="noopener">自动初始化 Gitalk 和 Gitment 评论</a></p>
 <h1 id="google-analytics">Google Analytics</h1>
 <hr>
 <h1 id="标签功能升级">标签功能升级</h1>
@@ -350,7 +362,7 @@
                     
                     
                         <li class="next">
-                            <a href="/2019/02/26/qiniu/" data-toggle="tooltip" data-placement="top" title="七牛云备份命令">Next Post &rarr;</a>
+                            <a href="/2019/02/26/qiniu/" data-toggle="tooltip" data-placement="top" title="七牛云备份命令">Next Post &rarr;<br><span>七牛云备份命令</span></a>
                         </li>
                     
                 </ul>
@@ -368,7 +380,6 @@
                 <!-- disqus comment end -->
 
                 <!-- Gitalk 评论 start  -->
-
                 
                 <!-- Link Gitalk 的支持文件  -->
                 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
@@ -400,7 +411,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#disqus换gitalk"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Disqus换Gitalk</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#集成-gitalk"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">集成 Gitalk</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#google-analytics"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Google Analytics</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#标签功能升级"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">标签功能升级</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#分类功能"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">分类功能</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#照片墙功能"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">照片墙功能</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#disqus换gitalk"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Disqus换Gitalk</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#集成-gitalk"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">集成 Gitalk</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#创建-github-application"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">创建 Github Application</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#创建issue"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">创建issue</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#google-analytics"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Google Analytics</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#标签功能升级"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">标签功能升级</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#分类功能"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">分类功能</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#照片墙功能"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">照片墙功能</span></a></li></ol>
         
         </div>
       </aside>
@@ -494,7 +505,7 @@
 
                 
                 <li>
-                    <a href="mailto:CoderTonyChan@icloud.com">
+                    <a href="mailto:CoderTonyChan@iCloud.com">
                         <span class="fa-stack fa-lg">
                             <i class="fa fa-circle fa-stack-2x"></i>
                             <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
