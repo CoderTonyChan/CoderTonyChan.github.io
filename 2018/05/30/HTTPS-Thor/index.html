@@ -15,11 +15,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          2017 年总结 - Tony&#39;s Studio
+          HTTP/HTTPS 抓包 ---- Thor - Tony&#39;s Studio
         
     </title>
 
-    <link rel="canonical" href="https://blog.tonystudio.ml/2018/01/01/2017-summary/">
+    <link rel="canonical" href="https://blog.tonystudio.ml/2018/05/30/HTTPS-Thor/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -90,14 +90,16 @@
                         <div class="post-heading" style="color: ">
                             <div class="tags">
                                 
-                                <a class="tag" href="/tags/#Blogger" title="Blogger">Blogger</a>
+                                <a class="tag" href="/tags/#抓包" title="抓包">抓包</a>
+                                
+                                <a class="tag" href="/tags/#HTTPS" title="HTTPS">HTTPS</a>
                                 
                             </div>
-                            <h1>2017 年总结</h1>
-                            <h2 class="subheading">2017 Summary</h2>
+                            <h1>HTTP/HTTPS 抓包 ---- Thor</h1>
+                            <h2 class="subheading">Thor Tutorial</h2>
                             <span class="meta">
                                 Posted by Tony Chan on
-                                2018-01-01
+                                2018-05-30
                             </span>
                         </div>
                         
@@ -322,17 +324,32 @@
                 post-container">
 
                 <blockquote>
-<p>2017年走过人生中最重要的三件大事：买房、结婚、生子。</p>
+<p>Thor 是一款 iOS 上强大的抓包能手，主要用来在 iOS 上进行网络抓包，是一款开发调试利器，并无隐藏功能，并无隐藏功能，纯、专业、抓包、工具。<br>
+下面我们来了解它们的用法。</p>
 </blockquote>
-<h1 id="2017总结">2017总结</h1>
+<h1 id="抓包">抓包</h1>
 <hr>
-<p>学习方法的总结：</p>
-<p>联系 - 发现 - 重组</p>
-<p>在学校，我们学习的是技法，但是并不会教会我们智慧 (智慧是靠自己悟出来的)。</p>
-<p>人民的名义</p>
-<p>寒门再难出贵子</p>
-<p>从《人民的名义》观照现实婚姻</p>
-<p>Begin again - 拍摄是谱曲，后期是演奏</p>
+<p>先打开Thor工具→点击蓝色按钮→按钮变为橘红色开始抓包</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53926766-b1f40000-40bf-11e9-911d-56ddfb620f33.png" alt="image"></p>
+<p>回到某音软件→播放目标视频播放过后→回到Thor工具→点击橘红按钮停止抓包→打开抓包记录后可看到本次抓包的记录</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53926801-cafcb100-40bf-11e9-866e-0894435d1676.png" alt="image"></p>
+<p>打开这条记录，可以看到这次抓包的全部数据</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53926806-cf28ce80-40bf-11e9-9990-d93fc17d645e.png" alt="image"></p>
+<h1 id="过滤器">过滤器</h1>
+<hr>
+<p>例如这次我们抓取某音的视频数据中，找出那些目标数据共同的地方</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53926892-0ac39880-40c0-11e9-97d4-6ef7d9bc2637.png" alt="image"></p>
+<p>回到软件主页面→点击上方的过滤器选择选项→点击“+”→再点击“添加过滤器”</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53926912-1a42e180-40c0-11e9-8c94-6a6f55e11063.png" alt="image"></p>
+<p>指定“匹配HTTP方法”→选择需要匹配HTTP的方法（可多选）</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53926928-26c73a00-40c0-11e9-970f-1633bae5c542.png" alt="image"></p>
+<p>指定“包括关键字”→点击“+”添加关键字</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53926951-43fc0880-40c0-11e9-96fb-985a46acd774.png" alt="image"></p>
+<h1 id="如何分享自己的过滤器">如何分享自己的过滤器</h1>
+<p>这里以QQ为例别人通过QQ分享给你→点击下载→点击“用其他应用打开”→找到“拷贝到Thor”图标点击</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53926994-655cf480-40c0-11e9-970f-0da09f4ba1f3.png" alt="image"></p>
+<p>进入过滤器预览界面→点击右上角图标→弹出选框点“安装”</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53927007-6c840280-40c0-11e9-97d7-5ebe2fef2e11.png" alt="image"></p>
 <hr>
 <p>Reference：</p>
 <blockquote>
@@ -347,12 +364,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2018/04/30/HTTPS-mitmproxy/" data-toggle="tooltip" data-placement="top" title="HTTP/HTTPS 抓包 ---- mitmproxy">&larr; Previous Post<br><span>HTTP/HTTPS 抓包 ---- mitmproxy</span></a>
+                            <a href="/2018/06/05/WWDC-2018/" data-toggle="tooltip" data-placement="top" title="WWDC 2018">&larr; Previous Post<br><span>WWDC 2018</span></a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2017/06/26/nginx-collect/" data-toggle="tooltip" data-placement="top" title="Nginx配置">Next Post &rarr;<br><span>Nginx配置</span></a>
+                            <a href="/2018/05/21/MacOS-Linux-Com/" data-toggle="tooltip" data-placement="top" title="MacOS/Linux下的串口通信">Next Post &rarr;<br><span>MacOS/Linux下的串口通信</span></a>
                         </li>
                     
                 </ul>
@@ -401,7 +418,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#2017总结"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">2017总结</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#抓包"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">抓包</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#过滤器"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">过滤器</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#如何分享自己的过滤器"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">如何分享自己的过滤器</span></a></li></ol>
         
         </div>
       </aside>
@@ -421,7 +438,9 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#Blogger" title="Blogger">Blogger</a>
+                          <a class="tag" href="/tags/#抓包" title="抓包">抓包</a>
+                        
+                          <a class="tag" href="/tags/#HTTPS" title="HTTPS">HTTPS</a>
                         
                     </div>
                 </section>

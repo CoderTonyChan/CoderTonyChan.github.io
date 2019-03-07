@@ -145,6 +145,13 @@
 
                         
                         <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
                             <a href="/archive/">Archives</a>
                         </li>
                         
@@ -154,28 +161,6 @@
                         <li>
                             <a href="/books/">Books</a>
                         </li>
-                        
-                    
-
-                        
-                    
-
-                        
-                        <li>
-                            <a href="/about/">About</a>
-                        </li>
-                        
-                    
-
-                        
-                    
-
-                        
-                    
-
-                        
-                    
-
                         
                     
 
@@ -225,6 +210,21 @@
                         <li>
                             <a href="/tags/">Tags</a>
                         </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
                         
                     
 
@@ -366,7 +366,39 @@
 <p>申请工具 <a href="https://freessl.cn" target="_blank" rel="noopener">https://freessl.cn</a> 免费的 但是只有3个月</p>
 <h1 id="域名自动续期">域名自动续期</h1>
 <hr>
-<p>TODO</p>
+<p>免费证书不存在续期这个说法，您只能重新申请一张新的证书。</p>
+<h2 id="使用freesslcn"><a href="http://xn--freessl-oc6k521z.cn" target="_blank" rel="noopener">使用freessl.cn</a></h2>
+<hr>
+<p>DNS验证经常验证不了</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53869755-c8547a00-4033-11e9-87f1-ed391baa2df0.png" alt="ce6edbb5-a749-42c0-bda5-2a11b69d6390"></p>
+<p>本地DNS验证可以使用命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dig -t txt _acme-challenge.tonystudio.ml</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> nslookup tonystudio.ml </span><br><span class="line">Server:		40.73.101.101</span><br><span class="line">Address:	40.73.101.101#53</span><br><span class="line"></span><br><span class="line">Non-authoritative answer:</span><br><span class="line">tonystudio.ml	canonical name = codertonychan.github.io.</span><br><span class="line">Name:	codertonychan.github.io</span><br><span class="line">Address: 185.199.109.153</span><br><span class="line">Name:	codertonychan.github.io</span><br><span class="line">Address: 185.199.111.153</span><br><span class="line">Name:	codertonychan.github.io</span><br><span class="line">Address: 185.199.110.153</span><br><span class="line">Name:	codertonychan.github.io</span><br><span class="line">Address: 185.199.108.153</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> nslookup tonystudio.ml 114.114.114.114</span><br><span class="line">Server:		114.114.114.114</span><br><span class="line">Address:	114.114.114.114#53</span><br><span class="line"></span><br><span class="line">Non-authoritative answer:</span><br><span class="line">tonystudio.ml	canonical name = codertonychan.github.io.</span><br><span class="line">Name:	codertonychan.github.io</span><br><span class="line">Address: 185.199.111.153</span><br><span class="line">Name:	codertonychan.github.io</span><br><span class="line">Address: 185.199.110.153</span><br><span class="line">Name:	codertonychan.github.io</span><br><span class="line">Address: 185.199.109.153</span><br><span class="line">Name:	codertonychan.github.io</span><br><span class="line">Address: 185.199.108.153</span><br></pre></td></tr></table></figure>
+<p><a href="http://xn--MySSL-2b3hs1jk87a4ti5w3c87ya.com" target="_blank" rel="noopener">或者使用工具MySSL.com</a></p>
+<p>Mac下能用工具集</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53870953-313cf180-4036-11e9-9065-70cbdc641dd6.png" alt="image"></p>
+<h2 id="使用mysslcom"><a href="http://xn--MySSL-2b3hr36t.com" target="_blank" rel="noopener">使用MySSL.com</a></h2>
+<ul>
+<li>
+<p><a href="https://myssl.com/tonystudio.ml?domain=tonystudio.ml&amp;status=q&amp;f=1" target="_blank" rel="noopener">网站安全性报告</a></p>
+</li>
+<li>
+<p><a href="https://myssl.com/dns_check.html#dns_check" target="_blank" rel="noopener">DNS 诊断工具</a></p>
+</li>
+</ul>
+<h2 id="使用sslforfree">使用sslforfree</h2>
+<hr>
+<p>这个是先验证后操作 不存在会验证失败的问题</p>
+<p>免费的DNS 只能设置 600 TTL 最多等待5分钟</p>
+<p>这个有Renew功能 推荐</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53869890-14072380-4034-11e9-989e-99225bb62044.png" alt="image"></p>
+<p>同一个签证完后 会有2个不同的日期 很奇怪 而且和之前的对不上</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53870084-7a8c4180-4034-11e9-9bd5-2df54dd0826c.png" alt="image"><br>
+<img src="https://user-images.githubusercontent.com/16996753/53870097-80822280-4034-11e9-9583-a95e03b4a2c8.png" alt="image"></p>
+<h2 id="证书托管">证书托管</h2>
+<hr>
+<p>推荐腾讯云的<a href="https://console.cloud.tencent.com/ssl" target="_blank" rel="noopener">SSL证书管理</a></p>
+<p>另外证书也会备份一份iCloud</p>
 <h1 id="图床推荐">图床推荐</h1>
 <hr>
 <p>我常用的图床 微博不能上传png 不支持透明</p>
@@ -447,7 +479,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#服务器"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">服务器</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#免密码登录"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">免密码登录</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#免费域名申请及使用"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">免费域名申请及使用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#申请"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">申请</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#nameserver"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">NameServer</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#dns"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">DNS</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#ssl证书"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">SSL证书</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#域名自动续期"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">域名自动续期</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#图床推荐"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">图床推荐</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#github-gist"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">GitHub Gist</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#github-issue"><span class="toc-nav-number">6.2.</span> <span class="toc-nav-text">GitHub Issue</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#七牛云"><span class="toc-nav-number">6.3.</span> <span class="toc-nav-text">七牛云</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#服务器"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">服务器</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#免密码登录"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">免密码登录</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#免费域名申请及使用"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">免费域名申请及使用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#申请"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">申请</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#nameserver"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">NameServer</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#dns"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">DNS</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#ssl证书"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">SSL证书</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#域名自动续期"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">域名自动续期</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#使用freesslcn"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">使用freessl.cn</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#使用mysslcom"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">使用MySSL.com</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#使用sslforfree"><span class="toc-nav-number">5.3.</span> <span class="toc-nav-text">使用sslforfree</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#证书托管"><span class="toc-nav-number">5.4.</span> <span class="toc-nav-text">证书托管</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#图床推荐"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">图床推荐</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#github-gist"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">GitHub Gist</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#github-issue"><span class="toc-nav-number">6.2.</span> <span class="toc-nav-text">GitHub Issue</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#七牛云"><span class="toc-nav-number">6.3.</span> <span class="toc-nav-text">七牛云</span></a></li></ol></li></ol>
         
         </div>
       </aside>

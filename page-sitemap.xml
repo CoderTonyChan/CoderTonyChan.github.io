@@ -15,14 +15,14 @@
     </url>
     
     <url>
-        <loc>https://blog.tonystudio.ml/archive/</loc>
+        <loc>https://blog.tonystudio.ml/about/</loc>
         <lastmod>2019-02-21T07:46:33.513Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://blog.tonystudio.ml/about/</loc>
+        <loc>https://blog.tonystudio.ml/archive/</loc>
         <lastmod>2019-02-21T07:46:33.513Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
