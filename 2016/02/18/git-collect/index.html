@@ -15,7 +15,7 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          Git操作指南 - Tony&#39;s Studio
+          Git/GitHub操作指南 - Tony&#39;s Studio
         
     </title>
 
@@ -93,7 +93,7 @@
                                 <a class="tag" href="/tags/#Git" title="Git">Git</a>
                                 
                             </div>
-                            <h1>Git操作指南</h1>
+                            <h1>Git/GitHub操作指南</h1>
                             <h2 class="subheading">Git Instructions</h2>
                             <span class="meta">
                                 Posted by Tony Chan on
@@ -158,6 +158,36 @@
                     
 
                         
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
                         <li>
                             <a href="/books/">Books</a>
                         </li>
@@ -192,39 +222,9 @@
                     
 
                         
-                    
-
-                        
-                    
-
-                        
-                    
-
-                        
-                    
-
-                        
-                    
-
-                        
-                    
-
-                        
-                    
-
-                        
-                    
-
-                        
                         <li>
                             <a href="/tags/">Tags</a>
                         </li>
-                        
-                    
-
-                        
-                    
-
                         
                     
 
@@ -348,6 +348,59 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = true</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        url = https://github.com/CoderTonyChan/laoshihao-login-web.git</span><br><span class="line">        url = https://gitee.com/CoderTonyChan/laoshihao-login-web.git</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[branch &quot;master&quot;]</span><br><span class="line">        remote = origin</span><br><span class="line">        merge = refs/heads/master</span><br></pre></td></tr></table></figure>
 <p>这时候我们一条命令即可更新两个远程仓库：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<h1 id="github-release功能">Github Release功能</h1>
+<hr>
+<p><img src="https://user-images.githubusercontent.com/16996753/54014341-41c8a580-41b7-11e9-9315-fcd79768826b.png" alt="image"></p>
+<h2 id="tag">Tag</h2>
+<hr>
+<p>填写这个代表用最新的代码打包📦</p>
+<p>否则是用存在的Tag修改</p>
+<h2 id="release-note">Release Note</h2>
+<hr>
+<p>使用md语法</p>
+<h2 id="二进制文件上传">二进制文件上传</h2>
+<hr>
+<p>可以上传编译好的二进制文件</p>
+<h2 id="this-is-a-pre-release">This is a pre-release</h2>
+<hr>
+<p>钩上证明还在测试</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/54014528-05497980-41b8-11e9-8d92-b33608a2b591.png" alt="image"></p>
+<p>钩上GitHub有标志</p>
+<h2 id="规范">规范</h2>
+<hr>
+<p>建议使用这个规范</p>
+<p>tag表明是否beta版本</p>
+<p>v1.0%beta2</p>
+<p>标题使用</p>
+<p>v1.0 pre-release</p>
+<h1 id="github-实用功能">Github 实用功能</h1>
+<hr>
+<p>一些常用功能</p>
+<h2 id="粘贴图片">粘贴图片</h2>
+<hr>
+<p>Ctrl+C</p>
+<h2 id="链接到代码">链接到代码</h2>
+<hr>
+<p>打开一个文件，点击代码左边的行号，或者按住 shift 选择多行。</p>
+<p>分享这个 URL ，可以链接到这些代码。如果文件被修改了，会发生变化吗?不会，因为这是永久链接。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/54014907-1941ab00-41b9-11e9-95b5-d0876529ef5a.png" alt="image"></p>
+<h2 id="创建复选框列表">创建复选框列表</h2>
+<hr>
+<p>“2/5” 的进度条</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/54014991-573ecf00-41b9-11e9-91f6-1daa82016fe3.png" alt="image"></p>
+<p>交互式复选框语法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- [ ] Screen width (integer) </span><br><span class="line">- [x] Service worker support </span><br><span class="line">- [x] Fetch support </span><br><span class="line">- [ ] CSS flexbox support </span><br><span class="line">- [ ] Custom elements</span><br></pre></td></tr></table></figure>
+<p>⚠️注意: 这是GitHub支持 并不是md语法</p>
+<h2 id="github-wiki">GitHub wiki</h2>
+<hr>
+<p>非结构化网页 可用于文档</p>
+<h2 id="github作为cms内容管理系统">GitHub作为CMS(内容管理系统)</h2>
+<hr>
+<p>文本写在 markdown 文件中，然后存到你的仓库。接着在前端写一个组件来请求文件然后渲染。</p>
+<p>marked( <a href="https://www.npmjs.com/package/marked" target="_blank" rel="noopener">https://www.npmjs.com/package/marked</a> ) 插件来解析markdown</p>
+<h2 id="快速引用">快速引用</h2>
+<hr>
+<p>你可以选中别人的评论文字，然后按r，这些内容会以引用的形式被复制在文本框中：</p>
 <hr>
 <p>Reference：</p>
 <blockquote>
@@ -416,7 +469,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#git删除所有历史提交记录"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">git删除所有历史提交记录</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#git多个远程仓库"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">git多个远程仓库</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#用git命令行添加多个远程仓库"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">用git命令行添加多个远程仓库</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#一条命令同时更新多个远程仓库"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">一条命令同时更新多个远程仓库</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#git删除所有历史提交记录"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">git删除所有历史提交记录</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#git多个远程仓库"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">git多个远程仓库</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#用git命令行添加多个远程仓库"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">用git命令行添加多个远程仓库</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#一条命令同时更新多个远程仓库"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">一条命令同时更新多个远程仓库</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#github-release功能"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Github Release功能</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#tag"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">Tag</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#release-note"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">Release Note</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#二进制文件上传"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">二进制文件上传</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#this-is-a-pre-release"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">This is a pre-release</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#规范"><span class="toc-nav-number">3.5.</span> <span class="toc-nav-text">规范</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#github-实用功能"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Github 实用功能</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#粘贴图片"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">粘贴图片</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#链接到代码"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">链接到代码</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#创建复选框列表"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">创建复选框列表</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#github-wiki"><span class="toc-nav-number">4.4.</span> <span class="toc-nav-text">GitHub wiki</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#github作为cms内容管理系统"><span class="toc-nav-number">4.5.</span> <span class="toc-nav-text">GitHub作为CMS(内容管理系统)</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#快速引用"><span class="toc-nav-number">4.6.</span> <span class="toc-nav-text">快速引用</span></a></li></ol></li></ol>
         
         </div>
       </aside>
