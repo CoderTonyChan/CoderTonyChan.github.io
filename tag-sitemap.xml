@@ -52,20 +52,6 @@
     </url>
 
     <url>
-        <loc>https://blog.tonystudio.ml/tags/%E8%B6%8A%E7%8B%B1/</loc>
-        <lastmod>2019-03-07T01:49:54.077Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.tonystudio.ml/tags/Blogger/</loc>
-        <lastmod>2019-03-07T01:57:05.151Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://blog.tonystudio.ml/tags/%E6%8A%93%E5%8C%85/</loc>
         <lastmod>2019-03-07T02:06:50.802Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -75,6 +61,27 @@
     <url>
         <loc>https://blog.tonystudio.ml/tags/HTTPS/</loc>
         <lastmod>2019-03-07T02:06:50.802Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/tags/Xcode/</loc>
+        <lastmod>2019-03-07T07:44:27.284Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/tags/%E8%B6%8A%E7%8B%B1/</loc>
+        <lastmod>2019-03-08T06:55:38.147Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/tags/Blogger/</loc>
+        <lastmod>2019-03-08T06:56:15.713Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

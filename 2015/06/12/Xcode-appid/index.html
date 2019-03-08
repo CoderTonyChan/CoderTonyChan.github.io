@@ -15,11 +15,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          HTTP/HTTPS 抓包 ---- Thor - Tony&#39;s Studio
+          WWDC 2015 Xcode 7 - Tony&#39;s Studio
         
     </title>
 
-    <link rel="canonical" href="https://blog.tonystudio.ml/2018/05/30/HTTPS-Thor/">
+    <link rel="canonical" href="https://blog.tonystudio.ml/2015/06/12/Xcode-appid/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -90,16 +90,14 @@
                         <div class="post-heading" style="color: ">
                             <div class="tags">
                                 
-                                <a class="tag" href="/tags/#抓包" title="抓包">抓包</a>
-                                
-                                <a class="tag" href="/tags/#HTTPS" title="HTTPS">HTTPS</a>
+                                <a class="tag" href="/tags/#Xcode" title="Xcode">Xcode</a>
                                 
                             </div>
-                            <h1>HTTP/HTTPS 抓包 ---- Thor</h1>
-                            <h2 class="subheading">Thor Tutorial</h2>
+                            <h1>WWDC 2015 Xcode 7</h1>
+                            <h2 class="subheading">WWDC 2015 Xcode 7</h2>
                             <span class="meta">
                                 Posted by Tony Chan on
-                                2018-05-30
+                                2015-06-12
                             </span>
                         </div>
                         
@@ -324,32 +322,39 @@
                 post-container">
 
                 <blockquote>
-<p>Thor 是一款 iOS 上强大的抓包能手，主要用来在 iOS 上进行网络抓包，是一款开发调试利器，并无隐藏功能，并无隐藏功能，纯、专业、抓包、工具。<br>
-下面我们来了解它们的用法。</p>
+<p>从Xcode7开始,Xcode 不需要$99/$299升级开发者直接可以进行真机调试。</p>
 </blockquote>
-<h1 id="抓包">抓包</h1>
+<h1 id="xcode-7">Xcode 7</h1>
 <hr>
-<p>先打开Thor工具→点击蓝色按钮→按钮变为橘红色开始抓包</p>
-<p><img src="https://user-images.githubusercontent.com/16996753/53926766-b1f40000-40bf-11e9-911d-56ddfb620f33.png" alt="image"></p>
-<p>回到某音软件→播放目标视频播放过后→回到Thor工具→点击橘红按钮停止抓包→打开抓包记录后可看到本次抓包的记录</p>
-<p><img src="https://user-images.githubusercontent.com/16996753/53926801-cafcb100-40bf-11e9-866e-0894435d1676.png" alt="image"></p>
-<p>打开这条记录，可以看到这次抓包的全部数据</p>
-<p><img src="https://user-images.githubusercontent.com/16996753/53926806-cf28ce80-40bf-11e9-9990-d93fc17d645e.png" alt="image"></p>
-<h1 id="过滤器">过滤器</h1>
+<p>WWDC 15最大惊喜.</p>
+<h2 id="0x1">0x1</h2>
+<p>假设已经你已经有了苹果账号,下载并安装好了Xcode7</p>
+<h2 id="0x2">0x2</h2>
+<p>打开Xcode-&gt; Preferences -&gt;Accounts  点加号增加一个Apple ID</p>
+<h2 id="0x3">0x3</h2>
+<p>添加后发现 多了一行以Apple ID 账号名称为名称的Team,我的是 fox sky,如图所示,iOS/Mac 都显示成了free</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53939872-3b6ef680-40ef-11e9-8d8e-a8c71dcf58bf.png" alt="image"></p>
+<h2 id="0x4">0x4</h2>
+<p>双击Team name,弹出下图,增加 iOS Development 与 Mac Developement证书,底部显示的是所有已经生成的Provisioning Profile文件,目前为空</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53939895-49247c00-40ef-11e9-9c42-386a8bc967f8.png" alt="image"></p>
+<h2 id="0x5">0x5</h2>
+<p>返回target,选择刚刚的Team 名称(Apple ID名称),点击fix issue 自动生产Provisioning Profile文件,Provisioning Profile文件可以在步骤四中的底部列表查看</p>
+<h1 id="注意事项">注意事项</h1>
 <hr>
-<p>例如这次我们抓取某音的视频数据中，找出那些目标数据共同的地方</p>
-<p><img src="https://user-images.githubusercontent.com/16996753/53926892-0ac39880-40c0-11e9-97d4-6ef7d9bc2637.png" alt="image"></p>
-<p>回到软件主页面→点击上方的过滤器选择选项→点击“+”→再点击“添加过滤器”</p>
-<p><img src="https://user-images.githubusercontent.com/16996753/53926912-1a42e180-40c0-11e9-8c94-6a6f55e11063.png" alt="image"></p>
-<p>指定“匹配HTTP方法”→选择需要匹配HTTP的方法（可多选）</p>
-<p><img src="https://user-images.githubusercontent.com/16996753/53926928-26c73a00-40c0-11e9-970f-1633bae5c542.png" alt="image"></p>
-<p>指定“包括关键字”→点击“+”添加关键字</p>
-<p><img src="https://user-images.githubusercontent.com/16996753/53926951-43fc0880-40c0-11e9-96fb-985a46acd774.png" alt="image"></p>
-<h1 id="如何分享自己的过滤器">如何分享自己的过滤器</h1>
-<p>这里以QQ为例别人通过QQ分享给你→点击下载→点击“用其他应用打开”→找到“拷贝到Thor”图标点击</p>
-<p><img src="https://user-images.githubusercontent.com/16996753/53926994-655cf480-40c0-11e9-970f-0da09f4ba1f3.png" alt="image"></p>
-<p>进入过滤器预览界面→点击右上角图标→弹出选框点“安装”</p>
-<p><img src="https://user-images.githubusercontent.com/16996753/53927007-6c840280-40c0-11e9-97d7-5ebe2fef2e11.png" alt="image"></p>
+<p>Bundle ID (Bundle Identifier)不能为其他中开发者账号中已经存在的app id</p>
+<h2 id="0x1">0x1</h2>
+<p>不要使用正式的bundle id 进行直接调试,如果app需要上架,并且在开发者网站没有创建appid,调试后,则会造成以后bundle id 已经存在问题</p>
+<h2 id="0x2">0x2</h2>
+<p>苹果最近可能最频繁生成appid进行了限制（详情），7天内不能超过10个，当经常运行一些demo，非正式项目的时候，建议bundle填写或者修改成一个固定的bundle id进行调试，比如我一直在使用org.skyfox.test进行调试，当有新设备的时候fix下就ing了，也是对那些生成乱七八糟证书，profile文件的一个技巧</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53940048-9bfe3380-40ef-11e9-985b-2be9a5761650.png" alt="image"></p>
+<h2 id="0x3">0x3</h2>
+<p>新项目选择手机为运行目标(更改Deploymnet Target 为适合的版本)后,直接可以run起来,如果是老项目,曾经设置过证书,需要如图配置后生效</p>
+<p>证书选择你的Apple ID 邮箱为名的证书</p>
+<p>选择刚刚生成的Provisioning Profile文件,(文件名为iOSTeam Provisioning Profile:项目的Bundle ID),</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/53940079-b1735d80-40ef-11e9-8d97-08652b2a2000.png" alt="image"></p>
+<p>那么问题来了,电脑中越来越多的Provisioning Profile文件如何管理,神马个人证书,企业证书,乱起八糟的Provisioning Profile</p>
+<p>推荐个Provisioning Profile管理软件 <a href="https://github.com/shaojiankui/ProfilesManager" target="_blank" rel="noopener">https://github.com/shaojiankui/ProfilesManager</a></p>
+<p>很遗憾,目前没有地方管理已经生成的并且存在苹果服务器端的Provisioning Profile文件</p>
 <hr>
 <p>Reference：</p>
 <blockquote>
@@ -364,12 +369,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2018/06/05/WWDC-2018/" data-toggle="tooltip" data-placement="top" title="WWDC 2018">&larr; Previous Post<br><span>WWDC 2018</span></a>
+                            <a href="/2016/02/18/git-collect/" data-toggle="tooltip" data-placement="top" title="Git操作指南">&larr; Previous Post<br><span>Git操作指南</span></a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2018/05/21/MacOS-Linux-Com/" data-toggle="tooltip" data-placement="top" title="MacOS/Linux下的串口通信">Next Post &rarr;<br><span>MacOS/Linux下的串口通信</span></a>
+                            <a href="/2015/05/06/ios9-collect/" data-toggle="tooltip" data-placement="top" title="iOS 9插件">Next Post &rarr;<br><span>iOS 9插件</span></a>
                         </li>
                     
                 </ul>
@@ -418,7 +423,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#抓包"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">抓包</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#过滤器"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">过滤器</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#如何分享自己的过滤器"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">如何分享自己的过滤器</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#xcode-7"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Xcode 7</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#0x1"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">0x1</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#0x2"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">0x2</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#0x3"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">0x3</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#0x4"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">0x4</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#0x5"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">0x5</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#注意事项"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">注意事项</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#0x1"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">0x1</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#0x2"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">0x2</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#0x3"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">0x3</span></a></li></ol></li></ol>
         
         </div>
       </aside>
@@ -438,9 +443,7 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#抓包" title="抓包">抓包</a>
-                        
-                          <a class="tag" href="/tags/#HTTPS" title="HTTPS">HTTPS</a>
+                          <a class="tag" href="/tags/#Xcode" title="Xcode">Xcode</a>
                         
                     </div>
                 </section>
