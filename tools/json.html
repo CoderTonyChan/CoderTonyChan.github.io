@@ -19,7 +19,7 @@
         
     </title>
 
-    <link rel="canonical" href="https://blog.tonystudio.ml/javbus/二宮ナナ.html">
+    <link rel="canonical" href="https://blog.tonystudio.ml/tools/json.html">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -90,7 +90,7 @@
                         <div class="site-heading">
                             <h1>Tony&#39;s Studio</h1>
                             <!--<hr class="small">-->
-                            <span class="subheading">Talk is cheap. Show me the code.</span>
+                            <span class="subheading">Tony&#39;s Tools</span>
                         </div>
                         
     
@@ -303,260 +303,192 @@
 
 
     <!-- Main Content -->
-    
-<meta name="referrer" content="no-referrer">
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        
-
-<!-- USE SIDEBAR -->
-    <!-- Post Container -->
-            <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-            
-                <h1 id="二宮ナナ"><a href="https://www.javbus.com/uncensored/star/6h7" target="_blank" rel="noopener">二宮ナナ</a></h1>
-<p><img src="https://gist.githubusercontent.com/CoderTonyChan/00b33fea476c321400d696b73b63847a/raw/0cef550f293c98f04f8aa4b2eb7d9594d0d26be8/%E4%BA%8C%E5%AE%AE%E3%83%8A%E3%83%8A.jpg" alt="Git"></p>
-<p>生日:???-??-??<br>
-年龄:??岁<br>
-身高:161cm<br>
-罩杯:J<br>
-胸围:??cm<br>
-腰围:??cm<br>
-臀围:??cm</p>
-<busactressdetailview actressurl="https://www.javbus.com/uncensored/star/6h7"> 
-<h2 id="mcdv-15">MCDV-15</h2>
-<p><img src="https://gist.githubusercontent.com/CoderTonyChan/00b33fea476c321400d696b73b63847a/raw/0cef550f293c98f04f8aa4b2eb7d9594d0d26be8/MCDV-15.jpg" alt="Git"></p>
-<busdetailview shortcode="MCDV-15">
-<avglepreviewview code="MCDV-15">
-<h2 id="mkd-s73">MKD-S73</h2>
-<p><img src="https://gist.githubusercontent.com/CoderTonyChan/00b33fea476c321400d696b73b63847a/raw/0cef550f293c98f04f8aa4b2eb7d9594d0d26be8/MKD-S73.jpg" alt="Git"></p>
-<busdetailview shortcode="MKD-S73">
-<avglepreviewview code="MKD-S73">
-</avglepreviewview></busdetailview></avglepreviewview></busdetailview></busactressdetailview>
-
-                <!-- 如果开启评论功能 -->
-                
-                    <hr>
-
-                    <!-- Gitalk 评论 start  -->
-                    
-                    <!-- Link Gitalk 的支持文件  -->
-                    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-                    <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
-                    
-                    <div id="gitalk-container"></div>
-                    <script type="text/javascript">
-                        var gitalk = new Gitalk({
-                            // gitalk的主要参数
-                            clientID: `d6e8288a1c63e75847f3`,
-                            clientSecret: `8c5389eb088393c894f7b085c7674d6aedc8783a`,
-                            repo: `CoderTonyChan.github.io`,
-                            owner: 'CoderTonyChan',
-                            admin: ['CoderTonyChan'],
-                            id: 'about',
-                            distractionFreeMode: false
-                        });
-                        gitalk.render('gitalk-container');
-                    </script>
-                    
-                    <!-- Gitalk end -->
-
-
-                    
-
-                    
-
-
-                    
-
-                    
-                
+    <link href="https://cdn.bootcss.com/jsoneditor/5.13.1/jsoneditor.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/jsoneditor/5.13.1/jsoneditor.min.js"></script>
+<script src="https://cdn.bootcss.com/ace/1.2.9/ace.js"></script>
+<script src="https://cdn.bootcss.com/jsonlint/1.6.0/jsonlint.min.js"></script>
+<body>
+    <div class="common">
+        <div class="flex">
+            <div style="width: 40%;">
+                <p class="title-text">code</p>
+                <div id="codeEditor" style="width: 100%; height: 600px;"></div>
+                <div class="code-btn-box">
+                    <button id="compact" class="compact-btn" type="button">压缩</button>
+                    <button id="format" class="format-btn" type="button">格式化</button>
+                    <button id="save" class="save-btn" type="button">保存</button>
+                </div>
             </div>
-
-          <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Featured Tags -->
-
-<section>
-    <!-- no hr -->
-    <h5><a href="/tags/">FEATURED TAGS</a></h5>
-    <div class="tags">
-        
-            
-            <a href="/tags/#Blogger" title="Blogger" rel="4">Blogger</a>
-            
-        
-            
-            <a href="/tags/#Shell" title="Shell" rel="3">Shell</a>
-            
-        
-            
-            <a href="/tags/#抓包" title="抓包" rel="4">抓包</a>
-            
-        
-            
-            <a href="/tags/#HTTPS" title="HTTPS" rel="3">HTTPS</a>
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-            <a href="/tags/#越狱" title="越狱" rel="3">越狱</a>
-            
-        
-            
-        
-            
-        
+            <ul class="btn-box">
+                <li>
+                    <button id="jsonBtn" class="json-btn" type="button">视图化 >></button>
+                </li>
+                <li>
+                    <button id="codeBtn" type="button">代码化</button>
+                </li>
+            </ul>
+            <div style="width: 40%;">
+                <p class="title-text">JSON</p>
+                <div id="jsonEditor" style="width: 100%; height: 600px;"></div>
+            </div>
+        </div>
     </div>
-</section>
+</body>
+<style type="text/css">
 
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-    <h5><a href="/about/">ABOUT ME</a></h5>
-    <div class="short-about">
+    .flex {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
 
-        
-        <img id="avatar_pic" src="/img/sidebar/avatar.jpg">
-        
+    .btn-box {
+        margin: 0 20px;
+        padding-top: 100px;
+    }
 
-        
-        <p>
-            Hi, i&#39;m Tony Chan
-        </p>
-        
+    .btn-box button {
+        padding: 10px 20px;
+        border: 1px solid #a4a4a4;
+        border-radius: 5px;
+        background: #eee;
+    }
 
-        <!-- SNS Link -->
-        <ul class="list-inline">
-            
-            <li>
-                <a href="mailto:CoderTonyChan@iCloud.com">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-                    </span>
-                </a>
-            </li>
-            
+    .btn-box .json-btn {
+        margin-bottom: 20px;
+    }
 
-            
-            <li>
-                <a target="_blank" href="https://github.com/CoderTonyChan">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                    </span>
-                </a>
-            </li>
-            
+    .code-btn-box {
+        text-align: right;
+        margin-top: 20px;
 
-            
-            <li>
-                <a href="/rss2.xml">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                    </span>
-                </a>
-            </li>
-            
-            
-            
+    }
 
-            
+    .code-btn-box button {
+        padding: 10px 20px;
+        border: 1px solid #a4a4a4;
+        border-radius: 5px;
+        background: #eee;
+    }
 
-            
+    .code-btn-box .save-btn {
+        border: 1px #f60 solid;
+        background: #ffc88b;
+        color: #f15214;
+        margin-left: 20px;
+    }
+    .common .table {
+        margin-bottom: 0;
+    }
 
+    .common .table>tbody>tr>td {
+        padding: 0;
+        border:none;
+    }
+    .common .table th,.common .table td{
+        border: none !important;
+    }
+</style>
+<script type="text/javascript">
+    var codeEditor = document.getElementById("codeEditor");
+    var jsonEditor = document.getElementById("jsonEditor");
+    var jsonBtn = document.getElementById("jsonBtn");
+    var codeBtn = document.getElementById("codeBtn");
+    var compact = document.getElementById("compact");
+    var format = document.getElementById("format");
+    var save = document.getElementById("save");
 
-            
-        </ul>
-    </div>
-</section>
-        <hr>
-    
-        
-  <h5>RECENT POSTS
-  <div class="widget">
-    <ul>
-      
-        <li>
-          <a href="/2019/03/05/2019-blog-feature/">2019博客升级</a>
-        </li>
-      
-        <li>
-          <a href="/2019/02/26/qiniu/">七牛云备份命令</a>
-        </li>
-      
-        <li>
-          <a href="/2019/01/01/2018-summary/">2018 年总结</a>
-        </li>
-      
-        <li>
-          <a href="/2018/11/06/FFmpeg/">FFmpeg命令</a>
-        </li>
-      
-        <li>
-          <a href="/2018/09/05/wireshark-tutorial/">wireshark 入门教程</a>
-        </li>
-      
-    </ul>
-  </div>
-</h5>
-        <hr>
-    
-        <!-- Friends Blog -->
+    //初始化编辑器模式
+    var codeOptions = {
+        mode: 'code',
+        modes: ['code'],
+        onError: function (err) {
+            alert(err.toString());
+        }
+    };
 
-<h5>FRIENDS</h5>
-<ul class="list-inline">
+    var jsonOptions = {
+        mode: 'tree',
+        modes: ['code', 'form', 'text', 'tree', 'view'],
+        onError: function (err) {
+            alert(err.toString());
+        }
+    };
 
-    
-        <li><a href="https://tonystudio.ml" target="_blank">TonyStudio Home</a></li>
-    
-</ul>
+    //初始化编辑器内容
+    var codeEditor = new JSONEditor(codeEditor, codeOptions, { "a": 1 });
+    var jsonEditor = new JSONEditor(jsonEditor, jsonOptions, { "a": 1 });
 
-        <hr>
-    
-        
-    <h5>ARCHIVES</h5>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">1</span></li></ul>
-    </div>
+    //视图化
+    jsonBtn.onclick = function () {
+        try {
+            var codeContent = codeEditor.get();
+            if (codeContent == "") {
+                alert("请输入JSON数据后再转换！");
+            } else {
+                jsonEditor.set(codeContent);
+            }
+        } catch (e) {
+            alert("JSON数据有误！");
+        }
 
-        <hr>
-    
-        <!-- Categories -->
+    }
 
-        <hr>
-    
-</div>
+    //代码化
+    codeBtn.onclick = function () {
+        try {
+            var jsonContent = jsonEditor.get();
+            codeEditor.set(jsonContent);
+        } catch (e) {
+            alert("JSON数据有误！");
+        }
+    }
 
-        
-    </div>
-</div>
+    //压缩
+    compact.onclick = function () {
+        try {
+            var codeContent = codeEditor.getText();
+            if (codeContent == "") {
+                alert("请输入JSON数据后再转换！");
+            } else {
+                codeContent = JSON.stringify(eval('(' + codeContent + ')'))
+                codeEditor.setText(codeContent);
+            }
+        } catch (e) {
+            alert("JSON数据有误！");
+        }
+    }
 
+    //格式化
+    format.onclick = function () {
+        try {
+            var codeContent = codeEditor.getText();
+            if (codeContent == "") {
+                alert("请输入JSON数据后再转换！");
+            } else {
+                codeContent = JSON.stringify(eval('(' + codeContent + ')'), null, 2);
+                codeEditor.setText(codeContent);
+            }
+        } catch (e) {
+            alert("JSON数据有误！");
+        }
+    }
+
+    //保存
+    save.onclick = function () {
+        try {
+            var codeContent = codeEditor.getText();
+            if (codeContent == "") {
+                alert("请输入JSON数据后再转换！");
+            } else {
+                // alert(codeContent);
+                console.log(codeContent);
+            }
+        } catch (e) {
+            alert("JSON数据有误！");
+        }
+    }
+</script>
 
     <!-- Footer -->
     <!-- Footer -->
