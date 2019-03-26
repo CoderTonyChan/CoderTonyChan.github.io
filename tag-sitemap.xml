@@ -3,20 +3,6 @@
 
 
     <url>
-        <loc>https://blog.tonystudio.ml/tags/%E4%B8%83%E7%89%9B%E4%BA%91/</loc>
-        <lastmod>2019-02-26T07:50:48.813Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.tonystudio.ml/tags/nginx/</loc>
-        <lastmod>2019-02-27T07:01:48.449Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://blog.tonystudio.ml/tags/Cocopods/</loc>
         <lastmod>2019-03-05T03:32:45.507Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -26,34 +12,6 @@
     <url>
         <loc>https://blog.tonystudio.ml/tags/COM/</loc>
         <lastmod>2019-03-05T03:34:05.160Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.tonystudio.ml/tags/WWDC/</loc>
-        <lastmod>2019-03-05T09:27:54.080Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.tonystudio.ml/tags/Shell/</loc>
-        <lastmod>2019-03-06T09:39:50.821Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.tonystudio.ml/tags/%E6%8A%93%E5%8C%85/</loc>
-        <lastmod>2019-03-07T02:06:50.802Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.tonystudio.ml/tags/HTTPS/</loc>
-        <lastmod>2019-03-07T02:06:50.802Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -73,15 +31,57 @@
     </url>
 
     <url>
+        <loc>https://blog.tonystudio.ml/tags/nginx/</loc>
+        <lastmod>2019-03-22T05:44:52.490Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://blog.tonystudio.ml/tags/Git/</loc>
-        <lastmod>2019-03-08T09:30:34.932Z</lastmod>
+        <lastmod>2019-03-26T01:37:44.876Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/tags/%E6%8A%93%E5%8C%85/</loc>
+        <lastmod>2019-03-26T01:37:44.904Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/tags/HTTPS/</loc>
+        <lastmod>2019-03-26T01:37:44.904Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://blog.tonystudio.ml/tags/Blogger/</loc>
-        <lastmod>2019-03-13T03:15:15.759Z</lastmod>
+        <lastmod>2019-03-26T01:37:44.913Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/tags/WWDC/</loc>
+        <lastmod>2019-03-26T01:37:44.913Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/tags/Shell/</loc>
+        <lastmod>2019-03-26T01:37:44.922Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/tags/%E4%B8%83%E7%89%9B%E4%BA%91/</loc>
+        <lastmod>2019-03-26T01:37:44.922Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

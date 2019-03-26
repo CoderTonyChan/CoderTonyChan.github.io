@@ -70,7 +70,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('http://pn9jzw2t9.bkt.clouddn.com/2019/bg-japan.JPG');
+            background-image: url('http://oss.zhcoco.com/2019/bg-japan.JPG');
             -webkit-mask: -webkit-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,1),rgba(0,0,0,1),rgba(0,0,0,0.5));
             /*post*/
         
@@ -329,6 +329,22 @@
 <h1 id="nginx常用配置">Nginx常用配置</h1>
 <hr>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  dev-admin.paascloud.net;</span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_pass http://localhost:7020;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    error_page   500 502 503 504  /50x.html;</span><br><span class="line">    location = /50x.html &#123;</span><br><span class="line">        root   html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  dev-login.paascloud.net;</span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_pass http://localhost:7010;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    error_page   500 502 503 504  /50x.html;</span><br><span class="line">    location = /50x.html &#123;</span><br><span class="line">        root   html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  dev-mall.paascloud.net;</span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_pass http://localhost:7030;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    error_page   500 502 503 504  /50x.html;</span><br><span class="line">    location = /50x.html &#123;</span><br><span class="line">        root   html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  dev-api.paascloud.net;</span><br><span class="line">    location ~ &#123;</span><br><span class="line">        proxy_pass   http://localhost:7979;</span><br><span class="line">    &#125;</span><br><span class="line">    error_page   500 502 503 504  /50x.html;</span><br><span class="line">    location = /50x.html &#123;</span><br><span class="line">        root   html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="增加nginx虚拟主机配置文件confd">增加nginx虚拟主机配置文件(conf.d)</h2>
+<hr>
+<p>新版本默认有 假如无的话</p>
+<p>在原来文件/etc/nginx/nginx.conf 的http 块下加一句话就可以</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">include /etc/nginx/conf.d/*.conf;</span><br></pre></td></tr></table></figure>
+<h2 id="root用户问题">root用户问题</h2>
+<hr>
+<p>众所周知，sshd_config是sshd的配置文件，其中PermitRootLogin可以限定root用户通过ssh的登录方式，如禁止登陆、禁止密码登录、仅允许密钥登陆和开放登陆，以下是对可选项的概括：</p>
+<p>/etc/ssh/sshd_config</p>
+<p>yes|允许|没有限制|没有限制<br>
+without-password|允许|除密码以外|没有限制<br>
+forced-commands-only|允许|仅允许使用密钥|仅允许已授权的命令<br>
+no|不允许|N/A|N/A</p>
+<p>但是这样还是不安全</p>
+<p>对单个文件开放权限算了</p>
+<p>chmod 777 /etc/nginx/nginx.conf</p>
 <h1 id="nginx配置文件的整体结构">Nginx配置文件的整体结构</h1>
 <hr>
 <p><img src="https://segmentfault.com/img/remote/1460000015385949" alt=""></p>
@@ -415,7 +431,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#nginx常用配置"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Nginx常用配置</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#nginx配置文件的整体结构"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Nginx配置文件的整体结构</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#nginx常见错误及处理方法"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Nginx常见错误及处理方法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#404-bad-request"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">404 bad request</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#500-internal-server-rrror"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">500 Internal Server Rrror</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#nginx常用配置"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Nginx常用配置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#增加nginx虚拟主机配置文件confd"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">增加nginx虚拟主机配置文件(conf.d)</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#root用户问题"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">root用户问题</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#nginx配置文件的整体结构"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Nginx配置文件的整体结构</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#nginx常见错误及处理方法"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Nginx常见错误及处理方法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#404-bad-request"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">404 bad request</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#500-internal-server-rrror"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">500 Internal Server Rrror</span></a></li></ol></li></ol>
         
         </div>
       </aside>

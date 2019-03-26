@@ -8,8 +8,48 @@
     </url>
 
     <url>
+        <loc>https://blog.tonystudio.ml/2019/02/26/qiniu/</loc>
+        <lastmod>2019-03-26T01:37:44.922Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2018/06/05/WWDC-2018/</loc>
+        <lastmod>2019-03-26T01:37:44.913Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.tonystudio.ml/2015/02/16/soft-collect/</loc>
-        <lastmod>2019-03-13T03:15:15.759Z</lastmod>
+        <lastmod>2019-03-26T01:37:44.913Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2016/09/18/HTTPS-Charles/</loc>
+        <lastmod>2019-03-26T01:37:44.904Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2016/10/24/build-tonystudio.ml/</loc>
+        <lastmod>2019-03-26T01:37:44.897Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2019/01/01/2018-summary/</loc>
+        <lastmod>2019-03-26T01:37:44.889Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -17,7 +57,31 @@
 
     <url>
         <loc>https://blog.tonystudio.ml/2016/02/18/git-collect/</loc>
-        <lastmod>2019-03-08T09:30:34.932Z</lastmod>
+        <lastmod>2019-03-26T01:37:44.876Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2019/03/21/2019-Spring/</loc>
+        <lastmod>2019-03-26T01:00:16.016Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2019/03/21/ttrss-guide%20/</loc>
+        <lastmod>2019-03-25T09:53:25.953Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2017/06/26/nginx-collect/</loc>
+        <lastmod>2019-03-22T05:44:52.490Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -64,40 +128,8 @@
     </url>
 
     <url>
-        <loc>https://blog.tonystudio.ml/2019/01/01/2018-summary/</loc>
-        <lastmod>2019-03-07T01:56:31.450Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.tonystudio.ml/2016/09/18/HTTPS-Charles/</loc>
-        <lastmod>2019-03-07T01:55:49.353Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://blog.tonystudio.ml/2018/04/30/HTTPS-mitmproxy/</loc>
         <lastmod>2019-03-07T01:55:46.286Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.tonystudio.ml/2016/10/24/build-tonystudio.ml/</loc>
-        <lastmod>2019-03-06T09:39:50.821Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.tonystudio.ml/2018/06/05/WWDC-2018/</loc>
-        <lastmod>2019-03-05T09:27:54.080Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -146,22 +178,6 @@
     <url>
         <loc>https://blog.tonystudio.ml/2018/08/06/ios-flex/</loc>
         <lastmod>2019-03-01T00:58:36.992Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.tonystudio.ml/2017/06/26/nginx-collect/</loc>
-        <lastmod>2019-02-27T07:01:48.449Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.tonystudio.ml/2019/02/26/qiniu/</loc>
-        <lastmod>2019-02-26T07:50:48.813Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
