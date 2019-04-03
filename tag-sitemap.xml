@@ -59,13 +59,6 @@
     </url>
 
     <url>
-        <loc>https://blog.tonystudio.ml/tags/Blogger/</loc>
-        <lastmod>2019-03-26T01:37:44.913Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://blog.tonystudio.ml/tags/WWDC/</loc>
         <lastmod>2019-03-26T01:37:44.913Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -73,15 +66,29 @@
     </url>
 
     <url>
-        <loc>https://blog.tonystudio.ml/tags/Shell/</loc>
+        <loc>https://blog.tonystudio.ml/tags/%E4%B8%83%E7%89%9B%E4%BA%91/</loc>
         <lastmod>2019-03-26T01:37:44.922Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://blog.tonystudio.ml/tags/%E4%B8%83%E7%89%9B%E4%BA%91/</loc>
-        <lastmod>2019-03-26T01:37:44.922Z</lastmod>
+        <loc>https://blog.tonystudio.ml/tags/Blogger/</loc>
+        <lastmod>2019-03-26T07:55:49.578Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/tags/Shell/</loc>
+        <lastmod>2019-03-27T09:09:36.354Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/tags/Apple/</loc>
+        <lastmod>2019-04-03T00:47:44.161Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

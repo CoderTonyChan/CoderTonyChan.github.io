@@ -8,6 +8,30 @@
     </url>
 
     <url>
+        <loc>https://blog.tonystudio.ml/2019/04/03/Apple%20News%20Format/</loc>
+        <lastmod>2019-04-03T00:47:44.161Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2016/10/24/build-tonystudio.ml/</loc>
+        <lastmod>2019-03-27T09:09:36.354Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2019/03/21/ttrss-guide%20/</loc>
+        <lastmod>2019-03-26T07:55:49.578Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.tonystudio.ml/2019/02/26/qiniu/</loc>
         <lastmod>2019-03-26T01:37:44.922Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -40,14 +64,6 @@
     </url>
 
     <url>
-        <loc>https://blog.tonystudio.ml/2016/10/24/build-tonystudio.ml/</loc>
-        <lastmod>2019-03-26T01:37:44.897Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://blog.tonystudio.ml/2019/01/01/2018-summary/</loc>
         <lastmod>2019-03-26T01:37:44.889Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -66,14 +82,6 @@
     <url>
         <loc>https://blog.tonystudio.ml/2019/03/21/2019-Spring/</loc>
         <lastmod>2019-03-26T01:00:16.016Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.tonystudio.ml/2019/03/21/ttrss-guide%20/</loc>
-        <lastmod>2019-03-25T09:53:25.953Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
