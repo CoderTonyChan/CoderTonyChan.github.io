@@ -88,7 +88,14 @@
 
     <url>
         <loc>https://blog.tonystudio.ml/tags/Apple/</loc>
-        <lastmod>2019-04-03T00:47:44.161Z</lastmod>
+        <lastmod>2019-04-03T01:06:41.504Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/tags/Tampermonkey/</loc>
+        <lastmod>2019-04-04T08:02:25.758Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

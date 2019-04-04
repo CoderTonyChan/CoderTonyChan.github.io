@@ -8,8 +8,16 @@
     </url>
 
     <url>
+        <loc>https://blog.tonystudio.ml/2019/04/04/Tampermonkey%20Tutorial/</loc>
+        <lastmod>2019-04-04T08:02:25.758Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.tonystudio.ml/2019/04/03/Apple%20News%20Format/</loc>
-        <lastmod>2019-04-03T00:47:44.161Z</lastmod>
+        <lastmod>2019-04-03T01:06:41.504Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
