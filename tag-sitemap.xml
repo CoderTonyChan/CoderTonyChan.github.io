@@ -73,13 +73,6 @@
     </url>
 
     <url>
-        <loc>https://blog.tonystudio.ml/tags/Blogger/</loc>
-        <lastmod>2019-03-26T07:55:49.578Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://blog.tonystudio.ml/tags/Shell/</loc>
         <lastmod>2019-03-27T09:09:36.354Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -96,6 +89,13 @@
     <url>
         <loc>https://blog.tonystudio.ml/tags/Tampermonkey/</loc>
         <lastmod>2019-04-04T08:27:13.604Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/tags/Blogger/</loc>
+        <lastmod>2019-04-04T08:37:51.650Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

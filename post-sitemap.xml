@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://blog.tonystudio.ml/2019/03/05/2019-blog-feature/</loc>
+        <lastmod>2019-04-04T08:37:51.650Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.tonystudio.ml/2019/04/04/Tampermonkey-Tutorial/</loc>
         <lastmod>2019-04-04T08:27:13.604Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -146,14 +154,6 @@
     <url>
         <loc>https://blog.tonystudio.ml/2018/04/30/HTTPS-mitmproxy/</loc>
         <lastmod>2019-03-07T01:55:46.286Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.tonystudio.ml/2019/03/05/2019-blog-feature/</loc>
-        <lastmod>2019-03-05T08:26:38.859Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

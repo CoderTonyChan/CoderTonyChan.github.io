@@ -8,6 +8,13 @@
     </url>
     
     <url>
+        <loc>https://blog.tonystudio.ml/gallery/</loc>
+        <lastmod>2019-04-12T08:17:42.775Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
         <loc>https://blog.tonystudio.ml/tags/</loc>
         <lastmod>2019-03-26T01:37:44.913Z</lastmod>
         <changefreq>weekly</changefreq>
