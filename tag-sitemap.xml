@@ -38,13 +38,6 @@
     </url>
 
     <url>
-        <loc>https://blog.tonystudio.ml/tags/Git/</loc>
-        <lastmod>2019-03-26T01:37:44.876Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://blog.tonystudio.ml/tags/%E6%8A%93%E5%8C%85/</loc>
         <lastmod>2019-03-26T01:37:44.904Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -94,8 +87,22 @@
     </url>
 
     <url>
+        <loc>https://blog.tonystudio.ml/tags/Git/</loc>
+        <lastmod>2019-04-18T01:04:33.234Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/tags/Travis/</loc>
+        <lastmod>2019-04-18T06:29:24.228Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://blog.tonystudio.ml/tags/Blogger/</loc>
-        <lastmod>2019-04-04T08:37:51.650Z</lastmod>
+        <lastmod>2019-04-22T01:47:42.195Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

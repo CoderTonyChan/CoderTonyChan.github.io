@@ -167,18 +167,18 @@
 
                         
                         <li>
-                            <a href="/gallery/">Gallery</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/archive/">Archives</a>
                         </li>
                         
                     
 
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/gallery/">Gallery</a>
+                        </li>
                         
                     
 
@@ -434,6 +434,33 @@
 <h2 id="快速引用">快速引用</h2>
 <hr>
 <p>你可以选中别人的评论文字，然后按r，这些内容会以引用的形式被复制在文本框中：</p>
+<h2 id="优雅的提交commit信息">优雅的提交Commit信息</h2>
+<hr>
+<p>使用<a href="https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines" target="_blank" rel="noopener">Angular团队提交规范</a></p>
+<p>主要有以下组成</p>
+<ul>
+<li>标题行: 必填, 描述主要修改类型和内容</li>
+<li>主题内容: 描述为什么修改, 做了什么样的修改, 以及开发的思路等等</li>
+<li>页脚注释: 放 Breaking Changes 或 Closed Issues</li>
+</ul>
+<p>常用的修改项</p>
+<ul>
+<li>type: commit 的类型</li>
+<li>feat: 新特性</li>
+<li>fix: 修改问题</li>
+<li>refactor: 代码重构</li>
+<li>docs: 文档修改</li>
+<li>style: 代码格式修改, 注意不是 css 修改</li>
+<li>test: 测试用例修改</li>
+<li>chore: 其他修改, 比如构建流程, 依赖管理.</li>
+<li>scope: commit 影响的范围, 比如: route, component, utils, build…</li>
+<li>subject: commit 的概述</li>
+<li>body: commit 具体修改内容, 可以分为多行</li>
+<li>footer: 一些备注, 通常是 BREAKING CHANGE 或修复的 bug 的链接.</li>
+</ul>
+<h2 id="一图详解"><a href="https://github.com/521xueweihan/git-tips" target="_blank" rel="noopener">一图详解</a></h2>
+<hr>
+<p><img src="http://oss.zhcoco.com/2019/git.3.png" alt=""></p>
 <hr>
 <p>Reference：</p>
 <blockquote>
@@ -502,7 +529,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#git删除所有历史提交记录"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">git删除所有历史提交记录</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#git多个远程仓库"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">git多个远程仓库</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#用git命令行添加多个远程仓库"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">用git命令行添加多个远程仓库</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#一条命令同时更新多个远程仓库"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">一条命令同时更新多个远程仓库</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#github-release功能"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Github Release功能</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#tag"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">Tag</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#release-note"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">Release Note</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#二进制文件上传"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">二进制文件上传</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#this-is-a-pre-release"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">This is a pre-release</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#规范"><span class="toc-nav-number">3.5.</span> <span class="toc-nav-text">规范</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#github-实用功能"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Github 实用功能</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#粘贴图片"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">粘贴图片</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#链接到代码"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">链接到代码</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#创建复选框列表"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">创建复选框列表</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#github-wiki"><span class="toc-nav-number">4.4.</span> <span class="toc-nav-text">GitHub wiki</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#github作为cms内容管理系统"><span class="toc-nav-number">4.5.</span> <span class="toc-nav-text">GitHub作为CMS(内容管理系统)</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#快速引用"><span class="toc-nav-number">4.6.</span> <span class="toc-nav-text">快速引用</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#git删除所有历史提交记录"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">git删除所有历史提交记录</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#git多个远程仓库"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">git多个远程仓库</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#用git命令行添加多个远程仓库"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">用git命令行添加多个远程仓库</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#一条命令同时更新多个远程仓库"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">一条命令同时更新多个远程仓库</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#github-release功能"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Github Release功能</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#tag"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">Tag</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#release-note"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">Release Note</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#二进制文件上传"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">二进制文件上传</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#this-is-a-pre-release"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">This is a pre-release</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#规范"><span class="toc-nav-number">3.5.</span> <span class="toc-nav-text">规范</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#github-实用功能"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Github 实用功能</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#粘贴图片"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">粘贴图片</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#链接到代码"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">链接到代码</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#创建复选框列表"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">创建复选框列表</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#github-wiki"><span class="toc-nav-number">4.4.</span> <span class="toc-nav-text">GitHub wiki</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#github作为cms内容管理系统"><span class="toc-nav-number">4.5.</span> <span class="toc-nav-text">GitHub作为CMS(内容管理系统)</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#快速引用"><span class="toc-nav-number">4.6.</span> <span class="toc-nav-text">快速引用</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#优雅的提交commit信息"><span class="toc-nav-number">4.7.</span> <span class="toc-nav-text">优雅的提交Commit信息</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#一图详解"><span class="toc-nav-number">4.8.</span> <span class="toc-nav-text">一图详解</span></a></li></ol></li></ol>
         
         </div>
       </aside>

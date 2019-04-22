@@ -8,6 +8,30 @@
     </url>
 
     <url>
+        <loc>https://blog.tonystudio.ml/2019/04/22/996/</loc>
+        <lastmod>2019-04-22T01:47:42.195Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2017/05/21/Travis-CI-Favicon/</loc>
+        <lastmod>2019-04-18T06:29:24.228Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2016/02/18/git-collect/</loc>
+        <lastmod>2019-04-18T01:04:33.234Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.tonystudio.ml/2019/03/05/2019-blog-feature/</loc>
         <lastmod>2019-04-04T08:37:51.650Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -82,14 +106,6 @@
     <url>
         <loc>https://blog.tonystudio.ml/2019/01/01/2018-summary/</loc>
         <lastmod>2019-03-26T01:37:44.889Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.tonystudio.ml/2016/02/18/git-collect/</loc>
-        <lastmod>2019-03-26T01:37:44.876Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Tony写字的地方">
+    <meta name="keyword" content="TonyChan">
+    <meta name="referrer" content="no-referrer">
+    <link rel="shortcut icon" href="/img/icon.png">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="manifest" href="/img/site.webmanifest">
+    <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#ff0000">
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          996 - Tony&#39;s Studio
+        
+    </title>
+
+    <link rel="canonical" href="https://blog.tonystudio.ml/2019/04/22/996/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('http://oss.zhcoco.com/2019/bg-japan.JPG');
+            -webkit-mask: -webkit-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,1),rgba(0,0,0,1),rgba(0,0,0,0.5));
+            /*post*/
+        
+    }
+
+    
+</style>
+
+<div style="background: #000">
+    <header class="intro-header">
+        <!-- Signature -->
+        <div id="signature">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        
+                        <div class="post-heading" style="color: ">
+                            <div class="tags">
+                                
+                                <a class="tag" href="/tags/#Blogger" title="Blogger">Blogger</a>
+                                
+                            </div>
+                            <h1>996</h1>
+                            <h2 class="subheading">996</h2>
+                            <span class="meta">
+                                Posted by Tony Chan on
+                                2019-04-22
+                            </span>
+                        </div>
+                        
+    
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Tony&#39;s Studio</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/books/">Books</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/gallery/">Gallery</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+                    <li>
+                        <a href="https://travel.tonystudio.ml">Travel</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>From <a href="https://www.v2ex.com/t/557056" target="_blank" rel="noopener">996.ICU 一番热度过去，留下了什么</a></p>
+<h1 id="jzer0n">Jzer0n</h1>
+<hr>
+<blockquote>
+<p>这事情没完，看看各方的得失分：</p>
+<ol>
+<li>先锋队输了。在这些所谓企业创始人出来为 996 站台又没得到法律的处罚开始，它就输了，而在可见的将来，它没有翻盘的可能。它制定的法律，成了一纸空文，在可见不可见的将来，更多千奇百怪的事情都会出现了，等着看。</li>
+</ol>
+<p>2.资本家当前似乎赢了，但长远来看是输了。当前这一代人，或者因为收到房贷等负担迫不得已妥协了这个 996，但种子已经种下，这一代人肯定会慢慢退出更竞争的行业的，到了接下来的一代，资本家会发现自己埋下的苦果自己啃。对于马云刘强东之流，送上一个字“呸”。迟早会清算。</p>
+<p>3.劳动者当前似乎输了，但未来可期。中国畸形的房地产和楼价，摧毁了至少一代人甚至是三代人的钱包，他们不得已只好更辛苦的负重前行，这波 996，先锋队站在资本家的一面，抛弃了底层无数的劳动者，资本家露出了他们原本的丑陋嘴脸，我们或者当前没有胜利，但我们的后辈心里的种子已经生根发芽。</p>
+<p>等着吧，一代新人胜旧人，我们未竟的事，下一代会越来越更多人继续下去。</p>
+<p>另外，先锋队和资本家成了一家人，真是完全颠覆了马克思，“马克思老人家，你不要来中国了，你的徒子徒孙已经抛弃你了。”</p>
+</blockquote>
+<h1 id="starqoq">starqoq</h1>
+<hr>
+<blockquote>
+<p>鲁迅先生的作品《聪明人和傻子和奴才》</p>
+</blockquote>
+<h1 id="mingyun">mingyun</h1>
+<hr>
+<blockquote>
+<p>关于 996 大讨论的微博总结</p>
+<p>资本家的话一个字都不要信。我每天只睡四个小时，我每天工作 16 个小时等等，诸如此类，你要是信了，你觉得鸡汤的味道不错，开始努力工作憧憬未来，那么恭喜，一个崭新的韭菜苗子就破土而出了。</p>
+<p>驴再努力的拉磨，把磨盘拉碎了，并没什么卵用。你越努力工作，所承担的压力和责任就越大，你不一定得到相应的回报。</p>
+<p>给多少钱干多少活，这就是职业道德。干的活比给的钱多，那就是不道德，那就是在助纣为虐，活该被剥削。</p>
+<p>资本家努力的工作和普通人努力工作能一样吗？人家在私人飞机上思考全球投资，大白腿给端茶倒水，你特么在黑压压的大开间 996 加班写代码；资本家吹空调喝 XO 看财报简讯，你在挤地铁公交大太阳下给人装 APP 完成 KPI ；资本家赔政要吃饭跳舞，你在家里一面抱着孩子一面线上解 BUG。资本家 16 个小时工作是吃喝玩乐，你 16 个小时是工地搬砖。资本家酒会舞会高尔夫保龄球来去自由，你在公司那个钢筋水泥的透明监狱指纹考勤。</p>
+<p>资本家财富积累都是通过剩余价值的剥削，资本家考虑怎么剥削你，你考虑怎么更多贡献剩余价值？</p>
+<p>上班摸鱼还能节节高升那才是本事，啥也不干资本家还的笑脸相迎高薪聘请，反向割资本家韭菜，这才是你应该思考的东西。</p>
+<p>资本家公开发言劝你努力，就当他们用嘴放屁，止增笑耳。</p>
+<p>不是说既然资本家剥削我，我就彻底混了，自暴自弃，也不加班也不努力。</p>
+<p>这是不对的，这也正式中了资本家的逻辑陷阱。个人努力提升不等于 996 给资本家拉磨，不给资本家搬砖也不代表自我放纵自暴自弃。</p>
+<p>看看人家刘慈欣是怎么做的？上班摸鱼摸出了雨果奖，这才是打工者的一条明路。</p>
+<p>公司分配给你的工作都是没啥价值的重复性工作，或许对新人有点提升，一旦熟悉以后就对个人来说没半点意义。这种垃圾工作干一天算一天钱，谁他妈也不欠谁。你来逼我 996，我就问候你家人，有来有往，礼尚往来。</p>
+<p>有价值，有提升，有技术含量的工作多做点不亏，技术练好了，不给加钱就炒老板鱿鱼。反过来重复性的垃圾任务，打钱就干，不打钱，滚！</p>
+<p>投资自己的事业，多苦多累都可以，为别人做嫁衣，多做一分都嫌弃。</p>
+<p>你年青有为，用青春和健康为别人成就霸业，最后仅得了一个养家糊口的薪水而已；当你人到中年，上有老下有小，一个裁员就让你滚蛋，你家里老人看病小孩待哺，你跟谁哭去？</p>
+<p>什么企业文化，什么都是兄弟，全 TMD 放屁，在利益面前都是贪婪的魔鬼。别尼玛假惺惺的来的劝我努力，害不害臊。</p>
+<p>别特么给我谈理想，谈未来，谈努力，谈回报，爷心里明镜似的，识破了你们这帮贪婪资本家的吸血本质，我就有了未来，我就能努力了，我的回报应该奖励我自己，而不是被你剥削宰割，反过来还喷我不努力！</p>
+<p>from <a href="https://weibo.com/1687243315/Hpz3SgDdf" target="_blank" rel="noopener">https://weibo.com/1687243315/Hpz3SgDdf</a></p>
+</blockquote>
+<hr>
+<p>Reference：</p>
+<blockquote>
+<p>少数派：<a href="https://sspai.com/post/53837" target="_blank" rel="noopener">Apple News+ 能不能成为新闻业的 Netflix？这是我的一周使用体验</a></p>
+<p>GitHub Repo：<a href="https://github.com/CoderTonyChan/CoderTonyChan.github.io" target="_blank" rel="noopener">Tony Studio</a></p>
+<p>Follow: <a href="https://github.com/CoderTonyChan" target="_blank" rel="noopener">CoderTonyCHan · GitHub</a></p>
+</blockquote>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2019/04/04/Tampermonkey-Tutorial/" data-toggle="tooltip" data-placement="top" title="Tampermonkey Tutorial">Next Post &rarr;<br><span>Tampermonkey Tutorial</span></a>
+                        </li>
+                    
+                </ul>
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                <!-- Gitalk 评论 start  -->
+                
+                <!-- Link Gitalk 的支持文件  -->
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+                
+                <div id="gitalk-container"></div>
+                <script type="text/javascript">
+                    var gitalk = new Gitalk({
+                        // gitalk的主要参数
+                        clientID: `d6e8288a1c63e75847f3`,
+                        clientSecret: `8c5389eb088393c894f7b085c7674d6aedc8783a`,
+                        repo: `CoderTonyChan.github.io`,
+                        owner: 'CoderTonyChan',
+                        admin: ['CoderTonyChan'],
+                        id: location.pathname,
+                        distractionFreeMode: false
+                    });
+                    gitalk.render('gitalk-container');
+                </script>
+                
+                <!-- Gitalk end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#jzer0n"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Jzer0n</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#starqoq"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">starqoq</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#mingyun"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">mingyun</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#Blogger" title="Blogger">Blogger</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://tonystudio.ml" target="_blank">TonyStudio Home</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+
+                
+                <li>
+                    <a href="mailto:hi@tonystudio.ml">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                
+                
+
+                
+                <li>
+                    <a target="_blank" href="https://github.com/CoderTonyChan">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                
+
+                
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                
+
+                
+
+                
+
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Tony Chan 2019 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="http://beantech.org">BeanTech</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://blog.tonystudio.ml/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-135626320-1';
+    var _gaDomain = 'undefined';
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135626320-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-135626320-1');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
