@@ -73,13 +73,6 @@
     </url>
 
     <url>
-        <loc>https://blog.tonystudio.ml/tags/Apple/</loc>
-        <lastmod>2019-04-03T01:06:41.504Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://blog.tonystudio.ml/tags/Tampermonkey/</loc>
         <lastmod>2019-04-04T08:27:13.604Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -102,7 +95,14 @@
 
     <url>
         <loc>https://blog.tonystudio.ml/tags/Blogger/</loc>
-        <lastmod>2019-04-22T01:47:42.195Z</lastmod>
+        <lastmod>2019-04-24T03:03:23.410Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/tags/Apple/</loc>
+        <lastmod>2019-04-24T03:04:37.855Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

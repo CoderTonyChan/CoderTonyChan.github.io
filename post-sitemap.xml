@@ -8,8 +8,16 @@
     </url>
 
     <url>
+        <loc>https://blog.tonystudio.ml/2019/04/24/AirPlay2/</loc>
+        <lastmod>2019-04-24T03:04:37.855Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.tonystudio.ml/2019/04/22/996/</loc>
-        <lastmod>2019-04-22T01:47:42.195Z</lastmod>
+        <lastmod>2019-04-24T03:03:23.410Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
