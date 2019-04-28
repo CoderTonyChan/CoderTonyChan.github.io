@@ -24,11 +24,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          cocopods的坑 - Tony&#39;s Studio
+          HomePod - Tony&#39;s Studio
         
     </title>
 
-    <link rel="canonical" href="https://blog.tonystudio.ml/2017/02/21/cocopods-collect/">
+    <link rel="canonical" href="https://blog.tonystudio.ml/2019/04/28/2019-04-28-HomePod/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -79,7 +79,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('http://oss.zhcoco.com/2019/bg-japan.JPG');
+            background-image: url('https://user-images.githubusercontent.com/16996753/56857164-e9cf4380-699c-11e9-93e0-1a4e9de0a234.png');
             -webkit-mask: -webkit-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,1),rgba(0,0,0,1),rgba(0,0,0,0.5));
             /*post*/
         
@@ -99,14 +99,14 @@
                         <div class="post-heading" style="color: ">
                             <div class="tags">
                                 
-                                <a class="tag" href="/tags/#Cocopods" title="Cocopods">Cocopods</a>
+                                <a class="tag" href="/tags/#Apple" title="Apple">Apple</a>
                                 
                             </div>
-                            <h1>cocopods的坑</h1>
-                            <h2 class="subheading">Cocopods Collect</h2>
+                            <h1>HomePod</h1>
+                            <h2 class="subheading">HomePod</h2>
                             <span class="meta">
                                 Posted by Tony Chan on
-                                2017-02-21
+                                2019-04-28
                             </span>
                         </div>
                         
@@ -341,23 +341,101 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>使用CocoaPods也有很长一段时间了，最近几个月的时间里也主导了公司私有Pods的创建和使用。在此期间踩过了不少坑，在踩坑的过程中也收获了不少经验，更加熟练地掌握了CocoaPods的一些指令的使用。本篇作为这段时间收获的备忘。</p>
-<h1 id="多target时podfile该如何写">多target时Podfile该如何写</h1>
+                <p>From <a href="https://sspai.com/post/46199" target="_blank" rel="noopener">HomePod：聊音箱，其它评测没告诉你的事</a></p>
+<p>本文，我不想重复任何其它评测中谈烂的话题。我将从实际听感及使用场景的角度来聊聊 HomePod 适合谁，为什么，怎么用。文末，我录制了一段实机对比录音视频，若你对 HomePod 的发音倾向感兴趣，可以实际听听来参考。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/56857166-f05dbb00-699c-11e9-8c67-0b764480f05f.png" alt="image"><br>
+本文录音设备及对比对象</p>
+<p>关于 HomePod，我看过不少评测或体验，但他们大多都只谈到了皮毛。涉及严肃的实际体验方面，如发音倾向，和它底适不适合你的使用场景等问题，这些评测大多浅尝辄止，没有讲明白。</p>
+<p>考虑到 HomePod 的文章本就不少，我本没打算写这篇文章。但在实际用了一阵子后，我发现 HomePod 使用场景很有针对性，若你对它有错误的期待，那可能很大可能买了也不会满意，若你是 HomePod 使用场景针对的用户，那 HomePod 无疑是最优选择。</p>
+<p>在文章开始前，先说下猫爪板的问题，有很多人担心 HomePod 会被用来当猫抓板。从我的体验来看，猫星人对 HomePod 完全不感兴趣，所以不必担心。但是如果你实在不放心，给 HomePod 买个 AppleCare+ 就可以了，保两年两次意外损坏。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/56857168-fd7aaa00-699c-11e9-9f8e-c52f92604403.png" alt="image"><br>
+猫抓板的比喻</p>
+<h1 id="homepod-到底是不是蓝牙音箱">HomePod 到底是不是蓝牙音箱？</h1>
 <hr>
-<p>我的建议是使用Ruby语法，定义不同的分组，然后不同的target可以自由选择依赖哪些分组，这种方式看起来更简洁，对于多target的项目来说也更友好：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">platform :ios, &apos;8.0&apos;</span><br><span class="line"></span><br><span class="line">def commonPods #通用pods集</span><br><span class="line">    pod &apos;AFNetworking&apos;, &apos;~&gt; 2.0&apos;</span><br><span class="line">    pod &apos;Masonry&apos;</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">def appOnlyPods #app专用pods集</span><br><span class="line">    pod &apos;MBProgressHUD&apos;</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">def extensionPods #扩展专用pods集</span><br><span class="line">    pod &apos;GTSDKExtension&apos;</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">target :TestCocoaPods do</span><br><span class="line">    commonPods</span><br><span class="line">    appOnlyPods</span><br><span class="line"></span><br><span class="line">    target :TestCocoaPodsTests do</span><br><span class="line">    inherit! :search_paths</span><br><span class="line">    # Pods for testing</span><br><span class="line">    end</span><br><span class="line"></span><br><span class="line">    target :TestCocoaPodsUITests do</span><br><span class="line">        inherit! :search_paths</span><br><span class="line">        # Pods for testing</span><br><span class="line">    end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">target :SecondTarget do</span><br><span class="line">    commonPods</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-<h1 id="如何忽略pods警告">如何忽略Pods警告？</h1>
+<p>很多人把 HomePod 当个蓝牙音箱，并抱怨其不支持其它设备。其实不然，HomePod 本质是个完全独立的音乐播放器。我甚至推测 HomePod 实际放歌的时候不是采用蓝牙传输音频的，而是 WI-FI。这样既可以杜绝蓝牙的带宽限制，也不需要设备在 HomePod 附近才可以播放。</p>
+<p>若你附近有 HomePod，你可以做这样一个测试，把 HomePod 相连的手机关机后让 SIRI 放歌，HomePod 依旧可以正常播放，也可以完全正常工作。这说明了 HomePod 的工作是不依托任何其他设备的，而是直接和家里的 WI-FI 互动来获取信息。</p>
+<p>这么一来，它的语音歌曲模式只支持 Apple Music 也就好理解了，因为它的歌曲播放是直接向 Apple Music 服务器要求的，而不是手机或者其它设备，对于其它音乐服务 Apple 无权直接索要歌曲。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/56857170-079ca880-699d-11e9-9693-8c59de53e89e.png" alt="image"><br>
+HomePod 主板 | ifixit</p>
+<p><strong>HomePod 本身采用 iOS 系统，拥有蓝牙 5.0，5G-MIMO WI-FI，且自带 1GB 内存和 16GB 闪存</strong>。在我看来，HomePod 设置时需要 iOS 设备主要是是为了获取账户订阅信息和 WI-FI 密码，在这之后便和 iOS 其它设备完全无关了，这时候若你用其他设备放歌，这些设备充当的更像是一台遥控器，而不是歌曲本身的发送者。在某种意义上，HomePod 是一台纯互联网设备。</p>
+<p>当然，如果你喜欢，你也可以把 HomePod 当成一个蓝牙音箱来用。并不像很多人说的只能用 Apple Music，你可以用任何苹果生态系统中的设备，任何音乐服务，任何应用程序，HomePod 这时候充当的是音响的角色。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/56857172-12efd400-699d-11e9-9a49-537760ef6b73.png" alt="image"><br>
+HomePod 连接 Apple TV</p>
+<p>从延迟的角度看， HomePod 充当音响时有细微的延迟，我不会建议用它来看电影，因为充当音响模式下的 HomePod 采用蓝牙会自带延迟属性加成。但这个延迟一点也不高，如果你能接受 AirPods 看电影，那 HomePod 的延迟也类似，几乎无法感知。</p>
+<h1 id="我们听到的声音如何而来">我们听到的声音如何而来？</h1>
 <hr>
-<p>有些第三方Pod集成进来会有一大堆警告信息，如果你看着比较难受想把它忽略的话，在Podfile中对应的target或分组下加上关键字inhibit_all_warnings即可。</p>
-<h1 id="如何直接引用第三方库中的头文件">如何直接引用第三方库中的头文件？</h1>
+<p>既然聊的是音箱，那么我们先来看看日常听到的音乐如何而来，这有助于理解为什么 HomePod 非常适合听歌或者博客，却不适合用来当作电视音响。</p>
+<p>我们从不同设备中听到任何声音，来源基本只有两个途径：一个是录音，另一个是合成。</p>
+<h2 id="录音">录音</h2>
 <hr>
-<p>在用CocoaPods集成第三方库之后，默认情况下，我们需要使用类似#import &lt;XXX/YYY.h&gt;的方式引入第三方库的头文件。我们可以在Build Settings -&gt; User Header Search Paths中添加${SRCROOT}并设置成recursive，这样我们就可以直接使用#impot &quot;YYY.h&quot;这种方式了。</p>
-<h1 id="修改pods中的源码为什么不生效">修改pods中的源码,为什么不生效?</h1>
+<p>这是最主要的音频来源。比如人说话的声音，唱歌的声音，电影中关门的声音，武打特效兵戈相碰的声音，甚至手机铃声等，基本都是录音。</p>
+<p>录音的主要设备是麦克风。常见麦克风一般有两个类型：一个是单声道麦克风，另一个是立体声麦克风。这两个类型没有绝对谁比谁好的说法，我们习惯在不同场景使用其中的某一类。</p>
+<p><strong>单声道麦克风</strong> 单声道麦克风的特点是指向性极强，麦克风永远指向录音前方，因此天生具有抗环境噪音的特质。下面的四张图是常见的几种比较有代表性的单声道麦克风。第一个是常用在歌手录歌或演讲，第二个常用在主持或者访谈时，第三个用在播客或工作室录音，前面有防破音网，最后一个是摄影摄像记者常装在相机上的麦克。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/56857194-2602a400-699d-11e9-9752-2084d58b9e7f.png" alt="image"><br>
+常见的单声道麦克风</p>
+<p>这些单身道麦克风主要在做什么呢？从上面的使用场景中不难看出，单身到麦克风的核心作用就是录制人声。讲到这里，可以和 HomePod 联系在一起了。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/56857199-3024a280-699d-11e9-8b36-cbf73e404fc0.png" alt="image"><br>
+一台 HomePod</p>
+<p>正因为一台 HomePod 是一台单声道播放器，它并不适合用来当作电影音箱来播放需要空间定位的音源，若你买一台 HomePod 希望把它主力看电影用，这并不合适。一台 HomePod 极适合用来听歌，听播客这些事情。</p>
+<p><strong>立体声麦克风</strong> 与单声道麦克风的指向性强相反，立体声麦克风需要接收多个指定位置，甚至四面八方传来的音乐，这时候录音时需要采用立体声麦克风。下面这几种是比较常见的立体声麦克风，比如下方中间这个称做 XY 麦克风，一个指向左一个指向右，就录出了我们常常听到的双声道立体声。下图左边的是单声道/立体声麦克风，右边的则是全域麦克风。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/56857201-39157400-699d-11e9-9c5b-5b89fb9f8b60.png" alt="image"><br>
+常见的立体声麦克风</p>
+<p>同理。若想要如实的表达这些麦克风录制的内容，你也需要至少两个音响。如果你家房间非常大，或者你希望获得传统的左右声道的体验，那么你就需要两台 HomePod。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/56857202-3f0b5500-699d-11e9-93a7-02d1c1dbc1ea.png" alt="image"><br>
+一对 HomePod</p>
+<p>当两台 HomePod 被连接在一起后，它会自动将左右声道分配到两台机器上，由于 HomePod 采用的声场技术非常先进，你不必局限在两个机器一左一右放置很近。你可以把它们放在房间的两端然后享受传统立体声。</p>
+<h2 id="合成音">合成音</h2>
 <hr>
-<p>每次编译编译器默认是不会再次编译pods中的代码, 修改后可以clean一下,然后再试</p>
+<p>这大多指的是你听到的一些不寻常的声音，比如某些电音，一些歌曲的特殊处理，或者虚拟立体声等。这些音效往往通过了许多后期软件加工，在音色和声道上加以处理以达到纯录音不能表现出的效果。</p>
+<p>之所以要聊这个，是因为除了立体声外，很多时候我们在电影院或者家庭影院中听到的那些震撼的声音，可能是后期计算出来的。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/56857213-492d5380-699d-11e9-9c51-01dc23cfa5b7.png" alt="image"><br>
+电影或游戏所追求的立体声 | Dolby Atmos</p>
+<p>若你追求的是超强的立体感，比如玩游戏或者看电影，那么一对 HomePod 可能不会让你完全满意。你可以考虑纯 5.1 或者 7.1 声道的音箱系统，或者配备杜比全景声技术的音箱。这些虚拟技术可以将声音在即便只有两声道的情况下虚拟出多个声道来，使得声音的定位感更强。由于产品定位不同，HomePod 并不具备这些技术。</p>
+<h1 id="homepod-听歌感受如何">HomePod 听歌感受如何？</h1>
+<hr>
+<p>HomePod 极其适合听歌。一台 HomePod 可以瞬间将家变成你的私家舞厅，这主要得益于 HomePod 的三个设计。</p>
+<h2 id="发音倾向忠于原音">发音倾向忠于原音</h2>
+<hr>
+<p>每个品牌对音乐的诠释都有所不同，有的追求清晰锐利，有的追求超级重低音。HomePod 的风格在我看来则是忠于原音。它不会一上来就给你的所有音乐加上咚咚咚的重低音的感觉，而是针对每一首歌尽量还原出作者创作时希望的风格取向。</p>
+<p>主观上来说，它给我的感觉就是听打击乐可以低音很低，听起来你可能会跟着鼓点一起肝颤；听钢琴曲又好像置身于某个礼堂，钢琴声的端庄和力量都让人能设身处地，甚至比现场听钢琴曲效果还好；听清脆的女声则是干净纯粹，像是用水洗过一般的声音。</p>
+<p>这可能是 A8 芯片在后面调节的成果。简而言之，用它来听各种风格的音乐，你都不会失望。它不会一股脑的将某个风格强加在所有音乐上，而是针对每首歌都尽量让其表现出原有的样貌，这大概就是我想表达的忠于原音。</p>
+<h2 id="声音大而不失真">声音大而不失真</h2>
+<hr>
+<p>这主要得益于它是扬声器确实多，HomePod 的外放由七个高音喇叭和一个巨大的低音喇叭组成。与许多传统音响声音一调大就容易破音不同，HomePod 在我使用期间即使声音最大也没有出现过破音的情况。它的音量调节很线性，若衡量最大音量，大概是一间大客厅听起来嫌吵的程度。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/56857219-59453300-699d-11e9-8e6a-feb116f5abd8.png" alt="image"><br>
+HomePod 构成 | Apple</p>
+<h2 id="声音能填满房子">声音能填满房子</h2>
+<hr>
+<p>这是个比较神奇的体验。简单来说，它是个全域音响，听音乐的话临场感很强，但只在一个房间有用。这个特性受益于 A8 芯片的分析，它会实时根据摆放位置调整每个喇叭的输出，来确保房间的每个角落听到的声音都差不多。主观感受也确实如此，这也是我说开 HomePod 像是进了迪厅的原因，它的声音可以非常饱满的填充整个房子。如果你的房子之间隔了门的话，那就不能指望还有能填满房子的体验了，你可能需要考虑第二台 HomePod。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/56857222-619d6e00-699d-11e9-9eb4-15509848b817.png" alt="image"><br>
+HomePod 声场 | Apple</p>
+<p>小结一下，HomePod 的音质完全不需要担心，在其它各方面表现也很不错。根据你的实际需要，你可以考虑买一个，或者买两个。</p>
+<h1 id="homepod-实际录音对比">HomePod 实际录音对比</h1>
+<hr>
+<p>为了更好的说明 HomePod 的发声倾向，我录制了一段对比罗技 Z200 音响的视频，这段视频不能代表 HomePod 的实际发声效果，因为你很可能用的是别的音响或耳机，但是它可以在某种程度上展示出 HomePod 在处理不同歌曲时的趋向。</p>
+<p>在接下来的视频/音频中，你将会首先听到罗技音响的录音，结束后第二次播放的相同曲目则是 HomePod 的录音。若你查看的是视频，则可以在视频中看到我加入的波形图和文字说明。录制时，MacBook Pro 控制的是罗技音响，iPad 控制的是 HomePod。视频中 L 表示罗技音响，H 表示 HomePod。</p>
+<p><a href="https://www.bilibili.com/video/av29822823/" target="_blank" rel="noopener">【点击播放视频】聊音箱，其它评测没告诉你的事 -bilibili</a></p>
+<p>测试歌曲，按视频录制顺序排列：</p>
+<p>电音：ALEX F<br>
+中国女声：忽然之间<br>
+钢琴：One Call Away<br>
+动漫： Senbonsakura<br>
+外国男声：Despacito<br>
+经典：加州旅馆<br>
+中国男声：蓝莲花<br>
+中国女声：后来<br>
+外国女声：Faded</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/56857226-77ab2e80-699d-11e9-8e22-561ee7d556e4.png" alt="image"><br>
+录制设备</p>
+<p>录音用的麦克风是舒尔 MV88，测试时为了照顾左右两侧的立体声罗技音响，选择的模式是 105 度夹角的立体声录制，音频本身没有做任何后期处理及修复，若你听到破音，则代表音响真的在播放时破音了。</p>
+<h1 id="写在文后">写在文后</h1>
+<hr>
+<p>我用 HomePod 来做什么？我买它的时候想法比较直接，就是我需要一个能在洗澡的时候还能听得清的音箱，同时我希望早晨一起来能用它放 Medium 当天的文章朗读或者 YouTube 有趣的视频，在我干活吸地洗碗的时候都必须能听清。这是我的两个核心需求，其次就是用来听歌，听歌反而是个次要需求。</p>
+<p>像我之前提到的，单个 HomePod 非常擅长播发单声道的内容，音频素质优秀。空间技术允许 HomePod 的声音填满整个房间，最终我的需求得到了很好的满足。若你需要立体声，则需要购买两个 HomePod。若你希望用它来充当家庭影院的音效，这和听歌是两种截然不同的需求，强烈建议你选择其他产品，有很多产品在影视音乐的表现远比 HomePod 优秀。</p>
 <hr>
 <p>Reference：</p>
 <blockquote>
+<p>少数派：<a href="https://sspai.com/post/46199" target="_blank" rel="noopener">HomePod：聊音箱，其它评测没告诉你的事</a></p>
 <p>GitHub Repo：<a href="https://github.com/CoderTonyChan/CoderTonyChan.github.io" target="_blank" rel="noopener">Tony Studio</a></p>
 <p>Follow: <a href="https://github.com/CoderTonyChan" target="_blank" rel="noopener">CoderTonyCHan · GitHub</a></p>
 </blockquote>
@@ -369,12 +447,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2017/05/21/Travis-CI-Favicon/" data-toggle="tooltip" data-placement="top" title="Travis-CI">&larr; Previous Post<br><span>Travis-CI</span></a>
+                            <a href="/2019/04/28/2019-04-28-Talk-about-electronic-products/" data-toggle="tooltip" data-placement="top" title="从电子产品说起">&larr; Previous Post<br><span>从电子产品说起</span></a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2016/10/24/build-tonystudio.ml/" data-toggle="tooltip" data-placement="top" title="个人建站教程">Next Post &rarr;<br><span>个人建站教程</span></a>
+                            <a href="/2019/04/24/AirPlay2/" data-toggle="tooltip" data-placement="top" title="AirPlay2">Next Post &rarr;<br><span>AirPlay2</span></a>
                         </li>
                     
                 </ul>
@@ -423,7 +501,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#多target时podfile该如何写"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">多target时Podfile该如何写</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#如何忽略pods警告"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">如何忽略Pods警告？</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#如何直接引用第三方库中的头文件"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">如何直接引用第三方库中的头文件？</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#修改pods中的源码为什么不生效"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">修改pods中的源码,为什么不生效?</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#homepod-到底是不是蓝牙音箱"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">HomePod 到底是不是蓝牙音箱？</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#我们听到的声音如何而来"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">我们听到的声音如何而来？</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#录音"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">录音</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#合成音"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">合成音</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#homepod-听歌感受如何"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">HomePod 听歌感受如何？</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#发音倾向忠于原音"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">发音倾向忠于原音</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#声音大而不失真"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">声音大而不失真</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#声音能填满房子"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">声音能填满房子</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#homepod-实际录音对比"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">HomePod 实际录音对比</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#写在文后"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">写在文后</span></a></li></ol>
         
         </div>
       </aside>
@@ -443,7 +521,7 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#Cocopods" title="Cocopods">Cocopods</a>
+                          <a class="tag" href="/tags/#Apple" title="Apple">Apple</a>
                         
                     </div>
                 </section>
