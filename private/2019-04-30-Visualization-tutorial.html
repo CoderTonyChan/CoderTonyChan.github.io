@@ -28,7 +28,7 @@
         
     </title>
 
-    <link rel="canonical" href="https://blog.tonystudio.ml/2019/04/30/backup/2019-04-30-Visualization-tutorial/">
+    <link rel="canonical" href="https://blog.tonystudio.ml/private/2019-04-30-Visualization-tutorial.html">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -78,10 +78,10 @@
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
-        
-            background-image: url('http://oss.zhcoco.com/2019/bg-japan.JPG');
-            -webkit-mask: -webkit-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,1),rgba(0,0,0,1),rgba(0,0,0,0.5));
-            /*post*/
+         /* page 就是 about archives 或者/archives/2019/02/ 等等 */
+            /* background-image: url('/undefined') */
+            background-image: url('http://oss.zhcoco.com/2019/bg-japan.JPG')
+            
         
     }
 
@@ -96,18 +96,10 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                         
-                        <div class="post-heading" style="color: ">
-                            <div class="tags">
-                                
-                                <a class="tag" href="/tags/#tutorial" title="tutorial">tutorial</a>
-                                
-                            </div>
+                        <div class="site-heading">
                             <h1>「零编程基础」的你可以这样做数据可视化</h1>
-                            <h2 class="subheading">Visualization tutorial.</h2>
-                            <span class="meta">
-                                Posted by Tony Chan on
-                                2019-04-30
-                            </span>
+                            <!--<hr class="small">-->
+                            <span class="subheading">Talk is cheap. Show me the code.</span>
                         </div>
                         
     
@@ -160,13 +152,6 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/books/">Books</a>
                         </li>
                         
@@ -180,6 +165,16 @@
                     
 
                         
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
                     
 
                         
@@ -208,7 +203,7 @@
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/private/2019-04-30-Visualization-tutorial.html">「零编程基础」的你可以这样做数据可视化</a>
                         </li>
                         
                     
@@ -216,6 +211,10 @@
                         
                     
 
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
                         
                     
 
@@ -328,19 +327,23 @@
 
 
     <!-- Main Content -->
-    <!-- Modify by Yu-Hsuan Yen -->
+    
+<meta name="referrer" content="no-referrer">
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        
 
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-
-            <!-- Post Container -->
+<!-- USE SIDEBAR -->
+    <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                post-container">
-
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
+            
                 <p>From <a href="https://sspai.com/post/54169" target="_blank" rel="noopener">爬取2000篇 Matrix 文章，这是一份可视化踹门教程</a></p>
 <hr>
 <p>Reference：</p>
@@ -349,145 +352,233 @@
 <p>Follow: <a href="https://github.com/CoderTonyChan" target="_blank" rel="noopener">CoderTonyCHan · GitHub</a></p>
 </blockquote>
 
-                
 
-                <hr>
-                <!-- Pager -->
-                <ul class="pager">
+                <!-- 如果开启评论功能 -->
+                
+                    <hr>
+
+                    <!-- Gitalk 评论 start  -->
                     
+                    <!-- Link Gitalk 的支持文件  -->
+                    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                    <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
                     
-                        <li class="next">
-                            <a href="/2019/04/30/2019-04-30-Visualization-tutorial/" data-toggle="tooltip" data-placement="top" title="「零编程基础」的你可以这样做数据可视化">Next Post &rarr;<br><span>「零编程基础」的你可以这样做数据可视化</span></a>
-                        </li>
+                    <div id="gitalk-container"></div>
+                    <script type="text/javascript">
+                        var gitalk = new Gitalk({
+                            // gitalk的主要参数
+                            clientID: `d6e8288a1c63e75847f3`,
+                            clientSecret: `8c5389eb088393c894f7b085c7674d6aedc8783a`,
+                            repo: `CoderTonyChan.github.io`,
+                            owner: 'CoderTonyChan',
+                            admin: ['CoderTonyChan'],
+                            id: 'about',
+                            distractionFreeMode: false
+                        });
+                        gitalk.render('gitalk-container');
+                    </script>
                     
-                </ul>
+                    <!-- Gitalk end -->
 
-                <!-- duoshuo Share start -->
-                
-                <!-- 多说 Share end-->
 
-                <!-- 多说评论框 start -->
-                
-                <!-- 多说评论框 end -->
+                    
 
-                <!-- disqus comment start -->
-                
-                <!-- disqus comment end -->
+                    
 
-                <!-- Gitalk 评论 start  -->
+
+                    
+
+                    
                 
-                <!-- Link Gitalk 的支持文件  -->
-                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-                <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
-                
-                <div id="gitalk-container"></div>
-                <script type="text/javascript">
-                    var gitalk = new Gitalk({
-                        // gitalk的主要参数
-                        clientID: `d6e8288a1c63e75847f3`,
-                        clientSecret: `8c5389eb088393c894f7b085c7674d6aedc8783a`,
-                        repo: `CoderTonyChan.github.io`,
-                        owner: 'CoderTonyChan',
-                        admin: ['CoderTonyChan'],
-                        id: location.pathname,
-                        distractionFreeMode: false
-                    });
-                    gitalk.render('gitalk-container');
-                </script>
-                
-                <!-- Gitalk end -->
             </div>
+
+          <!-- Sidebar Container -->
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+        <!-- Featured Tags -->
+
+<section>
+    <!-- no hr -->
+    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+    <div class="tags">
+        
             
-            <!-- Tabe of Content -->
-            <!-- Table of Contents -->
-
-    
-      <aside id="sidebar">
-        <div id="toc" class="toc-article">
-        <strong class="toc-title">Contents</strong>
+            <a href="/tags/#Blogger" title="Blogger" rel="7">Blogger</a>
+            
         
-          <ol class="nav">none</ol>
+            
+            <a href="/tags/#Apple" title="Apple" rel="5">Apple</a>
+            
         
-        </div>
-      </aside>
-    
-
-                
-            <!-- Sidebar Container -->
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
-                <!-- Featured Tags -->
-                
-                <section>
-                    <!-- no hr -->
-                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
-                    <div class="tags">
-                       
-                          <a class="tag" href="/tags/#tutorial" title="tutorial">tutorial</a>
-                        
-                    </div>
-                </section>
-                
-
-                <!-- Friends Blog -->
-                
-                <hr>
-                <h5>FRIENDS</h5>
-                <ul class="list-inline">
-
-                    
-                        <li><a href="https://tonystudio.ml" target="_blank">TonyStudio Home</a></li>
-                    
-                </ul>
-                
-            </div>
-        </div>
+            
+        
+            
+            <a href="/tags/#Shell" title="Shell" rel="3">Shell</a>
+            
+        
+            
+        
+            
+            <a href="/tags/#抓包" title="抓包" rel="4">抓包</a>
+            
+        
+            
+            <a href="/tags/#HTTPS" title="HTTPS" rel="3">HTTPS</a>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+            <a href="/tags/#越狱" title="越狱" rel="3">越狱</a>
+            
+        
+            
+        
+            
+        
     </div>
-</article>
+</section>
+
+        <hr>
+    
+        <!-- Short About -->
+<section class="visible-md visible-lg">
+    <h5><a href="/about/">ABOUT ME</a></h5>
+    <div class="short-about">
+
+        
+        <img id="avatar_pic" src="/img/sidebar/avatar.jpg">
+        
+
+        
+        <p>
+            Hi, i&#39;m Tony Chan
+        </p>
+        
+
+        <!-- SNS Link -->
+        <ul class="list-inline">
+            
+            <li>
+                <a href="mailto:hi@tonystudio.ml">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+            </li>
+            
+
+            
+            <li>
+                <a target="_blank" href="https://github.com/CoderTonyChan">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+            </li>
+            
+
+            
+            <li>
+                <a href="/rss2.xml">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+            </li>
+            
+            
+            
+
+            
+
+            
 
 
+            
+        </ul>
+    </div>
+</section>
+        <hr>
+    
+        
+  <h5>RECENT POSTS
+  <div class="widget">
+    <ul>
+      
+        <li>
+          <a href="/2019/04/30/2019-04-30-Visualization-tutorial/">「零编程基础」的你可以这样做数据可视化</a>
+        </li>
+      
+        <li>
+          <a href="/2019/04/28/2019-04-28-Talk-about-electronic-products/">从电子产品说起</a>
+        </li>
+      
+        <li>
+          <a href="/2019/04/28/2019-04-28-HomePod/">HomePod</a>
+        </li>
+      
+        <li>
+          <a href="/2019/04/24/2019-04-24-openbilibili/">openbilibili</a>
+        </li>
+      
+        <li>
+          <a href="/2019/04/24/AirPlay2/">AirPlay2</a>
+        </li>
+      
+    </ul>
+  </div>
+</h5>
+        <hr>
+    
+        <!-- Friends Blog -->
 
+<h5>FRIENDS</h5>
+<ul class="list-inline">
 
+    
+        <li><a href="https://tonystudio.ml" target="_blank">TonyStudio Home</a></li>
+    
+</ul>
 
+        <hr>
+    
+        
+    <h5>ARCHIVES</h5>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">1</span></li></ul>
+    </div>
 
+        <hr>
+    
+        <!-- Categories -->
 
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
-<script>
-    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
-        anchors.options = {
-          visible: 'hover',
-          placement: 'left',
-          icon: 'ℬ'
-        };
-        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
-    })
-</script>
-<style>
-    /* place left on bigger screen */
-    @media all and (min-width: 800px) {
-        .anchorjs-link{
-            position: absolute;
-            left: -0.75em;
-            font-size: 1.1em;
-            margin-top : -0.1em;
-        }
-    }
-</style>
+        <hr>
+    
+</div>
 
+        
+    </div>
+</div>
 
 
     <!-- Footer -->
