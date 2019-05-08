@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Tony写字的地方">
+    <meta name="keyword" content="TonyChan">
+    <meta name="referrer" content="no-referrer">
+    <link rel="shortcut icon" href="/img/icon.png">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="manifest" href="/img/site.webmanifest">
+    <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#ff0000">
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          环绕声耳机科学 - Tony&#39;s Studio
+        
+    </title>
+
+    <link rel="canonical" href="https://blog.tonystudio.ml/2019/04/30/2019-05-08-Surround-Earphone/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('http://oss.zhcoco.com/2019/bg-japan.JPG');
+            -webkit-mask: -webkit-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,1),rgba(0,0,0,1),rgba(0,0,0,0.5));
+            /*post*/
+        
+    }
+
+    
+</style>
+
+<div style="background: #000">
+    <header class="intro-header">
+        <!-- Signature -->
+        <div id="signature">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        
+                        <div class="post-heading" style="color: ">
+                            <div class="tags">
+                                
+                                <a class="tag" href="/tags/#Audio" title="Audio">Audio</a>
+                                
+                            </div>
+                            <h1>环绕声耳机科学</h1>
+                            <h2 class="subheading">Talk About Surround Sound Earphone.</h2>
+                            <span class="meta">
+                                Posted by Tony Chan on
+                                2019-04-30
+                            </span>
+                        </div>
+                        
+    
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Tony&#39;s Studio</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/books/">Books</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/gallery/">Gallery</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+                    <li>
+                        <a href="https://travel.tonystudio.ml">Travel</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>From <a href="https://www.bilibili.com/read/cv2466088?share_source=copy_link&amp;share_medium=iphone&amp;bbid=a811fa6671bc4ac9a5d0d9720149061a&amp;ts=1557234708" target="_blank" rel="noopener">UP主的问答时间 B站各类视频内容音频部分的科学食用指南</a> Trybass</p>
+<p>最近UP主周围的小伙伴们不少在问道UP主关于环绕声、耳机和在线视频的很多问题。于是乎UP主上B站搜索和调查了一下，姆姆姆X-X。</p>
+<p>其实B站上有不少以声音为主要元素的视频内容，不过UP主感觉还是很有必要向小伙伴们来科普和分享这些视频内容声音部分的科学食用指南的。</p>
+<h1 id="小伙伴们问b站上的杜比-dts的测试环绕声究竟是什么">小伙伴们问：B站上的杜比、DTS的测试环绕声究竟是什么？</h1>
+<p>UP主答：要回答这个问题，UP主先向小伙伴们介绍一下B站的UP主们都能够上传些什么东东。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/57343828-7e912880-7177-11e9-99bd-cbeb9efb10c3.png" alt="image"></p>
+<p>上面图片是B站官方对UP主上传视频内容的规格限制说明讷~。UP主帮小伙伴们划重点出来了哦。<br>
+也就是说小伙伴们在B站上看视频时听到的声音只能够是AAC格式2声道或者单声道的声音哦。至于杜比家的AC3，E-AC3，TrueHD的.thd文件或者DTS家的DTS声音文件，UP主们都是绞尽脑汁都上传不了的哦。</p>
+<p>嗯~，话说AAC是支持多声道的呐~ 不过，UP主将AAC5.1声道的内容上传后，系统会自动二压和转换成2声道立体声的啦，铛铛铛~5.1环绕声白做T-T。</p>
+<p>所以，如果视频声称什么7.1声道环绕声测试，什么杜比全景声源码直接播放什么的，对此UP主采取保留意见X-X</p>
+<p>不过UP主在此也倡议B站能够支持48000的采样率。在视频领域，48000的采样率才是默认的标准规格采样率，系统对48000采样率的声音进行44100的二次采样，品质破坏实在太大，而且太不专业了。</p>
+<h1 id="小伙伴们问b站为什么要对up主们的上传音频格式经行限制">小伙伴们问：B站为什么要对UP主们的上传音频格式经行限制？</h1>
+<p>UP主答：这个问题其实很大。UP主就站在小伙伴们的角度上举两个例子：首先很多小伙伴们手上的设备包括手机、平板等等并能够很好的处理和支持环绕声内容，比如DTS HD音轨等等，这样小伙伴们就只能看无声视频啦~。其次，真正环绕声的内容数据量都很大，DTS HDMA和Dolby TrueHD采用无损压缩码率都以Mbps来计算，嗯~看完视频，小伙伴们的流量套餐也就炸了~（移动happy~ing），嗯~，当小伙伴们网络信号不好的时候更容易卡出翔呐~</p>
+<h1 id="小伙伴们问我怎样才能看到我所播放的音视频信息呢">小伙伴们问：我怎样才能看到我所播放的音视频信息呢？</h1>
+<p>UP主答：嗯~UP主这次就充当一回临时客服大大。以电脑的网页端为例：</p>
+<ul>
+<li>
+<p>播放器设置中选择H5播放器，如下图所示：<br>
+<img src="https://user-images.githubusercontent.com/16996753/57343842-9072cb80-7177-11e9-8199-6abd33cd761e.png" alt="image"></p>
+</li>
+<li>
+<p>然后右击视频，选择视频统计信息，如下图：<br>
+<img src="https://user-images.githubusercontent.com/16996753/57343846-94065280-7177-11e9-92e9-fe53dc0b22ae.png" alt="image"></p>
+</li>
+<li>
+<p>再然后就可以看到实时的音视频信息啦！如下图：<br>
+<img src="https://user-images.githubusercontent.com/16996753/57343849-9668ac80-7177-11e9-9f0f-4eec34b3fd6b.png" alt="image"></p>
+</li>
+<li>
+<p>嗯嗯~至于还有其它很多情况嘛，还请各位小伙伴们去请教拿工资的客服大大吧~</p>
+</li>
+</ul>
+<h1 id="小伙伴们问那么在b站上的很多视频节目的确能够听到精彩的不一样的环绕效果啦这是怎么回事呢">小伙伴们问：那么在B站上的很多视频节目的确能够听到精彩的不一样的环绕效果啦，这是怎么回事呢？</h1>
+<p>UP主答：的确是这样呢，小伙伴们没有听错啦。其实要在AAC2.0声道的规格下呈现各种环绕声在当前的技术和科学是可行的呢~。这里UP主要稍微引入一个叫做“双耳信号”的专业词汇呢，English叫”Binaural Signal”。在目前B站上所有视频内容的音频部分如果从格式上分就只有AAC一种，然而AAC格式并不是造成环绕听感的原因哦。如果从信号特点上分的话有2类呢，一类是我们熟知的2声道立体声，小伙伴们是不可能从这类信号上听到环绕声的啦。而另一类就是双耳信号，小伙伴们能够听到环绕感觉的就是这类信号的音频内容呢。</p>
+<h1 id="小伙伴们问能否更加详细的说明一下么-">小伙伴们问：能否更加详细的说明一下么^-^</h1>
+<p>UP主答：OK哦！首先呢，双耳信号是从信号内容的角度来分的，所以音频格式对它没什么影响，也就是说说双耳信号可以是AAC格式，也可以是MP3格式。这就是为什么小伙伴们能够在B站上听到双耳信号的第一个原因。第二点，绝大多数情况下，双耳信号和通常所说的立体声在声道数量上是一样的呢，都是2路信号。这就是小伙伴们能够在B站听到它的第二个原因呢。但是两者的信号定义却不相同哦，通常立体声是对应定义为左声道和右声道，但是双耳信号的定义是左耳朵听到的声音和右耳朵听到的声音呢^-^，因为正常人就只有2只耳朵嘛。</p>
+<h1 id="小伙伴们问x_x-有什么不同">小伙伴们问：X_X? 有什么不同？</h1>
+<p>UP主答：简单来说，当小伙伴们在听2声道的立体声音箱时，左声道声音从左喇叭发出，右声道的声音从右喇叭发出。但是小伙伴的左耳朵听到的声音却=左喇叭的声音+右喇叭的声音+空间信息（反射，房间等等空间声音大杂烩），同样的右耳朵也一样。这就是不一样嘛。</p>
+<h1 id="小伙伴们问那听耳机呢">小伙伴们问：那听耳机呢？</h1>
+<p>UP主答：姆姆姆~小伙伴们用耳机听立体声音乐的时候，两者信号被近似画上的等号，因为右耳朵听不到左耳机的声音嘛~所以这也就是小伙伴们听耳机和听音箱会有不一样感受的原因之一啊。换句话说，如果能够把小伙伴们在听耳机时候左耳朵听到的声音变成听音箱时候一样的声音特性的话，听耳机和听音箱就没啥差别了呢^-^。这也是各种虚拟环绕声算法的设计目标之一哦~嗯嗯~又是一个很大的问题呢，UP主会在日后的节目里为大家详细介绍和科普的呢。</p>
+<p><a href="https://www.bilibili.com/video/av48047021" target="_blank" rel="noopener">耳机和扬声器听音的小视频</a></p>
+<iframe src="//player.bilibili.com/player.html?aid=48047021&cid=84167031&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<p>上面是UP主一段介绍耳机和扬声器听音的小视频呢^-^</p>
+<h1 id="小伙伴们问那小伙伴们如何区分b站上视频所听内容是那个呢">小伙伴们问：那小伙伴们如何区分B站上视频所听内容是那个呢？</h1>
+<p>UP主答：从数据规格上的确很难区分听到的是什么呢~ 一个方法是耳朵听，通常双耳信号作品能够产生小伙伴们不一样的环绕感呢。UP主再分享一些经验公式，通常指定小伙伴们用耳机听的大概率是哦（基于扬声器的双耳信号节目目前在B站上UP主还没有发现X-X），ASMR，3D标签的也可能是呐。对啦，还有那个8D标签，转来转去的也是。（UP主好想知道8D的高维空间是哪8个D啊T-T）</p>
+<h1 id="小伙伴们问那耳机里听环绕声是伪科学么">小伙伴们问：那耳机里听环绕声是伪科学么？</h1>
+<p>UP主答：虚拟环绕声是真科学的啦~，真正的虚拟环绕声技术就是将声音处理成双耳信号输出的讷~UP主会在其它的节目里再为小伙伴们详解这个话题啦。当然，如果要用什么杜比全景声在B站上“直接正面刚一波”的话，UP想说：“你已经没有下一个回合了。“</p>
+<h1 id="小伙伴们问如何正确科学的食用双耳信号的环绕声节目呢">小伙伴们问：如何正确科学的食用双耳信号的环绕声节目呢？</h1>
+<p>UP主答：嗯，这个才是正题好吧~。小伙伴们需要做的是，根据节目提示戴上耳机，别戴反哦~关闭手机或者设备上的所有音效，包括杜比音效，DTS音效等等。它们的处理效果会有冲突，再然后就~Enjoy！~</p>
+<p>鼓掌<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">第一期节目结束</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>Reference：</p>
+<blockquote>
+<p>GitHub Repo：<a href="https://github.com/CoderTonyChan/CoderTonyChan.github.io" target="_blank" rel="noopener">Tony Studio</a></p>
+<p>Follow: <a href="https://github.com/CoderTonyChan" target="_blank" rel="noopener">CoderTonyCHan · GitHub</a></p>
+</blockquote>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2019/04/30/2019-04-30-Visualization-tutorial/" data-toggle="tooltip" data-placement="top" title="「零编程基础」的你可以这样做数据可视化">Next Post &rarr;<br><span>「零编程基础」的你可以这样做数据可视化</span></a>
+                        </li>
+                    
+                </ul>
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                <!-- Gitalk 评论 start  -->
+                
+                <!-- Link Gitalk 的支持文件  -->
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+                
+                <div id="gitalk-container"></div>
+                <script type="text/javascript">
+                    var gitalk = new Gitalk({
+                        // gitalk的主要参数
+                        clientID: `d6e8288a1c63e75847f3`,
+                        clientSecret: `8c5389eb088393c894f7b085c7674d6aedc8783a`,
+                        repo: `CoderTonyChan.github.io`,
+                        owner: 'CoderTonyChan',
+                        admin: ['CoderTonyChan'],
+                        id: location.pathname,
+                        distractionFreeMode: false
+                    });
+                    gitalk.render('gitalk-container');
+                </script>
+                
+                <!-- Gitalk end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#小伙伴们问b站上的杜比-dts的测试环绕声究竟是什么"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">小伙伴们问：B站上的杜比、DTS的测试环绕声究竟是什么？</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#小伙伴们问b站为什么要对up主们的上传音频格式经行限制"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">小伙伴们问：B站为什么要对UP主们的上传音频格式经行限制？</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#小伙伴们问我怎样才能看到我所播放的音视频信息呢"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">小伙伴们问：我怎样才能看到我所播放的音视频信息呢？</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#小伙伴们问那么在b站上的很多视频节目的确能够听到精彩的不一样的环绕效果啦这是怎么回事呢"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">小伙伴们问：那么在B站上的很多视频节目的确能够听到精彩的不一样的环绕效果啦，这是怎么回事呢？</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#小伙伴们问能否更加详细的说明一下么-"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">小伙伴们问：能否更加详细的说明一下么^-^</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#小伙伴们问x_x-有什么不同"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">小伙伴们问：X_X? 有什么不同？</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#小伙伴们问那听耳机呢"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">小伙伴们问：那听耳机呢？</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#小伙伴们问那小伙伴们如何区分b站上视频所听内容是那个呢"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">小伙伴们问：那小伙伴们如何区分B站上视频所听内容是那个呢？</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#小伙伴们问那耳机里听环绕声是伪科学么"><span class="toc-nav-number">9.</span> <span class="toc-nav-text">小伙伴们问：那耳机里听环绕声是伪科学么？</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#小伙伴们问如何正确科学的食用双耳信号的环绕声节目呢"><span class="toc-nav-number">10.</span> <span class="toc-nav-text">小伙伴们问：如何正确科学的食用双耳信号的环绕声节目呢？</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#Audio" title="Audio">Audio</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://tonystudio.ml" target="_blank">TonyStudio Home</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+
+                
+                <li>
+                    <a href="mailto:hi@tonystudio.ml">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                
+                
+
+                
+                <li>
+                    <a target="_blank" href="https://github.com/CoderTonyChan">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                
+
+                
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                
+
+                
+
+                
+
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Tony Chan 2019 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="http://beantech.org">BeanTech</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://blog.tonystudio.ml/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-135626320-1';
+    var _gaDomain = 'undefined';
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135626320-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-135626320-1');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

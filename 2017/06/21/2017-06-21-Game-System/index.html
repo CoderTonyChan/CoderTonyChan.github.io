@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Tony写字的地方">
+    <meta name="keyword" content="TonyChan">
+    <meta name="referrer" content="no-referrer">
+    <link rel="shortcut icon" href="/img/icon.png">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="manifest" href="/img/site.webmanifest">
+    <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#ff0000">
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          家庭游戏系统 - Tony&#39;s Studio
+        
+    </title>
+
+    <link rel="canonical" href="https://blog.tonystudio.ml/2017/06/21/2017-06-21-Game-System/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('http://oss.zhcoco.com/2019/bg-japan.JPG');
+            -webkit-mask: -webkit-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,1),rgba(0,0,0,1),rgba(0,0,0,0.5));
+            /*post*/
+        
+    }
+
+    
+</style>
+
+<div style="background: #000">
+    <header class="intro-header">
+        <!-- Signature -->
+        <div id="signature">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        
+                        <div class="post-heading" style="color: ">
+                            <div class="tags">
+                                
+                                <a class="tag" href="/tags/#Blogger" title="Blogger">Blogger</a>
+                                
+                            </div>
+                            <h1>家庭游戏系统</h1>
+                            <h2 class="subheading">Game System.</h2>
+                            <span class="meta">
+                                Posted by Tony Chan on
+                                2017-06-21
+                            </span>
+                        </div>
+                        
+    
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Tony&#39;s Studio</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/books/">Books</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/gallery/">Gallery</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+                    <li>
+                        <a href="https://travel.tonystudio.ml">Travel</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>主要记录一下自己折腾家庭游戏系统的想法。</p>
+<p>现在的想法是买 Apple TV + Steelseries Nimbus手柄 + 还需要折腾一些软件平台。</p>
+<h1 id="街机系统">街机系统</h1>
+<hr>
+<p>可以考虑买一台 山寨supreme网红机子 rom也机子都有了</p>
+<p>自己玩的话 可以参考下面的软件平台 全部可以实现</p>
+<h1 id="主机系统">主机系统</h1>
+<hr>
+<p>PS2/Wii/3DS等等很多近代比较游戏的模拟器并没有集成到山寨supreme网红机子或者Retroarch中 但是可以参考我软件分享那的Wii/3DS模拟器 只能在PC/Mac的桌面环境玩</p>
+<h1 id="手柄">手柄</h1>
+<hr>
+<p>定制一个自己的街机系统 我觉得最重要的是解决手柄的问题 比如 PS4 和PS4 手柄之间的联动 不是先开电脑 然后用键鼠打开模拟器 再调好分辨率这么多步骤 应该是拿起手柄就可以玩</p>
+<p>又或者是一台掌机 本身就有手柄 也是开机立刻玩</p>
+<p>因此我觉得 适合做街机的系统有 山寨supreme网红机子/3DS破解 + Retroarch/PSVTV破解 + PS4手柄 + Retroarch / SHeild TV + Retroarch / Apple TV + Steelseries Nimbus手柄 + Retroarch + 开发者账号签名</p>
+<h1 id="以下是软件平台的整理">以下是软件平台的整理</h1>
+<h1 id="retroarch街机用-全平台支持">Retroarch（街机用 全平台支持）</h1>
+<hr>
+<p>这个的衍生系统Lakka，而Lakka的集成方Sx05re又在国内比较火，代表文章是S905怀旧主机的帖子。</p>
+<p>使用这个玩街机系列的东西的确是非常好的选择，如果不想在安卓盒子/Mac等等上搞，买一台专门的机子也是很好的选择。比如 抖音的网红机子 supreme</p>
+<p>supreme外型不错 据说原型机是外国的一个大神制作 而且同屏输出 还自带手柄 用于联机的确是非常好的选择 目前就是系统比较差 用月光宝盒（Sx05re衍生物）如果系统不是山寨的话入一部好一些收藏也是很好的选择</p>
+<p>目前在Mac/安卓盒子上使用，高度适配手柄 目前最好的街机平台（不支持PS2/3DS/Wii之后的模拟器）。</p>
+<h1 id="openemu街机用">OpenEmu（街机用）</h1>
+<hr>
+<p>这个聚合也是做得相当好 但是操作也没有适配手柄 属于Mac下比较好的聚合平台。比小鸡强太多</p>
+<p>/Users/tonychan/Library/Application\ Support/OpenEmu/Game\ Library/roms<br>
+<img src="https://user-images.githubusercontent.com/16996753/57188496-5bc20280-6f32-11e9-9e0d-e9e792a697fa.png" alt="image"></p>
+<p>所有游戏<br>
+<img src="https://user-images.githubusercontent.com/16996753/57188507-8ad87400-6f32-11e9-9ab8-7154a7e07570.png" alt="image"></p>
+<p>自动识别游戏名称和平台 并下载封面图<br>
+<img src="https://user-images.githubusercontent.com/16996753/57188573-88c2e500-6f33-11e9-8d47-7176af86dae8.png" alt="image"></p>
+<p>state按游戏平台分<br>
+<img src="https://user-images.githubusercontent.com/16996753/57188511-93c94580-6f32-11e9-8762-c94f2865c0d9.png" alt="image"></p>
+<p>issue<br>
+nds 没有声音 / 不支持调整显示的屏幕</p>
+<p>只支持怀旧游戏 PS1之前 没有次世代主机的游戏 PS2 之后 / Wii之后</p>
+<h1 id="provenance"><a href="https://github.com/Provenance-Emu/Provenance" target="_blank" rel="noopener">Provenance</a></h1>
+<hr>
+<p>一款支持多种游戏系统的模拟器，可以在 Apple TV 上运行。需要自己编译源代码。</p>
+<p>但是更加看好Retroarch</p>
+<h1 id="小鸡街机用-ios安卓支持">小鸡（街机用 iOS/安卓支持）</h1>
+<hr>
+<p>属于山寨集成 但是也算做得可以 但是在盒子用的话也没有适配手柄 但可以用于下载一些rom 这个盗版估计只能在中国做了。一些存档分享功能也是做到了，就是界面有点难看</p>
+<p>最大的缺点是只能手机用吧 用手机玩街机的游戏 不太合适</p>
+<h1 id="游戏内容">游戏内容</h1>
+<hr>
+<p>内容参考 <a href="http://www.oldmanemu.net" target="_blank" rel="noopener">老男人游戏网</a> 并加上自己的风格而成</p>
+<p>同步到 <a href="https://github.com/CoderTonyChan/games-state/issues" target="_blank" rel="noopener">GithuB</a></p>
+<p>往后会保存到进群晖系统 群晖流化rom</p>
+<p>目前是保存在 <a href="https://www.douban.com/people/103961302/games?action=collect" target="_blank" rel="noopener">豆瓣</a> 和<a href="https://airtable.com/tblK9H1CP7JdjwUAT/viwQjH5vRiK9dKVyN?blocks=hide" target="_blank" rel="noopener">Airtable</a></p>
+<p>游戏主要是按系列分 另外也提供几个思路</p>
+<h2 id="系列">系列</h2>
+<hr>
+<p>Pokemon （NDS颠覆）<br>
+马里奥系列（超马/银河/赛车/奥德赛）（NS颠覆）<br>
+星之卡比 （全系列值得玩）<br>
+塞尔达传说 （全系列值得玩）<br>
+勇者斗恶龙 （1-6经典RPG 7-11 IP）<br>
+任天堂明星大乱斗 （Wii）<br>
+古墓丽影<br>
+生化危机 （PS颠覆 PS4 生化2再次）<br>
+鬼武者<br>
+怪物猎人 （PSP颠覆 PS4 世界）<br>
+洛克人 （PS颠覆 8是PS2）<br>
+火焰纹章<br>
+战神 （全系列值得玩）<br>
+高达VS<br>
+龙珠 电光火石<br>
+王国之心 （PS2 -》 PS4 ）<br>
+超级机器人大战（PS2颠覆 a3 z3 og 和最新作）</p>
+<h2 id="街机">街机</h2>
+<hr>
+<p>ROM的来源主要是游聚的更新以及FBA4DROID</p>
+<p>Web版本 <a href="https://yikm.net" target="_blank" rel="noopener">小霸王，其乐无穷</a></p>
+<p>利用<a href="https://chrome.google.com/webstore/detail/chrono-download-manager/mciiogijehkdemklbdcbfkefimifhecn" target="_blank" rel="noopener">chrono-download-manager</a> 在调试模式下双击rom即可下载</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/57263281-ec1f5500-70a2-11e9-87d8-cefa235fe25e.JPG" alt="IMG_7995"><br>
+<img src="https://user-images.githubusercontent.com/16996753/57263282-ec1f5500-70a2-11e9-9d7e-8598c86af928.JPG" alt="IMG_7996"><br>
+<img src="https://user-images.githubusercontent.com/16996753/57263283-ecb7eb80-70a2-11e9-84bb-a9238de8fcfa.JPG" alt="IMG_7997"><br>
+<img src="https://user-images.githubusercontent.com/16996753/57263284-ecb7eb80-70a2-11e9-80c6-bc0be877ec1f.JPG" alt="IMG_7998"></p>
+<h2 id="ign史上满分游戏"><a href="https://www.douban.com/doulist/2598826/" target="_blank" rel="noopener">IGN史上满分游戏</a></h2>
+<hr>
+<p>IGN（Imagine Games Network）是一间多媒体和评论网站，主要对象为电子游戏。其对游戏评分是游戏质量的重要参考。<br>
+自2005年重组之后，IGN完善了评分标准，已经很少给游戏满分了。<br>
+以下是自1996年IGN成立以来评论的满分作品。</p>
+<p>豆列</p>
+<h2 id="fami通白金殿堂游戏"><a href="https://www.douban.com/doulist/40144402/" target="_blank" rel="noopener">Fami通白金殿堂游戏</a></h2>
+<hr>
+<p>豆列</p>
+<hr>
+<p>Reference：</p>
+<blockquote>
+<p>GitHub Repo：<a href="https://github.com/CoderTonyChan/CoderTonyChan.github.io" target="_blank" rel="noopener">Tony Studio</a></p>
+<p>Follow: <a href="https://github.com/CoderTonyChan" target="_blank" rel="noopener">CoderTonyCHan · GitHub</a></p>
+</blockquote>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2017/06/26/nginx-collect/" data-toggle="tooltip" data-placement="top" title="Nginx配置">&larr; Previous Post<br><span>Nginx配置</span></a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2017/06/21/2017-06-21-Home-Digital-Entertainment/" data-toggle="tooltip" data-placement="top" title="家庭影音系统">Next Post &rarr;<br><span>家庭影音系统</span></a>
+                        </li>
+                    
+                </ul>
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                <!-- Gitalk 评论 start  -->
+                
+                <!-- Link Gitalk 的支持文件  -->
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+                
+                <div id="gitalk-container"></div>
+                <script type="text/javascript">
+                    var gitalk = new Gitalk({
+                        // gitalk的主要参数
+                        clientID: `d6e8288a1c63e75847f3`,
+                        clientSecret: `8c5389eb088393c894f7b085c7674d6aedc8783a`,
+                        repo: `CoderTonyChan.github.io`,
+                        owner: 'CoderTonyChan',
+                        admin: ['CoderTonyChan'],
+                        id: location.pathname,
+                        distractionFreeMode: false
+                    });
+                    gitalk.render('gitalk-container');
+                </script>
+                
+                <!-- Gitalk end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#街机系统"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">街机系统</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#主机系统"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">主机系统</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#手柄"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">手柄</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#以下是软件平台的整理"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">以下是软件平台的整理</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#retroarch街机用-全平台支持"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">Retroarch（街机用 全平台支持）</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#openemu街机用"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">OpenEmu（街机用）</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#provenance"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">Provenance</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#小鸡街机用-ios安卓支持"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">小鸡（街机用 iOS/安卓支持）</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#游戏内容"><span class="toc-nav-number">9.</span> <span class="toc-nav-text">游戏内容</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#系列"><span class="toc-nav-number">9.1.</span> <span class="toc-nav-text">系列</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#街机"><span class="toc-nav-number">9.2.</span> <span class="toc-nav-text">街机</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#ign史上满分游戏"><span class="toc-nav-number">9.3.</span> <span class="toc-nav-text">IGN史上满分游戏</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#fami通白金殿堂游戏"><span class="toc-nav-number">9.4.</span> <span class="toc-nav-text">Fami通白金殿堂游戏</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#Blogger" title="Blogger">Blogger</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://tonystudio.ml" target="_blank">TonyStudio Home</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+
+                
+                <li>
+                    <a href="mailto:hi@tonystudio.ml">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                
+                
+
+                
+                <li>
+                    <a target="_blank" href="https://github.com/CoderTonyChan">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                
+
+                
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                
+
+                
+
+                
+
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Tony Chan 2019 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="http://beantech.org">BeanTech</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://blog.tonystudio.ml/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-135626320-1';
+    var _gaDomain = 'undefined';
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135626320-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-135626320-1');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

@@ -8,6 +8,38 @@
     </url>
 
     <url>
+        <loc>https://blog.tonystudio.ml/2019/04/30/2019-05-08-Surround-Earphone/</loc>
+        <lastmod>2019-05-08T02:09:23.561Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2015/02/16/2015-02-16-soft-collect/</loc>
+        <lastmod>2019-05-08T01:45:45.317Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2017/06/21/2017-06-21-Game-System/</loc>
+        <lastmod>2019-05-07T02:42:49.039Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2017/06/21/2017-06-21-Home-Digital-Entertainment/</loc>
+        <lastmod>2019-05-05T07:06:09.102Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.tonystudio.ml/2019/04/30/2019-04-30-Visualization-tutorial/</loc>
         <lastmod>2019-04-30T02:03:06.824Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -121,14 +153,6 @@
 
     <url>
         <loc>https://blog.tonystudio.ml/2018/06/05/WWDC-2018/</loc>
-        <lastmod>2019-03-26T01:37:44.913Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.tonystudio.ml/2015/02/16/soft-collect/</loc>
         <lastmod>2019-03-26T01:37:44.913Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
