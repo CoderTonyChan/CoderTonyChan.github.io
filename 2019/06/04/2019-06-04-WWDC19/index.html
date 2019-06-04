@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Tony写字的地方">
+    <meta name="keyword" content="TonyChan">
+    <meta name="referrer" content="no-referrer">
+    <link rel="shortcut icon" href="/img/icon.png">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="manifest" href="/img/site.webmanifest">
+    <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#ff0000">
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          WWDC19 - Tony&#39;s Studio
+        
+    </title>
+
+    <link rel="canonical" href="https://blog.tonystudio.ml/2019/06/04/2019-06-04-WWDC19/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('https://user-images.githubusercontent.com/16996753/58769870-c459d900-85dd-11e9-9304-19a37e13606d.png');
+            -webkit-mask: -webkit-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,1),rgba(0,0,0,1),rgba(0,0,0,0.5));
+            /*post*/
+        
+    }
+
+    
+</style>
+
+<div style="background: #000">
+    <header class="intro-header">
+        <!-- Signature -->
+        <div id="signature">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        
+                        <div class="post-heading" style="color: ">
+                            <div class="tags">
+                                
+                                <a class="tag" href="/tags/#WWDC" title="WWDC">WWDC</a>
+                                
+                            </div>
+                            <h1>WWDC19</h1>
+                            <h2 class="subheading">WWDC19</h2>
+                            <span class="meta">
+                                Posted by Tony Chan on
+                                2019-06-04
+                            </span>
+                        </div>
+                        
+    
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Tony&#39;s Studio</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/books/">Books</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/gallery/">Gallery</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+                    <li>
+                        <a href="https://travel.tonystudio.ml">Travel</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>From <a href="https://sspai.com/post/55078" target="_blank" rel="noopener">iPad 有了自己的系统，还有新 Mac Pro…… 昨晚发布会要点都在这了</a></p>
+<p>北京时间今日凌晨 1 点，苹果在美国加州的圣何塞会展中心召开了一年一度的 WWDC 全球开发者大会。作为受邀媒体，少数派今年继续全程在美国现场报道本次开发者大会。在将近 2 个半小时的开幕演讲中，苹果发布了拥有全局深色模式的 iOS 13、全新独立系统的 iPadOS 以及 watchOS 6 和 tvOS 13。</p>
+<p>作为 WWDC 的惯例，本次新系统的发布依旧是发布会的重点，不管是独立出去的 iPadOS 还是推出 Project Catalyst 的 macOS，对于消费者和开发者都是一件影响颇深的事件。与此同时，模块化的高性能 Mac Pro 终于也带着全新的设计回归，而支持 Retina 6K 和 Pro Display XDR 的专业显示器也赚足了眼球。</p>
+<h1 id="ios-13">iOS 13</h1>
+<p>作为本次 WWDC 的重头戏，iOS 13 闪亮登场。继去年深色模式登陆 macOS 之后，iPhone 和 iPad 也终于拥有了自己的深色模式，并且为照片应用新增了强大的浏览和编辑功能、提供以 Apple ID 登录应用或网站的选项以及可以在地图中获得更多的信息。</p>
+<p>除了新增功能，iOS 13 在性能优化上也有出色的表现，例如应用启动速度提升了两倍、应用更新速度也有提升等。</p>
+<h2 id="对眼睛更友好的深色模式">对眼睛更友好的深色模式</h2>
+<p>千呼万唤始出来，传了多年的 iOS 深色模式终于发布了。这次发布的 iOS 深色模式和 macOS 上的深色模式一样都是系统级的，所有的界面以及自带应用都已经适配了深色的配色方案，在低光情况下有很好的表现，屏幕看起来让眼睛更加舒服。</p>
+<p>除了系统自带应用，苹果也向第三方应用的开发者开放了接口，开发者们也可以方便地让自己的应用适配 iOS 的深色模式。除了手动启用，iOS 的深色模式也可以通过设定固定的时间或者依据当地的日出日落时间来自动切换。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/58847636-4f0e0700-86b6-11e9-9ecd-b69d570b8864.png" alt="image"></p>
+<h2 id="更加强大的照片编辑工具">更加强大的照片编辑工具</h2>
+<p>有机器学习加持之后，照片应用获得了更加强大的功能。首先，照片应用可以通过突出最好的照片、自动隐藏杂乱或者重复的照片来更好地展示过去的一天、一月或一年中重要的事件，巧妙地结合照片和视频，让使用者在浏览、发现和重温最喜欢的回忆时变得更加容易。<br>
+<img src="https://user-images.githubusercontent.com/16996753/58847646-56cdab80-86b6-11e9-9c0c-9e31b827f628.png" alt="image"></p>
+<p>其次，照片应用获得了丰富的编辑功能。只需轻轻一滑，你就可以轻松地调整照片的特效，通过原生的功能解决了调用第三方工具的繁琐，为摄影爱好者们提供了更多的创造可能性。除了照片，iOS 13 的照片应用还可以直接编辑视频，用户可以直接在其中旋转、裁剪和使用滤镜，方便了很多。<br>
+<img src="https://user-images.githubusercontent.com/16996753/58847651-59c89c00-86b6-11e9-919c-e93393832a37.png" alt="image"></p>
+<p>同时，人像模式新增了一个光线调节和一个 High-Key Mono 效果的选项，可以创造出更加好看的肖像照片。</p>
+<h2 id="便捷-私密的苹果账号登录">便捷、私密的苹果账号登录</h2>
+<p>越来越多的网站需要我们使用手机、邮箱、社交账号等来注册和登录，不但不方便管理，而且极易泄露自己的隐私。</p>
+<p>苹果这次推出了使用 Apple ID 登录的功能，轻松、简单地完成身份验证和登录网站。同时，为了保护使用者的隐私，苹果允许用户隐藏自己的邮箱地址，甚至可以自动生成一个随机的邮箱地址来替代。用户使用 Apple ID 来登录的时候，可以通过 Face ID 或者 Touch ID 来验证，加上双重验证，不但方便而且还确保了自己的隐私不会被泄漏。<br>
+<img src="https://user-images.githubusercontent.com/16996753/58847660-61884080-86b6-11e9-8293-640205be5edf.png" alt="image"></p>
+<h2 id="全新的地图体验">全新的地图体验</h2>
+<p>为了让 iOS 用户获得更好的地图使用体验，苹果在驱车 400 万英里收集数据后开始重构地图应用。在 iOS 13 的全新地图应用中，用户可以获取到更广泛的道路覆盖范围、更好的行人数据、更精确的地址和更详细的土地覆盖，并将在近两年推广到更多的国家和地区。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/58847674-6b11a880-86b6-11e9-9bd8-657f3c4e3156.gif" alt="cb71009d55de32f362487a55716b6400"></p>
+<p>iOS 13 的地图应用新增了街景的功能，所有的图像由全新的基础地图和高分辨率的 3D 摄影构成，帮助环顾功能提供了一个平滑无缝过渡的街景浏览体验。除此之外，地图应用还可以轻松分享最喜欢的餐厅、旅游目的地或者与朋友购物的地方，或者导航到常去的目的地，如家、办公地点、健身房或学校等。</p>
+<h2 id="其他值得一提的功能">其他值得一提的功能：</h2>
+<ul>
+<li>提醒事项应用重做，UI 设计交互完全改变，新增的快速工具栏可以方便地添加时间、日期、地点、旗标以及附件；</li>
+<li>信息应用可以自动共享用户的姓名和照片、Memoji 或者 Animoji，同时 Memoji 可以制作成贴纸在自带应用和第三方应用中使用；</li>
+<li>借助 Neural TTS ，Siri 有了一个更加自然的声音，并且提供更加个性化的自动化推荐；</li>
+<li>AirPods 可以通过 Siri 来读取和回复信息；</li>
+<li>语音控制可以让用户完全通过语音来控制 iPhone、iPad 和 Mac；</li>
+<li>原生键盘提供了滑动输入的选项。</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/16996753/58847702-7e247880-86b6-11e9-97bc-d0e0d3eb74c9.png" alt="image"></p>
+<p>iOS 13 升级仅支持 iPhone 6S 及之后推出的手机，以及 iPod touch 7。</p>
+<h1 id="ipados">iPadOS</h1>
+<p>在第一代 iPad Pro 发布将近四年之后，Apple 终于正式将 iPad 作为一个独立的平台与 iOS 独立开来，进一步强调了 iPad 的生产力属性，并在本次为它带来了许多独占功能。</p>
+<h2 id="多任务处理">多任务处理</h2>
+<p>本次 iPadOS 最大的更新在于对多任务处理的巨大改进。首先，Slide Over 从一个单纯的悬浮窗口变为了一个拥有完整功能的窗口模式。在本次更新后，你可以通过滑动应用窗口顶部的 Home Indicator 来切换应用，相当于在原来的多任务中心之外又嵌套了一个专属于 Slide Over 的多任务中心。</p>
+<p>关闭 Slide Over 中的应用窗口也是一样的操作，只需将应用卡片上滑退出即可。若想将 Slide Over 中的应用设为全屏应用，则需将应用窗口拖拽至屏幕的顶部。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/58847712-88467700-86b6-11e9-9161-0c5ada6b1bc4.gif" alt="eeecf7bcea1f73e149ef348d32928e7b"></p>
+<p>与此同时，iPad 终于支持了同一应用的分屏模式，而不再像之前只能使用两个应用同屏。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/58847724-94cacf80-86b6-11e9-9155-154f150f11d8.png" alt="image"></p>
+<p>除了单纯的分屏模式，同一应用还可以同时在分屏模式和 Slide Over 模式下同时使用。如果你想查看同一应用的不同位置，你可以使用从 macOS 新引入的 App Exposé，只需点击它在 Dock 上的图标即可进入 App Exposé 视图。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/58847728-97c5c000-86b6-11e9-8c34-2f457f68bdda.png" alt="image"></p>
+<p>除了拖拽窗口，现在直接拖拽链接、地址等信息也可以创建新的应用窗口，免去了先打开应用的麻烦。</p>
+<h2 id="主屏幕能摆更多图标了还能直接看小组件">主屏幕能摆更多图标了，还能直接看小组件</h2>
+<p>在 全新的 iPadOS 中，主屏现在可以放下更多的应用。另外，iPadOS 直接去掉了 iOS 上的负一屏，如果要在 iPadOS 上查看小组件，只需要通过右滑手势，就可以直接在主屏幕拉出控件，和主屏图标一起显示，利用小组件查看信息或者进行一些快捷操作会变得更加方便。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/58847741-a0b69180-86b6-11e9-8262-28b29ba0f455.gif" alt="1b320c1bce0a19f83fd13aa6440a1417"></p>
+<h2 id="文件应用更像-finder-了safari-新增下载管理器">文件应用更像 Finder 了，Safari 新增下载管理器</h2>
+<p>作为一个主打生产力的平台，系统文件应用在 iPadOS 中更新自然不会让人意外。新版文件应用支持了最多达 3 栏的显示视图，你还可以直接在文件应用中预览文件的各项信息—比如类型、大小、修改时间、图片的分辨率等等—而不用打开文件。<br>
+<img src="https://user-images.githubusercontent.com/16996753/58847756-ab712680-86b6-11e9-97d1-8f82e76b6eb1.png" alt="image"></p>
+<p>iOS 12 中文件应用虽然能共享文件，但是没有支持文件夹共享功能，iPadOS 终于补上了这一功能。你可以直接在文件应用里将文件夹共享给别人、或者连接别人共享出来的文件夹。除了共享云端文件，iPadOS 支持将 U 盘、SD 卡等外部存储设备连上 iPad，直接读取里面的文件。<br>
+<img src="https://user-images.githubusercontent.com/16996753/58847759-af9d4400-86b6-11e9-9be9-98d95893fa30.png" alt="image"></p>
+<p>在文件管理方面，Safari 也有新动作：终于支持了下载管理器。管理下载文件也非常简单：在系统文件应用找到下载文件夹就可以了。<br>
+<img src="https://user-images.githubusercontent.com/16996753/58847768-b461f800-86b6-11e9-811e-f857a108b13e.png" alt="image"></p>
+<p>除了下载管理器，Safari 在网页浏览方面也有比较大的改进：iPadOS 会直接在 Safari 中展示桌面版网页，并对一些需要鼠标操作的元素进行了触控优化，让你可以获得足够优秀和流畅的桌面级网页浏览体验。</p>
+<h2 id="打字更方便了也更快了">打字更方便了，也更快了</h2>
+<p>iPadOS 支持的 Floating Keyboard 浮动键盘能够让你通过双指捏合手势将键盘变为一个可拖动的悬浮窗口，如果你没有在用 Smart Keyboard 等外接蓝牙键盘设备，用双指捏合手势将键盘拖到左右手的任意一边打在效率应该会高不少。</p>
+<p>除了双指捏合手势，iPad OS 还新增了三指捏合复制、张开粘贴文字以及三指左滑撤销手势，按照发布会上的说法就是，你再也不用摇晃大尺寸的 iPad 来撤销误输入的文字了。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/58847782-c2b01400-86b6-11e9-8e81-d494ed1da52e.gif" alt="c1af160661d6cc90c8b4d393b13b8c81"></p>
+<p>此外，iPadOS 还支持了单指拖动选中指定文字、双击选中单词等实用手势，在输入效率方面的提升还是比较明显的。</p>
+<h2 id="其它值得关注的-ipados-特性">其它值得关注的 iPadOS 特性：</h2>
+<ul>
+<li>Apple Pencil 的响应延迟时间由 20ms 提升到了 9ms；</li>
+<li>Apple Pencil 工具栏支持拖拽移动位置，将 Apple Pencil 移到 iPad 屏幕角落会触发截图操作并自动弹出标注界面；</li>
+<li>新增 Sidecar 功能，让你通过 Wi-Fi 将 iPad 作为 Mac 的第二显示屏；</li>
+<li>在 iPadOS 上用 Face ID 解锁速度比 iOS 12 快了 30%；</li>
+<li>与 iOS 同步支持 Voice Control、AirPods 共享、HomePod 上的 Handoff 音频传输等功能；</li>
+<li>支持下载和管理字体。</li>
+<li>iPadOS 更新仅支持 iPad Air 2 及之后推出的 iPad、iPad Pro 和 iPad mini。</li>
+</ul>
+<h1 id="macos-1015">macOS 10.15</h1>
+<p>今年苹果把 macOS 10.15 命名为 macOS Catalina。正如此前爆料所言，今年的 macOS 第一个主要的新变化便是将 iTunes 进行了拆分。三个全新的 App：音乐、播客和 TV 将取代 iTunes，而此前同步与备份 iOS 设备的功能在新版系统里则被集成到 Finder 中。<br>
+<img src="https://user-images.githubusercontent.com/16996753/58847809-dbb8c500-86b6-11e9-92d0-ae597643739c.png" alt="image"></p>
+<p>在机器学习的帮助下，新的播客应用拥有更强大的搜索功能。现在输入关键词后，应用将为你直接搜索音频内容中出现该关键词的播客。<br>
+<img src="https://user-images.githubusercontent.com/16996753/58847816-df4c4c00-86b6-11e9-938c-7060e2713a61.png" alt="image"></p>
+<p>新的 TV 应用则支持在 Mac 上播放 4K HDR 内容，此外还提供了杜比视界和杜比全景声的支持。<br>
+<img src="https://user-images.githubusercontent.com/16996753/58847823-e4110000-86b6-11e9-9b4c-d7bc50934cf0.png" alt="image"></p>
+<p>另外新版的提醒事项和照片应用也将同步登陆 macOS Catalina。</p>
+<p>macOS Catalina 第二个主要的新功能是 Sidecar，它可以让你的 iPad 变身成为 Mac 的拓展屏幕。不仅如此，在新系统中你还可以把 iPad 当作 Mac 的手写板或绘图板来使用，用 Apple Pencil 直接在屏幕上画画和批注。该功能目前支持包括 Adobe Illustrator、Affinity Photo 和 Maya 在内的多款专业级应用。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/58847840-f12def00-86b6-11e9-9266-8e91345fa275.png" alt="image"></p>
+<p>去年苹果在 iOS 上推出了屏幕时间功能，让你可以了解和控制自己花费在 iOS 设备上的时间。今年 macOS Catalina 则把这项功能带到了 macOS 上。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/58847851-f7bc6680-86b6-11e9-8209-8923b61b1aad.png" alt="image"></p>
+<p>苹果系统在辅助功能方面体验一直走在行业的前列。macOS Catalina 今年则在语音控制上更进一步，现在用户可以完全通过语音来控制使用 macOS，从打开应用、选择菜单功能再到输入文字，整个流程完全可以通过语音指令完成。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/58847861-fbe88400-86b6-11e9-8232-ae8bff97e301.png" alt="image"></p>
+<p>macOS Catalina 中还新增了一个名叫「查找」的新 App。它集成了 iOS 上查找 iPhone 和查找我的朋友两款应用的功能。此外它还新增了一个可以查找未联网 Mac 的功能。另外配有 T2 安全芯片的 Mac 还可以在新系统中增加启动锁。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/58847870-00ad3800-86b7-11e9-9495-c8c3e9d3e15e.png" alt="image"></p>
+<p>苹果曾在去年介绍过帮助开发者将 iPad 应用快速迁移至 macOS 上的 Marzipan 项目，今年苹果将它正式命名为 Project Catalyst。苹果表示他们在过去的一年里做了大量的工作，来保证迁移项目能够得到更流畅的体验。发布会上苹果表示包括 Twitter、Jira 和 Gameloft 在内的多家第三方厂商正在参与这一项目，对自家的应用进行适配。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/58847878-0571ec00-86b7-11e9-9cfe-fdb32b407b64.png" alt="image"></p>
+<p>最后，设备支持方面，macOS Catalina 支持 2015 年及之后的 MacBook，2012 年及之后的 MacBook Air、MacBook Pro、Mac mini 和 iMac，2017 年及之后的 iMac Pro 以及 2013 年及之后的 Mac Pro。</p>
+<h1 id="watchos-6">watchOS 6</h1>
+<p>作为 watchOS 的第 6 个版本，watchOS 6 终于有了独立的 App Store 应用，这意味着你可以直接在 Apple Watch 上搜索、下载和运行应用，不再需要依赖 iPhone。Apple Watch 上的 App Store 支持语音和 Scribble 手写两种搜索应用的方式，你也可以在 Apple Watch 上直接查看 App Store 编辑的推荐或者来自用户的评价。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/58847889-0b67cd00-86b7-11e9-83ab-645020a26dfd.png" alt="image"></p>
+<p>除了 App Store，watchOS 6 也将计算器、语音备忘录和有声书三款应用带到了 Apple Watch 上，其中计算器应用还支持了小费计算这样的实用功能。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/58847892-0e62bd80-86b7-11e9-81f8-70f8520dc313.png" alt="image"></p>
+<h2 id="其它值得关注的-watchos-新特性有">其它值得关注的 watchOS 新特性有：</h2>
+<ul>
+<li>
+<p>新增渐变色、大数字、模块化等多个新表盘样式。<br>
+<img src="https://user-images.githubusercontent.com/16996753/58847915-24707e00-86b7-11e9-8723-9e7279fff6ca.png" alt="image"></p>
+</li>
+<li>
+<p>新增运动记录趋势分析功能，watchOS 会根据你的运动情况给出调整建议，并同步在 iOS 中的「健身记录」应用中进行展示。<br>
+<img src="https://user-images.githubusercontent.com/16996753/58847920-28040500-86b7-11e9-88a3-31bc5431e8da.png" alt="image"></p>
+</li>
+<li>
+<p>新增月经周期记录功能，支持月经、排卵期提醒等。<br>
+<img src="https://user-images.githubusercontent.com/16996753/58847926-2b978c00-86b7-11e9-92c6-e776333fcab9.png" alt="image"></p>
+</li>
+<li>
+<p>新增环境噪音检测功能，并会在当前环境噪音过大时进行提醒。<br>
+<img src="https://user-images.githubusercontent.com/16996753/58847929-2fc3a980-86b7-11e9-9fa5-530a4fb18789.png" alt="image"></p>
+</li>
+<li>
+<p>新增正点报时功能。<br>
+watchOS 支持包括 Apple Watch Series 1 在内之后的全部 Apple Watch 设备，不支持初代 Apple Watch。要想升级 watchOS 6，你需要有一台 iPhone 6s 或更新的 iOS 设备，并且确保 iPhone 升级到了 iOS 13 或者更新的系统版本。你可以在 Apple 官网查看 watchOS 6 的详细信息。</p>
+</li>
+</ul>
+<h1 id="tvos-13">tvOS 13</h1>
+<p>tvOS 13 支持了多账号功能，并且会根据每位家庭成员的观影记录进行个性化推荐，Apple Music 还支持实时显示正在播放歌曲的歌词。<br>
+<img src="https://user-images.githubusercontent.com/16996753/58847942-3baf6b80-86b7-11e9-960a-b47af563bebb.png" alt="image"></p>
+<p>在游戏娱乐方面，tvOS 13 支持了 Xbox One 和 PS DualShock 两款游戏手柄，在 Apple TV 上玩游戏将能够获得更好的游戏体验。最后，Apple 还与 BBC Natural History 纪录片剧组合作，在 tvOS 13 上带来了一系列 HDR 高清海底壁纸，让你在家就能拥有身临其境的海底世界体验。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/58847954-47029700-86b7-11e9-9273-6b58237fc225.png" alt="image"></p>
+<p>tvOS 13 支持目前在售的 Apple TV 4K 和 Apple TV HD 两款型号设备，你可以在 tvOS 官网查看 tvOS 13 的新特性。</p>
+<p>iOS 13、iPadOS、macOS Catalina、tvOS 13 和 watchOS 6 的 Beta 测试版本目前已经开放给开发者进行下载，7 月份会对所有人开放公开测试版本。如果你担心测试版本的系统可能会有不稳定的情况，可以等到今年秋季更新这些系统的正式版本。</p>
+<h1 id="mac-pro-和-pro-display-xdr">Mac Pro 和 Pro Display XDR</h1>
+<p>2017 年 曾有消息 传出苹果正在重新设计 Mac Pro。时隔两年，苹果终于在本次 WWDC 上正式推出了这款全新的 Mac Pro。</p>
+<p>新款 Mac Pro 回归了经典的塔式机箱外形，整个结构采用模块化设计。侧边则采用了类似「擦丝器」的镂空设计，底部可选配 4 个方便移动用的轮子，设计语言与上一代大相径庭。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/58847967-52ee5900-86b7-11e9-9f48-a1e1400fb781.gif" alt="43ef3c55961d8d071e0017b253aef61e"></p>
+<p>苹果称这个设计主要是为了新款 Mac Pro 强大的配置而服务，事实也的确如此。新款 Mac Pro 最高可选配 28 核的英特尔至强处理器和 1.5TB DDR4 ECC 的内存。它同时配有 8 个 PCIe 接口，其中 4 个提供 double-wide 设计以适应更大的拓展卡。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/58847974-5b469400-86b7-11e9-9529-e09767f1d147.png" alt="image"></p>
+<p>为了提供充足的视频性能，苹果还专门为新款 Mac Pro 设计了一个名为 MPX 的拓展模块，它可以为两块显卡提供高速连接。新款 Mac Pro 可最高选配 2 个带有 2 块 AMD Radeon Pro Vega 2 显卡的 MPX 模块，这意味着它能够提供高达 128GB 的 HBM2 高速显存。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/58847979-600b4800-86b7-11e9-899e-e80e7d503a41.png" alt="image"></p>
+<p>不仅如此，新款 Mac Pro 还配有一个专门的硬件加速卡，用于处理 4K 甚至是 8K 视频的渲染和转码，每秒可处理 63 亿像素的数据，满足专业人士对于剪辑 ProRes Raw 素材的需求。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/58847982-64376580-86b7-11e9-83e8-6bbf8d569ba3.png" alt="image"></p>
+<p>接口方面，新款 Mac Pro 则提供了 4 个雷雳 3 接口，2 个 USB-A 接口 和 2 个 10Gb 以太网接口。</p>
+<p>新款 Mac Pro 起售价 5999 美元，配有 32GB 内存、8 核心至强处理器、Radeon Pro 580X 显卡以及 256GB SSD 硬盘。今年秋季正式发售。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/58847987-6ac5dd00-86b7-11e9-9d9d-9546c3932524.png" alt="image"></p>
+<p>此外，苹果还推出了 Pro Display XDR 专业级显示器。它拥有一块 32 寸的 IPS LCD 屏幕，分辨率为 6016x3384，苹果称其为 Retina 6K Display。这款显示器在对比度方面达到了 1,000,000:1 的标准，亮度为 1000 nits，峰值亮度可达 1600 nits，苹果表示它在 HDR 上表现非常出色，超过了一般的行业标准，因此他们把它称为 Extreme Dynamic Range，简称「XDR」。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/58847995-744f4500-86b7-11e9-9e34-5d5ec9e15cb7.png" alt="image"></p>
+<p>为了提供更出色的显示体验，苹果还为 Pro Display XDR 设计了一个多角度可调的桌面支架，支持竖屏模式显示。另外 Pro Display XDR 还可选配带有 Nano-texture 处理的屏幕，可在保证屏幕显示效果的同时降低屏幕的反射率。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/58848005-7913f900-86b7-11e9-8d81-b1dd4fe5e745.png" alt="image"></p>
+<p>Pro Display XDR 售价为 4999 美元，带有 Nano-texture 屏幕的版本售价为 5999 美元，桌面支架需单独购买，售价 999 美元，今年秋季正式发售。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/58848013-80d39d80-86b7-11e9-93c1-21c43667c0e6.png" alt="image"></p>
+<p>以上就是本次发布会的主要内容，你可以继续关注 「少数派带你看 WWDC 2019」 特别专题，我们将陆续为你带来更多关于新系统的详细介绍文章。</p>
+<hr>
+<p>Reference：</p>
+<blockquote>
+<p>GitHub Repo：<a href="https://github.com/CoderTonyChan/CoderTonyChan.github.io" target="_blank" rel="noopener">Tony Studio</a></p>
+<p>Follow: <a href="https://github.com/CoderTonyChan" target="_blank" rel="noopener">CoderTonyCHan · GitHub</a></p>
+</blockquote>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2019/06/03/2019-06-03-WWDC19/" data-toggle="tooltip" data-placement="top" title="WWDC19临近，对苹果生态的一些建议">Next Post &rarr;<br><span>WWDC19临近，对苹果生态的一些建议</span></a>
+                        </li>
+                    
+                </ul>
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                <!-- Gitalk 评论 start  -->
+                
+                <!-- Link Gitalk 的支持文件  -->
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+                
+                <div id="gitalk-container"></div>
+                <script type="text/javascript">
+                    var gitalk = new Gitalk({
+                        // gitalk的主要参数
+                        clientID: `d6e8288a1c63e75847f3`,
+                        clientSecret: `8c5389eb088393c894f7b085c7674d6aedc8783a`,
+                        repo: `CoderTonyChan.github.io`,
+                        owner: 'CoderTonyChan',
+                        admin: ['CoderTonyChan'],
+                        id: location.pathname,
+                        distractionFreeMode: false
+                    });
+                    gitalk.render('gitalk-container');
+                </script>
+                
+                <!-- Gitalk end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#ios-13"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">iOS 13</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#对眼睛更友好的深色模式"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">对眼睛更友好的深色模式</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#更加强大的照片编辑工具"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">更加强大的照片编辑工具</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#便捷-私密的苹果账号登录"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">便捷、私密的苹果账号登录</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#全新的地图体验"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">全新的地图体验</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#其他值得一提的功能"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">其他值得一提的功能：</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#ipados"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">iPadOS</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#多任务处理"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">多任务处理</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#主屏幕能摆更多图标了还能直接看小组件"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">主屏幕能摆更多图标了，还能直接看小组件</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#文件应用更像-finder-了safari-新增下载管理器"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">文件应用更像 Finder 了，Safari 新增下载管理器</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#打字更方便了也更快了"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">打字更方便了，也更快了</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#其它值得关注的-ipados-特性"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">其它值得关注的 iPadOS 特性：</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#macos-1015"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">macOS 10.15</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#watchos-6"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">watchOS 6</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#其它值得关注的-watchos-新特性有"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">其它值得关注的 watchOS 新特性有：</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#tvos-13"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">tvOS 13</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#mac-pro-和-pro-display-xdr"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">Mac Pro 和 Pro Display XDR</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#WWDC" title="WWDC">WWDC</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://tonystudio.ml" target="_blank">TonyStudio Home</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+
+                
+                <li>
+                    <a href="mailto:hi@tonystudio.ml">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                
+                
+
+                
+                <li>
+                    <a target="_blank" href="https://github.com/CoderTonyChan">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                
+
+                
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                
+
+                
+
+                
+
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Tony Chan 2019 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="http://beantech.org">BeanTech</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://blog.tonystudio.ml/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-135626320-1';
+    var _gaDomain = 'undefined';
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135626320-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-135626320-1');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

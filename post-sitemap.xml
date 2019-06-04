@@ -8,8 +8,16 @@
     </url>
 
     <url>
-        <loc>https://blog.tonystudio.ml/2019/06/09/2019-06-09-WWDC19/</loc>
-        <lastmod>2019-06-03T01:38:33.255Z</lastmod>
+        <loc>https://blog.tonystudio.ml/2019/06/04/2019-06-04-WWDC19/</loc>
+        <lastmod>2019-06-04T03:03:05.423Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/2019/06/03/2019-06-03-WWDC19/</loc>
+        <lastmod>2019-06-04T03:00:33.198Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

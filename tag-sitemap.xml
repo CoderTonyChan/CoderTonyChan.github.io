@@ -45,13 +45,6 @@
     </url>
 
     <url>
-        <loc>https://blog.tonystudio.ml/tags/WWDC/</loc>
-        <lastmod>2019-03-26T01:37:44.913Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://blog.tonystudio.ml/tags/%E4%B8%83%E7%89%9B%E4%BA%91/</loc>
         <lastmod>2019-03-26T01:37:44.922Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -123,7 +116,14 @@
 
     <url>
         <loc>https://blog.tonystudio.ml/tags/iOS/</loc>
-        <lastmod>2019-06-03T01:38:33.255Z</lastmod>
+        <lastmod>2019-06-04T03:00:33.198Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.tonystudio.ml/tags/WWDC/</loc>
+        <lastmod>2019-06-04T03:03:05.423Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
