@@ -163,18 +163,8 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/books/">Books</a>
                         </li>
-                        
-                    
-
                         
                     
 
@@ -182,6 +172,19 @@
                         <li>
                             <a href="/gallery/">Gallery</a>
                         </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
                         
                     
 
@@ -213,9 +216,6 @@
                         <li>
                             <a href="/tags/">Tags</a>
                         </li>
-                        
-                    
-
                         
                     
 
@@ -396,7 +396,7 @@
 <p><img src="https://user-images.githubusercontent.com/16996753/53869755-c8547a00-4033-11e9-87f1-ed391baa2df0.png" alt="ce6edbb5-a749-42c0-bda5-2a11b69d6390"></p>
 <p>本地DNS验证可以使用命令</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dig -t txt _acme-challenge.tonystudio.ml</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> nslookup tonystudio.ml </span></span><br><span class="line">Server:		40.73.101.101</span><br><span class="line">Address:	40.73.101.101#53</span><br><span class="line"></span><br><span class="line">Non-authoritative answer:</span><br><span class="line">tonystudio.ml	canonical name = codertonychan.github.io.</span><br><span class="line">Name:	codertonychan.github.io</span><br><span class="line">Address: 185.199.109.153</span><br><span class="line">Name:	codertonychan.github.io</span><br><span class="line">Address: 185.199.111.153</span><br><span class="line">Name:	codertonychan.github.io</span><br><span class="line">Address: 185.199.110.153</span><br><span class="line">Name:	codertonychan.github.io</span><br><span class="line">Address: 185.199.108.153</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> nslookup tonystudio.ml 114.114.114.114</span></span><br><span class="line">Server:		114.114.114.114</span><br><span class="line">Address:	114.114.114.114#53</span><br><span class="line"></span><br><span class="line">Non-authoritative answer:</span><br><span class="line">tonystudio.ml	canonical name = codertonychan.github.io.</span><br><span class="line">Name:	codertonychan.github.io</span><br><span class="line">Address: 185.199.111.153</span><br><span class="line">Name:	codertonychan.github.io</span><br><span class="line">Address: 185.199.110.153</span><br><span class="line">Name:	codertonychan.github.io</span><br><span class="line">Address: 185.199.109.153</span><br><span class="line">Name:	codertonychan.github.io</span><br><span class="line">Address: 185.199.108.153</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> nslookup tonystudio.ml </span><br><span class="line">Server:		40.73.101.101</span><br><span class="line">Address:	40.73.101.101#53</span><br><span class="line"></span><br><span class="line">Non-authoritative answer:</span><br><span class="line">tonystudio.ml	canonical name = codertonychan.github.io.</span><br><span class="line">Name:	codertonychan.github.io</span><br><span class="line">Address: 185.199.109.153</span><br><span class="line">Name:	codertonychan.github.io</span><br><span class="line">Address: 185.199.111.153</span><br><span class="line">Name:	codertonychan.github.io</span><br><span class="line">Address: 185.199.110.153</span><br><span class="line">Name:	codertonychan.github.io</span><br><span class="line">Address: 185.199.108.153</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> nslookup tonystudio.ml 114.114.114.114</span><br><span class="line">Server:		114.114.114.114</span><br><span class="line">Address:	114.114.114.114#53</span><br><span class="line"></span><br><span class="line">Non-authoritative answer:</span><br><span class="line">tonystudio.ml	canonical name = codertonychan.github.io.</span><br><span class="line">Name:	codertonychan.github.io</span><br><span class="line">Address: 185.199.111.153</span><br><span class="line">Name:	codertonychan.github.io</span><br><span class="line">Address: 185.199.110.153</span><br><span class="line">Name:	codertonychan.github.io</span><br><span class="line">Address: 185.199.109.153</span><br><span class="line">Name:	codertonychan.github.io</span><br><span class="line">Address: 185.199.108.153</span><br></pre></td></tr></table></figure>
 <p><a href="http://xn--MySSL-2b3hs1jk87a4ti5w3c87ya.com" target="_blank" rel="noopener">或者使用工具MySSL.com</a></p>
 <p>Mac下能用工具集</p>
 <p><img src="https://user-images.githubusercontent.com/16996753/53870953-313cf180-4036-11e9-9065-70cbdc641dd6.png" alt="image"></p>

@@ -17,13 +17,13 @@
 					<key>kind</key>
 					<string>display-image</string>
 					<key>url</key>
-					<string>https://raw.githubusercontent.com/CoderTonyChan/blog.tonystudio.ml/master/source/img/ipa/Icon-57-retroarch.png?token=AEBVTEJBU434W3AMM7NPYMK464Y2A</string>
+					<string>https://raw.githubusercontent.com/CoderTonyChan/blog.tonystudio.ml/master/source/img/ipa/Icon-57-retroarch.png</string>
 				</dict>
 				<dict>
 					<key>kind</key>
 					<string>full-size-image</string>
 					<key>url</key>
-					<string>https://raw.githubusercontent.com/CoderTonyChan/blog.tonystudio.ml/master/source/img/ipa/Icon-512-retroarch.png?token=AEBVTEJKEKEHOOEC5UBDOMC464Y4E</string>
+					<string>https://raw.githubusercontent.com/CoderTonyChan/blog.tonystudio.ml/master/source/img/ipa/Icon-512-retroarch.png</string>
 				</dict>
 			</array>
 			<key>metadata</key>
