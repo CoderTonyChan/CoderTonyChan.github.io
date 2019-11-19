@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Tony写字的地方">
+    <meta name="keyword" content="TonyChan">
+    <meta name="referrer" content="no-referrer">
+    <link rel="shortcut icon" href="/img/icon.png">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="manifest" href="/img/site.webmanifest">
+    <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#ff0000">
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          苹果开发者账号 - Tony&#39;s Studio
+        
+    </title>
+
+    <link rel="canonical" href="https://blog.tonystudio.ml/2017/06/04/2017-06-14-apple-developer-account/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('https://user-images.githubusercontent.com/16996753/69120305-44182900-0ad4-11ea-9367-ef6e647fd48c.png');
+            -webkit-mask: -webkit-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,1),rgba(0,0,0,1),rgba(0,0,0,0.5));
+            /*post*/
+        
+    }
+
+    
+</style>
+
+<div style="background: #000">
+    <header class="intro-header">
+        <!-- Signature -->
+        <div id="signature">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        
+                        <div class="post-heading" style="color: ">
+                            <div class="tags">
+                                
+                                <a class="tag" href="/tags/#WWDC" title="WWDC">WWDC</a>
+                                
+                            </div>
+                            <h1>苹果开发者账号</h1>
+                            <h2 class="subheading">Apple Developer Account</h2>
+                            <span class="meta">
+                                Posted by Tony Chan on
+                                2017-06-04
+                            </span>
+                        </div>
+                        
+    
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Tony&#39;s Studio</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/books/">Books</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/gallery/">Gallery</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+                    <li>
+                        <a href="https://travel.tonystudio.ml">Travel</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>文章大部分来自<a href="https://www.jianshu.com/p/cda386ddaa2c" target="_blank" rel="noopener">最详细iOS打包流程</a></p>
+<p>关于开发证书配置（Certificates &amp; Identifiers &amp; Provisioning Profiles），相信做iOS开发的同学没少被折腾。对于一个iOS开发小白、半吊子（比如像我自己）抑或老兵，或多或少会有或曾有过以下不详、疑问、疑惑甚至困惑：</p>
+<p>什么是App ID？</p>
+<p>Explicit/Wildcard App ID有何区别？</p>
+<p>什么是App Group ID？</p>
+<p>什么是证书（Certificate）？如何申请？有啥用？</p>
+<p>什么是Key Pair（公钥/私钥）？有啥用？与证书有何关联？</p>
+<p>什么是签名（Signature）？</p>
+<p>如何签名（CodeSign）？怎样校验（Verify）？</p>
+<p>什么是（Team）Provisioning Profiles？有啥用？</p>
+<p>Xcode如何配置才能使用iOS真机进行开发调试？</p>
+<p>多台机器如何共享开发者账号或证书？</p>
+<p>遇到证书配置问题怎么办？</p>
+<p>Xcode 7免证书调试真机调试</p>
+<h1 id="开发者账号权限">开发者账号权限</h1>
+<p>1.勾选证书管理</p>
+<p>如果勾选App管理<br>
+我就有所有证书的管理权限</p>
+<p>如果只是勾选开发人员<br>
+不能注册新的App ID</p>
+<p>2.勾选App管理<br>
+角色是Admin<br>
+能编译开发<br>
+能打包App ADHoc<br>
+能构建上传</p>
+<p>3.勾选开发人员<br>
+角色是Menber<br>
+能编译开发<br>
+能打包App ADHoc<br>
+能构建上传</p>
+<p>Menber有一些不能打包App Store<br>
+<img src="https://user-images.githubusercontent.com/16996753/59498978-0bdb4180-8ec9-11e9-9db4-40f6db065fe5.png" alt="image"><br>
+<img src="https://user-images.githubusercontent.com/16996753/59499335-c8cd9e00-8ec9-11e9-8b82-28300ce59fa3.png" alt="image"></p>
+<p>关键应该是profile没权限</p>
+<p>admin就有所有权限</p>
+<h1 id="证书">证书</h1>
+<p>在 app 开发期间，对应不同的环境，您将创建不同的证书类型。iOS、tvOS 和 watchOS app 使用同一套证书，而 macOS app 使用另一套证书。开发证书用于在设备上运行 app 以及使用 app 服务；而分发证书用于分发 app 以进行测试和上传到 App Store Connect。</p>
+<p>开发证书属于个人。您总共可创建两个 iOS 开发证书及两个 Mac 开发证书。在您的开发者帐户中，电脑名称会追加到开发证书名称后面 (例如，Gita Kumar (Work Mac)，其中 Work Mac 是电脑名称)，便于您识别证书。</p>
+<p>分发证书属于团队，每个团队只能拥有一种类型的分发证书 (Developer ID 证书除外)。只有帐户持有人或管理职能可以创建分发证书 (如果您以个人身份注册，您即为帐户持有人)。</p>
+<p>您可以使用 Xcode 或开发者帐户创建和撤销证书。</p>
+<p><a href="https://help.apple.com/developer-account/#/dev04fd06d56" target="_blank" rel="noopener">https://help.apple.com/developer-account/#/dev04fd06d56</a></p>
+<h1 id="私钥证书">私钥证书</h1>
+<p>您可用私钥访问某些 app 服务，并验证与这些服务之间的通信，如 APNs、MusicKit 和 DeviceCheck。您将在服务请求的 JSON 网络令牌 (JWT) 中使用私钥。</p>
+<h1 id="app-idbundle-identifier测试用wildcard不能进行重签名">App ID（bundle identifier）(测试用Wildcard不能进行重签名)</h1>
+<p>App ID即Product ID，用于标识一个或者一组App。</p>
+<p>App ID应该和Xcode中的Bundle Identifier是一致（Explicit）的或匹配（Wildcard）的。</p>
+<p>App ID字符串通常以反域名（reverse-domain-name）格式的Company Identifier（Company ID）作为前缀（Prefix/Seed），一般不超过255个ASCII字符。</p>
+<p>App ID全名会被追加Application Identifier Prefix（一般为TeamID.），分为两类：</p>
+<p>Explicit App ID：唯一的App ID，用于唯一标识一个应用程序。例如“com.apple.garageband”这个App ID，用于标识Bundle Identifier为“com.apple.garageband”的App。</p>
+<p>Wildcard App ID：含有通配符的App ID，用于标识一组应用程序。例如“<em>”（实际上是Application Identifier Prefix）表示所有应用程序；而“com.apple.</em>”可以表示Bundle Identifier以“com.apple.”开头（苹果公司）的所有应用程序。</p>
+<p>用户可在Developer MemberCenter网站上注册（Register）或删除（Delete）已注册的App IDs。App ID被配置到【XcodeTarget|Info|Bundle Identifier】下；对于Wildcard App ID，只要bundle identifier包含其作为Prefix/Seed即可。</p>
+<h1 id="设备device">设备（Device）</h1>
+<p>Device就是运行iOS系统用于开发调试App的设备。每台Apple设备使用UDID来唯一标识。</p>
+<p>iOS设备连接Mac后，可通过iTunes-&gt;Summary或者Xcode-&gt;Window-&gt;Devices获取iPhone的UDID（identifier）。</p>
+<p>Apple Member Center网站个人账号下的Devices中包含了注册过的所有可用于开发和测试的设备，普通个人开发账号每年累计最多只能注册100个设备。Apps signed by you or your team run only on designated development devices.Apps run only on the test devices you specify.</p>
+<p>用户可在网站上注册或启用/禁用（Enable/Disable）已注册的Device。</p>
+<p>本文的Devices是指连接到Xcode被授权用于开发测试的iOS设备（iPhone/iPad）。</p>
+<h1 id="开发证书certificates">开发证书（Certificates）</h1>
+<h2 id="证书的概念">证书的概念</h2>
+<p>证书是由公证处或认证机关开具的证明资格或权力的证件，它是表明（或帮助断定）事理的一个凭证。证件或凭证的尾部通常会烙印公章。</p>
+<p>每个中国人一生可能需要70多个证件，含15种身份证明。证件中“必需的”有30到40个。将这些证件按时间顺序铺开，那就是一个天朝子民的一生——持准生证许可落地，以户籍证明入籍，以身份证认证身份，持结婚证以合法同居，最终以死亡证明注销。</p>
+<h2 id="数字证书的概念">数字证书的概念</h2>
+<p>数字证书就是互联网通讯中标志通讯各方身份信息的一串数字，提供了一种在Internet上验证通信实体身份的方式，其作用类似于司机的驾驶执照或日常生活中的身份证。它是由一个由权威机构——CA机构，又称为证书授权中心（Certificate Authority）发行的，人们可以在网上用它来识别对方的身份。</p>
+<p>数字证书是一个经证书授权中心数字签名的包含公开密钥拥有者信息以及公开密钥的文件。最简单的证书包含一个公开密钥、名称以及证书授权中心的数字签名。</p>
+<p>数字证书还有一个重要的特征就是时效性：只在特定的时间段内有效。数字证书中的公开密钥（公钥）相当于公章。</p>
+<p>某一认证领域内的根证书是CA认证中心给自己颁发的证书，是信任链的起始点。安装根证书意味着对这个CA认证中心的信任。</p>
+<p>为了防止GFW进行中间人攻击(MitM)，例如篡改github证书，导致无法访问github网站等问题，可选择不信任CNNIC：</p>
+<p>在［钥匙串-系统］中双击CNNIC ROOT，在【信任】|【使用此证书时】下拉选择【永不信任】。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/59493719-147a4a80-8ebe-11e9-85d8-316c95163ad5.png" alt="image"></p>
+<p>在天朝子民的一生中，户籍证明可理解为等效的根证书：有了户籍证明，才能办理身份证；有了上流的身份证，才能办理下游居住证、结婚证、计划生育证、驾驶执照等认证。</p>
+<h2 id="ios开发证书">iOS（开发）证书</h2>
+<p>iOS证书是用来证明iOS App内容（executable code）的合法性和完整性的数字证书。对于想安装到真机或发布到AppStore的应用程序（App），只有经过签名验证（Signature Validated）才能确保来源可信，并且保证App内容是完整、未经篡改的。</p>
+<p>iOS证书分为两类：Development和Production（Distribution）。</p>
+<p><strong>Development证书</strong>用来开发和调试应用程序：Adevelopment certificateidentifies you, as a team member, in a development provisioning profile that allows apps signed by you tolaunchon devices.</p>
+<p><strong>Production</strong>主要用来分发应用程序（根据证书种类有不同作用）：Adistribution certificateidentifies your team or organization in a distribution provisioning profile and allows you tosubmityour app to the store. Only a team agent or an admin can create a distribution certificate.</p>
+<p>普通个人开发账号最多可注册iOS Development/Distribution证书各2个，用户可在网站上删除（Revoke）已注册的Certificate。</p>
+<p>下文主要针对iOS App开发调试过程中的开发证书（Certificate for Development）。</p>
+<h2 id="ios开发证书的根证书">iOS（开发）证书的根证书</h2>
+<p>那么，iOS开发证书是谁颁发的呢？或者说我们是从哪个CA申请到用于Xcode开发调试App的证书呢？</p>
+<p>iOS以及Mac OS X系统（在安装Xcode时）将自动安装<strong>AppleWWDRCA.cer</strong>这个中间证书（Intermediate Certificates），它实际上就是iOS（开发）证书的证书，即根证书（Apple Root Certificate）。</p>
+<p>AppleWWDRCA（Apple Root CA）类似注册管理户籍的公安机关户政管理机构，AppleWWDRCA.cer之于iOS（开发）证书则好比户籍证之于身份证。</p>
+<p>如果Mac Keychain Access证书助理在申请证书时尚未安装过该证书，请先下载安装（Signing requires that you have both the signing identity and the intermediate certificate installed in your keychain）。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/59493803-54d9c880-8ebe-11e9-91b7-0c1992103b31.png" alt="image"></p>
+<h1 id="供应配置文件provisioning-profiles">供应配置文件（Provisioning Profiles）</h1>
+<h2 id="provisioning-profile的概念">Provisioning Profile的概念</h2>
+<p>Provisioning Profile文件包含了上述的所有内容：<strong>证书、App ID和设备</strong>。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/59493866-80f54980-8ebe-11e9-98fe-0f289ae9e585.png" alt="image"></p>
+<p>一个Provisioning Profile对应一个Explicit App ID或Wildcard App ID（一组相同Prefix/Seed的App IDs）。在网站上手动创建一个Provisioning Profile时，需要依次指定App ID（单选）、证书（Certificates，可多选）和设备（Devices，可多选）。用户可在网站上删除（Delete）已注册的Provisioning Profiles。</p>
+<p>Provisioning Profile决定Xcode用哪个证书（公钥）/私钥组合（Key Pair/Signing Identity）来签署应用程序（Signing Product）,将在应用程序打包时嵌入到.ipa包里。安装应用程序时，Provisioning Profile文件被拷贝到iOS设备中，运行该iOS App的设备也通过它来认证安装的程序。</p>
+<p>如果要打包或者在真机上运行一个APP，一般要经历以下三步：</p>
+<p>首先，需要指明它的App ID，并且验证Bundle ID是否与其一致；<br>
+其次，需要证书对应的私钥来进行签名，用于标识这个APP是合法、安全、完整的；<br>
+然后，如果是真机调试，需要确认这台设备是否授权运行该APP。</p>
+<p>Provisioning Profile把这些信息全部打包在一起，<strong>方便我们在调试和发布程序打包时使用</strong>。</p>
+<p>这样，只要在不同的情况下选择不同的Provisioning Profile文件就可以了。</p>
+<p>Provisioning Profile也分为Development和Distribution两类，<strong>有效期同Certificate一样</strong>。</p>
+<p>Distribution版本的ProvisioningProfile主要用于提交App Store审核，其中不指定开发测试的Devices（0，unlimited）。App ID为Wildcard App ID（*）。App Store审核通过上架后，允许所有iOS设备（Deployment Target）上安装运行该App。</p>
+<p>Xcode将全部供应配置文件（包括用户手动下载安装的和Xcode自动创建的Team Provisioning Profile）放在目录~/Library/MobileDevice/Provisioning Profiles下。</p>
+<h2 id="provisioning-profile的构成">Provisioning Profile的构成</h2>
+<p>以下为典型供应配置文件*.mobileprovision的构成简析：<br>
+（1）Name：该mobileprovision的文件名。<br>
+（2）UUID：该mobileprovision文件的真实文件名。<br>
+（3）TeamName：Apple ID账号名。<br>
+（4）TeamIdentifier：Team Identity。<br>
+（5）AppIDName：explicit/wildcard App ID name（ApplicationIdentifierPrefix）。<br>
+（6）ApplicationIdentifierPrefix：完整App ID的前缀（TeamIdentifier.<em>）。<br>
+（7）DeveloperCertificates：包含了可以为使用该配置文件应用签名的所有证书。证书是基于Base64编码，符合PEM(PrivacyEnhanced Mail, RFC 1848)格式的，可使用OpenSSL来处理（opensslx509 -text -in file.pem）。从DeveloperCertificates提取之间的内容到文件cert.cer（cert.perm）：-----BEGIN CERTIFICATE-----将之间的内容拷贝至此-----END CERTIFICATE-----`Mac下右键QuickLook查看cert.cer（cert.perm），在Keychain Access中右键Get Info查看对应证书ios_development.cer，正常情况（公私钥KeyPair配对）应吻合；Windows下没有足够信息（WWDRCA.cer），无法验证该证书。如果你用了一个不在这个列表中的证书进行签名，无论这个证书是否有效，这个应用都将CodeSign Fail。<br>
+（8）Entitlements键对应的：keychain-access-groups：$(AppIdentifierPrefix)，参见Code Signing Entitlements(</em>.entitlements)。每个应用程序都有一个可以用于安全保存一些如密码、认证等信息的keychain，一般而言自己的程序只能访问自己的keychain。通过对应用签名时的一些设置，还可以利用keychain的方式实现同一开发者签证（就是相同bundle seed）下的不同应用之间共享信息的操作。比如你有一个开发者帐户，并开发了两个不同的应用A和B，然后通过对A和B的keychain access group这个东西指定共用的访问分组，就可以实现共享此keychain中的内容。application-identifier：带前缀的全名，例如$(AppIdentifierPrefix)com.apple.garageband。com.apple.security.application-groups：App Group ID（group. com.apple），参见Code Signing Entitlements(*.entitlements)。com.apple.developer.team-identifier：同Team Identifier。<br>
+（9）ProvisionedDevices：该mobileprovision授权的开发设备的UDID 。Provisioning Profile被配置到【XcodeTarget|Build Settings|Code Signing|Provisioning Profile】下，然后在Code Signing Identity下拉可选择Identities from Profile “…”（即Provisioning Profile中包含的Certificates）。</p>
+<h1 id="开发组供应配置文件team-provisioning-profiles">开发组供应配置文件（Team Provisioning Profiles）</h1>
+<h2 id="teamprovisioning-profile的概念">TeamProvisioning Profile的概念</h2>
+<p>每个Apple开发者账号都对应一个唯一的Team ID，Xcode3.2.3预发布版本中加入了Team Provisioning Profile这项新功能。</p>
+<p>在Xcode中添加Apple Developer Account时，它将与Apple Member Center后台勾兑自动生成iOS Team Provisioning Profile（Managed by Xcode）。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/59494105-0bd64400-8ebf-11e9-9b83-61e719180c5c.png" alt="image"></p>
+<p>Team Provisioning Profile包含一个为Xcode iOS Wildcard App ID(<em>)生成的iOS Team Provisioning Profile:</em>（匹配所有应用程序），账户里所有的Development Certificates和Devices都可以使用它在这个team注册的所有设备上调试所有的应用程序（不管bundle identifier是什么）。同时，它还会为开发者自己创建的Wildcard/Explicit App IDs创建对应的iOS Team Provisioning Profile。</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/59494151-20b2d780-8ebf-11e9-861d-fca3225d64ef.png" alt="image"></p>
+<h2 id="teamprovisioning-profile生成更新时机">TeamProvisioning Profile生成/更新时机</h2>
+<p>Add an Apple ID account to Xcode</p>
+<p>Fix issue “No Provisioning Profiles with a valid signing identity” in Xcode</p>
+<p>Assign Your App to a Team in Xcode project settings of General|Identity</p>
+<p>Register new device on the apple development website or Xcode detected new device connected</p>
+<p>利用Xcode生成和管理的iOS Team Provisioning Profile来进行开发非常方便，可以不需要上网站手动生成下载Provisioning Profile。</p>
+<p>Team Provisioning Profile同Provisioning Profile，只不过是由Xcode自动生成的，也被配置到【XcodeTarget|Build Settings|Code Signing|Provisioning Profile】下。</p>
+<h1 id="app-group-id">App Group （ID）</h1>
+<h2 id="app-group的概念">App Group的概念</h2>
+<p>WWDC14除了发布了OS X v10.10和switf外，iOS 8.0也开始变得更加开放了。说到开放，当然要数应用扩展（App Extension）了。顾名思义，应用扩展允许开发者扩展应用的自定义功能和内容，能够让用户在使用其他应用程序时使用该项功能，从而实现各个应用程序间的功能和资源共享。可以将扩展理解为一个轻量级（nimble and lightweight）的分身。</p>
+<p>扩展和其Containing App各自拥有自己的沙盒，虽然扩展以插件形式内嵌在Containing App中，但是它们是独立的二进制包，不可以互访彼此的沙盒。为了实现Containing App与扩展的数据共享，苹果在iOS 8中引入了一个新的概念——App Group，它主要用于同一Group下的APP实现数据共享，具体来说是通过以App Group ID标识的共享资源区——App GroupContainer。</p>
+<p>App Group ID同App ID一样，一般不超过255个ASCII字符。用户可在网站上编辑Explicit App IDs的App Group Assignment；可以删除（Delete）已注册的AppGroup （ID）。</p>
+<h2 id="app-group的配置">App Group的配置</h2>
+<p>Containing App与Extension的Explicit App ID必须Assign到同一App Group下才能实现数据共享，并且Containing App与Extension的App ID命名必须符合规范：</p>
+<p>置于同一App Group下的App IDs必须是唯一的（Explicit，not Wildcard）</p>
+<p>Extension App ID以Containing App ID为Prefix/Seed</p>
+<p>假如Garageband这个App ID为“com.apple.garageband”，则支持从语音备忘录导入到Garageband应用的插件的App ID可能形如“com.apple.garageband.extImportRecording”。App(ex)App Group IDProvisioning ProfileCode Signing Identity（Certificate Key Pair）App ID（bundle identifier）Devices（test）GarageBand</p>
+<p>置于同一分组：group.com.apple（1）共用同一证书：ios_development.cer（2）共用证书Key Pair中的Private Key进行CodeSigncom.apple.garageband授权开发测试设备的UDIDsGarageBand扩展插件com.apple.garageband.extImportRecording关于Provisioning Profile，可以使用自己手动生成的，也可以使用Xcode自动生成的Team Provisioning Profile。App Group会被配置到【Xcode Target|Build Settings|Code Signing|Code Signing Entitlements】文件（*.entitlements）的键com.apple.security.application-groups下，不影响Provisioning Profile生成流程。</p>
+<h1 id="证书与签名certificateamp-signature">证书与签名（Certificate&amp; Signature）</h1>
+<h2 id="code-signing-identity">Code Signing Identity</h2>
+<p><img src="https://user-images.githubusercontent.com/16996753/59494379-94ed7b00-8ebf-11e9-9c08-9741970c06ad.png" alt="image"><br>
+<img src="https://user-images.githubusercontent.com/16996753/59494383-95861180-8ebf-11e9-8eda-0fc565297d82.png" alt="image"></p>
+<p>Xcode中配置的Code Signing Identity（entitlements、certificate）必须与Provisioning Profile匹配，并且配置的Certificate必须在本机Keychain Access中存在对应Public／Private Key Pair，否则编译会报错。</p>
+<p>Xcode所在的Mac设备（系统）使用CA证书（WWDRCA.cer）来判断Code Signing Identity中Certificate的合法性：</p>
+<p>若用WWDRCA公钥能成功解密出证书并得到公钥（Public Key）和内容摘要（Signature），证明此证书确乃AppleWWDRCA发布，即证书来源可信；</p>
+<p>再对证书本身使用哈希算法计算摘要，若与上一步得到的摘要一致，则证明此证书未被篡改过，即证书完整。</p>
+<h2 id="code-signing">Code Signing</h2>
+<p>每个证书（其实是公钥）对应Key Pair中的私钥会被用来对内容（executable code，resources such as images and nib files aren’t signed）进行数字签名（CodeSign）——使用哈希算法生成内容摘要（digest）。Xcode使用指定证书配套的私钥进行签名时需要授权，选择【始终允许】后，以后使用该私钥进行签名便不会再弹出授权确认窗口。</p>
+<h2 id="verify-code-signature-with-certificate">Verify Code Signature with Certificate</h2>
+<p>上面已经提到，公钥被包含在数字证书里，数字证书又被包含在描述文件(Provisioning File)中，描述文件在应用被安装的时候会被拷贝到iOS设备中。第一步，App在Mac／iOS真机上启动时，需要对配置的bundle ID、entitlements和certificate与Provisioning Profile进行匹配校验：</p>
+<p>第二步，iOS/Mac真机上的ios_development.cer被AppleWWDRCA.cer中的 public key解密校验合法后，获取每个开发证书中可信任的公钥对App的可靠性和完整性进行校验。iOS/Mac设备（系统）使用App Provisioning Profile（Code Signing Identity）中的开发证书来判断App的合法性：若用证书公钥能成功解密出App（executable code）的内容摘要（Signature），证明此App确乃认证开发者发布，即来源可信；再对App（executable code）本身使用哈希算法计算摘要，若与上一步得到的摘要一致，则证明此App（executable code）未被篡改过，即内容完整。小结：基于Provisioning Profile校验了CodeSign的一致性；基于Certificate校验App的可靠性和完整性；启动时，真机的device ID（UUID）必须在Provisioning Profile的ProvisionedDevices授权之列。</p>
+<h1 id="在多台机器上共享开发账户证书">在多台机器上共享开发账户/证书</h1>
+<h2 id="xcode导出开发者账号developerprofile或pkcs12文件p12">Xcode导出开发者账号(<em>.developerprofile)或PKCS12文件(</em>.p12)</h2>
+<p>进入Xcode Preferences|Accounts：选中Apple IDs列表中对应Account的的Email，点击±之后的☸|Export Accounts，可导出包含account/code signing identity/provisioning profiles信息的*.developerprofile（Exporting a Developer Profile）文件供其他机器上的Xcode开发使用（Import该Account）。</p>
+<p>选中右下列表中某行Account Name条目|ViewDetails，可以查看Signing Identities和Provisioning Profiles。</p>
+<p>选中欲导出的Signing Identity条目，点击栏底+之后的☸|Export，必须输入密码，并需授权export key “privateKey” from keychain，将导出Certificates.p12。</p>
+<p>点击左下角的刷新按钮可从Member Center同步该账号下所有的Provisioning Profile到本地。选中右击列表中某个Provisioning Profile可以【Show in Finder】到[~/Library/MobileDevice/Provisioning\ Profiles]目录，其中Provisioning Profile的真实名称为$(UUID).mobileprovision，名如&quot;2488109f-ff65-442e-9774-fd50bd6bc827.mobileprovision&quot;，其中Name中为Xcode中看到的描述性别名。</p>
+<h2 id="keychain-access导出pkcs12文件p12">Keychain Access导出PKCS12文件(*.p12)</h2>
+<p>在Keychain Access|Certificates中选中欲导出的certificate或其下private key，右键Export或者通过菜单File|Export Items导出Certificates.p12——PKCS12 file holds theprivate keyandcertificate。</p>
+<p>其他Mac机器上双击Certificates.p12（如有密码需输入密码）即可安装该共享证书。有了共享证书之后，在开发者网站上将欲调试的iOS设备注册到该开发者账号名下，并下载对应证书授权了iOS调试设备的Provisioning Profile文件，方可在iOS真机设备上开发调试。</p>
+<h1 id="app-signer进行ipa-重签名">App Signer进行ipa 重签名</h1>
+<h2 id="以开发者模式重签xcode-11之后-所有合一了">以开发者模式重签（Xcode 11之后 所有合一了）</h2>
+<p>1.申请Apple Development证书<br>
+Sign development versions of your iOS, macOS, tvOS, and watchOS apps. For use in Xcode 11 or later.</p>
+<p>2.注册appid<br>
+经过测试只能使用Explicit注册</p>
+<p>Wildcard重签会有问题</p>
+<p>3.注册Profiles中Development Profile</p>
+<p>4.重新签名</p>
+<p>选择<strong>自己的Apple Development证书</strong></p>
+<p>然后再选择Profiles Development就OK了</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/59495405-c7987300-8ec1-11e9-825f-2d00796acf0c.png" alt="image"></p>
+<h2 id="企业分发模式重签xcode-11之后-所有合一了">企业分发模式重签（Xcode 11之后 所有合一了）</h2>
+<p>1.申请Apple Distribution证书<br>
+Sign your apps for submission to the App Store or for Ad Hoc distribution. For use with Xcode 11 or later.</p>
+<p>2.注册appid<br>
+经过测试只能使用Explicit注册</p>
+<p>Wildcard重签会有问题</p>
+<p>3.注册Profiles中Distribution Profile</p>
+<p>4.重新签名</p>
+<p>选择<strong>公司证书</strong></p>
+<p>然后再选择Profiles Distribution就OK了</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/59495627-45f51500-8ec2-11e9-9fcd-4d47b9f467e9.png" alt="image"></p>
+<h1 id="常见错误">常见错误</h1>
+<p>a signed resource has been added modified or deleted.</p>
+<p>目测和Carthage等第三方库签名有关</p>
+<p>具体的应用是<br>
+Provenance-ios-develop-2770-dev.ipa</p>
+<p>同样的证书签名ppsspp 没问题</p>
+<p><img src="https://user-images.githubusercontent.com/16996753/59490831-37096500-8eb8-11e9-9644-813346b60df7.png" alt="image"></p>
+<hr>
+<p>Reference：</p>
+<blockquote>
+<p>GitHub Repo：<a href="https://github.com/CoderTonyChan/CoderTonyChan.github.io" target="_blank" rel="noopener">Tony Studio</a></p>
+<p>Follow: <a href="https://github.com/CoderTonyChan" target="_blank" rel="noopener">CoderTonyCHan · GitHub</a></p>
+</blockquote>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2017/06/21/2017-06-21-Home-Digital-Entertainment/" data-toggle="tooltip" data-placement="top" title="家庭影音系统">&larr; Previous Post<br><span>家庭影音系统</span></a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2017/05/21/Travis-CI-Favicon/" data-toggle="tooltip" data-placement="top" title="Travis-CI">Next Post &rarr;<br><span>Travis-CI</span></a>
+                        </li>
+                    
+                </ul>
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                <!-- Gitalk 评论 start  -->
+                
+                <!-- Link Gitalk 的支持文件  -->
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+                
+                <div id="gitalk-container"></div>
+                <script type="text/javascript">
+                    var gitalk = new Gitalk({
+                        // gitalk的主要参数
+                        clientID: `d6e8288a1c63e75847f3`,
+                        clientSecret: `8c5389eb088393c894f7b085c7674d6aedc8783a`,
+                        repo: `CoderTonyChan.github.io`,
+                        owner: 'CoderTonyChan',
+                        admin: ['CoderTonyChan'],
+                        id: location.pathname,
+                        distractionFreeMode: false
+                    });
+                    gitalk.render('gitalk-container');
+                </script>
+                
+                <!-- Gitalk end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#开发者账号权限"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">开发者账号权限</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#证书"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">证书</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#私钥证书"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">私钥证书</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#app-idbundle-identifier测试用wildcard不能进行重签名"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">App ID（bundle identifier）(测试用Wildcard不能进行重签名)</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#设备device"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">设备（Device）</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#开发证书certificates"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">开发证书（Certificates）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#证书的概念"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">证书的概念</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#数字证书的概念"><span class="toc-nav-number">6.2.</span> <span class="toc-nav-text">数字证书的概念</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#ios开发证书"><span class="toc-nav-number">6.3.</span> <span class="toc-nav-text">iOS（开发）证书</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#ios开发证书的根证书"><span class="toc-nav-number">6.4.</span> <span class="toc-nav-text">iOS（开发）证书的根证书</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#供应配置文件provisioning-profiles"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">供应配置文件（Provisioning Profiles）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#provisioning-profile的概念"><span class="toc-nav-number">7.1.</span> <span class="toc-nav-text">Provisioning Profile的概念</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#provisioning-profile的构成"><span class="toc-nav-number">7.2.</span> <span class="toc-nav-text">Provisioning Profile的构成</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#开发组供应配置文件team-provisioning-profiles"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">开发组供应配置文件（Team Provisioning Profiles）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#teamprovisioning-profile的概念"><span class="toc-nav-number">8.1.</span> <span class="toc-nav-text">TeamProvisioning Profile的概念</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#teamprovisioning-profile生成更新时机"><span class="toc-nav-number">8.2.</span> <span class="toc-nav-text">TeamProvisioning Profile生成/更新时机</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#app-group-id"><span class="toc-nav-number">9.</span> <span class="toc-nav-text">App Group （ID）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#app-group的概念"><span class="toc-nav-number">9.1.</span> <span class="toc-nav-text">App Group的概念</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#app-group的配置"><span class="toc-nav-number">9.2.</span> <span class="toc-nav-text">App Group的配置</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#证书与签名certificateamp-signature"><span class="toc-nav-number">10.</span> <span class="toc-nav-text">证书与签名（Certificate&amp; Signature）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#code-signing-identity"><span class="toc-nav-number">10.1.</span> <span class="toc-nav-text">Code Signing Identity</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#code-signing"><span class="toc-nav-number">10.2.</span> <span class="toc-nav-text">Code Signing</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#verify-code-signature-with-certificate"><span class="toc-nav-number">10.3.</span> <span class="toc-nav-text">Verify Code Signature with Certificate</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#在多台机器上共享开发账户证书"><span class="toc-nav-number">11.</span> <span class="toc-nav-text">在多台机器上共享开发账户/证书</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#xcode导出开发者账号developerprofile或pkcs12文件p12"><span class="toc-nav-number">11.1.</span> <span class="toc-nav-text">Xcode导出开发者账号(.developerprofile)或PKCS12文件(.p12)</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#keychain-access导出pkcs12文件p12"><span class="toc-nav-number">11.2.</span> <span class="toc-nav-text">Keychain Access导出PKCS12文件(*.p12)</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#app-signer进行ipa-重签名"><span class="toc-nav-number">12.</span> <span class="toc-nav-text">App Signer进行ipa 重签名</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#以开发者模式重签xcode-11之后-所有合一了"><span class="toc-nav-number">12.1.</span> <span class="toc-nav-text">以开发者模式重签（Xcode 11之后 所有合一了）</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#企业分发模式重签xcode-11之后-所有合一了"><span class="toc-nav-number">12.2.</span> <span class="toc-nav-text">企业分发模式重签（Xcode 11之后 所有合一了）</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#常见错误"><span class="toc-nav-number">13.</span> <span class="toc-nav-text">常见错误</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#WWDC" title="WWDC">WWDC</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://tonystudio.ml" target="_blank">TonyStudio Home</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+
+                
+                <li>
+                    <a href="mailto:hi@tonystudio.ml">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                
+                
+
+                
+                <li>
+                    <a target="_blank" href="https://github.com/CoderTonyChan">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                
+
+                
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                
+
+                
+
+                
+
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Tony Chan 2019 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="http://beantech.org">BeanTech</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://blog.tonystudio.ml/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-135626320-1';
+    var _gaDomain = 'undefined';
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135626320-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-135626320-1');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
