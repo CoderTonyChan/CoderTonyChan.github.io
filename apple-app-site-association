@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+    {
+      "appID": "GJ7RN3GE99.ml.tonystudio.dongguantong",
+      "paths": ["*"]
+    }, {
+      "appID": "D3KQX62K1A.com.example.DemoAdminApp",
+      "paths": ["*"]
+    }
+    ]
+  }
+}
