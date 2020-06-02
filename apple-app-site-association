@@ -4,13 +4,13 @@
     "details": [
     {
       "appID": "GJ7RN3GE99.ml.tonystudio.dongguantong",
-      "paths": ["*"]
+      "paths": ["/about/*"]
     }, {
       "appID": "E68F8CJM68.com.founder.DongGuanTongApp1",
       "paths": ["*"]
     }, {
       "appID": "E68F8CJM68.cn.com.dongguantong.dgtapp",
-      "paths": ["*"]
+      "paths": ["/books/*"]
     }
     ]
   }
