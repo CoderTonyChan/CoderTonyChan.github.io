@@ -8,6 +8,9 @@
     }, {
       "appID": "E68F8CJM68.com.founder.DongGuanTongApp1",
       "paths": ["*"]
+    }, {
+      "appID": "E68F8CJM68.cn.com.dongguantong.dgtapp",
+      "paths": ["*"]
     }
     ]
   }
