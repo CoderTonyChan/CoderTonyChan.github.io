@@ -9,7 +9,7 @@ proxies:
     server: 127.0.0.1
     port: 56630
     cipher: rc4-md5
-    password: "lovepx1314"
+    password: "asd"
     obfs: plain
     protocol: auth_chain_a
 
