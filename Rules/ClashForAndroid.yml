@@ -1,0 +1,22 @@
+mixed-port: 7890
+allow-lan: false
+external-controller: 127.0.0.1:50933
+secret: ''
+
+proxies:
+  - name: Shadowsocks
+    type: ssr
+    server: 127.0.0.1
+    port: 56630
+    cipher: rc4-md5
+    password: "abc"
+    obfs: plain
+    protocol: auth_chain_a
+
+proxy-groups:
+  - name: Proxy
+    type: select
+    proxies:
+      - Shadowsocks
+rules:
+  - "MATCH,REJECT"
