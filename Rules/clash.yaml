@@ -1,13 +1,12 @@
 # Tony
 payload:
-  # > iqiyi & pps
+  # > Tony自用
   - DOMAIN-SUFFIX,inoreader.com
   - DOMAIN-SUFFIX,ggpht.com
   - DOMAIN-SUFFIX,ytimg.com
   - DOMAIN-SUFFIX,www.t66y.com
   - DOMAIN-SUFFIX,pics.dmm.co.jp
   - DOMAIN-SUFFIX,avgle.com
-  - DOMAIN-SUFFIX,inoreader.com
   - DOMAIN-SUFFIX,phncdn.com
   - DOMAIN-SUFFIX,phprcdn.com
   - DOMAIN-SUFFIX,pornhub.com
