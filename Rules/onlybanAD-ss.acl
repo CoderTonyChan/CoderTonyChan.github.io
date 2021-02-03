@@ -1,14 +1,3 @@
-#**********************************************************************
-# 12.28
-# 2020年12月28日20:29:54
-# 转载需要注明版权和来源
-#
-# 全部规则来自GFWList 没有白名单
-#
-# 更新记录 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/more/New.md
-# 下载地址 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/gfwlist-banAD.acl
-#
-#**********************************************************************# 广告关键词
 (^|\.)\w*admarvel\w*\.\w*$
 (^|\.)\w*admaster\w*\.\w*$
 (^|\.)\w*adsage\w*\.\w*$
