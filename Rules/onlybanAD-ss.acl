@@ -8,14 +8,6 @@
 # 更新记录 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/more/New.md
 # 下载地址 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/gfwlist-banAD.acl
 #
-#**********************************************************************
-
-[bypass_all]
-### 默认直连 自己可以自定义
-### [outbound_block_list] 禁止访问列表
-### [bypass_list] 直连列表 禁止访问列表
-### [proxy_list] 代理列表
-
 #**********************************************************************# 广告关键词
 (^|\.)\w*admarvel\w*\.\w*$
 (^|\.)\w*admaster\w*\.\w*$
