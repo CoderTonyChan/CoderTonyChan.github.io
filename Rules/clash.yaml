@@ -28,3 +28,5 @@ payload:
   - DOMAIN-SUFFIX,share.dmhy.org
   - DOMAIN-SUFFIX,apkpure.com
   - DOMAIN-SUFFIX,apkmirror.com
+  - DOMAIN-SUFFIX,exhentai.org,PROXY
+  - DOMAIN-SUFFIX,e-hentai.org,PROXY
